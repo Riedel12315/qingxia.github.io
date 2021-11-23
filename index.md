@@ -2,14 +2,14 @@
 <table border="0">
   <tr>
     <td width="75%">
-      <h1>张三</h1>
-      <p><b>硕士研究生</b></p>
-      <p><b>××大学××学院</b></p>
-      <p><b>邮箱：1234567789@qq.com</b></p>
-      <p><b>地址：××市××区××路××号××大学，××楼，邮编×××</b></p>
+      <h1>Qing Xia</h1>
+      <p><b>Bachelor of Science/Ph.D. Candidate</b></p>
+      <p><b>School of Mathematics and Statistics, Xi'an Jiaotong University</b></p>
+      <p><b>Email：xiaqing151701@stu.xjtu.edu.cn</b></p>
+      <p><b>Adderess：陕西省 西安市 西安交通大学 数学与统计学院</b></p>
     </td>
     <td width="25%">
-      <img src="/Qing Xia1.jpg" width="100%">      % 插入证件照代码
+      <img src="/Qing Xia1.jpg" width="100%">     
     </td>
   </tr>
 </table>
