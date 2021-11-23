@@ -1,2 +1,2 @@
-# qingxia.github.io
+# Qing Xia(夏青)
 Qing Xia received the B.S. degree from the School of mathematics and Statistics, Xi’an Jiaotong University, China in 2019. Now, he is under a Ph.D. candidate advised by Prof. Dr. Yibao Li in School of mathematics and Statistics, Xi’an Jiaotong University, China. His research interests include Additive Manufacturing (3D Printing), computational fluid dynamics, and scientific computing.
