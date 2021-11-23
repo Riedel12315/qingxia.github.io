@@ -21,7 +21,7 @@ Qing Xia received the B.S. degree from the School of mathematics and Statistics,
 + Yibao Li# , Rui Liu, Qing Xia, Chenxi He, Zhong Li*, First- and second-order unconditionally stable direct discretization methods for multi-component Cahn-Hilliard system on surfaces, Journal of Computational and Applied Mathematics, 401  (2022)113778.   (SCI, Impact Factor 2.037)
 + An unconditionally energy-stable second-order time-accurate numerical scheme for the coupled Cahn-Hilliard system in copolymer/homopolymer mixtures
 + An efficient method for scanned images by using color-correction and L0 gradient minimization
-+ An efficient nonlinear polynomial color characterization method based on interrelations of color spaces
++ An efficient nonlinear polynomial color characterization method based on interrelations of color spaces     
 ## Research interest
 ### Computational fluid dynamics
 ### Image processing and surface processing
