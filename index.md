@@ -10,7 +10,7 @@
       <p><b>Adderess：No.28, West Xianning Road, Xi'an, Shaanxi, 710049,P.R. China</b></p>
     </td>
     <td width="25%">
-      <img src=https://github.com/Riedel12315/qingxia.github.io/Qing Xia1.jpg width="100%">     
+      <img src="/Qing Xia1.jpg" width="100%">     
     </td>
   </tr>
 </table>
