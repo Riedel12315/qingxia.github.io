@@ -10,12 +10,12 @@
       <p><b>Adderess：No.28, West Xianning Road, Xi'an, Shaanxi, 710049,P.R. China</b></p>
     </td>
     <td width="25%">
-      <img src="Qing Xia1.jpg" width="100%">     
+      <img src=https://i.loli.net/2021/11/23/C9SmkhPWaeUDjqY.jpg width="100%">     
     </td>
   </tr>
 </table>
-## Introduction  
 
+## Introduction  
 Qing Xia received the B.S. degree from the School of mathematics and Statistics, Xi’an Jiaotong University, China in 2019. Now, he is under a Ph.D. candidate advised by Prof. Dr. Yibao Li in School of mathematics and Statistics, Xi’an Jiaotong University, China. His research interests include Additive Manufacturing (3D Printing), computational fluid dynamics, and scientific computing.  
 
 ## Research interest
