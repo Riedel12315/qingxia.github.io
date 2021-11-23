@@ -21,7 +21,10 @@ Qing Xia received the B.S. degree from the School of mathematics and Statistics,
 + Yibao Li#, Rui Liu, Qing Xia, Chenxi He, Zhong Li*, First- and second-order unconditionally stable direct discretization methods for multi-component Cahn-Hilliard system on surfaces, Journal of Computational and Applied Mathematics, 401  (2022)113778.   (SCI, Impact Factor 2.037)
 + Yibao Li#, Lujing Zhang, Qing Xia, Qian Yu, Junseok Kim, An unconditionally energy-stable second-order time-accurate numerical scheme for the coupled Cahn-Hilliard system in copolymer/homopolymer mixtures, Comoutational Materials Science,  200 (2021) 110809.  (SCI, Impact Factor 2.863) 
 + Jing Ji#, Suping Fang*, Qing Xia, Zhengyuan Shi, An efficient method for scanned images by using color-correction and L0 gradient minimization, Optik, 2477(2021)167820. (SCI, Impact Factor 2.187) 
-+ Jing Ji#, Suping Fang*, Zhengyuan Shi, Qing Xia, Yibao Li, An efficient nonlinear polynomial color characterization method based on interrelations of color spaces, 45(2020)1023-1039. (SCI, Impact Factor 1.091)     
++ Jing Ji#, Suping Fang*, Zhengyuan Shi, Qing Xia, Yibao Li, An efficient nonlinear polynomial color characterization method based on interrelations of color spaces, 45(2020)1023-1039. (SCI, Impact Factor 1.091)
+
+
+
 ## Research interest
 ### Computational fluid dynamics
 ### Image processing and surface processing
