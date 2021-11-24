@@ -22,8 +22,8 @@ Qing Xia received the B.S. degree from the School of mathematics and Statistics,
 ### Xi’an Jiaotong University (Sep 2021 - Now)
 + Ph.D. Candidate in Applied Mathematics
 + Advisor: Prof. Dr. Yibao Li
-+ Research Field:
-$$\circ$$ Image and Geometry Processing
++ Research Field:   
+    - Image and Geometry Processing
 - Computational Fluid Dynamics   
 - 3D Printing     
 - Topology Optimization     
