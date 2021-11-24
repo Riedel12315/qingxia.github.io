@@ -18,6 +18,30 @@
 ## Introduction       
 Qing Xia received the B.S. degree from the School of mathematics and Statistics, Xi’an Jiaotong University, China in 2019. Now, he is under a Ph.D. candidate advised by Prof. Dr. Yibao Li in School of mathematics and Statistics, Xi’an Jiaotong University, China. His research interests include Additive Manufacturing (3D Printing), computational fluid dynamics, and scientific computing.   
 
+## Education    
+### Xi’an Jiaotong University (Sep 2021 - Now)
++ Ph.D. Candidate in Applied Mathematics
++ Advisor: Prof. Dr. Yibao Li
++ Research Field:
+++ Image and Geometry Processing
+++ Computational Fluid Dynamics   
+++ 3D Printing     
+++ Topology Optimization     
+
+### Xi’an Jiaotong University (Sep 2019 - Jun 2021)
++ MPhil in Applied Mathematics
++ Advisor: Prof. Dr. Yibao Li
++ Research Field:
+++ Image and Geometry Processing
+++ Computational Fluid Dynamics   
+
+### Xi’an Jiaotong University (Sep 2015 - Jun 2019)
++ BSc in Applied Mathematics
++ Advisor: Prof. Dr. Yibao Li
++ Research Field:
+++ Image and Geometry Processing
+++ 3D Printing
+
 ## Research interest
 + Computational fluid dynamics
 + Image processing and surface processing
