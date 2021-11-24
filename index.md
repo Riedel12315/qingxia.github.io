@@ -10,12 +10,14 @@
       <p><b>Xi'an Jiaotong University</b></p>
       <p><b>Email：xiaqing151701@stu.xjtu.edu.cn</b></p>
       <p><b>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;qingxia151701@outlook.com</b></p>
+      <p><b>Google Scholar：[https://scholar.google.com/citations?user=pWXuL4EAAAAJ&hl=zh-CN](https://scholar.google.com/citations?user=pWXuL4EAAAAJ&hl=zh-CN)\</b></p>
+      <p><b>Research Gate: [https://www.researchgate.net/profile/Qing-Xia-12](https://www.researchgate.net/profile/Qing-Xia-12)</b></p>
       <p><b>Adderess：No.28, West Xianning Road, Xi'an, Shaanxi, 710049,P.R. China</b></p>
     </td>
   </tr>
 </table>
 
-## Introduction       
+## Basic Information       
 Qing Xia received the B.S. degree from the School of mathematics and Statistics, Xi’an Jiaotong University, China in 2019. Now, he is under a Ph.D. candidate advised by Prof. Dr. Yibao Li in School of mathematics and Statistics, Xi’an Jiaotong University, China. His research interests include Additive Manufacturing (3D Printing), computational fluid dynamics, and scientific computing.   
 
 ## Education    
