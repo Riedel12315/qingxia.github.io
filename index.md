@@ -10,8 +10,8 @@
       <p><b>Xi'an Jiaotong University</b></p>
       <p><b>Email：xiaqing151701@stu.xjtu.edu.cn</b></p>
       <p><b>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;qingxia151701@outlook.com</b></p>
-      <p><b>Google Scholar：[https://scholar.google.com/citations?user=pWXuL4EAAAAJ&hl=zh-CN](https://scholar.google.com/citations?user=pWXuL4EAAAAJ&hl=zh-CN)\</b></p>
-      <p><b>Research Gate: [https://www.researchgate.net/profile/Qing-Xia-12](https://www.researchgate.net/profile/Qing-Xia-12)</b></p>
+      <p><b>Google Scholar：https://scholar.google.com/citations?user=pWXuL4EAAAAJ&hl=zh-CN</b></p>
+      <p><b>Research Gate: https://www.researchgate.net/profile/Qing-Xia-12</b></p>
       <p><b>Adderess：No.28, West Xianning Road, Xi'an, Shaanxi, 710049,P.R. China</b></p>
     </td>
   </tr>
