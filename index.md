@@ -30,14 +30,14 @@ Qing Xia received the B.S. degree from the School of mathematics and Statistics,
 
 ### Xi’an Jiaotong University (Sep 2019 - Jun 2021)
 + MPhil in Applied Mathematics
-+ Advisor: Prof. Dr. Yibao Li
++ Advisor: Prof. Dr. [Yibao Li](http://gr.xjtu.edu.cn/web/yibaoli)
 + Research Field:   
     - Image and Geometry Processing
     - Computational Fluid Dynamics   
 
 ### Xi’an Jiaotong University (Sep 2015 - Jun 2019)
 + BSc in Applied Mathematics
-+ Advisor: Prof. Dr. Yibao Li
++ Advisor: Prof. Dr. [Yibao Li](http://gr.xjtu.edu.cn/web/yibaoli)
 + Research Field:    
     - Image and Geometry Processing
     - 3D Printing
