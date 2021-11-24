@@ -67,6 +67,11 @@ Qing Xia received the B.S. degree from the School of mathematics and Statistics,
 + **Qing Xia**#, Gangming Sun, Qian Yu, Junseok Kim, Yibao Li*, Thermal--fluid topology optimization with unconditional energy stability and second--order accuracy via phase--field model, (2021).
 + Qian Yu#, **Qing Xia**, Yibao Li*, A phase field-based systematic multiscale topology optimization method for porous structures design, (2021).
 
+## Teaching Assistant  
++ Numerical Analysis(B)   
+Instructor: Prof. Dr. Yibao Li, Iharbour, Fall 2019   
++ Numerical Analysis(A)   
+Instructor: Prof. Dr. Yibao Li, Iharbour, Fall 2020
 
 
 
