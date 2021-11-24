@@ -1,9 +1,9 @@
 <table border="0">
   <tr>
-    <td width="30%">
-      <img src="https://i.loli.net/2021/11/24/6aWbyLkTpvqVonJ.jpg" width="75%">  
+    <td width="25%">
+      <img src="https://i.loli.net/2021/11/24/6aWbyLkTpvqVonJ.jpg" width="100%">  
     </td>
-    <td width="70%">
+    <td width="75%">
       <h1>Qing Xia</h1>
       <p><b>Bachelor of Science/Ph.D. Candidate</b></p>
       <p><b>School of Mathematics and Statistics</b></p>
