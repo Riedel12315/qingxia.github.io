@@ -65,7 +65,7 @@ Qing Xia received the B.S. degree from the School of mathematics and Statistics,
 + Qing Xia#, Junseok Kim, Binhu Xia, Yibao Li*. An alternating direction explicit method for the hydrodynamic phase-field model with heat transfer, submitted, (2021).  
 + Qing Xia#, Yuehan Liu, Junseok Kim, Yibao Li*, Binary thermal fluids computation over arbitrary surfaces with second-order accuracy and unconditional energy stability based on phase-field model, (2021).
 + Qing Xia#, Gangming Sun, Qian Yu, Junseok Kim, Yibao Li*, Thermal--fluid topology optimization with unconditional energy stability and second--order accuracy via phase--field model, (2021).
-+ Qian Yu#, Qing Xia, Yibao Li*, A phase field-based systematic multiscale topology optimization method for porous structures design, (2021).
++ Qian Yu#, **Qing Xia**, Yibao Li*, A phase field-based systematic multiscale topology optimization method for porous structures design, (2021).
 
 
 
