@@ -23,24 +23,24 @@ Qing Xia received the B.S. degree from the School of mathematics and Statistics,
 + Ph.D. Candidate in Applied Mathematics
 + Advisor: Prof. Dr. Yibao Li
 + Research Field:
-++ Image and Geometry Processing
-++ Computational Fluid Dynamics   
-++ 3D Printing     
-++ Topology Optimization     
+- Image and Geometry Processing
+- Computational Fluid Dynamics   
+- 3D Printing     
+- Topology Optimization     
 
 ### Xi’an Jiaotong University (Sep 2019 - Jun 2021)
 + MPhil in Applied Mathematics
 + Advisor: Prof. Dr. Yibao Li
 + Research Field:
-++ Image and Geometry Processing
-++ Computational Fluid Dynamics   
+- Image and Geometry Processing
+- Computational Fluid Dynamics   
 
 ### Xi’an Jiaotong University (Sep 2015 - Jun 2019)
 + BSc in Applied Mathematics
 + Advisor: Prof. Dr. Yibao Li
 + Research Field:
-++ Image and Geometry Processing
-++ 3D Printing
+- Image and Geometry Processing
+- 3D Printing
 
 ## Research interest
 + Computational fluid dynamics
