@@ -81,7 +81,7 @@ analytics:
 # Site Author
 author:
   name             : "Qing Xia"
-  avatar           : "profile.png"
+  avatar           : "QingXia.png"
   bio              : "Ph.D. Candidate in School of Mathematics and Statistics, Xi'an Jiaotong University"
   location         : "Xi'an, China"
   employer         :
@@ -103,13 +103,13 @@ author:
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
   linkedin         :
-  orcid            : "http://orcid.org/yourorcidurl"
+  orcid            : "https://orcid.org/0000-0003-1608-415X"
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
-  twitter          : "replacethistwitterhandle"
+  twitter          : 
   vine             :
   weibo            :
   xing             :
