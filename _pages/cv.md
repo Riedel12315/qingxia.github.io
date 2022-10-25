@@ -11,7 +11,7 @@ redirect_from:
 
 Curriculum Vitae
 =====
-[English CV](https://riedel12315.github.io/qingxia1.github.io/files/CV-EN.pdf)   
+[English CV](https://riedel12315.github.io/qingxia.github.io/files/CV-EN.pdf)   
 
 Education
 ======
