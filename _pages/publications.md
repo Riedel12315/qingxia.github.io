@@ -24,12 +24,23 @@ Publications
 
 Revision
 ======
-+ Yibao Li#, Kang Qin, **Qing Xia**, Junseok Kim*, A second-order unconditionally stable method for the anisotropic dendritic crystal growth model with an orientation-field, Applied Numerical Mathematics, 2022.
++ Yibao Li#, Kang Qin, **Qing Xia**, Junseok Kim*, A second-order unconditionally stable method for the anisotropic dendritic crystal growth model with an orientation-field, [Applied Numerical Mathematics](https://www.editorialmanager.com/apnum/default2.aspx), 2022.
 
 Submission
 =====
-+ **Qing Xia**#, Gangming Sun, Junseok Kim, Yibao Li*, Multi-scale modeling and simulation of additive manufacturing based on fused deposition technique, CNSNS, (2022).
-+ **Qing Xia**#, Yuehan Liu, Junseok Kim, Yibao Li*, Binary thermal fluids computation over arbitrary surfaces with second-order accuracy and unconditional energy stability based on phase-field model, JCAM (2022).
-+ **Qing Xia**#, Junxiang Yang, Yibao Li*, On the investigation of the conservative and consistent phase-field method for solving the N-component incompressible flows, JFM, (2022).
-+ **Qing Xia**#, Xiaoyu Jiang, Yibao Li*, Phase field modeling for the generation of the biological transport network, JCP, (2022).
++ **Qing Xia**#, Gangming Sun, Junseok Kim, Yibao Li*, Multi-scale modeling and simulation of additive manufacturing based on fused deposition technique, [Communications in Nonlinear Science and Numerical Simulation](https://www.editorialmanager.com/cnsns/default2.aspx), (2022).
++ **Qing Xia**#, Yuehan Liu, Junseok Kim, Yibao Li*, Binary thermal fluids computation over arbitrary surfaces with second-order accuracy and unconditional energy stability based on phase-field model, [Journal of Computational and Applied Mathematics](https://www.editorialmanager.com/elscam/default2.aspx), (2022).
++ **Qing Xia**#, Junxiang Yang, Yibao Li*, On the investigation of the conservative and consistent phase-field method for solving the N-component incompressible flows, [Journal of Fluid Mechanics](https://mc.manuscriptcentral.com/jfm), (2022).
++ **Qing Xia**#, Xiaoyu Jiang, Yibao Li*, Phase field modeling for the generation of the biological transport network, [Journal of Computational Physics](https://www.editorialmanager.com/jcomp/default2.aspx), (2022).
   
+已授权专利
+======
++ 李义宝，史政源，**夏青**，卢秉恒，一种隐形牙套的牙齿-牙龈快速分割方法。
++ 李义宝，刘蕊，**夏青**，一种基于多探测器的自动报靶预测算法。
+
+已受理专利
+======
++ 李义宝，**夏青**，刘蕊，一种指纹识别方法。
++ 李义宝，刘玥含，**夏青**，一种快速打印算法。
++ 李义宝，孙港明，史政源，**夏青**，一种牙龈线提取算法。
++ 李义宝，蒋小玉，**夏青**，一种数字孪生算法。
