@@ -14,6 +14,10 @@ Research
 ======
 My research interests mainly lie in **Shape topology optimization in 3D printing** and **multi-scale multi-physics coupled computation**.  My main work is to project the physical models from real space to digital space for equivalent experiments, which can eliminate the environment and material cost constraints of real physical experiment.
 
+News
+======
++ None
+
 Magnum Opus
 ======
 + **Qing Xia**#, Qian Yu, Yibao Li*. A second-order accuracy, unconditionally energy stable numerical scheme for binary fluid flows on arbitrarily curved surfaces ,  Computer Methods in Applied Mechanics and Engineering, 384 (2021) 113987. (SCI, Impact Factor 6.756)  
@@ -23,3 +27,8 @@ Magnum Opus
 + Jin Wang#, **Qing Xia***, Binhu Xia, Fast Image Restoration Method Based on the L0, L1, and L2 Gradient Minimization, Mathematics 10 (2022) 3107.
 + Yibao Li#，**Qing Xia**，Sungha Yoon，Chaeyoung Lee，Bingheng Lu，Junseok Kim*, A simple and efficient volume merging method for triply periodic minimal structure,   Computer Physics Communications, 264  (2021) 107956. (SCI, Impact Factor: 3.627)   
 + Yibao Li#, **Qing Xia**, Sungha Yoon, Junseok Kim*. A simple and efficient fingerprint image restoration method based on a phase-field model, Pattern Recognition, 123 (2020) 108405.  (SCI, Impact Factor: 7.740)
+
+Projects and Awards
+======
++ The Fundamental Research Funds for the Central Universities(No. XYZ022022005)
+
