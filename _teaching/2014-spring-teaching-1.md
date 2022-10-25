@@ -1,20 +1,17 @@
 ---
-title: "Teaching experience 1"
+title: "Teaching Assistant"
 collection: teaching
 type: "Undergraduate course"
 permalink: /teaching/2014-spring-teaching-1
 venue: "University 1, Department"
 date: 2014-01-01
-location: "City, Country"
+location: "Xi'an, China"
 ---
 
-This is a description of a teaching experience. You can use markdown like any other post.
-
-Heading 1
+Numerical Analysis(A)
+Instructor: Prof. Dr. Yibao Li, Iharbour, Fall 2020
 ======
 
-Heading 2
-======
-
-Heading 3
+Numerical Analysis(B)
+Instructor: Prof. Dr. Yibao Li, Iharbour, Fall 2019
 ======
