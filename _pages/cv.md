@@ -9,51 +9,51 @@ redirect_from:
 
 {% include base_path %}
 
+Curriculum Vitae
+=====
+[English CV](https://riedel12315.github.io/qingxia1.github.io/files/CV-EN.pdf)   
+
 Education
 ======
-* B.S. in GitHub, GitHub University, 2012
-* M.S. in Jekyll, GitHub University, 2014
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
+### Xi’an Jiaotong University (Sep 2021 - Now)
++ Ph.D. Candidate in Applied Mathematics
++ Advisor: Prof. Dr. [Yibao Li](http://gr.xjtu.edu.cn/web/yibaoli)
++ Research Field:   
+    - Image and Geometry Processing
+    - Computational Fluid Dynamics   
+    - 3D Printing     
+    - Topology Optimization    
 
-Work experience
-======
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+### Xi’an Jiaotong University (Sep 2019 - Jun 2021)
++ MPhil in Applied Mathematics
++ Advisor: Prof. Dr. [Yibao Li](http://gr.xjtu.edu.cn/web/yibaoli)
++ Research Field:   
+    - Image and Geometry Processing
+    - Computational Fluid Dynamics 
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+### Xi’an Jiaotong University (Sep 2015 - Jun 2019)
++ BSc in Applied Mathematics
++ Advisor: Prof. Dr. [Yibao Li](http://gr.xjtu.edu.cn/web/yibaoli)
++ Research Field:    
+    - Image and Geometry Processing
+    - 3D Printing 
   
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+Research interest
+=====
++ Computational fluid dynamics
++ Image processing and surface processing
++ 3D Printing     
 
-Publications
+Teaching Assistant
 ======
-  <ul>{% for post in site.publications %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
++ Numerical Analysis(A)   
+Instructor: Prof. Dr. Yibao Li, Iharbour, Fall 2020
++ Numerical Analysis(B)   
+Instructor: Prof. Dr. Yibao Li, Iharbour, Fall 2019   
   
-Talks
-======
-  <ul>{% for post in site.talks %}
-    {% include archive-single-talk-cv.html %}
-  {% endfor %}</ul>
   
-Teaching
+Contact
 ======
-  <ul>{% for post in site.teaching %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+School of Mathematics and Statistics   
+No.28, West Xianning Road, Xi'an, Shaanxi, 710049,P.R. China   
+Email:xiaqing151701@stu.xjtu.edu.cn, qingxia151701@outlook.com
