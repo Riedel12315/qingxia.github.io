@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: ""
+title: "Simulation"
 permalink: /simulation/
 author_profile: true
 redirect_from:
