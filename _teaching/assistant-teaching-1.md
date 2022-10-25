@@ -1,10 +1,10 @@
 ---
 title: "Teaching Assistant"
 collection: teaching
-type: "Undergraduate course"
-permalink: /teaching/2014-spring-teaching-1
+type: "Master course"
+permalink: /teaching/assistant-teaching-1
 venue: "University 1, Department"
-date: 2014-01-01
+date: 2019.09-2021.06
 location: "Xi'an, China"
 ---
 
