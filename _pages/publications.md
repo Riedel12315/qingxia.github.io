@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "Publications"
+title: "State of papers"
 permalink: /publications/
 author_profile: true
 ---
