@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Qing Xia / 夏青"
 title_separator          : "-"
 name                     : &name "Qing Xia"
-description              : &description "personal description"
+description              : &description "Ph.D. Candidate in School of Mathematics and Statistics, Xi'an Jiaotong University"
 url                      : https://riedel12315.github.io/qingxia.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "Riedel12315/qingxia.github.io"
@@ -80,15 +80,15 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Sidebar Name"
+  name             : "Qing Xia"
   avatar           : "profile.png"
-  bio              : "Your biography for the left-hand sidebar"
-  location         : "Location"
+  bio              : "Ph.D. Candidate in School of Mathematics and Statistics, Xi'an Jiaotong University"
+  location         : "Xi'an, China"
   employer         :
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  googlescholar    : "http://yourfullgooglescholarurl.com"
-  email            :
-  researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
+  pubmed           : 
+  googlescholar    : "https://scholar.google.com/citations?user=pWXuL4EAAAAJ&hl=zh-CN"
+  email            : "xiaqing151701@stu.xjtu.edu.cn"
+  researchgate     : "https://www.researchgate.net/profile/Qing-Xia-12"
   uri              :
   bitbucket        :
   codepen          :
@@ -96,7 +96,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "academicpages"
+  github           : 
   google_plus      :
   keybase          :
   instagram        :
