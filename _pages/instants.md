@@ -14,8 +14,10 @@ img{
 </style>
 
 {% include base_path %}
+# Yijun Hao(My girl) and I (Traveling in 2021)
+![avatar](http://qingxiaxjtu.com/images/instants2.png)
+
 # Prof. Yibao Li and I（Bachelor's Graduation Ceremony in 2019）   
 ![avatar](http://qingxiaxjtu.com/images/instants1.png)
 
-# Yijun Hao(My girl) and I (Traveling in 2021)
-![avatar](http://qingxiaxjtu.com/images/instants2.png)
+
