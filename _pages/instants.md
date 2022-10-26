@@ -7,16 +7,8 @@ redirect_from:
   - /resume
 ---
 
-<center class="half">
-  <img src="http://qingxiaxjtu.com/images/instants1.png" width="300" "Prof. Yibao Li(My supervisor) and I（Bachelor's Graduation Ceremony in 2019)"/>
-  <img src="http://qingxiaxjtu.com/images/instants2.png" width="300" "Yijun Hao(My girl) and I (Traveling in 2021)"/>
-</center>
 
-#![Alt text](/path/to/img.jpg "Optional title")
-
-#![Prof. Yibao Li(My supervisor) and I（Bachelor's Graduation Ceremony in 2019)](http://qingxiaxjtu.com/images/instants1.png)
-
-#![Yijun Hao(My girl) and I (Traveling in 2021)](http://qingxiaxjtu.com/images/instants2.png)
+![Prof. Yibao Li(My supervisor) and I（Bachelor's Graduation Ceremony in 2019)]([/path/to/img.jpg](http://qingxiaxjtu.com/images/instants1.png) "Prof. Yibao Li(My supervisor) and I（Bachelor's Graduation Ceremony in 2019)")![Yijun Hao(My girl) and I (Traveling in 2021)](http://qingxiaxjtu.com/images/instants2.png "Yijun Hao(My girl) and I (Traveling in 2021)")
 
 
 
