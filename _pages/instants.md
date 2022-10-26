@@ -8,8 +8,7 @@ redirect_from:
 ---
 
 <center class="half">
-    <img src="[http://xxx.jpg](http://qingxiaxjtu.com/images/instants1.png)" width="300"/>
-    <img src="[http://yyy.jpg](http://qingxiaxjtu.com/images/instants2.png)" width="300"/>
+    <img src="http://qingxiaxjtu.com/images/instants1.png" width="300"/><img src="http://qingxiaxjtu.com/images/instants2.png" width="300"/>
 </center>
 
 Prof. Yibao Li(My supervisor) and I（Bachelor's Graduation Ceremony in 2019). Yijun Hao(My girl) and I (Traveling in 2021). 
