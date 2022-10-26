@@ -17,7 +17,7 @@ img{
 # Yijun Hao(My girl) and I (Traveling in 2021)
 ![avatar](http://qingxiaxjtu.com/images/instants2.png)
 
-# Prof. Yibao Li and I（Bachelor's Graduation Ceremony in 2019）   
+# Prof. Yibao Li(My supervisor) and I（Bachelor's Graduation Ceremony in 2019）   
 ![avatar](http://qingxiaxjtu.com/images/instants1.png)
 
 
