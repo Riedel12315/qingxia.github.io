@@ -7,7 +7,7 @@ author_profile: true
 
 Publications
 =======
-+ **Qing Xia**#, Qian Yu, Yibao Li*, A second-order accurate, unconditionally energy stable numerical scheme for binary fluid flows on arbitrarily curved surfaces,  Computer Methods in Applied Mechanics and Engineering, 384 (2021)113987.(SCI, Impact Factor 6.756) [PDF](https://riedel12315.github.io/qingxia.github.io/files/paper3.pdf)
++ **Qing Xia**#, Qian Yu, Yibao Li*, A second-order accurate, unconditionally energy stable numerical scheme for binary fluid flows on arbitrarily curved surfaces,  <font color=red>Computer Methods in Applied Mechanics and Engineering</font>, 384 (2021)113987.(SCI, Impact Factor 6.756) [PDF](https://riedel12315.github.io/qingxia.github.io/files/paper3.pdf)
 + **Qing Xia**#, Gangming Sun, Qian Yu, Yibao Li*, Thermal-fluid topology optimization with unconditional energy stability and second-order accuracy via phase-field model, Communications in Nonlinear Science and Numerical Simulation 116 (2023) 106782. (SCI, Impact Factor 4.260) [PDF](https://riedel12315.github.io/qingxia.github.io/files/paper12.pdf)
 + **Qing Xia**#, Junseok Kim, Binhu Xia, Yibao Li*, An unconditionally energy stable method for binary incompressible heat conductive fluids based on the phase–field model, Computers & Mathematics with Applications 123 (2023) 26-39. (SCI, Impact Factor 1.860)[PDF](https://riedel12315.github.io/qingxia.github.io/files/paper13.pdf)
 + **Qing Xia**#, Junseok Kim, Yibao Li*, Modeling and simulation of multi-component immiscible flows based on a modified Cahn-Hilliard equation, European Journal of Mechanics-B/Fluids.(SCI, Impact Factor 2.183)[pdf](https://riedel12315.github.io/qingxia.github.io/files/paper10.pdf)
