@@ -6,6 +6,12 @@ author_profile: true
 redirect_from:
   - /resume
 ---
+<style>
+img{
+    width: 60%;
+    padding-left: 20%;
+}
+</style>
 
 {% include base_path %}
 # Prof. Yibao Li and I（Bachelor's Graduation Ceremony in 2019）   
