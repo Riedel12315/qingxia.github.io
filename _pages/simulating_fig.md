@@ -15,14 +15,15 @@ redirect_from:
 ## Lightweight scaffold design   
 <img src="https://i.loli.net/2021/11/26/ybGhM2HQBKnTZCo.jpg"
  width="900px" />
+## Digital twin with fused deposition technique   
+<img src="https://s2.loli.net/2022/10/27/Di28hBWA6M4sVPq.gif"
+ width="900px" />
 
 # Computational fluids flow 
 ## CFD on surfaces
 <img src="https://i.loli.net/2021/11/26/AM6axXyzCZenmb8.png"
- width="900px" />
- 
- <img src="https://s2.loli.net/2022/10/27/eRqTnblB2joIWSG.gif"
- width="400px" />
+ width="640px" /> <img src="https://s2.loli.net/2022/10/27/eRqTnblB2joIWSG.gif"
+ width="240px" />
 
  
 ## CFD with heat transfer
