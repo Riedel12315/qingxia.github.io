@@ -22,7 +22,7 @@ redirect_from:
  width="900px" />
  
  <img src="https://s2.loli.net/2022/10/27/eRqTnblB2joIWSG.gif"
- width="300px" />
+ width="400px" />
 
  
 ## CFD with heat transfer
