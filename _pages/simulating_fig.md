@@ -21,8 +21,8 @@ redirect_from:
 <img src="https://i.loli.net/2021/11/26/AM6axXyzCZenmb8.png"
  width="900px" />
  
- <img src="https://s2.loli.net/2022/10/27/eRqTnblB2joIWSG.gif.png"
- width="200px" />
+ <img src="https://s2.loli.net/2022/10/27/eRqTnblB2joIWSG.gif"
+ width="300px" />
 
  
 ## CFD with heat transfer
