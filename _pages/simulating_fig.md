@@ -20,6 +20,11 @@ redirect_from:
 ## CFD on surfaces
 <img src="https://i.loli.net/2021/11/26/AM6axXyzCZenmb8.png"
  width="900px" />
+ 
+ <img src="https://s2.loli.net/2022/10/27/eRqTnblB2joIWSG.gif.png"
+ width="200px" />
+
+ 
 ## CFD with heat transfer
 <img src="https://i.loli.net/2021/11/27/rORb1N96YUSQfmA.png"
  width="900px" />
