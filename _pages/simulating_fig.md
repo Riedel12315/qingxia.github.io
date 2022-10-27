@@ -10,18 +10,24 @@ redirect_from:
 {% include base_path %}
 # CAD for 3D printing 
 ## Topology optimization  
-![avatar](https://i.loli.net/2021/11/26/H4SAIPtXNed53CB.jpg)   
+<img src="https://i.loli.net/2021/11/26/H4SAIPtXNed53CB.jpg"
+ width="900px" />
 ## Lightweight scaffold design   
-![avatar](https://i.loli.net/2021/11/26/ybGhM2HQBKnTZCo.jpg)   
+<img src="https://i.loli.net/2021/11/26/ybGhM2HQBKnTZCo.jpg"
+ width="900px" />
 
 # Computational fluids flow 
 ## CFD on surfaces
-![avatar](https://i.loli.net/2021/11/26/AM6axXyzCZenmb8.png)   
+<img src="https://i.loli.net/2021/11/26/AM6axXyzCZenmb8.png"
+ width="900px" />
 ## CFD with heat transfer
-![avatar](https://i.loli.net/2021/11/27/rORb1N96YUSQfmA.png)  
+<img src="https://i.loli.net/2021/11/27/rORb1N96YUSQfmA.png"
+ width="900px" />
 
 # Image processing
 ## Fingerprint restoration
-![avatar](https://i.loli.net/2021/11/27/sWkfSq3ZENQJ7h5.jpg)
+<img src="https://i.loli.net/2021/11/27/sWkfSq3ZENQJ7h5.jpg"
+ width="900px" />
 ## Color correction and L0-denoising
-![avatar](https://i.loli.net/2021/11/26/jS8DZJFENX5oIW6.png)
+<img src="https://i.loli.net/2021/11/26/jS8DZJFENX5oIW6.png"
+ width="900px" />
