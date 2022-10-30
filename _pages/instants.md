@@ -7,7 +7,7 @@ redirect_from:
   - /resume
 ---
 
-![avatar](https://s3.plumeta.com/i/2022/10/27/ov5fmi.png)  
+![Two instants](https://s2.loli.net/2022/10/30/ySO5UzWcRZflg7o.png)  
 
 
 
