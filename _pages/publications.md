@@ -16,6 +16,7 @@ Publications
 + Yibao Li#, **Qing Xia**, Sungha Yoon, Junseok Kim*. A simple and efficient fingerprint image restoration method based on a phase-field model,  <font color="#660000">Pattern Recognition</font>, 123 (2022) 108405.  (SCI, Impact Factor: 7.740)[PDF](https://riedel12315.github.io/qingxia.github.io/files/paper7.pdf)
 + Qian Yu#, **Qing Xia**, Yibao Li*, A phase field-based systematic multiscale topology optimization method for porous structures design, <font color="#660000">Journal of Computational Physics</font>, 466 (2022) 111383.(SCI, Impact Factor: 3.553)[PDF](https://riedel12315.github.io/qingxia.github.io/files/paper11.pdf)
 + Bo You, **Qing Xia**, Continuous Data Assimilation Algorithm for the Two Dimensional Cahn–Hilliard–Navier–Stokes System, <font color="#660000">Applied Mathematics & Optimization</font>, 85 (2022) 1-19.(SCI, Impact Factor: 3.582)[PDF](https://riedel12315.github.io/qingxia.github.io/files/paper9.pdf)
++ Yibao Li#, Kang Qin, **Qing Xia**, Junseok Kim*, A second-order unconditionally stable method for the anisotropic dendritic crystal growth model with an orientation-field, Applied Numerical Mathematics, 2022.
 + Yibao Li#, Rui Liu, **Qing Xia**, Chenxi He, Zhong Li*, First- and second-order unconditionally stable direct discretization methods for multi-component Cahn-Hilliard system on surfaces, <font color="#660000">Journal of Computational and Applied Mathematics</font>, 401  (2022)113778.   (SCI, Impact Factor 2.037)[PDF](https://riedel12315.github.io/qingxia.github.io/files/paper4.pdf)
 + Yibao Li#, Lujing Zhang, **Qing Xia**, Qian Yu, Junseok Kim, An unconditionally energy-stable second-order time-accurate numerical scheme for the coupled Cahn-Hilliard system in copolymer/homopolymer mixtures, <font color="#660000">Comoutational Materials Science</font>,  200 (2021) 110809.  (SCI, Impact Factor 2.863)[PDF](https://riedel12315.github.io/qingxia.github.io/files/paper6.pdf) 
 + Yibao Li#, Kunyang Wang, Qian Yu, Qing Xia, Junseok Kim, Unconditionally energy stable schemes for fluid-based topology optimization, <font color="#660000">Communications in Nonlinear Science and Numerical Simulation</font>, 111 (2022) 106433.(SCI, Impact Factor: 4.260)[PDF](https://riedel12315.github.io/qingxia.github.io/files/paper8.pdf)
@@ -24,7 +25,7 @@ Publications
 
 Revision
 ======
-+ Yibao Li#, Kang Qin, **Qing Xia**, Junseok Kim*, A second-order unconditionally stable method for the anisotropic dendritic crystal growth model with an orientation-field, [Applied Numerical Mathematics](https://www.editorialmanager.com/apnum/default2.aspx), 2022.
+None
 
 Submission
 =====
