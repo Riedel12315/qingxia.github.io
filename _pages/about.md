@@ -33,5 +33,7 @@ Projects and Awards
 ======
 + The Fundamental Research Funds for the Central Universities(No. XYZ022022005)
 + National Scholarship for Doctoral students(2022).(2022年度国家奖学金)
-+ Outstanding Model for the Doctoral students of Xi'an Jiaotong University(2022).（2022年度西安交通大学博士研究生标兵）
++ Outstanding Model for the Doctoral students of Xi'an Jiaotong University(2022).(2022年度西安交通大学博士研究生标兵)
++ Outstanding Communist Youth League cadres of Xi’an Jiaotong University(2020).(2020年度西安交通大学优秀共青团干部)
++ Outstanding Graduate of Xi’an Jiaotong University(2019). (2019年度西安交通大学优秀毕业生)
 
