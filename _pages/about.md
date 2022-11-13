@@ -17,7 +17,7 @@ My research interests mainly lie in **Shape topology optimization in 3D printing
 News
 ======
 + Oct 28, 2022. I win the 'National Scholarship for Doctoral students(2022)'.
-+ Oct 28, 2022. I win the 'Outstanding Model for the Doctoral students of Xi'an Jiaotong University(2022)'.
++ Oct 28, 2022. I win the '[Outstanding Model for the Doctoral students of Xi'an Jiaotong University(2022)](http://news.xjtu.edu.cn/info/1033/189087.htm)'.
 
 Magnum Opus
 ======
