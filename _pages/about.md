@@ -27,7 +27,7 @@ Magnum Opus
 + **Qing Xia**#, Junseok Kim, Yibao Li*, Modeling and simulation of multi-component immiscible flows based on a modified Cahn-Hilliard equation, European Journal of Mechanics-B/Fluids, 95 (2022) 194-204. (SCI, Impact Factor 2.183). [PDF](https://riedel12315.github.io/qingxia.github.io/files/paper10.pdf)
 + Jin Wang#, **Qing Xia***, Binhu Xia, Fast Image Restoration Method Based on the L0, L1, and L2 Gradient Minimization, Mathematics 10 (2022) 3107. (SCI, Impact Factor 2.884). [PDF](https://riedel12315.github.io/qingxia.github.io/files/paper14.pdf)
 + Yibao Li#，**Qing Xia**，Sungha Yoon，Chaeyoung Lee，Bingheng Lu，Junseok Kim*, A simple and efficient volume merging method for triply periodic minimal structure,   Computer Physics Communications, 264  (2021) 107956. (SCI, Impact Factor: 3.627). [PDF](https://riedel12315.github.io/qingxia.github.io/files/paper2.pdf)   
-+ Yibao Li#, **Qing Xia**, Sungha Yoon, Junseok Kim*. A simple and efficient fingerprint image restoration method based on a phase-field model, Pattern Recognition, 123 (2020) 108405.  (SCI, Impact Factor: 7.740). [PDF](https://riedel12315.github.io/qingxia.github.io/files/paper7.pdf)
++ Yibao Li#, **Qing Xia**, Sungha Yoon, Junseok Kim*, A simple and efficient fingerprint image restoration method based on a phase-field model, Pattern Recognition, 123 (2020) 108405.  (SCI, Impact Factor: 7.740). [PDF](https://riedel12315.github.io/qingxia.github.io/files/paper7.pdf)
 
 Projects and Awards
 ======
