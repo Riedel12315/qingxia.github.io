@@ -16,7 +16,7 @@ My research interests mainly lie in **Shape topology optimization in 3D printing
 
 News
 ======
-+ Nov 20, 2022. I attended the event as a judge of '[Xi 'an Jiaotong University's Golden Wutong Festival]'(http://news.xjtu.edu.cn/info/1033/189522.htm)
++ Nov 20, 2022. I attended the event as a judge of '[Xi 'an Jiaotong University's Golden Wutong Festival](http://news.xjtu.edu.cn/info/1033/189522.htm)'.
 + Oct 28, 2022. I won the 'National Scholarship for Doctoral students(2022)'.
 + Oct 28, 2022. I won the '[Outstanding Model for the Doctoral students of Xi'an Jiaotong University(2022)](http://news.xjtu.edu.cn/info/1033/189087.htm)'.
 
