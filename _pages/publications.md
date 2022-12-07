@@ -7,6 +7,7 @@ author_profile: true
 
 Publications
 =======
+(# First Author, * Corresponding Author)
 1. **Qing Xia**#, Qian Yu, Yibao Li*, A second-order accurate, unconditionally energy stable numerical scheme for binary fluid flows on arbitrarily curved surfaces,  <font color="#660000">Computer Methods in Applied Mechanics and Engineering</font>, 384 (2021)113987.(SCI, Impact Factor 6.756). [PDF](https://riedel12315.github.io/qingxia.github.io/files/paper3.pdf)
 2. **Qing Xia**#, Gangming Sun, Qian Yu, Yibao Li*, Thermal-fluid topology optimization with unconditional energy stability and second-order accuracy via phase-field model, <font color="#660000">Communications in Nonlinear Science and Numerical Simulation</font>, 116 (2023) 106782. (SCI, Impact Factor 4.260). [PDF](https://riedel12315.github.io/qingxia.github.io/files/paper12.pdf)
 3. **Qing Xia**#, Junseok Kim, Binhu Xia, Yibao Li*, An unconditionally energy stable method for binary incompressible heat conductive fluids based on the phase–field model, <font color="#660000">Computers & Mathematics with Applications</font>, 123 (2023) 26-39. (SCI, Impact Factor 1.860). [PDF](https://riedel12315.github.io/qingxia.github.io/files/paper13.pdf)
@@ -33,7 +34,7 @@ Submission
 + **Qing Xia**#, Yuehan Liu, Junseok Kim, Yibao Li*, Binary thermal fluids computation over arbitrary surfaces with second-order accuracy and unconditional energy stability based on phase-field model, [Journal of Computational and Applied Mathematics](https://www.editorialmanager.com/elscam/default2.aspx), (2022).
 + **Qing Xia**#, Junxiang Yang, Yibao Li*, On the investigation of the conservative and consistent phase-field method for solving the N-component incompressible flows, [Physics of Fluid](https://aip.scitation.org/journal/phf), (2022).
 + **Qing Xia**#, Xiaoyu Jiang, Yibao Li*, Phase field modeling for the generation of the biological transport network, [Journal of Computational Physics](https://www.editorialmanager.com/jcomp/default2.aspx), (2022).
-+ Yibao Li#, **Qing Xia**, Seungyoon Kang, Soobin Kwak, Junseok Kim*, A simple and practical volume merging algorithm for the porous scaffold design with triply periodic structures, [Pattern Recognition](https://www.sciencedirect.com/journal/pattern-recognition), (2022).
++ Yibao Li#, **Qing Xia**, Seungyoon Kang, Soobin Kwak, Junseok Kim*, A simple and practical volume merging algorithm for the porous scaffold design with triply periodic structures, [Computer Aided Geometric Design](https://www.sciencedirect.com/journal/computer-aided-geometric-design), (2022).
 + Wenxuan Xie#, **Qing Xia**, Qian Yu, Yibao Li*, An effective phase field method for topology optimization without the curvature effects, [Computers and Mathematics with Applications](https://www.editorialmanager.com/camwa/default2.aspx), (2022).
   
 已授权专利
