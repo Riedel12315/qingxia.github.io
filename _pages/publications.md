@@ -45,6 +45,7 @@ Submission
 + 李义宝，史政源，**夏青**，卢秉恒，一种隐形牙套的牙齿-牙龈快速分割方法。[专利授权书](https://riedel12315.github.io/qingxia.github.io/files/patent1.pdf)
 + 李义宝，刘蕊，**夏青**，一种基于多探测器的自动报靶预测算法。[专利授权书](https://riedel12315.github.io/qingxia.github.io/files/patent2.pdf)
 
+
 已受理专利
 ======
 + 李义宝，**夏青**，刘蕊，一种受损指纹图像的快速修复技术。
