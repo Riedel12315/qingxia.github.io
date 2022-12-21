@@ -24,22 +24,26 @@ Publications
 14. Jing Ji#, Suping Fang*, **Qing Xia**, Zhengyuan Shi, An efficient method for scanned images by using color-correction and L0 gradient minimization, <font color="#660000">Optik</font>, 2477(2021)167820. (SCI, Impact Factor 2.187) [PDF](https://riedel12315.github.io/qingxia.github.io/files/paper5.pdf)
 15. Jing Ji#, Suping Fang*, Zhengyuan Shi, **Qing Xia**, Yibao Li, An efficient nonlinear polynomial color characterization method based on interrelations of color spaces, <font color="#660000">Color Research& Application</font>, 45 (2020) 1023-1039. (SCI, Impact Factor 1.668)  [PDF](https://riedel12315.github.io/qingxia.github.io/files/paper1.pdf)
 
-Revision
+Revision submitted
+======
+None
+
+In revision
 ======
 + **Qing Xia**#, Yuehan Liu, Junseok Kim, Yibao Li*, Binary thermal fluids computation over arbitrary surfaces with second-order accuracy and unconditional energy stability based on phase-field model, [Journal of Computational and Applied Mathematics](https://www.editorialmanager.com/elscam/default2.aspx), (2022).
 + **Qing Xia**#, Junxiang Yang, Yibao Li*, On the investigation of the conservative and consistent phase-field method for solving the N-component incompressible flows, [Physics of Fluid](https://aip.scitation.org/journal/phf), (2022).
 
 Submission
 =====
-+ **Qing Xia**#, Gangming Sun, Junseok Kim, Yibao Li*, Multi-scale modeling and simulation of additive manufacturing based on fused deposition technique, [Applied Mathematical Modelling](https://www.sciencedirect.com/journal/applied-mathematical-modelling), (2022).
++ **Qing Xia**#, Gangming Sun, Junseok Kim, Yibao Li*, Multi-scale modeling and simulation of additive manufacturing based on fused deposition technique, (2022).
 + **Qing Xia**#, Xiaoyu Jiang, Yibao Li*, Phase field modeling for the generation of the biological transport network, [Journal of Computational Physics](https://www.editorialmanager.com/jcomp/default2.aspx), (2022).
-+ Yibao Li#, **Qing Xia**, Seungyoon Kang, Soobin Kwak, Junseok Kim*, A simple and practical volume merging algorithm for the porous scaffold design with triply periodic structures, [Computer Aided Geometric Design](https://www.sciencedirect.com/journal/computer-aided-geometric-design), (2022).
++ Yibao Li#, **Qing Xia**, Seungyoon Kang, Soobin Kwak, Junseok Kim*, A simple and practical volume merging algorithm for the porous scaffold design with triply periodic structures, (2022).
 + Wenxuan Xie#, **Qing Xia**, Qian Yu, Yibao Li*, An effective phase field method for topology optimization without the curvature effects, [Computers and Mathematics with Applications](https://www.editorialmanager.com/camwa/default2.aspx), (2022).
   
 已授权专利
 ======
-+ 李义宝，史政源，**夏青**，卢秉恒，一种隐形牙套的牙齿-牙龈快速分割方法。
-+ 李义宝，刘蕊，**夏青**，一种基于多探测器的自动报靶预测算法。
++ 李义宝，史政源，**夏青**，卢秉恒，一种隐形牙套的牙齿-牙龈快速分割方法。[专利授权书](https://riedel12315.github.io/qingxia.github.io/files/patent1.pdf)
++ 李义宝，刘蕊，**夏青**，一种基于多探测器的自动报靶预测算法。[专利授权书](https://riedel12315.github.io/qingxia.github.io/files/patent2.pdf)
 
 已受理专利
 ======
@@ -47,3 +51,4 @@ Submission
 + 李义宝，刘玥含，**夏青**，马峻，王世刚，一种面向3D打印的多尺度多材料的自适应设计方法。
 + 李义宝，孙港明，**夏青**，史政源，马峻，王世刚，一种三维牙模的牙齿-牙龈分割线快速提取算法。
 + 李义宝，蒋小玉，**夏青**，一种面向熔融沉积工艺的多尺度加工仿真方法。
++ 李义宝，朱军霞，**夏青**，一种针对多材料切片的快速三维重构技术。
