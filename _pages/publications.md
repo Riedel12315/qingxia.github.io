@@ -26,18 +26,17 @@ Publications
 
 Revision submitted
 ======
-None
++ **Qing Xia**#, Junxiang Yang, Yibao Li*, On the investigation of the conservative and consistent phase-field method for solving the N-component incompressible flows, [Physics of Fluid](https://aip.scitation.org/journal/phf), (2022).
 
 In revision
 ======
 + **Qing Xia**#, Yuehan Liu, Junseok Kim, Yibao Li*, Binary thermal fluids computation over arbitrary surfaces with second-order accuracy and unconditional energy stability based on phase-field model, [Journal of Computational and Applied Mathematics](https://www.editorialmanager.com/elscam/default2.aspx), (2022).
-+ **Qing Xia**#, Junxiang Yang, Yibao Li*, On the investigation of the conservative and consistent phase-field method for solving the N-component incompressible flows, [Physics of Fluid](https://aip.scitation.org/journal/phf), (2022).
 
 Submission
 =====
 + **Qing Xia**#, Gangming Sun, Junseok Kim, Yibao Li*, Multi-scale modeling and simulation of additive manufacturing based on fused deposition technique, (2022).
 + **Qing Xia**#, Xiaoyu Jiang, Yibao Li*, Phase field modeling for the generation of the biological transport network, [Journal of Computational Physics](https://www.editorialmanager.com/jcomp/default2.aspx), (2022).
-+ Yibao Li#, **Qing Xia**, Seungyoon Kang, Soobin Kwak, Junseok Kim*, A simple and practical volume merging algorithm for the porous scaffold design with triply periodic structures, (2022).
++ Yibao Li#, **Qing Xia**, Seungyoon Kang, Soobin Kwak, Junseok Kim*, A simple and practical volume merging algorithm for the porous scaffold design with triply periodic structures,  [Computer Vision and Image Understanding](https://www.sciencedirect.com/journal/computer-vision-and-image-understanding), (2022).
 + Wenxuan Xie#, **Qing Xia**, Qian Yu, Yibao Li*, An effective phase field method for topology optimization without the curvature effects, [Computers and Mathematics with Applications](https://www.editorialmanager.com/camwa/default2.aspx), (2022).
   
 已授权专利
