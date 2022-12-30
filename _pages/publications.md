@@ -26,7 +26,7 @@ Publications
 
 Revision submitted
 ======
-+ **Qing Xia**#, Junxiang Yang, Yibao Li*, On the investigation of the conservative and consistent phase-field method for solving the N-component incompressible flows, [Physics of Fluid](https://aip.scitation.org/journal/phf), (2022).
++ **Qing Xia**#, Junxiang Yang, Yibao Li*, On the conservative phase-field method with the N-component incompressible flows, [Physics of Fluid](https://aip.scitation.org/journal/phf), (2022).
 
 In revision
 ======
@@ -44,10 +44,12 @@ Submission
 + 李义宝，史政源，**夏青**，卢秉恒，一种隐形牙套的牙齿-牙龈快速分割方法。[专利授权书](https://riedel12315.github.io/qingxia.github.io/files/patent1.pdf)
 + 李义宝，刘蕊，**夏青**，一种基于多探测器的自动报靶预测算法。[专利授权书](https://riedel12315.github.io/qingxia.github.io/files/patent2.pdf)
 
+在修改专利
+======
++ 李义宝，**夏青**，刘蕊，一种受损指纹图像的快速修复技术。
 
 已受理专利
 ======
-+ 李义宝，**夏青**，刘蕊，一种受损指纹图像的快速修复技术。
 + 李义宝，刘玥含，**夏青**，马峻，王世刚，一种面向3D打印的多尺度多材料的自适应设计方法。
 + 李义宝，孙港明，**夏青**，史政源，马峻，王世刚，一种三维牙模的牙齿-牙龈分割线快速提取算法。
 + 李义宝，蒋小玉，**夏青**，一种面向熔融沉积工艺的多尺度加工仿真方法。
