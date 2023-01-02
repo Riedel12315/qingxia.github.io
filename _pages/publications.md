@@ -27,10 +27,11 @@ Publications
 Revision submitted
 ======
 + **Qing Xia**#, Junxiang Yang, Yibao Li*, On the conservative phase-field method with the N-component incompressible flows, [Physics of Fluid](https://aip.scitation.org/journal/phf), (2022).
++ **Qing Xia**#, Yuehan Liu, Junseok Kim, Yibao Li*, Binary thermal fluids computation over arbitrary surfaces with second-order accuracy and unconditional energy stability based on phase-field model, [Journal of Computational and Applied Mathematics](https://www.editorialmanager.com/elscam/default2.aspx), (2022).
 
 In revision
 ======
-+ **Qing Xia**#, Yuehan Liu, Junseok Kim, Yibao Li*, Binary thermal fluids computation over arbitrary surfaces with second-order accuracy and unconditional energy stability based on phase-field model, [Journal of Computational and Applied Mathematics](https://www.editorialmanager.com/elscam/default2.aspx), (2022).
+None
 
 Submission
 =====
