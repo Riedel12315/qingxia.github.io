@@ -10,9 +10,9 @@ Publications
 (# First Author, * Corresponding Author)
 1. **Qing Xia**#, Qian Yu, Yibao Li*, A second-order accurate, unconditionally energy stable numerical scheme for binary fluid flows on arbitrarily curved surfaces,  <font color="#660000">Computer Methods in Applied Mechanics and Engineering</font>, 384 (2021)113987.(SCI, Impact Factor 6.756). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper3.pdf)
 2. **Qing Xia**#, Gangming Sun, Qian Yu, Yibao Li*, Thermal-fluid topology optimization with unconditional energy stability and second-order accuracy via phase-field model, <font color="#660000">Communications in Nonlinear Science and Numerical Simulation</font>, 116 (2023) 106782. (SCI, Impact Factor 4.260). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper12.pdf)
-3. **Qing Xia**#, Junseok Kim, Binhu Xia, Yibao Li*, An unconditionally energy stable method for binary incompressible heat conductive fluids based on the phase–field model, <font color="#660000">Computers & Mathematics with Applications</font>, 123 (2023) 26-39. (SCI, Impact Factor 1.860). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper13.pdf)
-4. **Qing Xia**#, Junseok Kim, Yibao Li*, Modeling and simulation of multi-component immiscible flows based on a modified Cahn-Hilliard equation, <font color="#660000">European Journal of Mechanics-B/Fluids</font>.(SCI, Impact Factor 2.183). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper10.pdf)
-5. **Qing Xia**#, Junxiang Yang, Yibao Li*, On the conservative phase-field method with the N-component incompressible flows, [Physics of Fluid](https://aip.scitation.org/journal/phf), (2022). ACCEPT.
+3. **Qing Xia**#, Junxiang Yang, Yibao Li*, On the conservative phase-field method with the N-component incompressible flows, <font color="#660000">Physics of Fluids</font>, 35 (2023). (SCI, Impact Factor 3.521). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/multi-PreDI_POF.pdf)
+4. **Qing Xia**#, Junseok Kim, Binhu Xia, Yibao Li*, An unconditionally energy stable method for binary incompressible heat conductive fluids based on the phase–field model, <font color="#660000">Computers & Mathematics with Applications</font>, 123 (2023) 26-39. (SCI, Impact Factor 1.860). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper13.pdf)
+5. **Qing Xia**#, Junseok Kim, Yibao Li*, Modeling and simulation of multi-component immiscible flows based on a modified Cahn-Hilliard equation, <font color="#660000">European Journal of Mechanics-B/Fluids</font>.(SCI, Impact Factor 2.183). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper10.pdf)
 6. Jin Wang#, **Qing Xia***, Binhu Xia, Fast Image Restoration Method Based on the L0, L1, and L2 Gradient Minimization, <font color="#660000">Mathematics</font>, 10 (2022) 3107.(SCI, Impact Factor 2.884). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper14.pdf)
 7. Yibao Li#，**Qing Xia**，Sungha Yoon，Chaeyoung Lee，Bingheng Lu，Junseok Kim*, A simple and efficient volume merging method for triply periodic minimal structure,   <font color="#660000">Computer Physics Communications</font>, 264  (2021)107956.(SCI, Impact Factor: 3.627). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper2.pdf) 
 8. Yibao Li#, **Qing Xia**, Sungha Yoon, Junseok Kim*. A simple and efficient fingerprint image restoration method based on a phase-field model,  <font color="#660000">Pattern Recognition</font>, 123 (2022) 108405.  (SCI, Impact Factor: 7.740). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper7.pdf)
@@ -45,9 +45,13 @@ Submission
 + 李义宝，史政源，**夏青**，卢秉恒，一种隐形牙套的牙齿-牙龈快速分割方法。[专利授权书](https://riedel12315.github.io/qingxia.github.io/files/patent1.pdf)
 + 李义宝，刘蕊，**夏青**，一种基于多探测器的自动报靶预测算法。[专利授权书](https://riedel12315.github.io/qingxia.github.io/files/patent2.pdf)
 
-在修改专利
+二审专利
 ======
 + 李义宝，**夏青**，刘蕊，一种受损指纹图像的快速修复技术。
+
+在修改专利
+======
+无
 
 已受理专利
 ======
