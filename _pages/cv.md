@@ -12,6 +12,7 @@ redirect_from:
 Curriculum Vitae
 =====
 [English CV](https://qingxiaxjtu.com/files/CV-EN.pdf)   
+[中文 CV](https://qingxiaxjtu.com/files/CV-CN.pdf)   
 
 Education
 ======
