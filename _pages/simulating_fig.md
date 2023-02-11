@@ -33,7 +33,7 @@ redirect_from:
  width="900px" />
  
 ## CFD with conservative phase-field method （Rerer to [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper16.pdf)）
-<img src="https://s2.loli.net/2023/02/11/WkeZyXgr9DQzxVs.gif"
+<img src="https://s2.loli.net/2023/02/11/OZhxirCEqVbc7o5.gif"
  width="900px" />
 
 # Image processing
