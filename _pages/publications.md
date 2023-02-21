@@ -36,7 +36,7 @@ In revision
 
 Submission
 =====
-+ Yibao Li#, **Qing Xia**, Seungyoon Kang, Soobin Kwak, Junseok Kim*, A simple and practical volume merging algorithm for the porous scaffold design with triply periodic structures,  [Computer Vision and Image Understanding](https://www.sciencedirect.com/journal/computer-vision-and-image-understanding), (2022).
++ Yibao Li#, **Qing Xia**, Seungyoon Kang, Soobin Kwak, Junseok Kim*, A simple and practical volume merging algorithm for the porous scaffold design with triply periodic structures,  [Numerical Mathematics: Theory, Methods and Applications](https://www.global-sci.org/nmtma), (2022).
 + Wenxuan Xie#, **Qing Xia**, Qian Yu, Yibao Li*, An effective phase field method for topology optimization without the curvature effects, [Computers and Mathematics with Applications](https://www.editorialmanager.com/camwa/default2.aspx), (2022).
   
 已授权专利
