@@ -9,12 +9,12 @@ redirect_from:
 
 {% include base_path %}
 
-Curriculum Vitae
+Curriculum Vitae（简历）
 =====
 [English CV](https://qingxiaxjtu.com/files/CV-EN.pdf)   
 [中文 CV](https://qingxiaxjtu.com/files/CV-CN.pdf)   
 
-Education
+Education（教育背景）
 ======
 ### Xi’an Jiaotong University (Sep 2021 - Now)
 + Ph.D. Candidate in Applied Mathematics
@@ -39,13 +39,13 @@ Education
     - Image and Geometry Processing
     - 3D Printing 
   
-Research interest
+Research interest（研究兴趣）
 =====
 + Computational fluid dynamics
 + Image processing and surface processing
 + 3D Printing     
 
-Teaching Assistant
+Teaching Assistant（助教）
 ======
 + Numerical Analysis(A)   
 Instructor: Prof. Dr. Yibao Li, Iharbour, Fall 2020
@@ -53,7 +53,7 @@ Instructor: Prof. Dr. Yibao Li, Iharbour, Fall 2020
 Instructor: Prof. Dr. Yibao Li, Iharbour, Fall 2019   
   
   
-Contact
+Contact（联系方式）
 ======
 School of Mathematics and Statistics   
 No.28, West Xianning Road, Xi'an, Shaanxi, 710049,P.R. China   
