@@ -1,19 +1,19 @@
 # main links links
 main:
 
-  - title: "Biography（个人简介）"
+  - title: "Biography（简介）"
     url: /cv/
 
-  - title: "Publications（学术论文）"
+  - title: "Publications（论文）"
     url: /publications/
     
-  - title: "Simulation（数值模拟）"
+  - title: "Simulation（模拟）"
     url: /simulation/
 
   #- title: "Talks"
    # url: /talks/    
 
-  - title: "Teaching（教学经历）"
+  - title: "Teaching（教学）"
     url: /teaching/    
     
   #- title: "Portfolio"
@@ -23,5 +23,5 @@ main:
    # url: /year-archive/
    
     
-  - title: "Instants（美好瞬间）"
+  - title: "Instants（瞬间）"
     url: /instants/
