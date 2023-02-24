@@ -44,6 +44,6 @@ redirect_from:
 ## Fingerprint restoration（指纹修补） [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper7.pdf)
 <img src="https://i.loli.net/2021/11/27/sWkfSq3ZENQJ7h5.jpg"
  width="900px" />
-## Color correction and L0-denoising（图像降噪和研究矫正） [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper5.pdf)
+## Color correction and L0-denoising（图像降噪和颜色矫正） [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper5.pdf)
 <img src="https://i.loli.net/2021/11/26/jS8DZJFENX5oIW6.png"
  width="900px" />
