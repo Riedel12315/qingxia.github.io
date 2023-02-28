@@ -9,8 +9,11 @@ redirect_from:
 
 {% include base_path %}
 # CAD for 3D printing 
-## Topology optimization（拓扑结构优化）[(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper12.pdf)
+## Mechanical structure optimization（机械结构优化）[(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper12.pdf)
 <img src="https://i.loli.net/2021/11/26/H4SAIPtXNed53CB.jpg"
+ width="900px" />
+## Biological network topology optimization（生物网络拓扑优化）
+<img src="https://s2.loli.net/2023/02/28/AzaXE6i7PINRrl9.gif"
  width="900px" />
 ## Lightweight scaffold design（轻量化支撑结构设计）[(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper2.pdf)
 <img src="https://i.loli.net/2021/11/26/ybGhM2HQBKnTZCo.jpg"
