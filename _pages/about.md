@@ -16,7 +16,8 @@ My research interests mainly lie in **Shape topology optimization in 3D printing
 
 News（新闻）
 ======
-+ Jan 05, 2023. Paper 'On the conservative phase-field method with the N-component incompressible flows' authored by **Qing Xia**, Junxiang Yang, Yibao Li has been accepted for publication in [Physics of Fluids](https://aip.scitation.org/doi/abs/10.1063/5.0135490)（JCR Q1, Top）.
++ Mar 02, 2023. Paper 'Multi-scale modeling and simulation of additive manufacturing based on fused deposition technique' authored by **Qing Xia**, Gangming Sun,  Junseok Kim, Yibao Li* has been accepted for publication in [Physics of Fluids](https://aip.scitation.org/doi/abs/10.1063/5.0135490)（JCR Q1, Top）.
++ Jan 05, 2023. Paper 'On the conservative phase-field method with the N-component incompressible flows' authored by **Qing Xia**, Junxiang Yang, Yibao Li* has been accepted for publication in [Physics of Fluids](https://aip.scitation.org/doi/abs/10.1063/5.0135490)（JCR Q1, Top）.
 + Nov 20, 2022. **Qing Xia** attended the event as a judge of '[Xi 'an Jiaotong University's Golden Wutong Festival](http://news.xjtu.edu.cn/info/1033/189522.htm)'.
 + Oct 28, 2022. **Qing Xia** won the 'National Scholarship for Doctoral students(2022)'.
 + Oct 28, 2022. **Qing Xia** won the '[Outstanding Model for the Doctoral students of Xi'an Jiaotong University(2022)](http://news.xjtu.edu.cn/info/1033/189087.htm)'.
