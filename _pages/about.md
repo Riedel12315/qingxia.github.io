@@ -25,7 +25,7 @@ News（新闻）
 Magnum Opus（代表作）
 ======
 + **Qing Xia**#, Qian Yu, Yibao Li\*. A second-order accuracy, unconditionally energy stable numerical scheme for binary fluid flows on arbitrarily curved surfaces,   *Computer Methods in Applied Mechanics and Engineering*, 384 (2021) 113987. (JCR Q1, TOP). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper3.pdf)  
-+ **Qing Xia**#, Gangming Sun, Junseok Kim, Yibao Li*, Multi-scale modeling and simulation of additive manufacturing based on fused deposition technique, *Physics of Fluids*, Accept, (JCR Q1, TOP).
++ **Qing Xia**#, Gangming Sun, Junseok Kim, Yibao Li*, Multi-scale modeling and simulation of additive manufacturing based on fused deposition technique, *Physics of Fluids*, Accept, (JCR Q1, TOP). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper17.pdf)  
 + **Qing Xia**#, Gangming Sun, Qian Yu, Yibao Li\*, Thermal-fluid topology optimization with unconditional energy stability and second-order accuracy via phase-field model, *Communications in Nonlinear Science and Numerical Simulation*, 116 (2023) 106782. (JCR Q1, TOP). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper12.pdf) 
 + **Qing Xia**#, Junxiang Yang, Yibao Li\*, On the conservative phase-field method with the N-component incompressible flows, *Physics of Fluids*, 35 (2023) 012120. (JCR Q1, TOP). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper16.pdf) 
 + **Qing Xia**#, Junseok Kim, Binhu Xia, Yibao Li\*, An unconditionally energy stable method for binary incompressible heat conductive fluids based on the phase–field model, *Computers & Mathematics with Applications*, 123 (2023) 26-39. (JCR Q1). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper13.pdf)
