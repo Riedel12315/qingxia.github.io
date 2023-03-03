@@ -12,7 +12,7 @@ redirect_from:
 
 Research(研究)
 ======
-My research interests mainly lie in **Shape topology optimization in 3D printing** and **multi-scale multi-physics coupled computation**.  My research interests also include computer vision on the digital twin, entropy analysis and numerical analysis. My main work is to project the physical models from real space to digital space for equivalent experiments, which can eliminate the environment and material cost constraints of real physical experiment. Since 2019, I have published **16 SCI** papers on the international academic journals such as *Comput. Methods Appl. Mech. Eng., Comput. Phys., Commun., Phys. Fluids, J. Comput. Phys., Pattern Recognit.*, **ten** of them are included in **JCR Q1** journals.
+My research interests mainly lie in **Shape topology optimization in 3D printing** and **multi-scale multi-physics coupled computation**.  My research interests also include computer vision on the digital twin, entropy analysis and numerical analysis. My main work is to project the physical models from real space to digital space for equivalent experiments, which can eliminate the environment and material cost constraints of real physical experiment. Since 2019, I have published **17 SCI** papers on the international academic journals such as *Comput. Methods Appl. Mech. Eng., Comput. Phys., Commun., Phys. Fluids, J. Comput. Phys., Pattern Recognit.*, **11** of them are included in **JCR Q1** journals.
 
 News（新闻）
 ======
