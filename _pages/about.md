@@ -36,9 +36,9 @@ Magnum Opus（代表作）
 
 Projects & Awards（项目和获奖）
 ======
-+ The Fundamental Research Funds for the Central Universities(No. XYZ022022005).(中央高校基础科研经费西安交通大学自由探索与创新-学生类项目)
++ [The Fundamental Research Funds for the Central Universities](https://riedel12315.github.io/qingxia.github.io/files/jijin1.pdf)(No. XYZ022022005).(中央高校基础科研经费西安交通大学自由探索与创新-学生类项目)
 + National Scholarship for Doctoral students(2022).(2022年度国家奖学金)
-+ Outstanding Model for the Doctoral students of Xi'an Jiaotong University(2022).(2022年度西安交通大学博士研究生标兵，个人最高奖)
++ [Outstanding Model for the Doctoral students of Xi'an Jiaotong University](https://riedel12315.github.io/qingxia.github.io/files/biaobing.pdf)(2022).(2022年度西安交通大学博士研究生标兵，个人最高奖)
 + Outstanding Communist Youth League cadres of Xi’an Jiaotong University(2020).(2020年度西安交通大学优秀共青团干部)
 + Outstanding Graduate of Xi’an Jiaotong University(2019). (2019年度西安交通大学优秀毕业生)
 
