@@ -38,6 +38,13 @@ Submission
 =====
 + Yibao Li#, **Qing Xia**, Seungyoon Kang, Soobin Kwak, Junseok Kim*, A simple and practical volume merging algorithm for the porous scaffold design with triply periodic structures,  [Numerical Mathematics: Theory, Methods and Applications](https://www.global-sci.org/nmtma), (2022).
 + Wenxuan Xie#, **Qing Xia**, Qian Yu, Yibao Li*, An effective phase field method for topology optimization without the curvature effects, [Computers and Mathematics with Applications](https://www.editorialmanager.com/camwa/default2.aspx), (2022).
+
+In Preparation
+=====
++ Non-isothermal hydrodynamic modeling and analysis for the flow  boiling in microchannels based heat exchanger (With Jingjie Cheng, Yibao Li)
++ On the unconditionally stable phase field model of ternarhy components system considering mass conservation and liquid-solid phase transition (With Zhixian Lv, Yibao Li)
++ Phase field modeling on the selected laser melting technique based manufacturing process (With Sijign Lai, Yibao Li)
++ Phase field based topology optimization of Darcy and Stokes flow for the generation of flow networks (With Yibao Li)
   
 已授权专利
 ======
