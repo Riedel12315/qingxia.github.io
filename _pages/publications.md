@@ -29,10 +29,11 @@ Publications
 Revision submitted
 ======
 + **Qing Xia**#, Yuehan Liu, Junseok Kim, Yibao Li*, Binary thermal fluids computation over arbitrary surfaces with second-order accuracy and unconditional energy stability based on phase-field model, [Journal of Computational and Applied Mathematics](https://www.editorialmanager.com/elscam/default2.aspx), (2022).
++ **Qing Xia**#, Xiaoyu Jiang, Yibao Li*, Phase field modeling for the generation of the biological transport network, [Journal of Computational Physics](https://www.editorialmanager.com/jcomp/default2.aspx), (2022).
 
 In revision
 ======
-+ **Qing Xia**#, Xiaoyu Jiang, Yibao Li*, Phase field modeling for the generation of the biological transport network, [Journal of Computational Physics](https://www.editorialmanager.com/jcomp/default2.aspx), (2022).
+None
 
 Submission
 =====
@@ -44,7 +45,7 @@ In Preparation
 + Non-isothermal hydrodynamic modeling and analysis for the flow  boiling in microchannels based heat exchanger (With Jingjie Cheng, Yibao Li)
 + On the unconditionally stable phase field model of ternarhy components system considering mass conservation and liquid-solid phase transition (With Zhixian Lv, Yibao Li)
 + Phase field modeling on the selected laser melting technique based manufacturing process (With Sijign Lai, Yibao Li)
-+ Phase field based topology optimization of Darcy and Stokes flow for the generation of flow networks (With Yibao Li)
++ Phase field based topology optimization of Darcy and Stokes flow for the generation of flow networks (With Kang Qin, Yibao Li)
   
 已授权专利
 ======
