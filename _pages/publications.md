@@ -45,7 +45,6 @@ In Preparation
 + Non-isothermal hydrodynamic modeling and analysis for the flow  boiling in microchannels based heat exchanger (With Jingjie Cheng, Yibao Li)
 + On the unconditionally stable phase field model of ternarhy components system considering mass conservation and liquid-solid phase transition (With Zhixian Lv, Yibao Li)
 + Phase field modeling on the selected laser melting technique based manufacturing process (With Sijign Lai, Yibao Li)
-+ Phase field based topology optimization of Darcy and Stokes flow for the generation of flow networks (With Kang Qin, Yibao Li)
   
 已授权专利
 ======
