@@ -18,7 +18,7 @@ redirect_from:
 ## Lightweight scaffold design（轻量化支撑结构设计）[(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper2.pdf)
 <img src="https://i.loli.net/2021/11/26/ybGhM2HQBKnTZCo.jpg"
  width="900px" />
-## Digital twin with fused deposition technique（FDM工艺数值模拟）
+## Digital twin with fused deposition technique（FDM工艺数值模拟）[(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper17.pdf)
 <img src="https://s2.loli.net/2022/10/27/Di28hBWA6M4sVPq.gif"
  width="900px" />
  
