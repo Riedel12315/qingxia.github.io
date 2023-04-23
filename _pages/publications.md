@@ -45,7 +45,7 @@ In Preparation
 + Non-isothermal hydrodynamic modeling and analysis for the flow  boiling in microchannels based heat exchanger (With Jingjie Cheng(Sec), Yibao Li(Corr))
 + On the unconditionally stable phase field model of ternarhy components system considering mass conservation and liquid-solid phase transition (With Zhixian Lv(Sec), Yibao Li(Corr))
 + Phase field modeling on the selected laser melting technique based manufacturing process (With Sijign Lai(Sec), Yibao Li(Corr))
-+ Triply periodic minimal surfaces lattice based topology optimization for the convective heat transfer process and composite structure design (With Junxia Zhu(Sec), Yibao Li)
++ Triply periodic minimal surfaces lattice based topology optimization for the convective heat transfer process and composite structure design (With Junxia Zhu(Sec), Yibao Li(Corr))
 + An efficient linear and unconditionally stable numerical scheme for a phase field sintering model (With Jingjie Cheng(Fir), Yibao Li(Corr))
 + Surfacant on surface (Bing Jiang(Fir), Yibao Li(Corr))
 + Data assimilation for Cahn-Hilliard-Navier-Stokes system (Xin Song(Fir), Yibao Li(Corr))
