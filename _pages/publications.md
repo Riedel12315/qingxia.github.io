@@ -42,10 +42,13 @@ Submission
 
 In Preparation
 =====
-+ Non-isothermal hydrodynamic modeling and analysis for the flow  boiling in microchannels based heat exchanger (With Jingjie Cheng, Yibao Li)
-+ On the unconditionally stable phase field model of ternarhy components system considering mass conservation and liquid-solid phase transition (With Zhixian Lv, Yibao Li)
-+ Phase field modeling on the selected laser melting technique based manufacturing process (With Sijign Lai, Yibao Li)
-+ An unconditionally energy stable method with second order accuracy for the multiple droplets in contact with solid (With Junxia Zhu, Yibao Li)
++ Non-isothermal hydrodynamic modeling and analysis for the flow  boiling in microchannels based heat exchanger (With Jingjie Cheng(Sec), Yibao Li(Corr))
++ On the unconditionally stable phase field model of ternarhy components system considering mass conservation and liquid-solid phase transition (With Zhixian Lv(Sec), Yibao Li(Corr))
++ Phase field modeling on the selected laser melting technique based manufacturing process (With Sijign Lai(Sec), Yibao Li(Corr))
++ Triply periodic minimal surfaces lattice based topology optimization for the convective heat transfer process and composite structure design (With Junxia Zhu(Sec), Yibao Li)
++ An efficient linear and unconditionally stable numerical scheme for a phase field sintering model (With Jingjie Cheng(Fir), Yibao Li(Corr))
++ Surfacant on surface (Bing Jiang(Fir), Yibao Li(Corr))
++ Data assimilation for Cahn-Hilliard-Navier-Stokes system (Xin Song(Fir), Yibao Li(Corr))
   
 已授权专利
 ======
@@ -66,3 +69,7 @@ In Preparation
 + 李义宝，孙港明，**夏青**，史政源，马峻，王世刚，一种三维牙模的牙齿-牙龈分割线快速提取算法。
 + 李义宝，蒋小玉，**夏青**，一种面向熔融沉积工艺的多尺度加工仿真方法。
 + 李义宝，朱军霞，**夏青**，一种针对多材料切片的快速三维重构技术。
+
+软件著作权（In Preparation）
+=====
++ 李义宝，赖思静，**夏青**，面向熔融沉积工艺的多尺度加工仿真算法。
