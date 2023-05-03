@@ -16,6 +16,7 @@ My research interests mainly lie in **Shape topology optimization in 3D printing
 
 News（新闻）
 ======
++ Apr 28, 2023. Our paper 'A modified and efficient phase field model for the biological transport network' authored by **Qing Xia**, Xiaoyu Jiang, Yibao Li* has been accepted for publication in [Journal of Computational Physics](https://www.sciencedirect.com/journal/journal-of-computational-physics) （JCR Q1, Top）.
 + Mar 24, 2023. Our work has been reported on the school's website. [Report link](http://news.xjtu.edu.cn/info/1004/193304.htm)
 + Mar 21, 2023. Our paper 'Multi-scale modeling and simulation of additive manufacturing based on fused deposition technique' has chosen as the SCIlight article of AIP publishing and Featured work in Physics of Fluids. [Report link](https://aip.scitation.org/doi/10.1063/10.0017716)
 + Mar 02, 2023. Paper 'Multi-scale modeling and simulation of additive manufacturing based on fused deposition technique' authored by **Qing Xia**, Gangming Sun,  Junseok Kim, Yibao Li* has been accepted for publication in [Physics of Fluids](https://aip.scitation.org/doi/10.1063/5.0141316)（JCR Q1, Top）.
@@ -26,7 +27,8 @@ News（新闻）
 
 Magnum Opus（代表作）
 ======
-+ **Qing Xia**#, Qian Yu, Yibao Li\*. A second-order accuracy, unconditionally energy stable numerical scheme for binary fluid flows on arbitrarily curved surfaces,   *Computer Methods in Applied Mechanics and Engineering*, 384 (2021) 113987. (JCR Q1, TOP). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper3.pdf)  
++ **Qing Xia**#, Qian Yu, Yibao Li\*, A second-order accuracy, unconditionally energy stable numerical scheme for binary fluid flows on arbitrarily curved surfaces,   *Computer Methods in Applied Mechanics and Engineering*, 384 (2021) 113987. (JCR Q1, TOP). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper3.pdf)  
++ **Qing Xia**#, Xiaoyu Jiang, Yibao Li\*, A modified and efficient phase field model for the biological transport network, *Journal of Computational Physics*, (2023). (JCR Q1, TOP). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper18.pdf)
 + **Qing Xia**#, Gangming Sun, Junseok Kim, Yibao Li\*, Multi-scale modeling and simulation of additive manufacturing based on fused deposition technique, *Physics of Fluids*, 35 (2023) 034116, (Cover Article/Featured/Scilight Article of AIP publishing). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper17.pdf)  
 + **Qing Xia**#, Gangming Sun, Qian Yu, Yibao Li\*, Thermal-fluid topology optimization with unconditional energy stability and second-order accuracy via phase-field model, *Communications in Nonlinear Science and Numerical Simulation*, 116 (2023) 106782. (JCR Q1, TOP). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper12.pdf) 
 + **Qing Xia**#, Junxiang Yang, Yibao Li\*, On the conservative phase-field method with the N-component incompressible flows, *Physics of Fluids*, 35 (2023) 012120. (JCR Q1, TOP). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper16.pdf) 
