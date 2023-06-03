@@ -20,7 +20,7 @@ Education（教育背景）
 + Ph.D. Candidate in Applied Mathematics
 + Advisor: Prof. Dr. [Yibao Li](http://gr.xjtu.edu.cn/web/yibaoli)
 + Research Field:   
-    - Image and Geometry Processing
+    - Image Processing and surface computation
     - Computational Fluid Dynamics   
     - 3D Printing     
     - Topology Optimization    
@@ -42,8 +42,8 @@ Education（教育背景）
 Research interest（研究兴趣）
 =====
 + Computational fluid dynamics
-+ Image processing and surface processing
-+ 3D Printing     
++ Image processing and surface computation
++ 3D Printing and topology optimization
 
 Teaching Assistant（助教）
 ======
@@ -57,4 +57,4 @@ Contact（联系方式）
 ======
 School of Mathematics and Statistics   
 No.28, West Xianning Road, Xi'an, Shaanxi, 710049,P.R. China   
-Email:xiaqing151701@stu.xjtu.edu.cn, qingxia151701@outlook.com
+Email:xiaqing151701@stu.xjtu.edu.cn, qingxia151701@gmail.com, qingxia151701@outlook.com
