@@ -41,6 +41,7 @@ Submission
 =====
 + **Qing Xia**#, Junxia Zhu, Qian Yu, Junseok Kim, Yibao Li*, Triply periodic minimal surfaces based topology optimization for the hydrodynamic and convective heat transfer, [Computer Methods in Applied Mechanics and Engineering](https://www.sciencedirect.com/journal/computer-methods-in-applied-mechanics-and-engineering),  (2023).
 + Yibao Li#, **Qing Xia**, Seungyoon Kang, Soobin Kwak, Junseok Kim*, A simple and practical volume merging algorithm for the porous scaffold design with triply periodic structures,  [Computers & Structures](https://www.editorialmanager.com/cas/default2.aspx), (2022).
++ Jingjie Cheng, **Qing Xia**, Junseok Kim, Yibao Li*, An efficient linear and unconditionally stable numerical scheme for a phase field sintering model, [Communications in Nonlinear Science and Numerical Simulation](https://www.sciencedirect.com/journal/communications-in-nonlinear-science-and-numerical-simulation), (2023).
 
 
 In Preparation
@@ -48,7 +49,6 @@ In Preparation
 + Non-isothermal hydrodynamic modeling and analysis for the flow  boiling in microchannels based heat exchanger (With Jingjie Cheng(Sec), Yibao Li(Corr))
 + On the unconditionally stable phase field model of ternarhy components system considering mass conservation and liquid-solid phase transition (With Zhixian Lv(Sec), Yibao Li(Corr))
 + Phase field modeling on the selected laser melting technique based manufacturing process (With Sijing Lai(Sec), Yibao Li(Corr))
-+ An efficient linear and unconditionally stable numerical scheme for a phase field sintering model (With Jingjie Cheng(Fir), Yibao Li(Corr))
 + Surfacant on surface (Bing Jiang(Fir), Yibao Li(Corr))
 + Data assimilation for Cahn-Hilliard-Navier-Stokes system (Xin Song(Fir), Yibao Li(Corr))
 + Topology optimization Design of functionally graded materials under minimum size control (Qian Yu(Fir), Yibao Li(Corr))
