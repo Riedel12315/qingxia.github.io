@@ -46,12 +46,13 @@ Submission
 
 In Preparation
 =====
-+ Non-isothermal hydrodynamic modeling and analysis for the flow  boiling in microchannels based heat exchanger (With Jingjie Cheng(Sec), Yibao Li(Corr))
-+ On the unconditionally stable phase field model of ternarhy components system considering mass conservation and liquid-solid phase transition (With Zhixian Lv(Sec), Yibao Li(Corr))
-+ Phase field modeling on the selected laser melting technique based manufacturing process (With Sijing Lai(Sec), Yibao Li(Corr))
-+ Surfacant on surface (Bing Jiang(Fir), Yibao Li(Corr))
-+ Data assimilation for Cahn-Hilliard-Navier-Stokes system (Xin Song(Fir), Yibao Li(Corr))
-+ Topology optimization Design of functionally graded materials under minimum size control (Qian Yu(Fir), Yibao Li(Corr))
++ Nucleation and transition from quasicrystals to crystals by taking the Largrangian multiplier method (With Junxiang Yang(Sec), Yibao Li(Corr)).
++ Non-isothermal hydrodynamic modeling and analysis for the flow  boiling in microchannels based heat exchanger (With Jingjie Cheng(Sec), Yibao Li(Corr)).
++ On the unconditionally stable phase field model of ternarhy components system considering mass conservation and liquid-solid phase transition (With Zhixian Lv(Sec), Yibao Li(Corr)).
++ Phase field modeling on the selected laser melting technique based manufacturing process (With Sijing Lai(Sec), Yibao Li(Corr)).
++ Surfacant on surface (Bing Jiang(Fir), Yibao Li(Corr)).
++ Data assimilation for Cahn-Hilliard-Navier-Stokes system (Xin Song(Fir), Yibao Li(Corr)).
++ Topology optimization Design of functionally graded materials under minimum size control (Qian Yu(Fir), Yibao Li(Corr)).
   
 已授权专利
 ======
@@ -74,6 +75,6 @@ In Preparation
 + 李义宝，蒋小玉，**夏青**，一种面向熔融沉积工艺的多尺度加工仿真方法。
 + 李义宝，朱军霞，**夏青**，一种针对多材料切片的快速三维重构技术。
 
-软件著作权（In Preparation）
+软件著作权
 =====
 + 李义宝，赖思静，**夏青**，面向熔融沉积工艺的多尺度加工仿真算法。
