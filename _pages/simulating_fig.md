@@ -26,7 +26,7 @@ redirect_from:
  width="900px" />
 
  ## Transition of different crystalline and quasicrystalline states
- <img src="https://s2.loli.net/2022/10/27/Di28hBWA6M4sVPq.gif"
+ <img src="https://s2.loli.net/2023/07/09/INqhYJLjSXtRsdy.gif"
  width="900px" />
 
 # Computational fluids flow(CFD)
