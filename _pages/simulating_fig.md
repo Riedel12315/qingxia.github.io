@@ -25,7 +25,9 @@ redirect_from:
  <img src="https://s2.loli.net/2023/02/11/Mc1ZOyBC682HEDl.gif"
  width="900px" />
 
- ![DigitaltwinFDM.png](https://riedel12315.github.io/qingxia.github.io/files/poster_ICBS2.png)
+ <img src="https://s2.loli.net/2023/07/24/cVWNwOCZLH46XUG.png"
+ width="900px" />
+
 
  
 ## Transition of different crystalline and quasicrystalline states
