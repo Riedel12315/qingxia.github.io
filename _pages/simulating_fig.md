@@ -24,6 +24,10 @@ redirect_from:
  
  <img src="https://s2.loli.net/2023/02/11/Mc1ZOyBC682HEDl.gif"
  width="900px" />
+
+<img src="https://riedel12315.github.io/qingxia.github.io/files/poster_ICBS2.png"
+ width="900px" />
+
  
 ## Transition of different crystalline and quasicrystalline states
  <img src="https://s2.loli.net/2023/07/09/INqhYJLjSXtRsdy.gif" width="900px" />
