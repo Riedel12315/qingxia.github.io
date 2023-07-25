@@ -20,7 +20,7 @@ Publications
 10. Yibao Li#，**Qing Xia**，Sungha Yoon，Chaeyoung Lee，Bingheng Lu，Junseok Kim*, A simple and efficient volume merging method for triply periodic minimal structure,   <font color="#660000">Computer Physics Communications</font>, 264  (2021)107956.(SCI, Impact Factor: 3.627). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper2.pdf) 
 11. Yibao Li#, **Qing Xia**, Sungha Yoon, Junseok Kim*. Simple and efficient fingerprint image restoration method based on a phase-field model,  <font color="#660000">Pattern Recognition</font>, 123 (2022) 108405.  (SCI, Impact Factor: 7.740). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper7.pdf)
 12. Qian Yu#, **Qing Xia**, Yibao Li*, A phase field-based systematic multiscale topology optimization method for porous structures design, <font color="#660000">Journal of Computational Physics</font>, 466 (2022) 111383.(SCI, Impact Factor: 3.553)[(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper11.pdf)
-13. Wenxuan Xie#, **Qing Xia**, Qian Yu, Yibao Li*, An effective phase field method for topology optimization without the curvature effects,  <font color="#660000">Computers & Mathematics with Applications</font>, (2023). (SCI, Impact Factor 1.860).
+13. Wenxuan Xie#, **Qing Xia**, Qian Yu, Yibao Li*, An effective phase field method for topology optimization without the curvature effects,  <font color="#660000">Computers & Mathematics with Applications</font>, (2023). (SCI, Impact Factor 1.860)[(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper20.pdf)
 14. Bo You, **Qing Xia**, Continuous Data Assimilation Algorithm for the Two Dimensional Cahn–Hilliard–Navier–Stokes System, <font color="#660000">Applied Mathematics & Optimization</font>, 85 (2022) 1-19.(SCI, Impact Factor: 3.582)[(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper9.pdf)
 15. Yibao Li#, Kang Qin, **Qing Xia**, Junseok Kim*, A second-order unconditionally stable method for the anisotropic dendritic crystal growth model with an orientation-field, <font color="#660000">Applied Numerical Mathematics</font>, 184 (2022) 512-526.(SCI, Impact Factor: 2.443)[(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper15.pdf)
 16. Yibao Li#, Rui Liu, **Qing Xia**, Chenxi He, Zhong Li*, First- and second-order unconditionally stable direct discretization methods for multi-component Cahn-Hilliard system on surfaces, <font color="#660000">Journal of Computational and Applied Mathematics</font>, 401  (2022)113778.   (SCI, Impact Factor 2.037)[(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper4.pdf)
@@ -41,18 +41,18 @@ None
 Submission
 =====
 + **Qing Xia**#, Junxia Zhu, Qian Yu, Junseok Kim, Yibao Li*, Triply periodic minimal surfaces based topology optimization for the hydrodynamic and convective heat transfer, [Applied Energy](https://www.sciencedirect.com/journal/applied-energy),  (2023).
++ **Qing Xia**#, Junxiang Yang, Junseok Kim, Yibao Li*, On the phase field based model for the crystalline transition and nucleation within the Lagrange multiplier framework, [Computer Methods in Applied Mechanics and Engineering](https://www.sciencedirect.com/journal/computer-methods-in-applied-mechanics-and-engineering),  (2023).
 + Yibao Li#, **Qing Xia**, Seungyoon Kang, Soobin Kwak, Junseok Kim*, A simple and practical volume merging algorithm for the porous scaffold design with triply periodic structures,  [Computers & Structures](https://www.editorialmanager.com/cas/default2.aspx), (2022).
 + Jingjie Cheng, **Qing Xia**, Junseok Kim, Yibao Li*, An efficient linear and unconditionally stable numerical scheme for a phase field sintering model, [Communications in Nonlinear Science and Numerical Simulation](https://www.sciencedirect.com/journal/communications-in-nonlinear-science-and-numerical-simulation), (2023).
++ Xin Song#, **Qing Xia**, Yibao Li*, An unconditional energy stable data assimilation scheme for Navier-Stokes-Cahn-Hilliard equations with local discretized observed data, (2023).
 
 
 In Preparation
 =====
-+ Nucleation and transition from quasicrystals to crystals by taking the Largrangian multiplier method (With Junxiang Yang(Sec), Yibao Li(Corr)).
 + Non-isothermal hydrodynamic modeling and analysis for the flow  boiling in microchannels based heat exchanger (With Jingjie Cheng(Sec), Yibao Li(Corr)).
 + On the unconditionally stable phase field model of ternarhy components system considering mass conservation and liquid-solid phase transition (With Zhixian Lv(Sec), Yibao Li(Corr)).
 + Phase field modeling on the selected laser melting technique based manufacturing process (With Sijing Lai(Sec), Yibao Li(Corr)).
 + Surfacant on surface (Bing Jiang(Fir), Yibao Li(Corr)).
-+ Data assimilation for Cahn-Hilliard-Navier-Stokes system (Xin Song(Fir), Yibao Li(Corr)).
 + Topology optimization Design of functionally graded materials under minimum size control (Qian Yu(Fir), Yibao Li(Corr)).
   
 已授权专利
