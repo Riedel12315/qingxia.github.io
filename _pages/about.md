@@ -16,7 +16,7 @@ My research interests mainly lie in **Shape topology optimization in 3D printing
 
 News（新闻）
 ======
-+ Aug 20, 2023. I attended the 10th International Congress on Industrial and Applied Mathematics held at Waseda University in Tokyo, Japan. [(ICIAM 2023)](https://aip.scitation.org/doi/10.1063/10.0017716)
++ Aug 20, 2023. I attended the 10th International Congress on Industrial and Applied Mathematics held at Waseda University in Tokyo, Japan. [(ICIAM 2023)](https://s2.loli.net/2023/09/12/wRSdWAVltXL3y4s.jpg)
 + May 03, 2023. Our paper 'Binary thermal fluids computation over arbitrary surfaces with second-order accuracy and unconditional energy stability based on phase-field model' authored by **Qing Xia**, Yuehan Liu, Junseok Kim, Yibao Li* has been accepted for publication in [Journal of Computational and Applied Mathematics](https://www.sciencedirect.com/journal/journal-of-computational-and-applied-mathematics) （JCR Q1, Top）.
 + Apr 28, 2023. Our paper 'A modified and efficient phase field model for the biological transport network' authored by **Qing Xia**, Xiaoyu Jiang, Yibao Li* has been accepted for publication in [Journal of Computational Physics](https://www.sciencedirect.com/journal/journal-of-computational-physics) （JCR Q1, Top）.
 + Mar 24, 2023. Our work has been reported on the school's website. [Report link](http://news.xjtu.edu.cn/info/1004/193304.htm)
