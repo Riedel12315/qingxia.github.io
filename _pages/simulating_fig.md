@@ -29,7 +29,7 @@ redirect_from:
  width="900px" />
 ## 2D simulations of Selective Laser Melting(SLM)（选择性激光熔融技术模拟）
 <img src="https://s2.loli.net/2023/10/12/PA3H4R9esOMZzEu.gif"
- width="900px" />
+ width="600px" />
 
 ## Transition of different crystalline and quasicrystalline states
  <img src="https://s2.loli.net/2023/07/09/INqhYJLjSXtRsdy.gif" width="900px" />
