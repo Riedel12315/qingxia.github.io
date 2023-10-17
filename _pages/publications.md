@@ -43,6 +43,7 @@ Submission
 =====
 + **Qing Xia**#, Junxia Zhu, Qian Yu, Junseok Kim, Yibao Li*, Triply periodic minimal surfaces based topology optimization for the hydrodynamic and convective heat transfer, [Communications in Nonlinear Science and Numerical Simulation](https://www.sciencedirect.com/journal/communications-in-nonlinear-science-and-numerical-simulation),  (2023).
 + **Qing Xia**#, Junxiang Yang, Junseok Kim, Yibao Li*, On the phase field based model for the crystalline transition and nucleation within the Lagrange multiplier framework, [Journal of Computational Physics](https://www.sciencedirect.com/journal/journal-of-computational-physics),  (2023).
++ **Qing Xia**#, Sijing Lai, Junseok Kim, Yibao Li*, On the dynamical behaviors of metallic powder during the bed fusion process within the phase field framework, [Computer Methods in Applied Mechanics and Engineering](https://www2.cloud.editorialmanager.com/cmame/default2.aspx), (2023).
 + Yibao Li#, **Qing Xia**, Seungyoon Kang, Soobin Kwak, Junseok Kim*, A simple and practical volume merging algorithm for the porous scaffold design with triply periodic structures,  [Mathematics and Computers in Simulation](https://track.authorhub.elsevier.com/?uuid=2736ddf5-c35d-407d-b0c4-d0f2c28d66c5), (2022).
 + Xin Song#, **Qing Xia**, Yibao Li*, An unconditional energy stable data assimilation scheme for Navier-Stokes-Cahn-Hilliard equations with local discretized observed data, [Computers & Mathematics with Applications](https://www.sciencedirect.com/journal/computers-and-mathematics-with-applications)(2023).
 
@@ -51,7 +52,6 @@ In Preparation
 =====
 + Non-isothermal hydrodynamic modeling and analysis for the flow  boiling in microchannels based heat exchanger (With Jingjie Cheng(Sec), Yibao Li(Corr)).
 + On the unconditionally stable phase field model of ternarhy components system considering mass conservation and liquid-solid phase transition (With Zhixian Lv(Sec), Yibao Li(Corr)).
-+ On the dynamical behaviors of metallic powder during the bed fusion process within the phase field framework (With Sijing Lai(Sec), Yibao Li(Corr)).
 + Surfacant on surface (Bing Jiang(Fir), Yibao Li(Corr)).
 + Topology optimization Design of functionally graded materials under minimum size control (Qian Yu(Fir), Yibao Li(Corr)).
   
