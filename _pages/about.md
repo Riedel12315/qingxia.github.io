@@ -16,7 +16,8 @@ My research interests mainly lie in **Shape topology optimization in 3D printing
 
 News（新闻）
 ======
-+ Aug 20, 2023. I attended the 10th International Congress on Industrial and Applied Mathematics held at Waseda University in Tokyo, Japan. [(ICIAM 2023)](https://riedel12315.github.io/qingxia.github.io/files/ICIAM2023.jpg)  
++ Aug 20, 2023. I attended the 10th International Congress on Industrial and Applied Mathematics held at Waseda University in Tokyo, Japan. [(ICIAM 2023)](https://riedel12315.github.io/qingxia.github.io/files/ICIAM2023.jpg)
++ Jul 26, 2023. I have been awarded a scholarship under the State Scholarship Fund by China Scholarship Council. 
 + May 03, 2023. Our paper 'Binary thermal fluids computation over arbitrary surfaces with second-order accuracy and unconditional energy stability based on phase-field model' authored by **Qing Xia**, Yuehan Liu, Junseok Kim, Yibao Li* has been accepted for publication in [Journal of Computational and Applied Mathematics](https://www.sciencedirect.com/journal/journal-of-computational-and-applied-mathematics) （JCR Q1, Top）.
 + Apr 28, 2023. Our paper 'A modified and efficient phase field model for the biological transport network' authored by **Qing Xia**, Xiaoyu Jiang, Yibao Li* has been accepted for publication in [Journal of Computational Physics](https://www.sciencedirect.com/journal/journal-of-computational-physics) （JCR Q1, Top）.
 + Mar 24, 2023. Our work has been reported on the school's website. [Report link](http://news.xjtu.edu.cn/info/1004/193304.htm)
@@ -43,6 +44,7 @@ Magnum Opus（代表作）
 
 Projects & Awards（项目和获奖）
 ======
++ The scholarship under the State Scholarship Fund by China Scholarship Council.(国家建设高水平大学公派研究生项目)
 + [The Fundamental Research Funds for the Central Universities](https://riedel12315.github.io/qingxia.github.io/files/jijin1.pdf)(No. XYZ022022005).(中央高校基础科研经费西安交通大学自由探索与创新-学生类项目)
 + [National Scholarship for Doctoral students(2022)](https://riedel12315.github.io/qingxia.github.io/files/2022guojiang.pdf).(2022年度国家奖学金)
 + [Outstanding Model for the Doctoral students of Xi'an Jiaotong University](https://riedel12315.github.io/qingxia.github.io/files/biaobing.pdf)(2022).(2022年度西安交通大学博士研究生标兵，个人最高奖)
