@@ -16,6 +16,7 @@ My research interests mainly lie in **Shape topology optimization in 3D printing
 
 News（新闻）
 ======
++ Oct 19, 2023. **Qing Xia** won the 'National Scholarship for Doctoral students(2023)'.
 + Aug 20, 2023. I attended the 10th International Congress on Industrial and Applied Mathematics held at Waseda University in Tokyo, Japan. [(ICIAM 2023)](https://riedel12315.github.io/qingxia.github.io/files/ICIAM2023.jpg)
 + Jul 26, 2023. I have been awarded a scholarship under the State Scholarship Fund by China Scholarship Council. 
 + May 03, 2023. Our paper 'Binary thermal fluids computation over arbitrary surfaces with second-order accuracy and unconditional energy stability based on phase-field model' authored by **Qing Xia**, Yuehan Liu, Junseok Kim, Yibao Li* has been accepted for publication in [Journal of Computational and Applied Mathematics](https://www.sciencedirect.com/journal/journal-of-computational-and-applied-mathematics) （JCR Q1, Top）.
@@ -44,6 +45,7 @@ Magnum Opus（代表作）
 
 Projects & Awards（项目和获奖）
 ======
++ National Scholarship for Doctoral students(2023).(2023年度国家奖学金)
 + The scholarship under the State Scholarship Fund by China Scholarship Council.(国家建设高水平大学公派研究生项目)
 + [The Fundamental Research Funds for the Central Universities](https://riedel12315.github.io/qingxia.github.io/files/jijin1.pdf)(No. XYZ022022005).(中央高校基础科研经费西安交通大学自由探索与创新-学生类项目)
 + [National Scholarship for Doctoral students(2022)](https://riedel12315.github.io/qingxia.github.io/files/2022guojiang.pdf).(2022年度国家奖学金)
