@@ -53,6 +53,7 @@ In Preparation
 + Non-isothermal hydrodynamic modeling and analysis for the flow  boiling in microchannels based heat exchanger (With Jingjie Cheng(Sec), Yibao Li(Corr)).
 + On the unconditionally stable phase field model of ternarhy components system considering mass conservation and liquid-solid phase transition (With Zhixian Lv(Sec), Yibao Li(Corr)).
 + Surfacant on surface (Bing Jiang(Fir), Yibao Li(Corr)).
++ 3D computation and simulation for Selective Leaser Manufacturing(Sijing Lai(Fir), Yibao Li(Corr)).
 + Topology optimization Design of functionally graded materials under minimum size control (Qian Yu(Fir), Yibao Li(Corr)).
   
 已授权专利
