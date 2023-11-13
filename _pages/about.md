@@ -16,6 +16,7 @@ My research interests mainly lie in **Shape topology optimization in 3D printing
 
 News（新闻）
 ======
++ Nov 13, 2023. Our paper 'On the conservative phase-field method with the N-component incompressible flows' has been chosen as the [Highly Cited paper](https://riedel12315.github.io/qingxia.github.io/files/HighlyCited.pdf) by Web of Science.
 + Oct 19, 2023. **Qing Xia** won the 'National Scholarship for Doctoral students(2023)'.
 + Aug 20, 2023. I attended the 10th International Congress on Industrial and Applied Mathematics held at Waseda University in Tokyo, Japan. [(ICIAM 2023)](https://riedel12315.github.io/qingxia.github.io/files/ICIAM2023.jpg)
 + Jul 26, 2023. I have been awarded a scholarship under the State Scholarship Fund by China Scholarship Council. 
