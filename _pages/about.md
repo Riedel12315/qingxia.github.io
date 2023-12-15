@@ -16,6 +16,7 @@ My research interests mainly lie in **Shape topology optimization in 3D printing
 
 News（新闻）
 ======
++ Dec 10, 2023. **Qing Xia** won the 2023 'Academic star award' of Xi'an Jiaotong University.
 + Nov 17, 2023. **Qing Xia** attends [National Award Sharing Session](https://mp.weixin.qq.com/s/xu1pCXFfJo8UXZKk0LYsSQ) at School of Mathematics and Statistics, Xi'an Jiaotong University, delivering a presentation.
 + Nov 13, 2023. Our paper 'On the conservative phase-field method with the N-component incompressible flows' has been chosen as the [Highly Cited paper](https://riedel12315.github.io/qingxia.github.io/files/HighlyCited.pdf) by Web of Science.
 + Oct 19, 2023. **Qing Xia** won the 'National Scholarship for Doctoral students(2023)'.
@@ -47,11 +48,12 @@ Magnum Opus（代表作）
 
 Projects & Awards（项目和获奖）
 ======
++ Academic Star Award of Xi’an Jiaotong University(2023).(2023年度西安交通大学学术之星，全校10人)
 + National Scholarship for Doctoral students(2023).(2023年度国家奖学金)
 + The scholarship under the State Scholarship Fund by China Scholarship Council.(国家建设高水平大学公派研究生项目)
 + [The Fundamental Research Funds for the Central Universities](https://riedel12315.github.io/qingxia.github.io/files/jijin1.pdf)(No. XYZ022022005).(中央高校基础科研经费西安交通大学自由探索与创新-学生类项目)
 + [National Scholarship for Doctoral students(2022)](https://riedel12315.github.io/qingxia.github.io/files/2022guojiang.pdf).(2022年度国家奖学金)
-+ [Outstanding Model for the Doctoral students of Xi'an Jiaotong University](https://riedel12315.github.io/qingxia.github.io/files/biaobing.pdf)(2022).(2022年度西安交通大学博士研究生标兵，个人最高奖)
++ [Outstanding Model for the Doctoral students of Xi'an Jiaotong University](https://riedel12315.github.io/qingxia.github.io/files/biaobing.pdf)(2022).(2022年度西安交通大学博士研究生标兵，个人最高奖，全校15人)
 + Outstanding Communist Youth League cadres of Xi’an Jiaotong University(2020).(2020年度西安交通大学优秀共青团干部)
 + Outstanding Graduate of Xi’an Jiaotong University(2019). (2019年度西安交通大学优秀毕业生)
 
