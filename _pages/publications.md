@@ -33,10 +33,11 @@ Publications
 Revision submitted
 ======
 + **Qing Xia**#, Junxia Zhu, Qian Yu, Junseok Kim, Yibao Li*, Triply periodic minimal surfaces based topology optimization for the hydrodynamic and convective heat transfer, [Communications in Nonlinear Science and Numerical Simulation](https://www.sciencedirect.com/journal/communications-in-nonlinear-science-and-numerical-simulation),  (2023).
++ Yibao Li#, **Qing Xia**, Seungyoon Kang, Soobin Kwak, Junseok Kim*, A simple and practical volume merging algorithm for the porous scaffold design with triply periodic structures,  [Mathematics and Computers in Simulation](https://track.authorhub.elsevier.com/?uuid=2736ddf5-c35d-407d-b0c4-d0f2c28d66c5), (2022).
 
 In revision
 ======
-+ Yibao Li#, **Qing Xia**, Seungyoon Kang, Soobin Kwak, Junseok Kim*, A simple and practical volume merging algorithm for the porous scaffold design with triply periodic structures,  [Mathematics and Computers in Simulation](https://track.authorhub.elsevier.com/?uuid=2736ddf5-c35d-407d-b0c4-d0f2c28d66c5), (2022).
+None
 
 Submission
 =====
