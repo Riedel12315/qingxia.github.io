@@ -44,15 +44,16 @@ Submission
 + **Qing Xia**#, Junxiang Yang, Junseok Kim, Yibao Li*, On the phase field based model for the crystalline transition and nucleation within the Lagrange multiplier framework, [Journal of Computational Physics](https://www.sciencedirect.com/journal/journal-of-computational-physics),  (2023).
 + **Qing Xia**#, Sijing Lai, Junseok Kim, Yibao Li*, On the dynamical behaviors of metallic powder during the bed fusion process within the phase field framework, [SIAM Journal on Scientific Computation](https://www.siam.org/publications/journals/siam-journal-on-scientific-computing-sisc), (2023).
 + Xin Song#, **Qing Xia**, Yibao Li*, An unconditional energy stable data assimilation scheme for Navier-Stokes-Cahn-Hilliard equations with local discretized observed data, [Computers & Mathematics with Applications](https://www.sciencedirect.com/journal/computers-and-mathematics-with-applications)(2023).
++ Bing Jiang#, **Qing Xia**, Junseok Kim, Yibao Li*, Efficient second order accurate scheme for fluid-surfactant systems on curved surfaces with unconditional energy stabilitiy, [Communications in Nonlinear Science and Numerical Simulation](https://www.sciencedirect.com/journal/communications-in-nonlinear-science-and-numerical-simulation),  (2023).
 
 
 In Preparation
 =====
 + Non-isothermal hydrodynamic modeling and analysis for the flow  boiling in microchannels based heat exchanger (With Jingjie Cheng(Sec), Yibao Li(Corr)).
 + On the unconditionally stable phase field model of ternarhy components system considering mass conservation and liquid-solid phase transition (With Zhixian Lv(Sec), Yibao Li(Corr)).
-+ Efficient second order accurate scheme for fluid-surfactant systems on curved surfaces with unconditional energy stabilitiy (Bing Jiang(Fir), Yibao Li(Corr)).
 + 3D computation and simulation for Selective Leaser Manufacturing(Sijing Lai(Fir), Yibao Li(Corr)).
 + Topology optimization Design of functionally graded materials under minimum size control (Qian Yu(Fir), Yibao Li(Corr)).
++ 基于相场模型的设计-优化-仿真一体化建模与算法研究(Qing Xia(Fir), Yibao Li(Corr)).
   
 已授权专利
 ======
