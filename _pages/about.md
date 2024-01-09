@@ -16,7 +16,7 @@ My research interests mainly lie in **Shape topology optimization in 3D printing
 
 News（新闻）
 ======
-+ Jan 04, 2024. Our paper 'Triply periodic minimal surfaces based topology optimization for the hydrodynamic and convective heat transfer' authored by **Qing Xia**, Junxia Zhu, Qian Yu, Junseok Kim, Yibao Li* has been accepted for publication in [Communications in Nonlinear Science and Numerical Simulation](https://www.sciencedirect.com/journal/communications-in-nonlinear-science-and-numerical-simulation) （JCR Q1, Top）.
++ Jan 04, 2024. Our paper 'Triply periodic minimal surfaces based topology optimization for the hydrodynamic and convective heat transfer' authored by **Qing Xia**, Junxia Zhu, Qian Yu, Junseok Kim, Yibao Li* has been accepted for publication in Communications in Nonlinear Science and Numerical Simulation （JCR Q1, Top）.
 + Dec 10, 2023. **Qing Xia** won the 2023 ['Academic star award'](https://mp.weixin.qq.com/s/YFpBw9HNSVTHwRahzfuBCg) of Xi'an Jiaotong University.
 + Nov 17, 2023. **Qing Xia** attends [National Award Sharing Session](https://mp.weixin.qq.com/s/xu1pCXFfJo8UXZKk0LYsSQ) at School of Mathematics and Statistics, Xi'an Jiaotong University, delivering a presentation.
 + Nov 13, 2023. Our paper 'On the conservative phase-field method with the N-component incompressible flows' has been chosen as the [Highly Cited paper](https://riedel12315.github.io/qingxia.github.io/files/HighlyCited.pdf) by Web of Science.
@@ -39,7 +39,8 @@ Magnum Opus（代表作）
 + **Qing Xia**#, Junxiang Yang, Yibao Li\*, On the conservative phase-field method with the N-component incompressible flows, *Physics of Fluids*, 35 (2023) 012120. (JCR Q1, TOP, [Highly Cited paper](https://riedel12315.github.io/qingxia.github.io/files/HighlyCited.pdf)). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper16.pdf) 
 + **Qing Xia**#, Qian Yu, Yibao Li\*, A second-order accuracy, unconditionally energy stable numerical scheme for binary fluid flows on arbitrarily curved surfaces,   *Computer Methods in Applied Mechanics and Engineering*, 384 (2021) 113987. (JCR Q1, TOP). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper3.pdf)  
 + **Qing Xia**#, Xiaoyu Jiang, Yibao Li\*, A modified and efficient phase field model for the biological transport network, *Journal of Computational Physics*, (2023). (JCR Q1, TOP). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper18.pdf)
-+ **Qing Xia**#, Gangming Sun, Qian Yu, Yibao Li\*, Thermal-fluid topology optimization with unconditional energy stability and second-order accuracy via phase-field model, *Communications in Nonlinear Science and Numerical Simulation*, 116 (2023) 106782. (JCR Q1, TOP). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper12.pdf) 
++ **Qing Xia**#, Gangming Sun, Qian Yu, Yibao Li\*, Thermal-fluid topology optimization with unconditional energy stability and second-order accuracy via phase-field model, *Communications in Nonlinear Science and Numerical Simulation*, 116 (2023) 106782. (JCR Q1, TOP). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper12.pdf)
++ **Qing Xia**#, Junxia Zhu, Qian Yu, Junseok Kim, Yibao Li\*, Triply periodic minimal surfaces based topology optimization for the hydrodynamic and convective heat transfer, *Communications in Nonlinear Science and Numerical Simulation*, 131 (2024) 107819. (JCR Q1, TOP). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper22.pdf)
 + **Qing Xia**#, Yuehan Liu, Junseok Kim, Yibao Li\*, Binary thermal fluids computation over arbitrary surfaces with second-order accuracy and unconditional energy stability based on phase-field model, *Journal of Computational and Applied Mathematics*, (2023). (JCR Q1, Top). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper19.pdf)
 + **Qing Xia**#, Junseok Kim, Binhu Xia, Yibao Li\*, An unconditionally energy stable method for binary incompressible heat conductive fluids based on the phase–field model, *Computers & Mathematics with Applications*, 123 (2023) 26-39. (JCR Q1). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper13.pdf)
 + **Qing Xia**#, Junseok Kim, Yibao Li\*, Modeling and simulation of multi-component immiscible flows based on a modified Cahn-Hilliard equation, *European Journal of Mechanics-B/Fluids*, 95 (2022) 194-204. (JCR Q3). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper10.pdf)
@@ -49,12 +50,12 @@ Magnum Opus（代表作）
 
 Projects & Awards（项目和获奖）
 ======
-+ Academic Star Award of Xi’an Jiaotong University(2023).(2023年度西安交通大学学术之星，全校10人)
-+ National Scholarship for Doctoral students(2023).(2023年度国家奖学金)
++ Academic Star Award of Xi’an Jiaotong University(2023).(2023年度**西安交通大学学术之星**，全校10人)
++ National Scholarship for Doctoral students(2023).(2023年度**国家奖学金**)
 + The scholarship under the State Scholarship Fund by China Scholarship Council.(国家建设高水平大学公派研究生项目)
 + [The Fundamental Research Funds for the Central Universities](https://riedel12315.github.io/qingxia.github.io/files/jijin1.pdf)(No. XYZ022022005).(中央高校基础科研经费西安交通大学自由探索与创新-学生类项目)
-+ [National Scholarship for Doctoral students(2022)](https://riedel12315.github.io/qingxia.github.io/files/2022guojiang.pdf).(2022年度国家奖学金)
-+ [Outstanding Model for the Doctoral students of Xi'an Jiaotong University](https://riedel12315.github.io/qingxia.github.io/files/biaobing.pdf)(2022).(2022年度西安交通大学博士研究生标兵，个人最高奖，全校15人)
++ [National Scholarship for Doctoral students(2022)](https://riedel12315.github.io/qingxia.github.io/files/2022guojiang.pdf).(2022年度**国家奖学金**)
++ [Outstanding Model for the Doctoral students of Xi'an Jiaotong University](https://riedel12315.github.io/qingxia.github.io/files/biaobing.pdf)(2022).(2022年度**西安交通大学博士研究生标兵**，个人最高奖，全校15人)
 + Outstanding Communist Youth League cadres of Xi’an Jiaotong University(2020).(2020年度西安交通大学优秀共青团干部)
 + Outstanding Graduate of Xi’an Jiaotong University(2019). (2019年度西安交通大学优秀毕业生)
 
