@@ -34,7 +34,7 @@ Publications
 
 Revision submitted
 ======
-+ Xin Song#, **Qing Xia**, Yibao Li*, An unconditional energy stable data assimilation scheme for Navier-Stokes-Cahn-Hilliard equations with local discretized observed data, [Computers & Mathematics with Applications](https://www.sciencedirect.com/journal/computers-and-mathematics-with-applications)(2023).
++ Xin Song#, **Qing Xia**, Yibao Li*, An unconditional energy stable data assimilation scheme for Navier-Stokes-Cahn-Hilliard equations with local discretized observed data, [Computers & Mathematics with Applications](https://www.sciencedirect.com/journal/computers-and-mathematics-with-applications), (2023).
 
 In revision
 ======
