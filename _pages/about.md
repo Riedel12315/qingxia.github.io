@@ -16,6 +16,7 @@ My research interests mainly lie in **Shape topology optimization in 3D printing
 
 News（新闻）
 ======
++ Feb 10,2024. Our paper 'A simple and practical volume merging algorithm for the porous scaffold design with triply periodic structures‘, Mathematics and Computers in Simulation' authored by Yibao Li, **Qing Xia**, Seungyoon Kang, Soobin Kwak, Junseok Kim has been accepted for publication in Mathematics and Computers in Simulation (JCR Q2).
 + Jan 04, 2024. Our paper 'Triply periodic minimal surfaces based topology optimization for the hydrodynamic and convective heat transfer' authored by **Qing Xia**, Junxia Zhu, Qian Yu, Junseok Kim, Yibao Li* has been accepted for publication in Communications in Nonlinear Science and Numerical Simulation （JCR Q1, Top）.
 + Dec 10, 2023. **Qing Xia** won the 2023 ['Academic star award'](https://mp.weixin.qq.com/s/YFpBw9HNSVTHwRahzfuBCg) of Xi'an Jiaotong University.
 + Nov 17, 2023. **Qing Xia** attends [National Award Sharing Session](https://mp.weixin.qq.com/s/xu1pCXFfJo8UXZKk0LYsSQ) at School of Mathematics and Statistics, Xi'an Jiaotong University, delivering a presentation.
@@ -47,6 +48,7 @@ Magnum Opus（代表作）
 + Jin Wang#, **Qing Xia**\*, Binhu Xia, Fast Image Restoration Method Based on the L0, L1, and L2 Gradient Minimization, *Mathematics*, 10 (2022) 3107. (JCR Q1). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper14.pdf)
 + Yibao Li#，**Qing Xia**，Sungha Yoon，Chaeyoung Lee，Bingheng Lu，Junseok Kim\*, A simple and efficient volume merging method for triply periodic minimal structure,   *Computer Physics Communications*, 264  (2021) 107956. (JCR Q1). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper2.pdf)   
 + Yibao Li#, **Qing Xia**, Sungha Yoon, Junseok Kim\*, Simple and efficient fingerprint image restoration method based on a phase-field model, *Pattern Recognition*, 123 (2020) 108405.  (JCR Q1, TOP). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper7.pdf)
++  Yibao Li, **Qing Xia**, Seungyoon Kang, Soobin Kwak, Junseok Kim, A simple and practical volume merging algorithm for the porous scaffold design with triply periodic structures, *Mathematics and Computers in Simulation*. (JCR Q2).
 
 Projects & Awards（项目和获奖）
 ======
