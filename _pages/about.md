@@ -16,7 +16,6 @@ My research interests mainly lie in **Shape topology optimization in 3D printing
 
 News（新闻）
 ======
-
 + Jan 04, 2024. Our paper 'Triply periodic minimal surfaces based topology optimization for the hydrodynamic and convective heat transfer' authored by **Qing Xia**, Junxia Zhu, Qian Yu, Junseok Kim, Yibao Li* has been accepted for publication in Communications in Nonlinear Science and Numerical Simulation （JCR Q1, Top）.
 + Dec 10, 2023. **Qing Xia** won the 2023 ['Academic star award'](https://mp.weixin.qq.com/s/YFpBw9HNSVTHwRahzfuBCg) of Xi'an Jiaotong University.
 + Nov 17, 2023. **Qing Xia** attends [National Award Sharing Session](https://mp.weixin.qq.com/s/xu1pCXFfJo8UXZKk0LYsSQ) at School of Mathematics and Statistics, Xi'an Jiaotong University, delivering a presentation.
