@@ -21,7 +21,7 @@ News（新闻）
 + Dec 10, 2023. **Qing Xia** won the 2023 ['Academic star award'](https://mp.weixin.qq.com/s/YFpBw9HNSVTHwRahzfuBCg) of Xi'an Jiaotong University.
 + Nov 17, 2023. **Qing Xia** attends [National Award Sharing Session](https://mp.weixin.qq.com/s/xu1pCXFfJo8UXZKk0LYsSQ) at School of Mathematics and Statistics, Xi'an Jiaotong University, delivering a presentation.
 + Nov 13, 2023. Our paper 'On the conservative phase-field method with the N-component incompressible flows' has been chosen as the [Highly Cited paper](https://riedel12315.github.io/qingxia.github.io/files/HighlyCited.pdf) by Web of Science.
-+ Oct 19, 2023. **Qing Xia** won the 'National Scholarship for Doctoral students(2023)'.
++ Oct 19, 2023. **Qing Xia** won the 'National Scholarship for Doctoral students'(2023).
 + Aug 20, 2023. I attended the 10th International Congress on Industrial and Applied Mathematics held at Waseda University in Tokyo, Japan. [(ICIAM 2023)](https://riedel12315.github.io/qingxia.github.io/files/ICIAM2023.jpg)
 + Jul 26, 2023. I have been awarded a scholarship under the State Scholarship Fund by China Scholarship Council. 
 + May 03, 2023. Our paper 'Binary thermal fluids computation over arbitrary surfaces with second-order accuracy and unconditional energy stability based on phase-field model' authored by **Qing Xia**, Yuehan Liu, Junseok Kim, Yibao Li* has been accepted for publication in [Journal of Computational and Applied Mathematics](https://www.sciencedirect.com/journal/journal-of-computational-and-applied-mathematics) （JCR Q1, Top）.
