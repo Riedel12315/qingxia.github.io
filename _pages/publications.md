@@ -20,7 +20,7 @@ Publications
 10. Jin Wang#, **Qing Xia***, Binhu Xia, Fast Image Restoration Method Based on the L0, L1, and L2 Gradient Minimization, <font color="#660000">Mathematics</font>, 10 (2022) 3107.(SCI, Impact Factor 2.884). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper14.pdf)
 11. Yibao Li#，**Qing Xia**，Sungha Yoon，Chaeyoung Lee，Bingheng Lu，Junseok Kim*, A simple and efficient volume merging method for triply periodic minimal structure,   <font color="#660000">Computer Physics Communications</font>, 264 (2021) 107956.(SCI, Impact Factor: 3.627). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper2.pdf).
 12. Yibao Li#, **Qing Xia**, Sungha Yoon, Junseok Kim*, Simple and efficient fingerprint image restoration method based on a phase-field model,  <font color="#660000">Pattern Recognition</font>, 123 (2022) 108405. (SCI, Impact Factor: 7.740). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper7.pdf).
-13. Yibao Li#, **Qing Xia**, Seungyoon Kang, Soobin Kwak, Junseok Kim*, A simple and practical volume merging algorithm for the porous scaffold design with triply periodic structures, <font color="#660000">Mathematics and Computers in Simulation</font>, (2024). (SCI, Impact Factor: 4.6).
+13. Yibao Li#, **Qing Xia**, Seungyoon Kang, Soobin Kwak, Junseok Kim*, A simple and practical volume merging algorithm for the porous scaffold design with triply periodic structures, <font color="#660000">Mathematics and Computers in Simulation</font>, 220 (2024) 481-495. (SCI, Impact Factor: 4.6).[(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper23.pdf).
 14. Qian Yu#, **Qing Xia**, Yibao Li*, A phase field-based systematic multiscale topology optimization method for porous structures design, <font color="#660000">Journal of Computational Physics</font>, 466 (2022) 111383. (SCI, Impact Factor: 3.553). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper11.pdf).
 15. Jingjie Cheng, **Qing Xia**, Junseok Kim, Yibao Li*, An efficient linear and unconditionally stable numerical scheme for a phase field sintering model, <font color="#660000">Communications in Nonlinear Science and Numerical Simulation</font>, 127 (2023) 107529. (SCI, Impact Factor: 4.260).[(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper21.pdf).
 16. Wenxuan Xie#, **Qing Xia**, Qian Yu, Yibao Li*, An effective phase field method for topology optimization without the curvature effects,  <font color="#660000">Computers & Mathematics with Applications</font>, 146 (2023) 200-212. (SCI, Impact Factor 1.860). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper20.pdf).
@@ -44,26 +44,29 @@ In revision
 
 Submission
 =====
-+ **Qing Xia**#, Sijing Lai, Junseok Kim, Yibao Li*, On the dynamical behaviors of metallic powder during the bed fusion process within the phase field framework, [SIAM Journal on Scientific Computation](https://www.siam.org/publications/journals/siam-journal-on-scientific-computing-sisc), (2023).
-+ Bing Jiang#, **Qing Xia**, Junseok Kim, Yibao Li*, Efficient second order accurate scheme for fluid-surfactant systems on curved surfaces with unconditional energy stabilitiy, [Communications in Nonlinear Science and Numerical Simulation](https://www.sciencedirect.com/journal/communications-in-nonlinear-science-and-numerical-simulation),  (2023).
-+ Sijing Lai#, **Qing Xia**, Junseok Kim, Yibao Li*, Phase field based modeling and simulation for selective laser melting techniques in additive manufacturing [Journal of Computational Physics](https://www.sciencedirect.com/journal/journal-of-computational-physics),  (2023).
-+ Wenxuan Xie#, Jiachen Feng, **Qing Xia**, Junseok Kim, Yibao Li*, Design of the shell-infill structures using a phase field-based topology optimization method, [Computer Methods in Applied Mechanics and Engineering](https://www.sciencedirect.com/journal/computer-methods-in-applied-mechanics-and-engineering),  (2023).
+1. **Qing Xia**#, Sijing Lai, Junseok Kim, Yibao Li*, On the dynamical behaviors of metallic powder during the bed fusion process within the phase field framework, [SIAM Journal on Scientific Computation](https://www.siam.org/publications/journals/siam-journal-on-scientific-computing-sisc), (2023).
+2. Bing Jiang#, **Qing Xia**, Junseok Kim, Yibao Li*, Efficient second order accurate scheme for fluid-surfactant systems on curved surfaces with unconditional energy stabilitiy, [Communications in Nonlinear Science and Numerical Simulation](https://www.sciencedirect.com/journal/communications-in-nonlinear-science-and-numerical-simulation),  (2023).
+3. Sijing Lai#, **Qing Xia**, Junseok Kim, Yibao Li*, Phase field based modeling and simulation for selective laser melting techniques in additive manufacturing [Journal of Computational Physics](https://www.sciencedirect.com/journal/journal-of-computational-physics),  (2023).
+4. Wenxuan Xie#, Jiachen Feng, **Qing Xia**, Junseok Kim, Yibao Li*, Design of the shell-infill structures using a phase field-based topology optimization method, [Computer Methods in Applied Mechanics and Engineering](https://www.sciencedirect.com/journal/computer-methods-in-applied-mechanics-and-engineering),  (2023).
 
 In Preparation
 =====
-+ Optimization of biological transport networks in complex regions (With Zhixian Lv(Sec), Yibao Li(Corr)).
-+ Non-isothermal hydrodynamic modeling and analysis for the flow  boiling in microchannels based heat exchanger (With Jingjie Cheng(Sec), Yibao Li(Corr)).
-+ On the unconditionally stable phase field model of ternarhy components system considering mass conservation and liquid-solid phase transition (With Zhixian Lv(Sec), Yibao Li(Corr)).
-+ 基于相场模型的设计-优化-仿真一体化建模与算法研究(Qing Xia(Fir), Yibao Li(Corr)).
-+ Topology optimization Design of functionally graded materials under minimum size control (Qian Yu(Fir), Yibao Li(Corr)).
+1. Optimization of biological transport networks in complex regions (With Zhixian Lv(Sec), Yibao Li(Corr)).
+2. Non-isothermal hydrodynamic modeling and analysis for the flow  boiling in microchannels based heat exchanger (With Jingjie Cheng(Sec), Yibao Li(Corr)).
+3. On the unconditionally stable phase field model of ternarhy components system considering mass conservation and liquid-solid phase transition (With Zhixian Lv(Sec), Yibao Li(Corr)).
+4. 基于相场模型的设计-优化-仿真一体化建模与算法研究(Qing Xia(Fir), Yibao Li(Corr)).
+5. Study on reduced order model of Cahn-Hilliard equation(With Zhixian Lv(Fir), Yibao Li(Corr)).
+6. Study on grain boundary evolution of multiphase heat transfer(With Jingjie Cheng(Fir), Yibao Li(Corr)).
+7. Research on connectivity region discrimination algorithm in three-dimensional space(With Sijing Cheng(Fir), Yibao Li(Corr)).
+8. Topology optimization Design of functionally graded materials under minimum size control (Qian Yu(Fir), Yibao Li(Corr)).
 
 
   
 已授权专利
 ======
-+ 李义宝，史政源，**夏青**，卢秉恒，一种隐形牙套的牙齿-牙龈快速分割方法。[专利授权书](https://riedel12315.github.io/qingxia.github.io/files/patent1.pdf)
-+ 李义宝，刘蕊，**夏青**，一种基于多探测器的自动报靶预测算法。[专利授权书](https://riedel12315.github.io/qingxia.github.io/files/patent2.pdf)
-+ 李义宝，**夏青**，刘蕊，一种受损指纹图像的快速修复技术。
+1. 李义宝，史政源，**夏青**，卢秉恒，一种隐形牙套的牙齿-牙龈快速分割方法。[专利授权书](https://riedel12315.github.io/qingxia.github.io/files/patent1.pdf)
+2. 李义宝，刘蕊，**夏青**，一种基于多探测器的自动报靶预测算法。[专利授权书](https://riedel12315.github.io/qingxia.github.io/files/patent2.pdf)
+3. 李义宝，**夏青**，刘蕊，一种受损指纹图像的快速修复技术。
 
 二审专利
 ======
@@ -75,12 +78,18 @@ In Preparation
 
 已受理专利
 ======
-+ 李义宝，刘玥含，**夏青**，马峻，王世刚，一种面向3D打印的多尺度多材料的自适应设计方法。
-+ 李义宝，孙港明，**夏青**，史政源，马峻，王世刚，一种三维牙模的牙齿-牙龈分割线快速提取算法。
-+ 李义宝，蒋小玉，**夏青**，一种面向熔融沉积工艺的多尺度加工仿真方法。
-+ 李义宝，朱军霞，**夏青**，一种针对多材料切片的快速三维重构技术。
-+ 李义宝，张媛媛，**夏青**，一种用于通道形状设计基于三周期最小曲面结构（TPMS）的拓扑优化方法。
+1. 李义宝，刘玥含，**夏青**，马峻，王世刚，一种面向3D打印的多尺度多材料的自适应设计方法。
+2. 李义宝，孙港明，**夏青**，史政源，马峻，王世刚，一种三维牙模的牙齿-牙龈分割线快速提取算法。
+3. 李义宝，蒋小玉，**夏青**，一种面向熔融沉积工艺的多尺度加工仿真方法。
+4. 李义宝，朱军霞，**夏青**，一种针对多材料切片的快速三维重构技术。
+5. 李义宝，张媛媛，**夏青**，一种用于通道形状设计基于三周期最小曲面结构（TPMS）的拓扑优化方法。
 
 软件著作权
 =====
-+ 李义宝，赖思静，**夏青**，面向熔融沉积工艺的多尺度加工仿真算法。
+1. 李义宝，赖思静，**夏青**，面向熔融沉积工艺的多尺度加工仿真算法。
+
+筹备专著：
+=====
+1. 李义宝，**夏青**，相场模型的工程应用。
+2. 李义宝，**夏青**，材料科学中的高性能算法研究。
+
