@@ -48,7 +48,7 @@ Magnum Opus（代表作）
 + Jin Wang#, **Qing Xia**\*, Binhu Xia, Fast Image Restoration Method Based on the L0, L1, and L2 Gradient Minimization, *Mathematics*, 10 (2022) 3107. (JCR Q1). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper14.pdf)
 + Yibao Li#, **Qing Xia**, Sungha Yoon, Chaeyoung Lee, Bingheng Lu, Junseok Kim, A simple and efficient volume merging method for triply periodic minimal structure,   *Computer Physics Communications*, 264  (2021) 107956. (JCR Q1). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper2.pdf)   
 + Yibao Li#, **Qing Xia**, Sungha Yoon, Junseok Kim, Simple and efficient fingerprint image restoration method based on a phase-field model, *Pattern Recognition*, 123 (2020) 108405.  (JCR Q1, TOP). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper7.pdf)
-+ Yibao Li#, **Qing Xia**, Seungyoon Kang, Soobin Kwak, Junseok Kim, A simple and practical volume merging algorithm for the porous scaffold design with triply periodic structures, *Mathematics and Computers in Simulation*, (2024), (JCR Q2).
++ Yibao Li#, **Qing Xia**, Seungyoon Kang, Soobin Kwak, Junseok Kim, A simple and practical volume merging algorithm for the porous scaffold design with triply periodic structures, *Mathematics and Computers in Simulation*, 481(2024)481-495, (JCR Q2). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper23.pdf)
 
 Projects & Awards（项目和获奖）
 ======
