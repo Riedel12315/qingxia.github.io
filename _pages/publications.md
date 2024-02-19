@@ -55,10 +55,11 @@ In Preparation
 2. Non-isothermal hydrodynamic modeling and analysis for the flow  boiling in microchannels based heat exchanger (With Jingjie Cheng(Sec), Yibao Li(Corr)).
 3. On the unconditionally stable phase field model of ternarhy components system considering mass conservation and liquid-solid phase transition (With Zhixian Lv(Sec), Yibao Li(Corr)).
 4. 基于相场模型的设计-优化-仿真一体化建模与算法研究(Qing Xia(Fir), Yibao Li(Corr)).
-5. Study on reduced order model of Cahn-Hilliard equation(With Zhixian Lv(Fir), Yibao Li(Corr)).
-6. Study on grain boundary evolution of multiphase heat transfer(With Jingjie Cheng(Fir), Yibao Li(Corr)).
-7. Research on connectivity region discrimination algorithm in three-dimensional space(With Sijing Cheng(Fir), Yibao Li(Corr)).
-8. Topology optimization Design of functionally graded materials under minimum size control (Qian Yu(Fir), Yibao Li(Corr)).
+5. PINNs for  biological transport networks(With Jiachen Feng(Fir), Yibao Li(Corr))
+6. Study on reduced order model of Cahn-Hilliard equation(With Zhixian Lv(Fir), Yibao Li(Corr)).
+7. Study on grain boundary evolution of multiphase heat transfer(With Jingjie Cheng(Fir), Yibao Li(Corr)).
+8. Research on connectivity region discrimination algorithm in three-dimensional space(With Sijing Lai(Fir), Yibao Li(Corr)).
+9. Topology optimization Design of functionally graded materials under minimum size control (Qian Yu(Fir), Yibao Li(Corr)).
 
 
   
