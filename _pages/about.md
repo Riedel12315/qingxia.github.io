@@ -16,8 +16,8 @@ My research interests mainly lie in **Shape topology optimization in 3D printing
 
 News（新闻）
 ======
-+ Feb 19, 2024. Our paper 'Thermal-fluid topology optimization with unconditional energy stability and second-order accuracy via phase-field model' has been chosen as the [Highly Cited paper](https://riedel12315.github.io/qingxia.github.io/files/HighlyCited.pdf) by Web of Science.
-+ Feb 19, 2024. Our paper 'A second-order unconditionally stable method for the anisotropic dendritic crystal growth model with an orientation-field' has been chosen as the [Highly Cited paper](https://riedel12315.github.io/qingxia.github.io/files/HighlyCited.pdf) by Web of Science.
++ Feb 19, 2024. Our paper 'Thermal-fluid topology optimization with unconditional energy stability and second-order accuracy via phase-field model' has been chosen as the [Highly Cited paper](https://riedel12315.github.io/qingxia.github.io/files/HighlyCited2.pdf) by Web of Science.
++ Feb 19, 2024. Our paper 'A second-order unconditionally stable method for the anisotropic dendritic crystal growth model with an orientation-field' has been chosen as the [Highly Cited paper](https://riedel12315.github.io/qingxia.github.io/files/HighlyCited3.pdf) by Web of Science.
 + Feb 10, 2024. Our paper 'A simple and practical volume merging algorithm for the porous scaffold design with triply periodic structures' authored by Yibao Li, **Qing Xia**, Seungyoon Kang, Soobin Kwak, Junseok Kim has been accepted for publication in Mathematics and Computers in Simulation (JCR Q2).
 + Jan 04, 2024. Our paper 'Triply periodic minimal surfaces based topology optimization for the hydrodynamic and convective heat transfer' authored by **Qing Xia**, Junxia Zhu, Qian Yu, Junseok Kim, Yibao Li has been accepted for publication in Communications in Nonlinear Science and Numerical Simulation (JCR Q1, Top).
 + Dec 10, 2023. **Qing Xia** won the 2023 'Academic star award'[[Report link 1](https://mp.weixin.qq.com/s/YFpBw9HNSVTHwRahzfuBCg)][[Report link 2](https://mp.weixin.qq.com/s/4tqjfHSbtHd55cClae1mTg)] of Xi'an Jiaotong University.
