@@ -13,6 +13,7 @@ Curriculum Vitae（简历）
 =====
 [English CV](https://qingxiaxjtu.com/files/CV-EN.pdf)   
 [中文 CV](https://qingxiaxjtu.com/files/CV-CN.pdf)   
+[中文 CV](https://qingxiaxjtu.com/files/CV-CN2.pdf)   
 
 Education（教育背景）
 ======
