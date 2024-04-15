@@ -47,6 +47,10 @@ redirect_from:
 ## CFD with multi-component model（多相流计算） [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper10.pdf)
 <img src="https://s2.loli.net/2023/02/12/lYviAZdCo2XLMsc.gif"
  width="900px" />
+
+ ## CFD with dam break based on Smoothed Partical Hydrodynamic(SPH) method （溃坝模拟）
+ <img src="https://s2.loli.net/2024/04/15/Ei1qCAUW9vSJ2I8.gif"
+ width="900px" />
  
 ## CFD with conservative phase-field method（守恒的相场方法研究） [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper16.pdf)
 <img src="https://s2.loli.net/2023/02/11/OZhxirCEqVbc7o5.gif"
