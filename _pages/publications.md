@@ -41,16 +41,15 @@ Revision submitted
 
 In revision
 ======
-None
++ **夏青**，余倩，李义宝*，面向3D打印的设计-优化-仿真一体化建模与算法研究,[数值计算与计算机应用](https://computmath.cjoe.ac.cn/szjs/CN/1000-3266/home.shtml),(2024).
++ Zhixian Lv#, Xin Song, Jiachen Feng, **Qing Xia**, Yibao Li*, Enhanced Reduced-Order Modeling with VAE and LSTM for Predicting the Cahn-Hilliard Equation, [Computer Methods in Applied Mechanics and Engineering](https://www.sciencedirect.com/journal/computer-methods-in-applied-mechanics-and-engineering),  (2024).
 
 
 Submission
 =====
-1. **Qing Xia**#, Sijing Lai, Junseok Kim, Yibao Li*, On the dynamical behaviors of metallic powder during the bed fusion process within the phase field framework, [SIAM Journal on Scientific Computation](https://www.siam.org/publications/journals/siam-journal-on-scientific-computing-sisc), (2023).
-2. **夏青**，余倩，李义宝*，面向3D打印的设计-优化-仿真一体化建模与算法研究,[数值计算与计算机应用](https://computmath.cjoe.ac.cn/szjs/CN/1000-3266/home.shtml),(2024).
-3. Sijing Lai#, **Qing Xia**, Junseok Kim, Yibao Li*, Phase field based modeling and simulation for selective laser melting techniques in additive manufacturing [Journal of Computational Physics](https://www.sciencedirect.com/journal/journal-of-computational-physics),  (2023).
-4. Wenxuan Xie#, Jiachen Feng, **Qing Xia**, Junseok Kim, Yibao Li*, Design of the shell-infill structures using a phase field-based topology optimization method, [Computer Methods in Applied Mechanics and Engineering](https://www.sciencedirect.com/journal/computer-methods-in-applied-mechanics-and-engineering),  (2023).
-5. Zhixian Lv#, Xin Song, Jiachen Feng, **Qing Xia**, Yibao Li*, Enhanced Reduced-Order Modeling with VAE and LSTM for Predicting the Cahn-Hilliard Equation, [Computer Methods in Applied Mechanics and Engineering](https://www.sciencedirect.com/journal/computer-methods-in-applied-mechanics-and-engineering),  (2024).
+1. **Qing Xia**#, Sijing Lai, Junseok Kim, Yibao Li*, On the dynamical behaviors of metallic powder during the bed fusion process within the phase field framework, [Journal of Computational Physics](https://www.sciencedirect.com/journal/journal-of-computational-physics), (2023).
+2. Sijing Lai#, **Qing Xia**, Junseok Kim, Yibao Li*, Phase field based modeling and simulation for selective laser melting techniques in additive manufacturing [Communications in Nonlinear Science and Numerical Simulation](https://www.sciencedirect.com/journal/communications-in-nonlinear-science-and-numerical-simulation),  (2023).
+3. Wenxuan Xie#, Jiachen Feng, **Qing Xia**, Junseok Kim, Yibao Li*, Design of the shell-infill structures using a phase field-based topology optimization method, [Computer Methods in Applied Mechanics and Engineering](https://www.sciencedirect.com/journal/computer-methods-in-applied-mechanics-and-engineering),  (2023).
 
 In Preparation
 =====
@@ -92,6 +91,5 @@ In Preparation
 
 筹备专著：
 =====
-1. 李义宝，**夏青**，相场模型的工程应用。
-2. 李义宝，**夏青**，材料科学中的高性能算法研究。
+1. 李义宝，**夏青**，计算材料学-相场法建模与应用。
 
