@@ -48,7 +48,7 @@ redirect_from:
 <img src="https://s2.loli.net/2023/02/12/lYviAZdCo2XLMsc.gif"
  width="900px" />
 
- ## CFD with dam break based on Smoothed Partical Hydrodynamic(SPH) method （溃坝模拟）
+## CFD with dam break based on Smoothed Partical Hydrodynamic(SPH) method （溃坝模拟）
  <img src="https://s2.loli.net/2024/04/15/Ei1qCAUW9vSJ2I8.gif"
  width="900px" />
  
