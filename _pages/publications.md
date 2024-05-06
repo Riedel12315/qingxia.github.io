@@ -23,7 +23,7 @@ Publications
 13. Yibao Li#, **Qing Xia**, Seungyoon Kang, Soobin Kwak, Junseok Kim*, A simple and practical volume merging algorithm for the porous scaffold design with triply periodic structures, <font color="#660000">Mathematics and Computers in Simulation</font>, 220 (2024) 481-495. (SCI, Impact Factor: 4.6).[(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper23.pdf).
 14. Qian Yu#, **Qing Xia**, Yibao Li*, A phase field-based systematic multiscale topology optimization method for porous structures design, <font color="#660000">Journal of Computational Physics</font>, 466 (2022) 111383. (SCI, Impact Factor: 3.553). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper11.pdf).
 15. Jingjie Cheng, **Qing Xia**, Junseok Kim, Yibao Li*, An efficient linear and unconditionally stable numerical scheme for a phase field sintering model, <font color="#660000">Communications in Nonlinear Science and Numerical Simulation</font>, 127 (2023) 107529. (SCI, Impact Factor: 4.260).[(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper21.pdf).
-16. Bing Jiang#, **Qing Xia**, Junseok Kim, Yibao Li*, Efficient second order accurate scheme for fluid-surfactant systems on curved surfaces with unconditional energy stabilitiy, [Communications in Nonlinear Science and Numerical Simulation](https://www.sciencedirect.com/journal/communications-in-nonlinear-science-and-numerical-simulation),  (2023).
+16. Bing Jiang#, **Qing Xia**, Junseok Kim, Yibao Li*, Efficient second order accurate scheme for fluid-surfactant systems on curved surfaces with unconditional energy stabilitiy, <font color="#660000">Communications in Nonlinear Science and Numerical Simulation</font>, (2024) 108054. (SCI, Impact Factor: 4.260).
 17. Wenxuan Xie#, **Qing Xia**, Qian Yu, Yibao Li*, An effective phase field method for topology optimization without the curvature effects,  <font color="#660000">Computers & Mathematics with Applications</font>, 146 (2023) 200-212. (SCI, Impact Factor 1.860). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper20.pdf).
 18. Xin Song#, **Qing Xia**, Junseok Kim, Yibao Li*, An unconditional energy stable data assimilation scheme for Navier-Stokes-Cahn-Hilliard equations with local discretized observed data,  <font color="#660000">Computers & Mathematics with Applications</font>, 164 (2024) 21-33. (SCI, Impact Factor 1.860). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper24.pdf).
 19. Bo You, **Qing Xia**, Continuous Data Assimilation Algorithm for the Two Dimensional Cahn–Hilliard–Navier–Stokes System, <font color="#660000">Applied Mathematics & Optimization</font>, 85 (2022) 1-19. (SCI, Impact Factor: 3.582). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper9.pdf).
@@ -92,5 +92,5 @@ In Preparation
 
 筹备专著：
 =====
-1. 李义宝，**夏青**，计算材料学-相场法建模与应用。
+1. 李义宝，**夏青**，计算材料学-相场法建模与应用。(在审)
 
