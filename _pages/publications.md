@@ -38,11 +38,11 @@ Publications
 Revision submitted
 ======
 + **Qing Xia**#, Junxiang Yang, Junseok Kim, Yibao Li*, On the phase field based model for the crystalline transition and nucleation within the Lagrange multiplier framework, [Journal of Computational Physics](https://www.sciencedirect.com/journal/journal-of-computational-physics), (2023).
++ **夏青**，余倩，李义宝*，面向3D打印的设计-优化-仿真一体化建模与算法研究,[数值计算与计算机应用](https://computmath.cjoe.ac.cn/szjs/CN/1000-3266/home.shtml),(2024).
 
 
 In revision
 ======
-+ **夏青**，余倩，李义宝*，面向3D打印的设计-优化-仿真一体化建模与算法研究,[数值计算与计算机应用](https://computmath.cjoe.ac.cn/szjs/CN/1000-3266/home.shtml),(2024).
 + Zhixian Lv#, Xin Song, Jiachen Feng, **Qing Xia**, Yibao Li*, Enhanced Reduced-Order Modeling with VAE and LSTM for Predicting the Cahn-Hilliard Equation, [Computer Methods in Applied Mechanics and Engineering](https://www.sciencedirect.com/journal/computer-methods-in-applied-mechanics-and-engineering),  (2024).
 
 
