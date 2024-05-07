@@ -38,7 +38,7 @@ Publications
 Revision submitted
 ======
 + **Qing Xia**#, Junxiang Yang, Junseok Kim, Yibao Li*, On the phase field based model for the crystalline transition and nucleation within the Lagrange multiplier framework, [Journal of Computational Physics](https://www.sciencedirect.com/journal/journal-of-computational-physics), (2023).
-+ **夏青**，余倩，李义宝*，面向3D打印的设计-优化-仿真一体化建模与算法研究,[数值计算与计算机应用](https://computmath.cjoe.ac.cn/szjs/CN/1000-3266/home.shtml),(2024).
++ **夏青**，余倩，李义宝*，基于相场模型的3D打印设计-优化-仿真一体化研究,[数值计算与计算机应用](https://computmath.cjoe.ac.cn/szjs/CN/1000-3266/home.shtml),(2024).（特邀）
 
 
 In revision
