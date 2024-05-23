@@ -39,12 +39,11 @@ Publications
 Revision submitted
 ======
 + **Qing Xia**#, Junxiang Yang, Junseok Kim, Yibao Li*, On the phase field based model for the crystalline transition and nucleation within the Lagrange multiplier framework, [Journal of Computational Physics](https://www.sciencedirect.com/journal/journal-of-computational-physics), (2023).
-
++ Zhixian Lv#, Xin Song, Jiachen Feng, **Qing Xia**, Yibao Li*, Enhanced Reduced-Order Modeling with VAE and LSTM for Predicting the Cahn-Hilliard Equation, [Computer Methods in Applied Mechanics and Engineering](https://www.sciencedirect.com/journal/computer-methods-in-applied-mechanics-and-engineering),  (2024).
 
 
 In revision
 ======
-+ Zhixian Lv#, Xin Song, Jiachen Feng, **Qing Xia**, Yibao Li*, Enhanced Reduced-Order Modeling with VAE and LSTM for Predicting the Cahn-Hilliard Equation, [Computer Methods in Applied Mechanics and Engineering](https://www.sciencedirect.com/journal/computer-methods-in-applied-mechanics-and-engineering),  (2024).
 + Wenxuan Xie#, Jiachen Feng, **Qing Xia**, Junseok Kim, Yibao Li*, Design of the shell-infill structures using a phase field-based topology optimization method, [Computer Methods in Applied Mechanics and Engineering](https://www.sciencedirect.com/journal/computer-methods-in-applied-mechanics-and-engineering),  (2023).
 
 
@@ -52,17 +51,16 @@ Submission
 =====
 1. **Qing Xia**#, Sijing Lai, Junseok Kim, Yibao Li*, On the dynamical behaviors of metallic powder during the bed fusion process within the phase field framework, [Journal of Computational Physics](https://www.sciencedirect.com/journal/journal-of-computational-physics), (2023).
 2. Sijing Lai#, **Qing Xia**, Junseok Kim, Yibao Li*, Phase field based modeling and simulation for selective laser melting techniques in additive manufacturing [Communications in Nonlinear Science and Numerical Simulation](https://www.sciencedirect.com/journal/communications-in-nonlinear-science-and-numerical-simulation),  (2023).
+3. Sijing Lai#, Bing Jiang, **Qing Xia**, Binhu Xia, Junseok Kim, Yibao Li*, On the phase field algorithm for distinguishing connected regions in digital model. [Extreme Mechanics Letters](https://www.sciencedirect.com/journal/extreme-mechanics-letters), (2024.)
 
 
 In Preparation
 =====
-1. Optimization of biological transport networks in complex regions (With Zhixian Lv(Sec), Yibao Li(Corr)).
+1. Optimization of biological transport networks in complex regions (With Yibao Li(Fir), Zhixian Lv(Sec), Qing Xia(Corr)).
 2. Non-isothermal hydrodynamic modeling and analysis for the flow  boiling in microchannels based heat exchanger (With Jingjie Cheng(Sec), Yibao Li(Corr)).
 3. On the unconditionally stable phase field model of ternarhy components system considering mass conservation and liquid-solid phase transition (With Zhixian Lv(Sec), Yibao Li(Corr)).
-4. PINNs for  biological transport networks(With Jiachen Feng(Fir), Yibao Li(Corr))
-5. Study on grain boundary evolution of multiphase heat transfer(With Jingjie Cheng(Fir), Yibao Li(Corr)).
-6. Research on connectivity region discrimination algorithm in three-dimensional space(With Sijing Lai(Fir), Yibao Li(Corr)).
-7. Topology optimization Design of functionally graded materials under minimum size control (Qian Yu(Fir), Yibao Li(Corr)).
+4. Study on grain boundary evolution of multiphase heat transfer(With Jingjie Cheng(Fir), Yibao Li(Corr)).
+5. Topology optimization Design of functionally graded materials under minimum size control (Qian Yu(Fir), Yibao Li(Corr)).
 
 
   
