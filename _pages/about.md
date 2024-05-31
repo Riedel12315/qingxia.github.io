@@ -16,7 +16,7 @@ My research interests mainly lie in **Shape topology optimization in 3D printing
 
 News（新闻）
 ======
-+ May 28, 2024. Our paper 'On the phase field based model for the crystalline transition and nucleation within the Lagrange multiplier framework' authored by **Qing Xia**, Junxiang Yang, Junseok Kim and Yibao Li has been accepted for publication in Journal of Computational Physics. 
++ May 28, 2024. Our paper 'On the phase field based model for the crystalline transition and nucleation within the Lagrange multiplier framework' authored by **Qing Xia**, Junxiang Yang, Junseok Kim, Yibao Li has been accepted for publication in Journal of Computational Physics. 
 + May 10, 2024. Our paper 'On the integrated 3D printing research for design, optimization and simulation within phase field framework' has been accepted for publication in Journal on numerical methods and computer applications.(Special invation)
 + Apr 13, 2024. **Qing Xia** participated in the Shaanxi Provincial University mathematics [graduate intercollegiate Forum](https://mp.weixin.qq.com/s?__biz=Mzg3MDU4OTMyNg==&mid=2247494118&idx=1&sn=2f6f686891b0b08741e5642ac82c6d3e&chksm=ce89df07f9fe5611856f0524f594e20c74b1aaf6780f35a205384b89283c514438467b6bfd08&mpshare=1&scene=2&srcid=0415wqDQouwQeWEewnnlqlX8&sharer_shareinfo=9380e512e1c7f4ae050491af71bb0b80&sharer_shareinfo_first=9380e512e1c7f4ae050491af71bb0b80#rd).
 + Feb 19, 2024. Our paper 'Thermal-fluid topology optimization with unconditional energy stability and second-order accuracy via phase-field model' has been chosen as the [Highly Cited paper](https://riedel12315.github.io/qingxia.github.io/files/HighlyCited2.pdf) by Web of Science.
@@ -34,7 +34,7 @@ News（新闻）
 + Mar 24, 2023. Our work has been reported on the school's website. [Report link](http://news.xjtu.edu.cn/info/1004/193304.htm)
 + Mar 21, 2023. Our paper 'Multi-scale modeling and simulation of additive manufacturing based on fused deposition technique' has chosen as the SCIlight article of AIP publishing and Featured work in Physics of Fluids. [Report link](https://aip.scitation.org/doi/10.1063/10.0017716)
 + Mar 02, 2023. Paper 'Multi-scale modeling and simulation of additive manufacturing based on fused deposition technique' authored by **Qing Xia**, Gangming Sun,  Junseok Kim, Yibao Li has been accepted for publication in [Physics of Fluids](https://aip.scitation.org/doi/10.1063/5.0141316)(JCR Q1, Top).
-+ Jan 05, 2023. Paper 'On the conservative phase-field method with the N-component incompressible flows' authored by **Qing Xia**, Junxiang Yang, Yibao Li* has been accepted for publication in [Physics of Fluids](https://aip.scitation.org/doi/abs/10.1063/5.0135490)（JCR Q1, Top）.
++ Jan 05, 2023. Paper 'On the conservative phase-field method with the N-component incompressible flows' authored by **Qing Xia**, Junxiang Yang, Yibao Li* has been accepted for publication in [Physics of Fluids](https://aip.scitation.org/doi/abs/10.1063/5.0135490)(JCR Q1, Top).
 + Nov 20, 2022. **Qing Xia** attended the event as a judge of '[Xi 'an Jiaotong University's Golden Wutong Festival](http://news.xjtu.edu.cn/info/1033/189522.htm)'.
 + Oct 28, 2022. **Qing Xia** won the 'National Scholarship for Doctoral students(2022)'.
 + Oct 28, 2022. **Qing Xia** won the '[Outstanding Model for the Doctoral students of Xi'an Jiaotong University(2022)](http://news.xjtu.edu.cn/info/1033/189087.htm)'.
