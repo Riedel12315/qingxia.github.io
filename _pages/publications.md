@@ -12,7 +12,7 @@ Publications
 2. **Qing Xia**#, Junxiang Yang, Yibao Li*, On the conservative phase-field method with the N-component incompressible flows, <font color="#660000">Physics of Fluids</font>, 35 (2023) 012120. (SCI, Impact Factor 3.521, [Highly Cited paper](https://riedel12315.github.io/qingxia.github.io/files/HighlyCited.pdf)). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper16.pdf)
 3. **Qing Xia**#, Qian Yu, Yibao Li*, A second-order accurate, unconditionally energy stable numerical scheme for binary fluid flows on arbitrarily curved surfaces,  <font color="#660000">Computer Methods in Applied Mechanics and Engineering</font>, 384 (2021)113987.(SCI, Impact Factor 6.756). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper3.pdf)
 4. **Qing Xia**#, Xiaoyu Jiang, Yibao Li*, A modified and efficient phase field model for the biological transport network, <font color="#660000">Journal of Computational Physics</font>, 488 (2022) 122192. (SCI, Impact Factor 4.645). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper18.pdf)
-5. **Qing Xia**#, Junxiang Yang, Junseok Kim, Yibao Li*, On the phase field based model for the crystalline transition and nucleation within the Lagrange multiplier framework, [Journal of Computational Physics](https://www.sciencedirect.com/journal/journal-of-computational-physics), (2023).
+5. **Qing Xia**#, Junxiang Yang, Junseok Kim, Yibao Li*, On the phase field based model for the crystalline transition and nucleation within the Lagrange multiplier framework, 513 (2024) 113158. (SCI, Impact Factor 4.645). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper27.pdf)
 6. **Qing Xia**#, Gangming Sun, Qian Yu, Yibao Li*, Thermal-fluid topology optimization with unconditional energy stability and second-order accuracy via phase-field model, <font color="#660000">Communications in Nonlinear Science and Numerical Simulation</font>, 116 (2023) 106782. (SCI, Impact Factor 4.260, [Highly Cited paper](https://riedel12315.github.io/qingxia.github.io/files/HighlyCited2.pdf)). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper12.pdf)
 7. **Qing Xia**#, Junxia Zhu, Qian Yu, Junseok Kim, Yibao Li*, Triply periodic minimal surfaces based topology optimization for the hydrodynamic and convective heat transfer,  <font color="#660000">Communications in Nonlinear Science and Numerical Simulation</font>, 131 (2024) 107819. (SCI, Impact Factor 4.260). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper22.pdf)
 8. **Qing Xia**#, Yuehan Liu, Junseok Kim, Yibao Li*, Binary thermal fluids computation over arbitrary surfaces with second-order accuracy and unconditional energy stability based on phase-field model, <font color="#660000">Journal of Computational and Applied Mathematics</font>, 433 (2023) 115319. (SCI, Impact Factor 2.037). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper19.pdf)
@@ -40,27 +40,26 @@ Publications
 
 Revision submitted
 ======
-+ Zhixian Lv#, Xin Song, Jiachen Feng, **Qing Xia**, Yibao Li*, Enhanced Reduced-Order Modeling with VAE and LSTM for Predicting the Cahn-Hilliard Equation, [Computer Methods in Applied Mechanics and Engineering](https://www.sciencedirect.com/journal/computer-methods-in-applied-mechanics-and-engineering),  (2024).
-
+1. Zhixian Lv#, Xin Song, Jiachen Feng, **Qing Xia**, Yibao Li*, Enhanced Reduced-Order Modeling with VAE and LSTM for Predicting the Cahn-Hilliard Equation, [Computer Methods in Applied Mechanics and Engineering](https://www.sciencedirect.com/journal/computer-methods-in-applied-mechanics-and-engineering),  (2024).
+2. Sijing Lai#, **Qing Xia**, Junseok Kim, Yibao Li*, Phase field based modeling and simulation for selective laser melting techniques in additive manufacturing [Communications in Nonlinear Science and Numerical Simulation](https://www.sciencedirect.com/journal/communications-in-nonlinear-science-and-numerical-simulation),  (2023).
 
 In revision
 ======
-+ Sijing Lai#, **Qing Xia**, Junseok Kim, Yibao Li*, Phase field based modeling and simulation for selective laser melting techniques in additive manufacturing [Communications in Nonlinear Science and Numerical Simulation](https://www.sciencedirect.com/journal/communications-in-nonlinear-science-and-numerical-simulation),  (2023).
+None
 
 
 Submission
 =====
 1. **Qing Xia**#, Sijing Lai, Junseok Kim, Yibao Li*, On the dynamical behaviors of metallic powder during the bed fusion process within the phase field framework, [Journal of Computational Physics](https://www.sciencedirect.com/journal/journal-of-computational-physics), (2023).
-2. Sijing Lai#, Bing Jiang, **Qing Xia**, Binhu Xia, Junseok Kim, Yibao Li*, On the phase field algorithm for distinguishing connected regions in digital model. [Extreme Mechanics Letters](https://www.sciencedirect.com/journal/extreme-mechanics-letters), (2024).
-
+2. Jingjie Cheng, **Qing Xia**, Junseok Kim, Yibao Li*, Decoupled, efficient and structure-preserving numerical scheme for the non-isothermal phase field sintering model, [Computer Methods in Applied Mechanics and Engineering](https://www.sciencedirect.com/journal/computer-methods-in-applied-mechanics-and-engineering),  (2024).
+3. Sijing Lai#, Bing Jiang, **Qing Xia**, Binhu Xia, Junseok Kim, Yibao Li*, On the phase field algorithm for distinguishing connected regions in digital model. [Extreme Mechanics Letters](https://www.sciencedirect.com/journal/extreme-mechanics-letters), (2024).
 
 In Preparation
 =====
 1. Optimization of biological transport networks in complex regions (With Yibao Li(Fir), Zhixian Lv(Sec), Qing Xia(Corr)).
 2. Non-isothermal hydrodynamic modeling and analysis for the flow  boiling in microchannels based heat exchanger (With Jingjie Cheng(Sec), Yibao Li(Corr)).
 3. On the unconditionally stable phase field model of ternarhy components system considering mass conservation and liquid-solid phase transition (With Zhixian Lv(Sec), Yibao Li(Corr)).
-4. Decoupled, efficient and structure-preserving numerical scheme for the non-isothermal phase field sintering model(With Jingjie Cheng(Fir), Yibao Li(Corr)).
-5. An efficient SIEQ approach for phase field based multimaterial topology optimization with graded interface (Qian Yu(Fir), Yibao Li(Corr)).
+4. An efficient SIEQ approach for phase field based multimaterial topology optimization with graded interface (Qian Yu(Fir), Yibao Li(Corr)).
 
 
   
