@@ -58,6 +58,7 @@ Magnum Opus（代表作）
 
 Projects & Awards（项目和获奖）
 ======
++ [Outstanding achievements of scientific and technological research of Shaanxi Province](https://mp.weixin.qq.com/s/EWDFD3DzGpITQALkitUH-w)(2024年度**陕西高等学校科学技术研究优秀成果一等奖（第三完成人）**)
 + [Academic Star Award of Xi’an Jiaotong University(2023)](https://riedel12315.github.io/qingxia.github.io/files/xueshuzhixing.pdf).(2023年度**西安交通大学学术之星**，全校10人)
 + [National Scholarship for Doctoral students(2023)](https://riedel12315.github.io/qingxia.github.io/files/2023guojiang.pdf).(2023年度**国家奖学金**)
 + The scholarship under the State Scholarship Fund by China Scholarship Council.(国家建设高水平大学公派研究生项目)
