@@ -16,7 +16,8 @@ My research interests mainly lie in **Shape topology optimization in 3D printing
 
 News（新闻）
 ======
-+ Jun 5,2024. Our paper 'Design of the shell-infill structures using a phase field-based topology optimization method' authored by Wenxuan xie, Jiachen Feng, **Qing Xia**, Junseok Kim, Yibao Li has been accepted for publication in Computer Methods in Applied Mechanics and Engineering.
++ Jun 14, 2024. Our application of '3D printing design - simulation - processing integration research' was awarded "Outstanding achievements of scientific and technological research of Shaanxi Province". 由李义宝(My mentor)，夏斌湖, **夏青**申报的"3D打印设计-仿真-加工一体化研究"获评“2024年度陕西高等学校科学技术研究优秀成果（**一等奖**）”.
++ Jun 5, 2024. Our paper 'Design of the shell-infill structures using a phase field-based topology optimization method' authored by Wenxuan xie, Jiachen Feng, **Qing Xia**, Junseok Kim, Yibao Li has been accepted for publication in Computer Methods in Applied Mechanics and Engineering.
 + May 28, 2024. Our paper 'On the phase field based model for the crystalline transition and nucleation within the Lagrange multiplier framework' authored by **Qing Xia**, Junxiang Yang, Junseok Kim, Yibao Li has been accepted for publication in Journal of Computational Physics. 
 + May 10, 2024. Our paper 'On the integrated 3D printing research for design, optimization and simulation within phase field framework' has been accepted for publication in Journal on numerical methods and computer applications.(Special invation)
 + Apr 13, 2024. **Qing Xia** participated in the Shaanxi Provincial University mathematics [graduate intercollegiate Forum](https://mp.weixin.qq.com/s?__biz=Mzg3MDU4OTMyNg==&mid=2247494118&idx=1&sn=2f6f686891b0b08741e5642ac82c6d3e&chksm=ce89df07f9fe5611856f0524f594e20c74b1aaf6780f35a205384b89283c514438467b6bfd08&mpshare=1&scene=2&srcid=0415wqDQouwQeWEewnnlqlX8&sharer_shareinfo=9380e512e1c7f4ae050491af71bb0b80&sharer_shareinfo_first=9380e512e1c7f4ae050491af71bb0b80#rd).
