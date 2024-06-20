@@ -65,9 +65,13 @@ In Preparation
   
 已授权专利
 ======
-1. 李义宝，史政源，**夏青**，卢秉恒，一种隐形牙套的牙齿-牙龈快速分割方法。[专利授权书](https://riedel12315.github.io/qingxia.github.io/files/patent1.pdf)
-2. 李义宝，刘蕊，**夏青**，一种基于多探测器的自动报靶预测算法。[专利授权书](https://riedel12315.github.io/qingxia.github.io/files/patent2.pdf)
-3. 李义宝，**夏青**，刘蕊，一种受损指纹图像的快速修复技术。
+1. 李义宝，**夏青**，刘蕊，一种受损指纹图像的快速修复技术。[专利授权书](https://riedel12315.github.io/qingxia.github.io/files/patent3.pdf)
+2. 李义宝，史政源，**夏青**，卢秉恒，一种隐形牙套的牙齿-牙龈快速分割方法。[专利授权书](https://riedel12315.github.io/qingxia.github.io/files/patent1.pdf)
+3. 李义宝，刘蕊，**夏青**，一种基于多探测器的自动报靶预测算法。[专利授权书](https://riedel12315.github.io/qingxia.github.io/files/patent2.pdf)
+
+软件著作权
+=====
+1. 李义宝，赖思静，**夏青**，面向熔融沉积工艺的多尺度加工仿真算法。[专利授权书](https://riedel12315.github.io/qingxia.github.io/files/patentsoftware.pdf)
 
 二审专利
 ======
@@ -85,9 +89,7 @@ In Preparation
 4. 李义宝，朱军霞，**夏青**，一种针对多材料切片的快速三维重构技术。
 5. 李义宝，张媛媛，**夏青**，一种用于通道形状设计基于三周期最小曲面结构（TPMS）的拓扑优化方法。
 
-软件著作权
-=====
-1. 李义宝，赖思静，**夏青**，面向熔融沉积工艺的多尺度加工仿真算法。
+
 
 筹备专著：
 =====
