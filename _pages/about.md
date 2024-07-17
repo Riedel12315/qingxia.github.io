@@ -16,6 +16,7 @@ My research interests mainly lie in **Shape topology optimization in 3D printing
 
 News（新闻）
 ======
++ July 17, 2024. Our paper ' Phase-field based modeling anosimulation for selective laser meltingtechniques in additive manufacturing' authored by Sijing Lai, **Qing Xia**, Junseok Kim, Yibao Li has been accepted for publication in Communications in Nonlinear Science and Numerical Simulation.
 + Jun 14, 2024. Our application of '3D printing design - simulation - processing integration research' was awarded "Outstanding achievements of scientific and technological research of Shaanxi Province". 由李义宝(My mentor)，夏斌湖, **夏青**申报的"3D打印设计-仿真-加工一体化研究"获评“[2024年度陕西高等学校科学技术研究优秀成果（**一等奖**）](https://mp.weixin.qq.com/s/EWDFD3DzGpITQALkitUH-w)”.
 + Jun 5, 2024. Our paper 'Design of the shell-infill structures using a phase field-based topology optimization method' authored by Wenxuan xie, Jiachen Feng, **Qing Xia**, Junseok Kim, Yibao Li has been accepted for publication in Computer Methods in Applied Mechanics and Engineering.
 + May 28, 2024. Our paper 'On the phase field based model for the crystalline transition and nucleation within the Lagrange multiplier framework' authored by **Qing Xia**, Junxiang Yang, Junseok Kim, Yibao Li has been accepted for publication in Journal of Computational Physics. 
