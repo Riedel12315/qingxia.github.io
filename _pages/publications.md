@@ -46,7 +46,7 @@ Revision submitted
 
 In revision
 ======
-1. Sijing Lai#, Bing Jiang, **Qing Xia**, Binhu Xia, Junseok Kim, Yibao Li*, On the phase field algorithm for distinguishing connected regions in digital model. [Extreme Mechanics Letters](https://www.sciencedirect.com/journal/extreme-mechanics-letters), (2024).
+1. Sijing Lai#, Bing Jiang, **Qing Xia**, Binhu Xia, Junseok Kim, Yibao Li*, On the phase field algorithm for distinguishing connected regions in digital model. [Journal of Computational Physics](https://www.sciencedirect.com/journal/journal-of-computational-physics).
 
 
 Submission
