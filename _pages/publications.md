@@ -51,10 +51,10 @@ In revision
 
 Submission
 =====
-1. **Qing Xia**#, Sijing Lai, Junseok Kim, Yibao Li*, On the dynamical behaviors of metallic powder during the bed fusion process within the phase field framework, [Journal of Computational Physics](https://www.sciencedirect.com/journal/journal-of-computational-physics), (2023).
-2. Yibao Li, Zhixian Lv, **Qing Xia(Corr)**, On the adaption of biological transport networks affected by complex domains, [Computer Methods in Applied Mechanics and Engineering](https://www.sciencedirect.com/journal/computer-methods-in-applied-mechanics-and-engineering),  (2024).
-3. Jingjie Cheng, **Qing Xia**, Junseok Kim, Yibao Li*, Decoupled, efficient and structure-preserving numerical scheme for the non-isothermal phase field sintering model, [Computer Methods in Applied Mechanics and Engineering](https://www.sciencedirect.com/journal/computer-methods-in-applied-mechanics-and-engineering),  (2024).
-4. Qian Yu, **Qing Xia**, Yibao Li, Chao Yang, Unconditionally Energy-Stable Phase Field Simulation for Multimaterial Topology Optimization with Various Graded Interfaces, [Computer Methods in Applied Mechanics and Engineering](https://www.sciencedirect.com/journal/computer-methods-in-applied-mechanics-and-engineering),  (2024).
+1. **Qing Xia**#, Sijing Lai, Junseok Kim, Yibao Li*, On the dynamical behaviors of metallic powder during the bed fusion process within the phase field framework, [Applied Mathematical Modelling](https://www.sciencedirect.com/journal/applied-mathematical-modelling), (2023).
+2. Yibao Li, Zhixian Lv, **Qing Xia(Corr)**, On the adaption of biological transport networks affected by complex domains, [Physics of Fluids](https://pubs.aip.org/aip/pof),  (2024).
+3. Jingjie Cheng, **Qing Xia**, Junseok Kim, Yibao Li*, Decoupled, efficient and structure-preserving numerical scheme for the non-isothermal phase field sintering model, [Computer Physics Communications](https://www.sciencedirect.com/journal/computer-physics-communications),  (2024).
+4. Qian Yu, **Qing Xia**, Yibao Li, Chao Yang, Unconditionally Energy-Stable Phase Field Simulation for Multimaterial Topology Optimization with Various Graded Interfaces, [Journal of Computational Physics](https://www.sciencedirect.com/journal/journal-of-computational-physics),  (2024).
 
 
 
@@ -62,6 +62,8 @@ In Preparation
 =====
 1. Non-isothermal hydrodynamic modeling and analysis for the flow  boiling in microchannels based heat exchanger (With Jingjie Cheng(Sec), Yibao Li(Corr)).
 2. On the unconditionally stable phase field model of ternarhy components system considering mass conservation and liquid-solid phase transition (With Zhixian Lv(Sec), Yibao Li(Corr)).
+3. Dynamic Interplay of Crystalline Grain Boundary Energy and Multiple-Frequency Forcing during Nucleation(With Yibao Li(Corr)).
+4. Bionic heat dissipation design based on biological transmission network(With Yibao Li(Corr)).
 
 
   
@@ -90,6 +92,7 @@ In Preparation
 3. 李义宝，蒋小玉，**夏青**，一种面向熔融沉积工艺的多尺度加工仿真方法。
 4. 李义宝，朱军霞，**夏青**，一种针对多材料切片的快速三维重构技术。
 5. 李义宝，张媛媛，**夏青**，一种用于通道形状设计基于三周期最小曲面结构（TPMS）的拓扑优化方法。
+
 
 
 
