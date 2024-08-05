@@ -41,12 +41,12 @@ Publications
 
 Revision submitted
 ======
-1. Zhixian Lv#, Xin Song, Jiachen Feng, **Qing Xia**, Yibao Li*, Enhanced Reduced-Order Modeling with VAE and LSTM for Predicting the Cahn-Hilliard Equation, [Computer Methods in Applied Mechanics and Engineering](https://www.sciencedirect.com/journal/computer-methods-in-applied-mechanics-and-engineering),  (2024).
+1. Sijing Lai#, Bing Jiang, **Qing Xia**, Binhu Xia, Junseok Kim, Yibao Li*, On the phase field algorithm for distinguishing connected regions in digital model. [Journal of Computational Physics](https://www.sciencedirect.com/journal/journal-of-computational-physics).
 
 
 In revision
 ======
-1. Sijing Lai#, Bing Jiang, **Qing Xia**, Binhu Xia, Junseok Kim, Yibao Li*, On the phase field algorithm for distinguishing connected regions in digital model. [Journal of Computational Physics](https://www.sciencedirect.com/journal/journal-of-computational-physics).
+
 
 
 Submission
@@ -55,7 +55,7 @@ Submission
 2. Yibao Li, Zhixian Lv, **Qing Xia(Corr)**, On the adaption of biological transport networks affected by complex domains, [Physics of Fluids](https://pubs.aip.org/aip/pof),  (2024).
 3. Jingjie Cheng, **Qing Xia**, Junseok Kim, Yibao Li*, Decoupled, efficient and structure-preserving numerical scheme for the non-isothermal phase field sintering model, [Computer Physics Communications](https://www.sciencedirect.com/journal/computer-physics-communications),  (2024).
 4. Qian Yu, **Qing Xia**, Yibao Li, Chao Yang, Unconditionally Energy-Stable Phase Field Simulation for Multimaterial Topology Optimization with Various Graded Interfaces, [Journal of Computational Physics](https://www.sciencedirect.com/journal/journal-of-computational-physics),  (2024).
-
+5. Zhixian Lv#, Xin Song, Jiachen Feng, **Qing Xia**, Yibao Li*, Enhanced Reduced-Order Modeling with VAE and LSTM for Predicting the Cahn-Hilliard Equation,[Journal of Computational Physics](https://www.sciencedirect.com/journal/journal-of-computational-physics),  (2024).
 
 
 In Preparation
@@ -92,6 +92,7 @@ In Preparation
 3. 李义宝，蒋小玉，**夏青**，一种面向熔融沉积工艺的多尺度加工仿真方法。
 4. 李义宝，朱军霞，**夏青**，一种针对多材料切片的快速三维重构技术。
 5. 李义宝，张媛媛，**夏青**，一种用于通道形状设计基于三周期最小曲面结构（TPMS）的拓扑优化方法。
+6. 李义宝，赖思静，**夏青**，一种判别复杂模型联通区域并提取的方法。
 
 
 
