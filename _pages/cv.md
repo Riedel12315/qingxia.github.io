@@ -12,8 +12,9 @@ redirect_from:
 Curriculum Vitae（简历）
 =====
 [English CV](https://qingxiaxjtu.com/files/CV-EN.pdf)   
-[中文 CV](https://qingxiaxjtu.com/files/CV-CN.pdf)   
-[中文 CV](https://qingxiaxjtu.com/files/CV-CN2.pdf)   
+[中文 CV full](https://qingxiaxjtu.com/files/CV-CN.pdf)   
+[中文 CV 1页版](https://qingxiaxjtu.com/files/CV-CN2.pdf)   
+[中文 CV 2页版](https://qingxiaxjtu.com/files/CV-CN3.pdf)   
 
 Education（教育背景）
 ======
