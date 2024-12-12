@@ -83,8 +83,13 @@
   }
 
   img {
-    max-width: 175px;
-    border-radius: 0 !important;
+    border-radius: 0 !important; /* 强制去掉圆角 */
+    width: auto !important; /* 保持原始宽度 */
+    height: auto !important; /* 保持原始高度 */
+    display: block; /* 确保没有内联干扰 */
+    max-width: 100%; /* 防止超出容器 */
+    border: none !important; /* 去掉边框 */
+    box-shadow: none !important; /* 去掉阴影 */
 
     @include breakpoint($large) {
       padding: 5px;
