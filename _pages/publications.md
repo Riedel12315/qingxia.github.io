@@ -45,6 +45,7 @@ Publications
 Revision submitted
 ======
 + Zhixian Lv#, Xin Song, Jiachen Feng, **Qing Xia**, Yibao Li*, Enhanced Reduced-Order Modeling with VAE and LSTM for Predicting the Cahn-Hilliard Equation,[Engineering Analysis with Boundary Elements](https://www.sciencedirect.com/journal/engineering-analysis-with-boundary-elements),  (2024).
++ Binghu Xia, Sijing Lai, **Qing Xia**, Xiang Liu, Junseok Kim, Yibao Li*, Phase-field modeling of fiber-based thermal diffusion and phase transitions in FDM processes.
 
 
 In revision
@@ -54,18 +55,21 @@ In revision
 
 Submission
 =====
-1. **Qing Xia**#, Sijing Lai, Junseok Kim, Yibao Li*, On the dynamical behaviors of metallic powder during the bed fusion process within the phase field framework, [Applied Mathematical Modelling](https://www.sciencedirect.com/journal/applied-mathematical-modelling), (2023).
-2. **Qing Xia**#, Jingjie Cheng, Yibao Li*, A phase-field model for investigating the coupled dynamics of grain boundary evolution and crystal nucleation in multiphase crystalline systems, [Computer Methods in Applied Mechanics and Engineering](https://www.sciencedirect.com/journal/computer-methods-in-applied-mechanics-and-engineering),(2025).
-3. Yibao Li, Zhixian Lv, **Qing Xia***, On the unconditionally stable phase field model of ternarhy components system considering mass conservation and liquid-solid phase transition. [SIAM Journal on Scientific Computing](https://www.siam.org/publications/siam-journals/siam-journal-on-scientific-computing/).
-4. Jingjie Cheng, **Qing Xia**, Junseok Kim, Yibao Li*, Decoupled, efficient and structure-preserving numerical scheme for the non-isothermal phase field sintering model, [Computers and Mathematics with Applications](https://www.editorialmanager.com/camwa/Default.aspx),  (2024).
-5. Qian Yu, **Qing Xia**, Yibao Li, Chao Yang, Unconditionally Energy-Stable Phase Field Simulation for Multimaterial Topology Optimization with Various Graded Interfaces, [Journal of Computational Physics](https://www.sciencedirect.com/journal/journal-of-computational-physics),  (2024).
+1. **Qing Xia**#, Sijing Lai, Junseok Kim, Yibao Li*, On the dynamical behaviors of metallic powder during the bed fusion process within the phase field framework, [Communications in Nonlinear Science and Numerical Simulation](https://www.sciencedirect.com/journal/communications-in-nonlinear-science-and-numerical-simulation), (2023).
+2. **Qing Xia**#, Jingjie Cheng, Yibao Li*, A phase-field model for investigating the coupled dynamics of grain boundary evolution and crystal nucleation in multiphase crystalline systems, [Computer Methods in Applied Mechanics and Engineering](https://www.sciencedirect.com/journal/computer-methods-in-applied-mechanics-and-engineering), (2025).
+3. Yibao Li, Zhixian Lv, **Qing Xia***, On the unconditionally stable phase field model of ternarhy components system considering mass conservation and liquid-solid phase transition. [SIAM Journal on Scientific Computing](https://www.siam.org/publications/siam-journals/siam-journal-on-scientific-computing/),(2025).
+4. Jingjie Cheng, **Qing Xia**, Junseok Kim, Yibao Li*, Decoupled, efficient and structure-preserving numerical scheme for the non-isothermal phase field sintering model, [Computers and Mathematics with Applications](https://www.editorialmanager.com/camwa/Default.aspx), (2024).
+5. Qian Yu, **Qing Xia**, Yibao Li, Chao Yang, Unconditionally Energy-Stable Phase Field Simulation for Multimaterial Topology Optimization with Various Graded Interfaces, [Journal of Computational Physics](https://www.sciencedirect.com/journal/journal-of-computational-physics), (2024).
 
 
 In Preparation
 =====
 1. Non-isothermal hydrodynamic modeling and analysis for the flow  boiling in microchannels based heat exchanger (Yibao Li(Fir), Jingjie Cheng(Sec), Qing Xia(Corr)).
-2. Numerical investigation of electrohydrodynamic printing. (Yibao Li(Fir), Sijing Lai(Sec), Qing Xia(Corr)).
-3. Bionic heat dissipation design based on biological transmission network(With Zhixian Lv(Fir), Qing Xia(Sec), Yibao Li(Corr)).
+2. Numerical investigation of electrohydrodynamic printing(Yibao Li(Fir), Sijing Lai(Sec), Qing Xia(Corr)).
+3. Numerical investigation of thermal stress in laser melting additive manufacturing process(Sijing Lai(Fir), Qing Xia(Sec), Yibao Li(Corr)).
+4. Simulation of laser powder printing based on smooth particle hydrodynamic and phase field model.
+5. Grain boundary defect prediction based on graph neural networks.
+6. Bionic heat dissipation design based on biological transmission network(With Zhixian Lv(Fir), Qing Xia(Sec), Yibao Li(Corr)).
 
 
   
