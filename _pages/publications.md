@@ -44,28 +44,28 @@ Publications
 
 Revision submitted
 ======
-None
++ Zhixian Lv#, Xin Song, Jiachen Feng, **Qing Xia**, Yibao Li*, Enhanced Reduced-Order Modeling with VAE and LSTM for Predicting the Cahn-Hilliard Equation,[Engineering Analysis with Boundary Elements](https://www.sciencedirect.com/journal/engineering-analysis-with-boundary-elements),  (2024).
 
 
 In revision
 ======
-None
++ Xiaochuan Hu, **Qing Xia**, Yibao Li*, A second-order accurate numerical method with unconditional energy stability for the Lifshitz-Petrich equation on curved surfaces, [Applied Mathematical Letter](https://www.sciencedirect.com/journal/applied-mathematics-letters),(2024).
 
 
 Submission
 =====
 1. **Qing Xia**#, Sijing Lai, Junseok Kim, Yibao Li*, On the dynamical behaviors of metallic powder during the bed fusion process within the phase field framework, [Applied Mathematical Modelling](https://www.sciencedirect.com/journal/applied-mathematical-modelling), (2023).
-2. Jingjie Cheng, **Qing Xia**, Junseok Kim, Yibao Li*, Decoupled, efficient and structure-preserving numerical scheme for the non-isothermal phase field sintering model, [Computers and Mathematics with Applications](https://www.editorialmanager.com/camwa/Default.aspx),  (2024).
-3. Qian Yu, **Qing Xia**, Yibao Li, Chao Yang, Unconditionally Energy-Stable Phase Field Simulation for Multimaterial Topology Optimization with Various Graded Interfaces, [Journal of Computational Physics](https://www.sciencedirect.com/journal/journal-of-computational-physics),  (2024).
-4. Zhixian Lv#, Xin Song, Jiachen Feng, **Qing Xia**, Yibao Li*, Enhanced Reduced-Order Modeling with VAE and LSTM for Predicting the Cahn-Hilliard Equation,[Journal of Computational Physics](https://www.sciencedirect.com/journal/journal-of-computational-physics),  (2024).
+2. **Qing Xia**#, Jingjie Cheng, Yibao Li*, A phase-field model for investigating the coupled dynamics of grain boundary evolution and crystal nucleation in multiphase crystalline systems, [Computer Methods in Applied Mechanics and Engineering](https://www.sciencedirect.com/journal/computer-methods-in-applied-mechanics-and-engineering),(2025).
+3. Yibao Li, Zhixian Lv, **Qing Xia***, On the unconditionally stable phase field model of ternarhy components system considering mass conservation and liquid-solid phase transition. [SIAM Journal on Scientific Computing](https://www.siam.org/publications/siam-journals/siam-journal-on-scientific-computing/).
+4. Jingjie Cheng, **Qing Xia**, Junseok Kim, Yibao Li*, Decoupled, efficient and structure-preserving numerical scheme for the non-isothermal phase field sintering model, [Computers and Mathematics with Applications](https://www.editorialmanager.com/camwa/Default.aspx),  (2024).
+5. Qian Yu, **Qing Xia**, Yibao Li, Chao Yang, Unconditionally Energy-Stable Phase Field Simulation for Multimaterial Topology Optimization with Various Graded Interfaces, [Journal of Computational Physics](https://www.sciencedirect.com/journal/journal-of-computational-physics),  (2024).
 
 
 In Preparation
 =====
-1. Non-isothermal hydrodynamic modeling and analysis for the flow  boiling in microchannels based heat exchanger (With Jingjie Cheng(Sec), Yibao Li(Corr)).
-2. On the unconditionally stable phase field model of ternarhy components system considering mass conservation and liquid-solid phase transition (With Zhixian Lv(Sec), Yibao Li(Corr)).
-3. Dynamic Interplay of Crystalline Grain Boundary Energy and Multiple-Frequency Forcing during Nucleation(With Yibao Li(Corr)).
-4. Bionic heat dissipation design based on biological transmission network(With Yibao Li(Corr)).
+1. Non-isothermal hydrodynamic modeling and analysis for the flow  boiling in microchannels based heat exchanger (Yibao Li(Fir), Jingjie Cheng(Sec), Qing Xia(Corr)).
+2. Numerical investigation of electrohydrodynamic printing. (Yibao Li(Fir), Sijing Lai(Sec), Qing Xia(Corr)).
+3. Bionic heat dissipation design based on biological transmission network(With Zhixian Lv(Fir), Qing Xia(Sec), Yibao Li(Corr)).
 
 
   
