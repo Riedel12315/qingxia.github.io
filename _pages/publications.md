@@ -31,14 +31,15 @@ Publications
 21. Wenxuan Xie#, **Qing Xia**, Qian Yu, Yibao Li*, An effective phase field method for topology optimization without the curvature effects,  <font color="#660000">Computers & Mathematics with Applications</font>, 146 (2023) 200-212. (SCI, Impact Factor 1.860). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper20.pdf).
 22. Xin Song#, **Qing Xia**, Junseok Kim, Yibao Li*, An unconditional energy stable data assimilation scheme for Navier-Stokes-Cahn-Hilliard equations with local discretized observed data,  <font color="#660000">Computers & Mathematics with Applications</font>, 164 (2024) 21-33. (SCI, Impact Factor 1.860). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper24.pdf).
 23. Bo You, **Qing Xia**, Continuous Data Assimilation Algorithm for the Two Dimensional Cahn–Hilliard–Navier–Stokes System, <font color="#660000">Applied Mathematics & Optimization</font>, 85 (2022) 1-19. (SCI, Impact Factor: 3.582). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper9.pdf).
-24. Wenxuan Xie#, Jiachen Feng, **Qing Xia**, Junseok Kim, Yibao Li*, Design of the shell-infill structures using a phase field-based topology optimization method, <font color="#660000">Computer Methods in Applied Mechanics and Engineering</font>,  429 (2024) 117138. [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper28.pdf).
-25. Yibao Li#, Kang Qin, **Qing Xia**, Junseok Kim*, A second-order unconditionally stable method for the anisotropic dendritic crystal growth model with an orientation-field, <font color="#660000">Applied Numerical Mathematics</font>, 184 (2022) 512-526. (SCI, Impact Factor: 2.443, [Highly Cited paper](https://riedel12315.github.io/qingxia.github.io/files/HighlyCited3.pdf)). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper15.pdf).
-26. Yibao Li#, Rui Liu, **Qing Xia**, Chenxi He, Zhong Li*, First- and second-order unconditionally stable direct discretization methods for multi-component Cahn-Hilliard system on surfaces, <font color="#660000">Journal of Computational and Applied Mathematics</font>, 401 (2022) 113778.   (SCI, Impact Factor 2.037)[(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper4.pdf)
-27. Yibao Li#, Lujing Zhang, **Qing Xia**, Qian Yu, Junseok Kim, An unconditionally energy-stable second-order time-accurate numerical scheme for the coupled Cahn-Hilliard system in copolymer/homopolymer mixtures, <font color="#660000">Comoutational Materials Science</font>,  200 (2021) 110809.  (SCI, Impact Factor 2.863)[(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper6.pdf)
-28.  Sijing Lai#, Bing Jiang, **Qing Xia**, Binhu Xia, Junseok Kim, Yibao Li*, On the phase field algorithm for distinguishing connected regions in digital model.  Engineering Analysiswith Boundary Elements.
-29. Yibao Li#, Kunyang Wang, Qian Yu, **Qing Xia**, Junseok Kim, Unconditionally energy stable schemes for fluid-based topology optimization, <font color="#660000">Communications in Nonlinear Science and Numerical Simulation</font>, 111 (2022) 106433.(SCI, Impact Factor: 4.260)[(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper8.pdf)
-30. Jing Ji#, Suping Fang*, **Qing Xia**, Zhengyuan Shi, An efficient method for scanned images by using color-correction and L0 gradient minimization, <font color="#660000">Optik</font>, 2477 (2021) 167820. (SCI, Impact Factor 2.187) [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper5.pdf)
-31. Jing Ji#, Suping Fang*, Zhengyuan Shi, **Qing Xia**, Yibao Li, An efficient nonlinear polynomial color characterization method based on interrelations of color spaces, <font color="#660000">Color Research& Application</font>, 45 (2020) 1023-1039. (SCI, Impact Factor 1.668)  [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper1.pdf)
+24. Xiaochuan Hu, **Qing Xia**, Yibao Li*, A second-order accurate numerical method with unconditional energy stability for the Lifshitz-Petrich equation on curved surfaces, <font color="#660000">Applied Mathematical Letter</font>, 163 (2025) 109439. [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper32.pdf).
+25. Wenxuan Xie#, Jiachen Feng, **Qing Xia**, Junseok Kim, Yibao Li*, Design of the shell-infill structures using a phase field-based topology optimization method, <font color="#660000">Computer Methods in Applied Mechanics and Engineering</font>,  429 (2024) 117138. [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper28.pdf).
+26. Yibao Li#, Kang Qin, **Qing Xia**, Junseok Kim*, A second-order unconditionally stable method for the anisotropic dendritic crystal growth model with an orientation-field, <font color="#660000">Applied Numerical Mathematics</font>, 184 (2022) 512-526. (SCI, Impact Factor: 2.443, [Highly Cited paper](https://riedel12315.github.io/qingxia.github.io/files/HighlyCited3.pdf)). [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper15.pdf).
+27. Yibao Li#, Rui Liu, **Qing Xia**, Chenxi He, Zhong Li*, First- and second-order unconditionally stable direct discretization methods for multi-component Cahn-Hilliard system on surfaces, <font color="#660000">Journal of Computational and Applied Mathematics</font>, 401 (2022) 113778.   (SCI, Impact Factor 2.037)[(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper4.pdf)
+28. Yibao Li#, Lujing Zhang, **Qing Xia**, Qian Yu, Junseok Kim, An unconditionally energy-stable second-order time-accurate numerical scheme for the coupled Cahn-Hilliard system in copolymer/homopolymer mixtures, <font color="#660000">Comoutational Materials Science</font>,  200 (2021) 110809.  (SCI, Impact Factor 2.863)[(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper6.pdf)
+29.  Sijing Lai#, Bing Jiang, **Qing Xia**, Binhu Xia, Junseok Kim, Yibao Li*, On the phase field algorithm for distinguishing connected regions in digital model.  Engineering Analysiswith Boundary Elements.
+30. Yibao Li#, Kunyang Wang, Qian Yu, **Qing Xia**, Junseok Kim, Unconditionally energy stable schemes for fluid-based topology optimization, <font color="#660000">Communications in Nonlinear Science and Numerical Simulation</font>, 111 (2022) 106433.(SCI, Impact Factor: 4.260)[(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper8.pdf)
+31. Jing Ji#, Suping Fang*, **Qing Xia**, Zhengyuan Shi, An efficient method for scanned images by using color-correction and L0 gradient minimization, <font color="#660000">Optik</font>, 2477 (2021) 167820. (SCI, Impact Factor 2.187) [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper5.pdf)
+32. Jing Ji#, Suping Fang*, Zhengyuan Shi, **Qing Xia**, Yibao Li, An efficient nonlinear polynomial color characterization method based on interrelations of color spaces, <font color="#660000">Color Research& Application</font>, 45 (2020) 1023-1039. (SCI, Impact Factor 1.668)  [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper1.pdf)
 
 
 
@@ -50,16 +51,16 @@ Revision submitted
 
 In revision
 ======
-+ Xiaochuan Hu, **Qing Xia**, Yibao Li*, A second-order accurate numerical method with unconditional energy stability for the Lifshitz-Petrich equation on curved surfaces, [Applied Mathematical Letter](https://www.sciencedirect.com/journal/applied-mathematics-letters),(2024).
+
 
 
 Submission
 =====
 1. **Qing Xia**#, Sijing Lai, Junseok Kim, Yibao Li*, On the dynamical behaviors of metallic powder during the bed fusion process within the phase field framework, [Communications in Nonlinear Science and Numerical Simulation](https://www.sciencedirect.com/journal/communications-in-nonlinear-science-and-numerical-simulation), (2023).
-2. **Qing Xia**#, Jingjie Cheng, Yibao Li*, A phase-field model for investigating the coupled dynamics of grain boundary evolution and crystal nucleation in multiphase crystalline systems, [Computer Methods in Applied Mechanics and Engineering](https://www.sciencedirect.com/journal/computer-methods-in-applied-mechanics-and-engineering), (2025).
+2. **Qing Xia**#, Jingjie Cheng, Yibao Li*, A phase-field model for investigating the coupled dynamics of grain boundary evolution and crystal nucleation in multiphase crystalline systems, [Journal of Computational Physics](https://www.sciencedirect.com/journal/journal-of-computational-physics), (2025).
 3. Yibao Li, Zhixian Lv, **Qing Xia***, On the unconditionally stable phase field model of ternarhy components system considering mass conservation and liquid-solid phase transition. [SIAM Journal on Scientific Computing](https://www.siam.org/publications/siam-journals/siam-journal-on-scientific-computing/),(2025).
 4. Jingjie Cheng, **Qing Xia**, Junseok Kim, Yibao Li*, Decoupled, efficient and structure-preserving numerical scheme for the non-isothermal phase field sintering model, [Computers and Mathematics with Applications](https://www.editorialmanager.com/camwa/Default.aspx), (2024).
-5. Qian Yu, **Qing Xia**, Yibao Li, Chao Yang, Unconditionally Energy-Stable Phase Field Simulation for Multimaterial Topology Optimization with Various Graded Interfaces, [Journal of Computational Physics](https://www.sciencedirect.com/journal/journal-of-computational-physics), (2024).
+5. Qian Yu, **Qing Xia**, Yibao Li, Chao Yang, Unconditionally Energy-Stable Phase Field Simulation for Multimaterial Topology Optimization with Various Graded Interfaces, [International Journal for Numerical Methods in Engineering](https://onlinelibrary.wiley.com/journal/10970207?gad_source=1&gclid=Cj0KCQiAvbm7BhC5ARIsAFjwNHsK_vrjfjFSgE6K230l2MKMeise6bUG6zHFYqbaSX4aM7xWZ5xgjH8aAo6yEALw_wcB&utm_campaign=R3MR425&utm_content=PhysSciEngineering&utm_medium=paidsearch&utm_source=google), (2024).
 
 
 In Preparation
@@ -68,7 +69,7 @@ In Preparation
 2. Numerical investigation of electrohydrodynamic printing(Yibao Li(Fir), Sijing Lai(Sec), Qing Xia(Corr)).
 3. Numerical investigation of thermal stress in laser melting additive manufacturing process(Sijing Lai(Fir), Qing Xia(Sec), Yibao Li(Corr)).
 4. Simulation of laser powder printing based on smooth particle hydrodynamic and phase field model.
-5. Grain boundary defect prediction based on graph neural networks.
+5. Grain boundary defect prediction based on graph neural networks.(With Zhixian Lv(Fir), Qing Xia(Sec), Yibao Li(Corr)).
 6. Bionic heat dissipation design based on biological transmission network(With Zhixian Lv(Fir), Qing Xia(Sec), Yibao Li(Corr)).
 
 
@@ -85,7 +86,7 @@ In Preparation
 
 二审专利
 ======
-无
++ 李义宝，朱军霞，**夏青**，一种针对多材料切片的快速三维重构技术。
 
 在修改专利
 ======
@@ -96,9 +97,8 @@ In Preparation
 1. 李义宝，刘玥含，**夏青**，马峻，王世刚，一种面向3D打印的多尺度多材料的自适应设计方法。
 2. 李义宝，孙港明，**夏青**，史政源，马峻，王世刚，一种三维牙模的牙齿-牙龈分割线快速提取算法。
 3. 李义宝，蒋小玉，**夏青**，一种面向熔融沉积工艺的多尺度加工仿真方法。
-4. 李义宝，朱军霞，**夏青**，一种针对多材料切片的快速三维重构技术。
-5. 李义宝，张媛媛，**夏青**，一种用于通道形状设计基于三周期最小曲面结构（TPMS）的拓扑优化方法。
-6. 李义宝，赖思静，**夏青**，沈安伟，一种三维模型复杂联通区域的处理方法、系统、介质、芯片及设备。
+4. 李义宝，张媛媛，**夏青**，一种用于通道形状设计基于三周期最小曲面结构（TPMS）的拓扑优化方法。
+5. 李义宝，赖思静，**夏青**，沈安伟，一种三维模型复杂联通区域的处理方法、系统、介质、芯片及设备。
 
 
 
