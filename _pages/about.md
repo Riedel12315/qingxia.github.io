@@ -12,10 +12,12 @@ redirect_from:
 
 Research(研究)
 ======
-My research interests mainly lie in **Shape topology optimization in 3D printing** and **multi-scale multi-physics coupled computation**.  My research interests also include computer vision on the digital twin, entropy analysis and numerical analysis. My main work is to project the physical models from real space to digital space for equivalent experiments, which can eliminate the environment and material cost constraints of real physical experiment. Since 2019, I have published **31 SCI** papers on the international academic journals such as *Comput. Methods Appl. Mech. Eng.,  J. Comput. Phys., Comput. Phys., Commun., Phys. Fluids, Pattern Recognit.*, **22** of them are included in **JCR Q1** journals.
+My research interests mainly lie in **Shape topology optimization in 3D printing** and **multi-scale multi-physics coupled computation**.  My research interests also include computer vision on the digital twin, entropy analysis and numerical analysis. My main work is to project the physical models from real space to digital space for equivalent experiments, which can eliminate the environment and material cost constraints of real physical experiment. Since 2019, I have published **32 SCI** papers on the international academic journals such as *Comput. Methods Appl. Mech. Eng.,  J. Comput. Phys., Comput. Phys., Commun., Phys. Fluids, Pattern Recognit.*, **23** of them are included in **JCR Q1** journals.
 
 News（新闻）
 ======
++ Dec 18, 2024. Our paper 'A second-order accurate numerical method with unconditional energy stability for the Lifshitz-Petrich equation on curved surfaces' authored by Xiaochuan Hu, **Qing Xia**, Binhu Xia, and Yibao Li has been accepted for publication in Applied Mathematical Letter.
++ Dec 03, 2024. **Qing Xia** received the doctoral project support from the National Natural Science Foundation of China. 
 + Sep 11, 2024. Our paper 'On the adaption of biological transport networks affected by complex domains' authored by Yibao Li, Zhixian Lv, **Qing Xia**, has been accepted for publication in Physics of Fluids.
 + Sep 10, 2024. Our paper 'On the integrated 3D printing research for design, optimization and simulation within phase field framework' was selected as a Featured paper.[我们的文章“基于相场模型的3D打印设计-优化-仿真一体化研究”被评选为期刊精选文章](https://mp.weixin.qq.com/s?__biz=MzA4NDU5ODU0Mg==&mid=2247483927&idx=1&sn=e502c85b429687bf8264966b31b6a19d&chksm=9e769febdeb203ff7c84e546a4468ae1bed46f2b4c8a33aa52d60a41243c60da5db5ce7598fe&mpshare=1&scene=2&srcid=0910XouPkEjqKPVlbu1P0ato&sharer_shareinfo=48120b2f0b3827b37f42df607072ecfa&sharer_shareinfo_first=8c8d071437fcbfb931e1d9b84292f545#rd)
 + Sep 7, 2024. **Qing Xia**  was invited to attend the 2024 graduate admission ceremony of Xi'an Jiaotong University.[夏青参加2024级研究生新生典礼并发表演讲](https://news.xjtu.edu.cn/info/1219/213804.htm)
@@ -66,6 +68,7 @@ Magnum Opus（代表作）
 Projects & Awards（项目和获奖）
 ======
 + [Outstanding achievements of scientific and technological research of Shaanxi Province](https://riedel12315.github.io/qingxia.github.io/files/jiaoyutingjiang.pdf)(2024年度**陕西高等学校科学技术研究优秀成果一等奖（第三完成人）**)
++ Basic Research Project for Young Students of National Natural Science Foundation of China (Doctoral candidate)(国家自然科学基金青年学生基础研究项目（博士研究生）)
 + [Academic Star Award of Xi’an Jiaotong University(2023)](https://riedel12315.github.io/qingxia.github.io/files/xueshuzhixing.pdf).(2023年度**西安交通大学学术之星**，全校10人)
 + [National Scholarship for Doctoral students(2023)](https://riedel12315.github.io/qingxia.github.io/files/2023guojiang.pdf).(2023年度**国家奖学金**)
 + The scholarship under the State Scholarship Fund by China Scholarship Council.(国家建设高水平大学公派研究生项目)
