@@ -38,14 +38,14 @@ Publications
 28. Yibao Li#, Lujing Zhang, **Qing Xia**, Qian Yu, Junseok Kim, An unconditionally energy-stable second-order time-accurate numerical scheme for the coupled Cahn-Hilliard system in copolymer/homopolymer mixtures, <font color="#660000">Comoutational Materials Science</font>,  200 (2021) 110809.  (SCI, Impact Factor 2.863)[(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper6.pdf)
 29.  Sijing Lai#, Bing Jiang, **Qing Xia**, Binhu Xia, Junseok Kim, Yibao Li*, On the phase field algorithm for distinguishing connected regions in digital model.  Engineering Analysiswith Boundary Elements.
 30. Yibao Li#, Kunyang Wang, Qian Yu, **Qing Xia**, Junseok Kim, Unconditionally energy stable schemes for fluid-based topology optimization, <font color="#660000">Communications in Nonlinear Science and Numerical Simulation</font>, 111 (2022) 106433.(SCI, Impact Factor: 4.260)[(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper8.pdf)
-31. Jing Ji#, Suping Fang*, **Qing Xia**, Zhengyuan Shi, An efficient method for scanned images by using color-correction and L0 gradient minimization, <font color="#660000">Optik</font>, 2477 (2021) 167820. (SCI, Impact Factor 2.187) [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper5.pdf)
-32. Jing Ji#, Suping Fang*, Zhengyuan Shi, **Qing Xia**, Yibao Li, An efficient nonlinear polynomial color characterization method based on interrelations of color spaces, <font color="#660000">Color Research& Application</font>, 45 (2020) 1023-1039. (SCI, Impact Factor 1.668)  [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper1.pdf)
+31. Zhixian Lv#, Xin Song, Jiachen Feng, **Qing Xia**, Yibao Li*, Enhanced Reduced-Order Modeling with VAE and LSTM for Predicting the Cahn-Hilliard Equation,[Engineering Analysis with Boundary Elements](https://www.sciencedirect.com/journal/engineering-analysis-with-boundary-elements),  (2024).
+32. Jing Ji#, Suping Fang*, **Qing Xia**, Zhengyuan Shi, An efficient method for scanned images by using color-correction and L0 gradient minimization, <font color="#660000">Optik</font>, 2477 (2021) 167820. (SCI, Impact Factor 2.187) [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper5.pdf)
+33. Jing Ji#, Suping Fang*, Zhengyuan Shi, **Qing Xia**, Yibao Li, An efficient nonlinear polynomial color characterization method based on interrelations of color spaces, <font color="#660000">Color Research& Application</font>, 45 (2020) 1023-1039. (SCI, Impact Factor 1.668)  [(PDF)](https://riedel12315.github.io/qingxia.github.io/files/paper1.pdf)
 
 
 
 Revision submitted
 ======
-+ Zhixian Lv#, Xin Song, Jiachen Feng, **Qing Xia**, Yibao Li*, Enhanced Reduced-Order Modeling with VAE and LSTM for Predicting the Cahn-Hilliard Equation,[Engineering Analysis with Boundary Elements](https://www.sciencedirect.com/journal/engineering-analysis-with-boundary-elements),  (2024).
 + Binghu Xia, Sijing Lai, **Qing Xia**, Xiang Liu, Junseok Kim, Yibao Li*, Phase-field modeling of fiber-based thermal diffusion and phase transitions in FDM processes.
 
 
@@ -58,7 +58,7 @@ Submission
 =====
 1. **Qing Xia**#, Sijing Lai, Junseok Kim, Yibao Li*, On the dynamical behaviors of metallic powder during the bed fusion process within the phase field framework, [Communications in Nonlinear Science and Numerical Simulation](https://www.sciencedirect.com/journal/communications-in-nonlinear-science-and-numerical-simulation), (2023).
 2. **Qing Xia**#, Jingjie Cheng, Yibao Li*, A phase-field model for investigating the coupled dynamics of grain boundary evolution and crystal nucleation in multiphase crystalline systems, [Journal of Computational Physics](https://www.sciencedirect.com/journal/journal-of-computational-physics), (2025).
-3. Yibao Li, Zhixian Lv, **Qing Xia***, On the unconditionally stable phase field model of ternarhy components system considering mass conservation and liquid-solid phase transition. [SIAM Journal on Scientific Computing](https://www.siam.org/publications/siam-journals/siam-journal-on-scientific-computing/),(2025).
+3. Yibao Li, Zhixian Lv, **Qing Xia***, On the unconditionally stable phase field model of ternarhy components system considering mass conservation and liquid-solid phase transition. [Journal of Computational Physics](https://www.sciencedirect.com/journal/journal-of-computational-physics),(2025).
 4. Jingjie Cheng, **Qing Xia**, Junseok Kim, Yibao Li*, Decoupled, efficient and structure-preserving numerical scheme for the non-isothermal phase field sintering model, [Computers and Mathematics with Applications](https://www.editorialmanager.com/camwa/Default.aspx), (2024).
 5. Qian Yu, **Qing Xia**, Yibao Li, Chao Yang, Unconditionally Energy-Stable Phase Field Simulation for Multimaterial Topology Optimization with Various Graded Interfaces, [International Journal for Numerical Methods in Engineering](https://onlinelibrary.wiley.com/journal/10970207?gad_source=1&gclid=Cj0KCQiAvbm7BhC5ARIsAFjwNHsK_vrjfjFSgE6K230l2MKMeise6bUG6zHFYqbaSX4aM7xWZ5xgjH8aAo6yEALw_wcB&utm_campaign=R3MR425&utm_content=PhysSciEngineering&utm_medium=paidsearch&utm_source=google), (2024).
 
