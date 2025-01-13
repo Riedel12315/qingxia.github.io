@@ -51,16 +51,15 @@ Revision submitted
 
 In revision
 ======
-
+1. **Qing Xia**#, Sijing Lai, Junseok Kim, Yibao Li*, On the dynamical behaviors of metallic powder during the bed fusion process within the phase field framework, [Communications in Nonlinear Science and Numerical Simulation](https://www.sciencedirect.com/journal/communications-in-nonlinear-science-and-numerical-simulation), (2023).
 
 
 Submission
 =====
-1. **Qing Xia**#, Sijing Lai, Junseok Kim, Yibao Li*, On the dynamical behaviors of metallic powder during the bed fusion process within the phase field framework, [Communications in Nonlinear Science and Numerical Simulation](https://www.sciencedirect.com/journal/communications-in-nonlinear-science-and-numerical-simulation), (2023).
-2. **Qing Xia**#, Jingjie Cheng, Yibao Li*, A phase-field model for investigating the coupled dynamics of grain boundary evolution and crystal nucleation in multiphase crystalline systems, [Journal of Computational Physics](https://www.sciencedirect.com/journal/journal-of-computational-physics), (2025).
-3. Yibao Li, Zhixian Lv, **Qing Xia***, On the unconditionally stable phase field model of ternarhy components system considering mass conservation and liquid-solid phase transition. [Journal of Computational Physics](https://www.sciencedirect.com/journal/journal-of-computational-physics),(2025).
-4. Jingjie Cheng, **Qing Xia**, Junseok Kim, Yibao Li*, Decoupled, efficient and structure-preserving numerical scheme for the non-isothermal phase field sintering model, [Computers and Mathematics with Applications](https://www.editorialmanager.com/camwa/Default.aspx), (2024).
-5. Qian Yu, **Qing Xia**, Yibao Li, Chao Yang, Unconditionally Energy-Stable Phase Field Simulation for Multimaterial Topology Optimization with Various Graded Interfaces, [International Journal for Numerical Methods in Engineering](https://onlinelibrary.wiley.com/journal/10970207?gad_source=1&gclid=Cj0KCQiAvbm7BhC5ARIsAFjwNHsK_vrjfjFSgE6K230l2MKMeise6bUG6zHFYqbaSX4aM7xWZ5xgjH8aAo6yEALw_wcB&utm_campaign=R3MR425&utm_content=PhysSciEngineering&utm_medium=paidsearch&utm_source=google), (2024).
++ **Qing Xia**#, Jingjie Cheng, Yibao Li*, A phase-field model for investigating the coupled dynamics of grain boundary evolution and crystal nucleation in multiphase crystalline systems, [Journal of Computational Physics](https://www.sciencedirect.com/journal/journal-of-computational-physics), (2025).
++ Yibao Li, Zhixian Lv, **Qing Xia***, On the unconditionally stable phase field model of ternarhy components system considering mass conservation and liquid-solid phase transition. [Journal of Computational Physics](https://www.sciencedirect.com/journal/journal-of-computational-physics),(2025).
++ Jingjie Cheng, **Qing Xia**, Junseok Kim, Yibao Li*, Decoupled, efficient and structure-preserving numerical scheme for the non-isothermal phase field sintering model, [Computers and Mathematics with Applications](https://www.editorialmanager.com/camwa/Default.aspx), (2024).
++ Qian Yu, **Qing Xia**, Yibao Li, Chao Yang, Unconditionally Energy-Stable Phase Field Simulation for Multimaterial Topology Optimization with Various Graded Interfaces, [International Journal for Numerical Methods in Engineering](https://onlinelibrary.wiley.com/journal/10970207?gad_source=1&gclid=Cj0KCQiAvbm7BhC5ARIsAFjwNHsK_vrjfjFSgE6K230l2MKMeise6bUG6zHFYqbaSX4aM7xWZ5xgjH8aAo6yEALw_wcB&utm_campaign=R3MR425&utm_content=PhysSciEngineering&utm_medium=paidsearch&utm_source=google), (2024).
 
 
 In Preparation
