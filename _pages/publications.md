@@ -46,7 +46,7 @@ Publications
 
 Revision submitted
 ======
-+ Binghu Xia, Sijing Lai, **Qing Xia**, Xiang Liu, Junseok Kim, Yibao Li*, Phase-field modeling of fiber-based thermal diffusion and phase transitions in FDM processes.
+None
 
 
 In revision
@@ -60,6 +60,7 @@ Submission
 + Yibao Li, Zhixian Lv, **Qing Xia***, On the unconditionally stable phase field model of ternarhy components system considering mass conservation and liquid-solid phase transition. [Journal of Computational Physics](https://www.sciencedirect.com/journal/journal-of-computational-physics),(2025).
 + Jingjie Cheng, **Qing Xia**, Junseok Kim, Yibao Li*, Decoupled, efficient and structure-preserving numerical scheme for the non-isothermal phase field sintering model, [Computers and Mathematics with Applications](https://www.editorialmanager.com/camwa/Default.aspx), (2024).
 + Qian Yu, **Qing Xia**, Yibao Li, Chao Yang, Unconditionally Energy-Stable Phase Field Simulation for Multimaterial Topology Optimization with Various Graded Interfaces, [International Journal for Numerical Methods in Engineering](https://onlinelibrary.wiley.com/journal/10970207?gad_source=1&gclid=Cj0KCQiAvbm7BhC5ARIsAFjwNHsK_vrjfjFSgE6K230l2MKMeise6bUG6zHFYqbaSX4aM7xWZ5xgjH8aAo6yEALw_wcB&utm_campaign=R3MR425&utm_content=PhysSciEngineering&utm_medium=paidsearch&utm_source=google), (2024).
++ Binghu Xia, Sijing Lai, **Qing Xia**, Xiang Liu, Junseok Kim, Yibao Li*, Phase-field modeling of fiber-based thermal diffusion and phase transitions in FDM processes.
 
 
 In Preparation
