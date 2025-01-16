@@ -16,8 +16,8 @@ My research interests mainly lie in **Shape topology optimization in 3D printing
 
 News（新闻）
 ======
-+ Jan 11, 2025. Our paper 'Triply periodic minimal surfaces based topology optimization for the hydrodynamic and convective heat transfer' has been chosen as the [Highly Cited paper](https://riedel12315.github.io/qingxia.github.io/files/HighlyCited2.pdf) by Web of Science.
-+ Jan 11, 2025. Our paper 'An unconditional energy stable data assimilation scheme for Navier-Stokes-Cahn-Hilliard equations with local discretized observed data' has been chosen as the [Highly Cited paper](https://riedel12315.github.io/qingxia.github.io/files/HighlyCited2.pdf) by Web of Science.
++ Jan 11, 2025. Our paper 'Triply periodic minimal surfaces based topology optimization for the hydrodynamic and convective heat transfer' has been chosen as the [Highly Cited paper](https://riedel12315.github.io/qingxia.github.io/files/HighlyCited4.pdf) by Web of Science.
++ Jan 11, 2025. Our paper 'An unconditional energy stable data assimilation scheme for Navier-Stokes-Cahn-Hilliard equations with local discretized observed data' has been chosen as the [Highly Cited paper](https://riedel12315.github.io/qingxia.github.io/files/HighlyCited5.pdf) by Web of Science.
 + Jan 09, 2025. Our paper 'Enhanced Reduced-Order Modeling with VAE and LSTM for Predicting the Cahn-Hilliard Equation' authored by Zhixian Lv, Xin Song, Jiachen Feng, **Qing Xia**, Yibao Li* has been accepted for publication in *Engineering Analysis with Boundary Elements*.
 + Dec 18, 2024. Our paper 'A second-order accurate numerical method with unconditional energy stability for the Lifshitz-Petrich equation on curved surfaces' authored by Xiaochuan Hu, **Qing Xia**, Binhu Xia, and Yibao Li has been accepted for publication in *Applied Mathematical Letter*.
 + Dec 03, 2024. **Qing Xia** received the doctoral project support from the National Natural Science Foundation of China.
@@ -73,7 +73,7 @@ Projects & Awards（项目和获奖）
 ======
 + [Outstanding achievements of scientific and technological research of Shaanxi Province](https://riedel12315.github.io/qingxia.github.io/files/jiaoyutingjiang.pdf)(2024年度**陕西高等学校科学技术研究优秀成果一等奖（第三完成人）**)
 + Xu Zongben Applied Mathematics Paper Award(Second Prize)(徐宗本应用数学论文奖（二等奖）)
-+ Basic Research Project for Young Students of National Natural Science Foundation of China (Doctoral candidate)(国家自然科学基金青年学生基础研究项目（博士研究生）)
++ [Basic Research Project for Young Students of National Natural Science Foundation of China (Doctoral candidate)](https://math.xjtu.edu.cn/info/1085/13533.htm)(国家自然科学基金青年学生基础研究项目（博士研究生）)
 + [Academic Star Award of Xi’an Jiaotong University(2023)](https://riedel12315.github.io/qingxia.github.io/files/xueshuzhixing.pdf).(2023年度**西安交通大学学术之星**，全校10人)
 + [National Scholarship for Doctoral students(2023)](https://riedel12315.github.io/qingxia.github.io/files/2023guojiang.pdf).(2023年度**国家奖学金**)
 + The scholarship under the State Scholarship Fund by China Scholarship Council.(国家建设高水平大学公派研究生项目)
