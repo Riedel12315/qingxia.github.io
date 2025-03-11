@@ -53,7 +53,7 @@ None
 In revision
 ======
 + Qian Yu, **Qing Xia**, Yibao Li, Chao Yang, Unconditionally Energy-Stable Phase Field Simulation for Multimaterial Topology Optimization with Various Graded Interfaces, [International Journal for Numerical Methods in Engineering](https://onlinelibrary.wiley.com/journal/10970207?gad_source=1&gclid=Cj0KCQiAvbm7BhC5ARIsAFjwNHsK_vrjfjFSgE6K230l2MKMeise6bUG6zHFYqbaSX4aM7xWZ5xgjH8aAo6yEALw_wcB&utm_campaign=R3MR425&utm_content=PhysSciEngineering&utm_medium=paidsearch&utm_source=google), (2024).
-
++ Binghu Xia, Sijing Lai, **Qing Xia**, Xiang Liu, Junseok Kim, Yibao Li*, Phase-field modeling of fiber-based thermal diffusion and phase transitions in FDM processes, [Communications in Nonlinear Science and Numerical Simulation](https://www.sciencedirect.com/journal/communications-in-nonlinear-science-and-numerical-simulation)
 
 Submission
 =====
@@ -61,8 +61,8 @@ Submission
 + Yibao Li, Zhixian Lv, **Qing Xia***, On the unconditionally stable phase field model of ternarhy components system considering mass conservation and liquid-solid phase transition. [Journal of Computational Physics](https://www.sciencedirect.com/journal/journal-of-computational-physics),(2025).
 + Jingjie Cheng, **Qing Xia**, Junseok Kim, Yibao Li*, Decoupled, efficient and structure-preserving numerical scheme for the non-isothermal phase field sintering model, [Computers and Mathematics with Applications](https://www.editorialmanager.com/camwa/Default.aspx), (2024).
 + Jingjie Cheng, **Qing Xia**, Junseok Kim, Yibao Li*, Non-isothermal hydrodynamic modeling and analysis for the flow  boiling in microchannels based heat exchanger.[Journal of Computational Physics](https://www.sciencedirect.com/journal/journal-of-computational-physics),(2025).
-+ Sijing Lai#, **Qing Xia**, Yibao Li*, Numerical investigation of thermal stress in laser melting additive manufacturing process.
-+ Binghu Xia, Sijing Lai, **Qing Xia**, Xiang Liu, Junseok Kim, Yibao Li*, Phase-field modeling of fiber-based thermal diffusion and phase transitions in FDM processes.
++ Sijing Lai#, **Qing Xia**, Yibao Li*, Numerical investigation of thermal stress in laser melting additive manufacturing process. [Computer Methods in Applied Mechanics and Engineering](https://www.sciencedirect.com/journal/computer-methods-in-applied-mechanics-and-engineering)
+
 
 
 
@@ -80,6 +80,7 @@ In Preparation
 1. 李义宝，**夏青**，刘蕊，一种受损指纹图像的快速修复技术。[专利授权书](https://riedel12315.github.io/qingxia.github.io/files/patent3.pdf)
 2. 李义宝，史政源，**夏青**，卢秉恒，一种隐形牙套的牙齿-牙龈快速分割方法。[专利授权书](https://riedel12315.github.io/qingxia.github.io/files/patent1.pdf)
 3. 李义宝，刘蕊，**夏青**，一种基于多探测器的自动报靶预测算法。[专利授权书](https://riedel12315.github.io/qingxia.github.io/files/patent2.pdf)
+4. 李义宝，朱军霞，**夏青**，一种针对多材料切片的快速三维重构技术。
 
 软件著作权
 =====
@@ -87,7 +88,7 @@ In Preparation
 
 二审专利
 ======
-+ 李义宝，朱军霞，**夏青**，一种针对多材料切片的快速三维重构技术。
+无
 
 在修改专利
 ======
