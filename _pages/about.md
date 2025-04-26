@@ -16,6 +16,8 @@ My research interests mainly lie in **Shape topology optimization in 3D printing
 
 News（新闻）
 ======
++ Apr 22, 2025. Our paper 'Data-driven reduced-order modeling of hydrogen-fueled supersonic combustion' authored by Zhixian Lv, Jiachen Feng, **Qing Xia**, Jiahao Huang, Xing Sun, Junseok Kim, and Yibao Li has been accepted for publication in *Physics of Fluids*.
++ Apr 09, 2025. **Qing Xia** attended the award ceremony of the 10th Xu Zongben Applied Mathematics Paper Award and delivered a presentation.[夏青参加第十届徐宗本应用数学论文奖颁奖仪式典礼并做报告](https://math.xjtu.edu.cn/info/1085/13805.htm)
 + Mar 08, 2025. Our paper 'Phase field modeling of melting and solidification dynamics in metallic powders during the bed fusion process' authored by **Qing Xia**, Sijing Lai, and Yibao Li* has been accepted for publication in *Communications in Nonlinear Science and Numerical Simulation*.
 + Jan 11, 2025. Our paper 'Triply periodic minimal surfaces based topology optimization for the hydrodynamic and convective heat transfer' has been chosen as the [Highly Cited paper](https://riedel12315.github.io/qingxia.github.io/files/HighlyCited4.pdf) by Web of Science.
 + Jan 11, 2025. Our paper 'An unconditional energy stable data assimilation scheme for Navier-Stokes-Cahn-Hilliard equations with local discretized observed data' has been chosen as the [Highly Cited paper](https://riedel12315.github.io/qingxia.github.io/files/HighlyCited5.pdf) by Web of Science.
@@ -74,13 +76,13 @@ Magnum Opus（代表作）
 Projects & Awards（项目和获奖）
 ======
 + [Outstanding achievements of scientific and technological research of Shaanxi Province](https://riedel12315.github.io/qingxia.github.io/files/jiaoyutingjiang.pdf)(2024年度**陕西高等学校科学技术研究优秀成果一等奖（第三完成人）**)
-+ Xu Zongben Applied Mathematics Paper Award(Second Prize)(**徐宗本应用数学论文奖（二等奖）**)
++ [The 10th Xu Zongben Applied Mathematics Paper Award](https://riedel12315.github.io/qingxia.github.io/files/xuzongbenlunwenjiang.pdf)(**第十届徐宗本应用数学论文奖**)
 + [Basic Research Project for Young Students of National Natural Science Foundation of China (Doctoral candidate)](https://math.xjtu.edu.cn/info/1085/13533.htm)(**国家自然科学基金青年学生基础研究项目（博士研究生）**)
 + [National Scholarship for Doctoral students(2023)](https://riedel12315.github.io/qingxia.github.io/files/2023guojiang.pdf).(2024年度**国家奖学金**)
 + [Academic Star Award of Xi’an Jiaotong University(2023)](https://riedel12315.github.io/qingxia.github.io/files/xueshuzhixing.pdf).(2023年度**西安交通大学学术之星**，全校10人)
 + [National Scholarship for Doctoral students(2023)](https://riedel12315.github.io/qingxia.github.io/files/2023guojiang.pdf).(2023年度**国家奖学金**)
 + The scholarship under the State Scholarship Fund by China Scholarship Council.(国家建设高水平大学公派研究生项目)
-+ [The Fundamental Research Funds for the Central Universities](https://riedel12315.github.io/qingxia.github.io/files/jijin1.pdf)(No. XYZ022022005).(中央高校基础科研经费西安交通大学自由探索与创新-学生类项目)
++ [The Fundamental Research Funds for the Central Universities](https://riedel12315.github.io/qingxia.github.io/files/jijin1.pdf)(No. XZY022022005).(中央高校基础科研经费西安交通大学自由探索与创新-学生类项目)
 + [National Scholarship for Doctoral students(2022)](https://riedel12315.github.io/qingxia.github.io/files/2022guojiang.pdf).(2022年度**国家奖学金**)
 + [Outstanding Model for the Doctoral students of Xi'an Jiaotong University](https://riedel12315.github.io/qingxia.github.io/files/biaobing.pdf)(2022).(2022年度**西安交通大学博士研究生标兵**，个人最高奖，全校15人)
 + Outstanding Communist Youth League cadres of Xi’an Jiaotong University(2020).(2020年度西安交通大学优秀共青团干部)
