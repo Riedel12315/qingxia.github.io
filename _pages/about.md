@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-**Qing Xia** received the B.S. degree from the School of mathematics and Statistics, Xi’an Jiaotong University, China in 2019. Now, he is under a Ph.D. candidate advised by Prof. Dr. [Yibao Li](http://gr.xjtu.edu.cn/web/yibaoli) in School of mathematics and Statistics, Xi’an Jiaotong University, China. His research interests include Additive Manufacturing (3D Printing), computational fluid dynamics, and scientific computing.
+**Qing Xia** received his Ph.D. degree in June 2025 from the School of Mathematics and Statistics at Xi’an Jiaotong University, China, under the supervision of Prof. Dr. [Yibao Li](http://gr.xjtu.edu.cn/web/yibaoli). He also received the B.S. degree from the same school at Xi’an Jiaotong University in 2019. His research interests include Additive Manufacturing (3D Printing), computational fluid dynamics, and scientific computing.
 
 Research(研究)
 ======
@@ -16,6 +16,7 @@ My research interests mainly lie in **Shape topology optimization in 3D printing
 
 News（新闻）
 ======
++ May 15, 2025. **Qing Xia** successfully obtained his Ph.D. in Science.
 + May 01, 2025. Our paper 'A Unified Algorithm Framework for Phase-Field Based Multimaterial Topology Optimization with Various Graded Interfaces' authored by Qian Yu, **Qing Xia**, Yibao Li, Chao Yang has been accepted for publication in *International Journal for Numerical Methods in Engineering*.
 + Apr 22, 2025. Our paper 'Data-driven reduced-order modeling of hydrogen-fueled supersonic combustion' authored by Zhixian Lv, Jiachen Feng, **Qing Xia**, Jiahao Huang, Xing Sun, Junseok Kim, and Yibao Li has been accepted for publication in *Physics of Fluids*.
 + Apr 09, 2025. **Qing Xia** attended the award ceremony of the 10th Xu Zongben Applied Mathematics Paper Award and delivered a presentation.[夏青参加第十届徐宗本应用数学论文奖颁奖仪式典礼并做报告](https://math.xjtu.edu.cn/info/1085/13805.htm)
