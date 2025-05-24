@@ -44,7 +44,7 @@ Education（教育背景）
 Mathmatics Genealogy Project（学术传承）
 =====
 <img src="https://s2.loli.net/2025/05/24/2oVkGzn3ibZpMwh.png"
- width="450px" />
+ width="300px" />
 
 
   
