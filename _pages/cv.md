@@ -18,8 +18,8 @@ Curriculum Vitae（简历）
 
 Education（教育背景）
 ======
-### Xi’an Jiaotong University (Sep 2021 - Now)
-+ Ph.D. Candidate in Applied Mathematics
+### Xi’an Jiaotong University (Sep 2021 - Jun 2025)
++ Ph.D. in Applied Mathematics
 + Advisor: Prof. Dr. [Yibao Li](http://gr.xjtu.edu.cn/web/yibaoli)
 + Research Field:   
     - Image Processing and surface computation
@@ -39,7 +39,11 @@ Education（教育背景）
 + Advisor: Prof. Dr. [Yibao Li](http://gr.xjtu.edu.cn/web/yibaoli)
 + Research Field:    
     - Image and Geometry Processing
-    - 3D Printing 
+    - 3D Printing
+ 
+Mathmatics Genealogy Project（学术传承）
+=====
+https://sm.ms/image/2oVkGzn3ibZpMwh
   
 Research interest（研究兴趣）
 =====
