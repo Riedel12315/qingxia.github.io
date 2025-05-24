@@ -43,7 +43,10 @@ Education（教育背景）
  
 Mathmatics Genealogy Project（学术传承）
 =====
-https://sm.ms/image/2oVkGzn3ibZpMwh
+<img src="https://s2.loli.net/2025/05/24/2oVkGzn3ibZpMwh.png"
+ width="450px" />
+
+
   
 Research interest（研究兴趣）
 =====
