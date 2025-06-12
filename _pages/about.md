@@ -25,9 +25,8 @@ News（新闻）
 + Jan 11, 2025. Our paper 'An unconditional energy stable data assimilation scheme for Navier-Stokes-Cahn-Hilliard equations with local discretized observed data' has been chosen as the [Highly Cited paper](https://riedel12315.github.io/qingxia.github.io/files/HighlyCited5.pdf) by Web of Science.
 + Jan 09, 2025. Our paper 'Enhanced Reduced-Order Modeling with VAE and LSTM for Predicting the Cahn-Hilliard Equation' authored by Zhixian Lv, Xin Song, Jiachen Feng, **Qing Xia**, Yibao Li* has been accepted for publication in *Engineering Analysis with Boundary Elements*.
 + Dec 18, 2024. Our paper 'A second-order accurate numerical method with unconditional energy stability for the Lifshitz-Petrich equation on curved surfaces' authored by Xiaochuan Hu, **Qing Xia**, Binhu Xia, and Yibao Li has been accepted for publication in *Applied Mathematical Letter*.
-+ Dec 03, 2024. **Qing Xia** received the doctoral project support from the National Natural Science Foundation of China.
 + Oct 30, 2024. **Qing Xia** won the Xu Zongben Applied Mathematics Paper Award(Second prize).
-+ Sep 11, 2024. Our paper 'On the adaption of biological transport networks affected by complex domains' authored by Yibao Li, Zhixian Lv, **Qing Xia**, has been accepted for publication in *Physics of Fluids*.
++ Sep 11, 2024. Our paper 'On the adaption of biological transport networks affected by complex domains' authored by Yibao Li, Zhixian Lv, **Qing Xia**, has been accepted for publication in *Physics of Fluids*. 
 + Sep 10, 2024. Our paper 'On the integrated 3D printing research for design, optimization and simulation within phase field framework' was selected as a Featured paper.[我们的文章“基于相场模型的3D打印设计-优化-仿真一体化研究”被评选为期刊精选文章](https://mp.weixin.qq.com/s?__biz=MzA4NDU5ODU0Mg==&mid=2247483927&idx=1&sn=e502c85b429687bf8264966b31b6a19d&chksm=9e769febdeb203ff7c84e546a4468ae1bed46f2b4c8a33aa52d60a41243c60da5db5ce7598fe&mpshare=1&scene=2&srcid=0910XouPkEjqKPVlbu1P0ato&sharer_shareinfo=48120b2f0b3827b37f42df607072ecfa&sharer_shareinfo_first=8c8d071437fcbfb931e1d9b84292f545#rd)
 + Sep 7, 2024. **Qing Xia**  was invited to attend the 2024 graduate admission ceremony of Xi'an Jiaotong University.[夏青参加2024级研究生新生典礼并发表演讲](https://news.xjtu.edu.cn/info/1219/213804.htm)
 + Aug 9, 2024. Our paper ' On the phase-field algorithm for distinguishing connected regions in digita mode ' authored by Sijing Lai, Bing Jiang, **Qing Xia**, Binhu Xia, Junseok Kim, Yibao Li has been accepted for publication in *Engineering Analysiswith Boundary Elements*.
@@ -75,15 +74,13 @@ Magnum Opus（代表作）
 + Yibao Li#, **Qing Xia**, Sungha Yoon, Junseok Kim, Simple and efficient fingerprint image restoration method based on a phase-field model, *Pattern Recognition*, 123 (2020) 108405.  (JCR Q1, TOP).
 + Yibao Li#, **Qing Xia**, Seungyoon Kang, Soobin Kwak, Junseok Kim, A simple and practical volume merging algorithm for the porous scaffold design with triply periodic structures, *Mathematics and Computers in Simulation*, 481(2024)481-495, (JCR Q2).
 
-Projects & Awards（项目和获奖）
+Awards（获奖）
 ======
 + [Outstanding achievements of scientific and technological research of Shaanxi Province](https://riedel12315.github.io/qingxia.github.io/files/jiaoyutingjiang.pdf)(2024年度**陕西高等学校科学技术研究优秀成果一等奖（第三完成人）**)
 + [The 10th Xu Zongben Applied Mathematics Paper Award](https://riedel12315.github.io/qingxia.github.io/files/xuzongbenlunwenjiang.pdf)(**第十届徐宗本应用数学论文奖**)
-+ [Basic Research Project for Young Students of National Natural Science Foundation of China (Doctoral candidate)](https://math.xjtu.edu.cn/info/1085/13533.htm)(**国家自然科学基金青年学生基础研究项目（博士研究生）**)
 + [National Scholarship for Doctoral students(2023)](https://riedel12315.github.io/qingxia.github.io/files/2023guojiang.pdf).(2024年度**国家奖学金**)
 + [Academic Star Award of Xi’an Jiaotong University(2023)](https://riedel12315.github.io/qingxia.github.io/files/xueshuzhixing.pdf).(2023年度**西安交通大学学术之星**，全校10人)
 + [National Scholarship for Doctoral students(2023)](https://riedel12315.github.io/qingxia.github.io/files/2023guojiang.pdf).(2023年度**国家奖学金**)
-+ The scholarship under the State Scholarship Fund by China Scholarship Council.(国家建设高水平大学公派研究生项目)
 + [The Fundamental Research Funds for the Central Universities](https://riedel12315.github.io/qingxia.github.io/files/jijin1.pdf)(No. XZY022022005).(中央高校基础科研经费西安交通大学自由探索与创新-学生类项目)
 + [National Scholarship for Doctoral students(2022)](https://riedel12315.github.io/qingxia.github.io/files/2022guojiang.pdf).(2022年度**国家奖学金**)
 + [Outstanding Model for the Doctoral students of Xi'an Jiaotong University](https://riedel12315.github.io/qingxia.github.io/files/biaobing.pdf)(2022).(2022年度**西安交通大学博士研究生标兵**，个人最高奖，全校15人)
