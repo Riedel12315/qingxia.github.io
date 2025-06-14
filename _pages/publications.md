@@ -36,33 +36,32 @@ Publications
 26. Xiaochuan Hu, **Qing Xia**, Yibao Li*, A second-order accurate numerical method with unconditional energy stability for the Lifshitz-Petrich equation on curved surfaces, <font color="#660000">Applied Mathematical Letter</font>, 163 (2025) 109439. 
 27. Wenxuan Xie#, Jiachen Feng, **Qing Xia**, Junseok Kim, Yibao Li*, Design of the shell-infill structures using a phase field-based topology optimization method, <font color="#660000">Computer Methods in Applied Mechanics and Engineering</font>,  429 (2024) 117138.
 28. Zhixian Lv#, Jiachen Feng, **Qing Xia**, Jiahao Huang, Xing Sun, Junseok Kim, Yibao Li*, Data-driven reduced-order modeling of hydrogen-fueled supersonic combustion, <font color="#660000">Physics of Fluids</font>.
-29. Yibao Li#, Kang Qin, **Qing Xia**, Junseok Kim*, A second-order unconditionally stable method for the anisotropic dendritic crystal growth model with an orientation-field, <font color="#660000">Applied Numerical Mathematics</font>, 184 (2022) 512-526. (SCI, Impact Factor: 2.443, [Highly Cited paper](https://riedel12315.github.io/qingxia.github.io/files/HighlyCited3.pdf)).
-30. Yibao Li#, Rui Liu, **Qing Xia**, Chenxi He, Zhong Li*, First- and second-order unconditionally stable direct discretization methods for multi-component Cahn-Hilliard system on surfaces, <font color="#660000">Journal of Computational and Applied Mathematics</font>, 401 (2022) 113778.  (SCI, Impact Factor 2.037).
-31. Yibao Li#, Lujing Zhang, **Qing Xia**, Qian Yu, Junseok Kim, An unconditionally energy-stable second-order time-accurate numerical scheme for the coupled Cahn-Hilliard system in copolymer/homopolymer mixtures, <font color="#660000">Comoutational Materials Science</font>,  200 (2021) 110809.  (SCI, Impact Factor 2.863)
-32.  Sijing Lai#, Bing Jiang, **Qing Xia**, Binhu Xia, Junseok Kim, Yibao Li*, On the phase field algorithm for distinguishing connected regions in digital model, <font color="#660000">Engineering Analysis with Boundary Elements</font>, 168 (2024) 105918.
-33. Yibao Li#, Kunyang Wang, Qian Yu, **Qing Xia**, Junseok Kim, Unconditionally energy stable schemes for fluid-based topology optimization, <font color="#660000">Communications in Nonlinear Science and Numerical Simulation</font>, 111 (2022) 106433.(SCI, Impact Factor: 4.260).
-34. Zhixian Lv#, Xin Song, Jiachen Feng, **Qing Xia**, Yibao Li*, Enhanced Reduced-Order Modeling with VAE and LSTM for Predicting the Cahn-Hilliard Equation, <font color="#660000">Engineering Analysis with Boundary Elements</font>, 172 (2024) 106118. 
-35. Jing Ji#, Suping Fang*, **Qing Xia**, Zhengyuan Shi, An efficient method for scanned images by using color-correction and L0 gradient minimization, <font color="#660000">Optik</font>, 2477 (2021) 167820. (SCI, Impact Factor 2.187).
-36. Jing Ji#, Suping Fang*, Zhengyuan Shi, **Qing Xia**, Yibao Li, An efficient nonlinear polynomial color characterization method based on interrelations of color spaces, <font color="#660000">Color Research& Application</font>, 45 (2020) 1023-1039. (SCI, Impact Factor 1.668).
+29. Binghu Xia#, Sijing Lai, **Qing Xia**, Xiang Liu, Junseok Kim*, Yibao Li, Phase-field modeling of fiber-based thermal diffusion and phase transitions in FDM processes, Communications in Nonlinear Science and Numerical Simulation.
+30. Yibao Li#, Kang Qin, **Qing Xia**, Junseok Kim*, A second-order unconditionally stable method for the anisotropic dendritic crystal growth model with an orientation-field, <font color="#660000">Applied Numerical Mathematics</font>, 184 (2022) 512-526. (SCI, Impact Factor: 2.443, [Highly Cited paper](https://riedel12315.github.io/qingxia.github.io/files/HighlyCited3.pdf)).
+31. Yibao Li#, Rui Liu, **Qing Xia**, Chenxi He, Zhong Li*, First- and second-order unconditionally stable direct discretization methods for multi-component Cahn-Hilliard system on surfaces, <font color="#660000">Journal of Computational and Applied Mathematics</font>, 401 (2022) 113778.  (SCI, Impact Factor 2.037).
+32. Yibao Li#, Lujing Zhang, **Qing Xia**, Qian Yu, Junseok Kim, An unconditionally energy-stable second-order time-accurate numerical scheme for the coupled Cahn-Hilliard system in copolymer/homopolymer mixtures, <font color="#660000">Comoutational Materials Science</font>,  200 (2021) 110809.  (SCI, Impact Factor 2.863)
+33.  Sijing Lai#, Bing Jiang, **Qing Xia**, Binhu Xia, Junseok Kim, Yibao Li*, On the phase field algorithm for distinguishing connected regions in digital model, <font color="#660000">Engineering Analysis with Boundary Elements</font>, 168 (2024) 105918.
+34. Yibao Li#, Kunyang Wang, Qian Yu, **Qing Xia**, Junseok Kim, Unconditionally energy stable schemes for fluid-based topology optimization, <font color="#660000">Communications in Nonlinear Science and Numerical Simulation</font>, 111 (2022) 106433.(SCI, Impact Factor: 4.260).
+35. Zhixian Lv#, Xin Song, Jiachen Feng, **Qing Xia**, Yibao Li*, Enhanced Reduced-Order Modeling with VAE and LSTM for Predicting the Cahn-Hilliard Equation, <font color="#660000">Engineering Analysis with Boundary Elements</font>, 172 (2024) 106118. 
+36. Jing Ji#, Suping Fang*, **Qing Xia**, Zhengyuan Shi, An efficient method for scanned images by using color-correction and L0 gradient minimization, <font color="#660000">Optik</font>, 2477 (2021) 167820. (SCI, Impact Factor 2.187).
+37. Jing Ji#, Suping Fang*, Zhengyuan Shi, **Qing Xia**, Yibao Li, An efficient nonlinear polynomial color characterization method based on interrelations of color spaces, <font color="#660000">Color Research& Application</font>, 45 (2020) 1023-1039. (SCI, Impact Factor 1.668).
 
 
 
 Revision submitted
 ======
-None
++ Yibao Li#, Zhixian Lv, **Qing Xia***, On the unconditionally stable phase field model of ternarhy components system considering mass conservation and liquid-solid phase transition. [Journal of Computational Physics](https://www.sciencedirect.com/journal/journal-of-computational-physics),(2025).
 
 
 In revision
 ======
-+ Yibao Li#, Zhixian Lv, **Qing Xia***, On the unconditionally stable phase field model of ternarhy components system considering mass conservation and liquid-solid phase transition. [Journal of Computational Physics](https://www.sciencedirect.com/journal/journal-of-computational-physics),(2025).
-+ Binghu Xia#, Sijing Lai, **Qing Xia**, Xiang Liu, Junseok Kim*, Yibao Li, Phase-field modeling of fiber-based thermal diffusion and phase transitions in FDM processes, [Communications in Nonlinear Science and Numerical Simulation](https://www.sciencedirect.com/journal/communications-in-nonlinear-science-and-numerical-simulation)
++ Jingjie Cheng#, **Qing Xia**, Junseok Kim, Yibao Li*, Non-isothermal hydrodynamic modeling and analysis for the flow  boiling in microchannels based heat exchanger.[Communications in Nonlinear Science and Numerical Simulation](https://www.sciencedirect.com/journal/communications-in-nonlinear-science-and-numerical-simulation),(2025).
 
 
 Submission
 =====
 + **Qing Xia**#, Jingjie Cheng, Yibao Li*, A phase-field model for investigating the coupled dynamics of grain boundary evolution and crystal nucleation in multiphase crystalline systems, [International Journal of Mechanical Sciences](https://www.sciencedirect.com/journal/international-journal-of-mechanical-sciences), (2025).
 + Jingjie Cheng#, **Qing Xia**, Junseok Kim, Yibao Li*, Decoupled, efficient and structure-preserving numerical scheme for the non-isothermal phase field sintering model, [Computers and Mathematics with Applications](https://www.editorialmanager.com/camwa/Default.aspx), (2024).
-+ Jingjie Cheng#, **Qing Xia**, Junseok Kim, Yibao Li*, Non-isothermal hydrodynamic modeling and analysis for the flow  boiling in microchannels based heat exchanger.[Communications in Nonlinear Science and Numerical Simulation](https://www.sciencedirect.com/journal/communications-in-nonlinear-science-and-numerical-simulation),(2025).
 + Sijing Lai#, **Qing Xia**, Yibao Li*, Numerical investigation of thermo-mechanical-phase interaction in laser melting additive manufacturing process incorporating phase-field framework. [Engineering with Computers](https://link.springer.com/journal/366)
 + Zhixian Lv#; Yuhong  Li; **Qing Xia**; Junseok Kim; Yibao Li*, A novel U-shaped spatial-channel attention neural operator for simulating the coupled Navier Stokes, Cahn Hilliard, heat transfer system. [Journal of Fluid Mechanics](https://www.cambridge.org/core/journals/journal-of-fluid-mechanics)
 + Jiachen Feng#, Jiachen Fenga, Wenxuan Xie, Zhixian Lv, **Qing Xia**, Junseok Kim, Yibao Lia∗, Microstructural evolution prediction in the phase field crystal model with VAE-LSTM and ensemble kalman filtering. [Journal of Computational Physics](https://www.sciencedirect.com/journal/journal-of-computational-physics),(2025).
