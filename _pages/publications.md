@@ -55,12 +55,12 @@ Publications
 
 Revision submitted
 ======
-+ 
++ Jiachen Feng#, Jiachen Fenga, Wenxuan Xie, Zhixian Lv, **Qing Xia**, Junseok Kim, Yibao Lia∗, Microstructural evolution prediction in the phase field crystal model with VAE-LSTM and ensemble kalman filtering. [Journal of Computational Physics](https://www.sciencedirect.com/journal/journal-of-computational-physics),(2025).
 
 
 In revision
 ======
-+ Jiachen Feng#, Jiachen Fenga, Wenxuan Xie, Zhixian Lv, **Qing Xia**, Junseok Kim, Yibao Lia∗, Microstructural evolution prediction in the phase field crystal model with VAE-LSTM and ensemble kalman filtering. [Journal of Computational Physics](https://www.sciencedirect.com/journal/journal-of-computational-physics),(2025).
+None
 
 
 Submission
@@ -101,9 +101,9 @@ In Preparation
 
 已受理专利
 ======
-3. 李义宝，蒋小玉，**夏青**，一种面向熔融沉积工艺的多尺度加工仿真方法。
-4. 李义宝，张媛媛，**夏青**，一种用于通道形状设计基于三周期最小曲面结构（TPMS）的拓扑优化方法。
-5. 李义宝，赖思静，**夏青**，沈安伟，一种三维模型复杂联通区域的处理方法、系统、介质、芯片及设备。
+1. 李义宝，蒋小玉，**夏青**，一种面向熔融沉积工艺的多尺度加工仿真方法。
+2. 李义宝，张媛媛，**夏青**，一种用于通道形状设计基于三周期最小曲面结构（TPMS）的拓扑优化方法。
+3. 李义宝，赖思静，**夏青**，沈安伟，一种三维模型复杂联通区域的处理方法、系统、介质、芯片及设备。
 
 
 
