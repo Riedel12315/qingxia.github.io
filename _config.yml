@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Qing Xia / 夏青"
 title_separator          : "-"
 name                     : &name "Qing Xia"
-description              : &description "Ph.D. Candidate in School of Mathematics and Statistics, Xi'an Jiaotong University"
+description              : &description "Ph.D. in Science"
 url                      : https://riedel12315.github.io/qingxia.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "Riedel12315/qingxia.github.io"
@@ -82,7 +82,7 @@ analytics:
 author:
   name             : "Qing Xia"
   avatar           : "QingXia1.png"
-  bio              : "Ph.D. Candidate in School of Mathematics and Statistics, Xi'an Jiaotong University"
+  bio              : "Ph.D. in Science"
   location         : "Xi'an, China"
   employer         :
   pubmed           : 

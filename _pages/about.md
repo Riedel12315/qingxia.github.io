@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-**Qing Xia** received his Ph.D. degree in June 2025 from the School of Mathematics and Statistics at Xi’an Jiaotong University, China, under the supervision of Prof. Dr. [Yibao Li](http://gr.xjtu.edu.cn/web/yibaoli). He also received the B.S. degree from the same school at Xi’an Jiaotong University in 2019. His research interests include Additive Manufacturing (3D Printing), computational fluid dynamics, and scientific computing.
+**Qing Xia** received his Ph.D. degree in June 2025 from the School of Mathematics and Statistics at Xi’an Jiaotong University (XJTU), where he was supervised by Prof. Dr. [Yibao Li](http://gr.xjtu.edu.cn/web/yibaoli). Prior to that, he obtained his B.S. degree from the same school at XJTU in 2019. Recently, he was selected for the **TopMinds** program and joined Huawei.
 
 Research(研究)
 ======
