@@ -43,8 +43,38 @@ Education（教育背景）
  
 Mathmatics Genealogy Project（学术传承）
 =====
-<img src="https://s2.loli.net/2025/05/24/2oVkGzn3ibZpMwh.png"
- width="300px" />
+```
+                          ┏━━━━━━━━━━━━━━━━━━━━┓
+                          ┃ Academic Genealogy  ┃
+                          ┗━━━━━━━━━━━━━━━━━━━━┛
+
+  Gen 1  │  David Hilbert
+         │  Ph.D. 1885 · Universität Königsberg 🇩🇪
+         │
+  Gen 2  │  Richard Courant
+         │  Ph.D. 1910 · Georg-August-Universität Göttingen 🇩🇪
+         │
+  Gen 3  │  Joseph Bishop Keller
+         │  Ph.D. 1948 · New York University 🇺🇸
+         │
+  Gen 4  │  George C. Papanicolaou  ⇢  📍 Stanford University
+         │  Ph.D. 1969 · New York University 🇺🇸
+         │
+  Gen 5  │  Russel Edward Caflisch  ⇢  📍 University of California, Los Angeles
+         │  Ph.D. 1978 · New York University 🇺🇸
+         │
+  Gen 6  │  John Samuel Lowengrub  ⇢  📍 University of California, Irvine
+         │  Ph.D. 1988 · New York University 🇺🇸
+         │
+  Gen 7  │  Jun-Seok Kim  ⇢  📍 Korea University
+         │  Ph.D. 2002 · University of Minnesota Minneapolis 🇺🇸
+         │
+  Gen 8  │  Yibao Li  ⇢  📍 Xi'an Jiaotong University
+         │  Ph.D. 2013 · Korea University 🇰🇷
+         │
+  Gen 9  │  Qing Xia  ⇢  📍 Huawei Technologies Co., Ltd.
+         │  Ph.D. 2025 · Xi'an Jiaotong University 🇨🇳
+```
 
 
   
