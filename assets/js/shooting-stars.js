@@ -8,9 +8,10 @@
     const config = {
         interval: { min: 2000, max: 6000 },  // 流星出现间隔 (ms)
         duration: { min: 1200, max: 2200 },   // 流星飞行时长 (ms)
-        size: { min: 80, max: 180 },          // 流星拖尾长度 (px)
-        width: { min: 1.5, max: 3 },          // 流星线条粗细 (px)
-        maxPerBurst: 3,                        // 每次最多同时出现几颗
+        size: { min: 140, max: 280 },          // 流星拖尾长度 (px)
+        width: { min: 2, max: 4 },            // 流星线条粗细 (px)
+        maxPerBurst: 5,                        // 每次最多同时出现几颗
+        minPerBurst: 3,                        // 每次最少出现几颗
     };
 
     let container = null;
@@ -43,7 +44,7 @@
     }
 
     function spawnBurst() {
-        const count = 1 + Math.floor(Math.random() * config.maxPerBurst);
+        const count = config.minPerBurst + Math.floor(Math.random() * (config.maxPerBurst - config.minPerBurst + 1));
         for (let i = 0; i < count; i++) {
             setTimeout(() => createShootingStar(), Math.random() * 400);
         }

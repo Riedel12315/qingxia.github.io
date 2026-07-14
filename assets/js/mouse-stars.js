@@ -31,7 +31,7 @@
         
         // 星星配置
         const config = {
-            count: 15,           // 星星数量
+            count: 10,           // 星星数量
             size: { min: 2, max: 6 }, // 星星大小范围（像素）
             color: '#3498db',    // 主色调（蓝色，与你的网站主题匹配）
             colors: [            // 可选颜色数组（随机选择）
@@ -96,7 +96,7 @@
             stars.forEach((star, index) => {
                 // 计算目标位置（围绕鼠标的圆形分布）
                 const angle = (index / stars.length) * Math.PI * 2 + Date.now() * 0.0001;
-                const radius = 25 + Math.sin(Date.now() * 0.001 + index) * 7;
+                const radius = 42 + Math.sin(Date.now() * 0.001 + index) * 10;
                 
                 const targetX = centerX + Math.cos(angle) * radius;
                 const targetY = centerY + Math.sin(angle) * radius;
