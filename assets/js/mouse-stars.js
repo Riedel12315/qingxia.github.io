@@ -96,7 +96,7 @@
             stars.forEach((star, index) => {
                 // 计算目标位置（围绕鼠标的圆形分布）
                 const angle = (index / stars.length) * Math.PI * 2 + Date.now() * 0.0001;
-                const radius = 100 + Math.sin(Date.now() * 0.001 + index) * 30;
+                const radius = 25 + Math.sin(Date.now() * 0.001 + index) * 7;
                 
                 const targetX = centerX + Math.cos(angle) * radius;
                 const targetY = centerY + Math.sin(angle) * radius;
