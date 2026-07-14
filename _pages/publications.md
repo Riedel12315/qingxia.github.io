@@ -49,14 +49,14 @@ Publications
 39.  Sijing Lai#, Bing Jiang, **Qing Xia**, Binhu Xia, Junseok Kim, Yibao Li*, On the phase field algorithm for distinguishing connected regions in digital model, <font color="#660000">Engineering Analysis with Boundary Elements</font>, 168 (2024) 105918.
 40. Yibao Li#, Kunyang Wang, Qian Yu, **Qing Xia**, Junseok Kim, Unconditionally energy stable schemes for fluid-based topology optimization, <font color="#660000">Communications in Nonlinear Science and Numerical Simulation</font>, 111 (2022) 106433.(SCI, Impact Factor: 4.260).
 41. Zhixian Lv#, Xin Song, Jiachen Feng, **Qing Xia**, Yibao Li*, Enhanced Reduced-Order Modeling with VAE and LSTM for Predicting the Cahn-Hilliard Equation, <font color="#660000">Engineering Analysis with Boundary Elements</font>, 172 (2024) 106118. 
-42. Jing Ji#, Suping Fang*, **Qing Xia**, Zhengyuan Shi, An efficient method for scanned images by using color-correction and L0 gradient minimization, <font color="#660000">Optik</font>, 2477 (2021) 167820. (SCI, Impact Factor 2.187).
-43. Jing Ji#, Suping Fang*, Zhengyuan Shi, **Qing Xia**, Yibao Li, An efficient nonlinear polynomial color characterization method based on interrelations of color spaces, <font color="#660000">Color Research& Application</font>, 45 (2020) 1023-1039. (SCI, Impact Factor 1.668).
+42. Jiachen Feng#, Wenxuan Xie, Zhixian Lv, **Qing Xia**, Junseok Kim, Yibao Li*, Microstructural evolution prediction in the phase field crystal model with VAE-LSTM and ensemble Kalman filtering, <font color="#660000">Communications in Nonlinear Science and Numerical Simulation</font>, 163 (2026) 110522.
+43. Jing Ji#, Suping Fang*, **Qing Xia**, Zhengyuan Shi, An efficient method for scanned images by using color-correction and L0 gradient minimization, <font color="#660000">Optik</font>, 2477 (2021) 167820. (SCI, Impact Factor 2.187).
+44. Jing Ji#, Suping Fang*, Zhengyuan Shi, **Qing Xia**, Yibao Li, An efficient nonlinear polynomial color characterization method based on interrelations of color spaces, <font color="#660000">Color Research& Application</font>, 45 (2020) 1023-1039. (SCI, Impact Factor 1.668).
 
 
 
 Revision submitted
 ======
-+ Jiachen Feng#, Wenxuan Xie, Zhixian Lv, **Qing Xia**, Junseok Kim, Yibao Lia∗, Microstructural evolution prediction in the phase field crystal model with VAE-LSTM and ensemble kalman filtering. [Journal of Computational Physics](https://www.sciencedirect.com/journal/journal-of-computational-physics),(2025).
 
 
 In revision
