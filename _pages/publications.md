@@ -57,7 +57,7 @@ Publications
 
 Revision submitted
 ======
-
+None
 
 In revision
 ======

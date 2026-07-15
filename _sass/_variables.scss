@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Variables — Raycast-inspired academic
+   Variables — Raycast-inspired academic (readability pass)
    ========================================================================== */
 
 /*
@@ -22,41 +22,45 @@ $global-font-family         : $sans-serif;
 $header-font-family         : $sans-serif-narrow;
 $caption-font-family        : $sans-serif;
 
-/* type scale — tighter for tool-like feel */
-$type-size-1                : 2.441em;  // ~39px
-$type-size-2                : 1.953em;  // ~31px
-$type-size-3                : 1.563em;  // ~25px
-$type-size-4                : 1.25em;   // ~20px
-$type-size-5                : 1em;      // ~16px
-$type-size-6                : 0.875em;  // ~14px
-$type-size-7                : 0.75em;   // ~12px
-$type-size-8                : 0.625em;  // ~10px
+/* type scale */
+$type-size-1                : 2.441em;
+$type-size-2                : 1.953em;
+$type-size-3                : 1.563em;
+$type-size-4                : 1.25em;
+$type-size-5                : 1em;
+$type-size-6                : 0.875em;
+$type-size-7                : 0.75em;
+$type-size-8                : 0.625em;
 
 
 /*
-   Colors — Raycast dark palette
+   Colors — dark palette tuned for readability
    ========================================================================== */
 
-$gray                       : #8B8D93;
-$dark-gray                  : #EDEDEF;
-$darker-gray                : #FFFFFF;
+// ── Neutrals ──
+$gray                       : #9CA0A8;   // secondary text — lighter for readability
+$dark-gray                  : #E4E4E7;   // primary body text
+$darker-gray                : #FFFFFF;   // headings / emphasis
 $light-gray                 : rgba(255, 255, 255, 0.10);
 $lighter-gray               : rgba(255, 255, 255, 0.04);
 
-// Ground
-$body-color                 : #0F0F11;
-$background-color           : #0F0F11;
+// ── Surfaces ──
+$body-color                 : #0C0C0F;
+$background-color           : #0C0C0F;
 $code-background-color      : rgba(255, 255, 255, 0.05);
 $code-background-color-dark : rgba(255, 255, 255, 0.08);
-$text-color                 : #EDEDEF;
-$border-color               : rgba(255, 255, 255, 0.08);
+$text-color                 : #E4E4E7;
+$border-color               : rgba(255, 255, 255, 0.07);
 
-// Accent
-$primary-color              : #FF6363;
+// ── Accent palette ──
+$primary-color              : #FF6363;   // UI accent only (buttons, glows, decoration)
 $success-color              : #4DF0B5;
 $warning-color              : #F5C842;
 $danger-color               : #FF6363;
 $info-color                 : #C4A6FF;
+
+// ── Code / inline highlight (teal for readability on dark) ──
+$code-accent                : #5EEAD4;
 
 /* brands */
 $behance-color              : #1769FF;
@@ -81,10 +85,10 @@ $youtube-color              : #bb0000;
 $xing-color                 : #006567;
 
 
-/* links */
-$link-color                 : #FF6363;
-$link-color-hover           : #FF8A8A;
-$link-color-visited         : #FF8A8A;
+/* links — brighter for dark backgrounds */
+$link-color                 : #FF8585;
+$link-color-hover           : #FFABAB;
+$link-color-visited         : #E599E5;
 $masthead-link-color        : #B0B3B8;
 $masthead-link-color-hover  : #FFFFFF;
 

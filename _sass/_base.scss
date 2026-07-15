@@ -1,11 +1,11 @@
 /* ==========================================================================
-   BASE ELEMENTS — Aurora glass-morphism dark academic
+   BASE ELEMENTS — tuned for readability on dark ground
    ========================================================================== */
 
 html {
   position: relative;
   min-height: 100%;
-  background-color: #0F0F11;
+  background-color: #0C0C0F;
 }
 
 body {
@@ -16,8 +16,8 @@ body {
   font-family: $global-font-family;
   font-size: 15px;
   font-weight: 400;
-  line-height: 1.7;
-  background-color: #0F0F11;
+  line-height: 1.75;
+  background-color: #0C0C0F;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-wrap: pretty;
@@ -40,7 +40,6 @@ body {
     animation: auroraDrift 28s ease-in-out infinite;
   }
 
-  /* ── Second aurora layer for depth ── */
   &::after {
     content: '';
     position: fixed;
@@ -55,20 +54,16 @@ body {
     animation: auroraDrift 22s ease-in-out infinite reverse;
   }
 
-  &.overflow--hidden {
-    overflow: hidden;
-  }
+  &.overflow--hidden { overflow: hidden; }
 }
 
-/* ── Ensure content sits above aurora ── */
-.masthead,
-#main,
-.page__footer,
-.sidebar {
+/* ── Content sits above aurora ── */
+.masthead, #main, .page__footer, .sidebar {
   position: relative;
   z-index: 1;
 }
 
+/* ── Headings ── */
 h1, h2, h3, h4, h5, h6 {
   margin: 2em 0 0.5em;
   line-height: 1.2;
@@ -83,10 +78,6 @@ h1 {
   font-size: 2em;
   font-weight: 700;
   letter-spacing: -0.03em;
-  background: linear-gradient(135deg, #FFFFFF 0%, #C8CAD0 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 h2 {
@@ -96,8 +87,8 @@ h2 {
   margin-top: 2.5em;
   padding-bottom: 0.6em;
   position: relative;
+  color: #FFFFFF;
 
-  /* Subtle accent underline */
   &::after {
     content: '';
     position: absolute;
@@ -107,19 +98,17 @@ h2 {
     height: 2px;
     background: $primary-color;
     border-radius: 1px;
-    opacity: 0.6;
+    opacity: 0.5;
   }
 }
 
 h3 {
   font-size: 1.1em;
   font-weight: 600;
-  color: #EDEDEF;
+  color: #F0F0F3;
 }
 
-h4 { font-size: $type-size-6; }
-h5 { font-size: $type-size-6; }
-h6 { font-size: $type-size-6; }
+h4, h5, h6 { font-size: $type-size-6; }
 
 small, .small {
   font-size: $type-size-6;
@@ -129,30 +118,46 @@ small, .small {
 p {
   margin-bottom: 1.3em;
   line-height: 1.75;
+  color: $text-color;
 }
 
-u,
-ins {
+/* ── Inline code — teal for readability, not dark red ── */
+p > code,
+a > code,
+li > code,
+figcaption > code,
+td > code {
+  padding: 0.15em 0.5em;
+  font-size: 0.85em;
+  font-family: $monospace;
+  font-weight: 500;
+  background: rgba(94, 234, 212, 0.08);
+  border: 1px solid rgba(94, 234, 212, 0.15);
+  border-radius: 4px;
+  color: $code-accent;
+}
+
+/* ── Links — bright coral, underlined on hover ── */
+a {
+  color: $link-color;
   text-decoration: none;
-  border-bottom: 1px solid $text-color;
-  a { color: inherit; }
+  transition: all 0.2s ease;
+
+  &:focus { @extend %tab-focus; }
+
+  &:hover, &:active {
+    color: $link-color-hover;
+    outline: 0;
+  }
 }
 
-del a { color: inherit; }
-
-p, pre, blockquote, ul, ol, dl, figure, table, fieldset {
-  orphans: 3;
-  widows: 3;
+/* ── Bold / strong — crisp white ── */
+strong, b {
+  color: #F4F4F6;
+  font-weight: 600;
 }
 
-abbr[title],
-abbr[data-original-title] {
-  text-decoration: none;
-  cursor: help;
-  border-bottom: 1px dotted $text-color;
-}
-
-/* ── Blockquotes — elegant pull quote ── */
+/* ── Blockquotes ── */
 blockquote {
   margin: 2em 0;
   padding: 1.25em 1.75em;
@@ -172,24 +177,7 @@ blockquote {
   }
 }
 
-/* ── Links ── */
-a {
-  color: $link-color;
-  text-decoration: none;
-  transition: all 0.2s ease;
-
-  &:focus { @extend %tab-focus; }
-  &:hover, &:active {
-    color: $link-color-hover;
-    outline: 0;
-  }
-}
-
-/* ── Code ── */
-tt, code, kbd, samp, pre {
-  font-family: $monospace;
-}
-
+/* ── Code blocks ── */
 pre {
   overflow-x: auto;
   background: rgba(255, 255, 255, 0.04);
@@ -200,19 +188,8 @@ pre {
   -webkit-backdrop-filter: blur(12px);
 }
 
-p > code,
-a > code,
-li > code,
-figcaption > code,
-td > code {
-  padding: 0.15em 0.5em;
-  font-size: 0.85em;
+tt, code, kbd, samp, pre {
   font-family: $monospace;
-  font-weight: 500;
-  background: rgba(255, 99, 99, 0.10);
-  border: 1px solid rgba(255, 99, 99, 0.15);
-  border-radius: 4px;
-  color: #FF6363;
 }
 
 /* ── Horizontal rule ── */
@@ -225,21 +202,32 @@ hr {
 }
 
 /* ── Lists ── */
-ul li,
-ol li {
+ul li, ol li {
   margin-bottom: 0.6em;
   line-height: 1.65;
+  color: $text-color;
 }
 
-li ul,
-li ol {
-  margin-top: 0.5em;
+li ul, li ol { margin-top: 0.5em; }
+
+u, ins {
+  text-decoration: none;
+  border-bottom: 1px solid $text-color;
+  a { color: inherit; }
 }
 
-/* ── Bold — premium crisp white ── */
-strong, b {
-  color: #F0F0F3;
-  font-weight: 600;
+del a { color: inherit; }
+
+p, pre, blockquote, ul, ol, dl, figure, table, fieldset {
+  orphans: 3;
+  widows: 3;
+}
+
+abbr[title],
+abbr[data-original-title] {
+  text-decoration: none;
+  cursor: help;
+  border-bottom: 1px dotted $text-color;
 }
 
 /*
@@ -253,9 +241,7 @@ figure {
   flex-wrap: wrap;
   margin: 2em 0;
 
-  img, iframe, .fluid-width-video-wrapper {
-    margin-bottom: 1em;
-  }
+  img, iframe, .fluid-width-video-wrapper { margin-bottom: 1em; }
 
   img {
     width: 100%;
@@ -283,14 +269,12 @@ figure {
 figcaption {
   margin-bottom: 0.5em;
   color: $gray;
-  font-family: $caption-font-family;
   font-size: $type-size-6;
 
   a {
     color: inherit;
     text-decoration: none;
     border-bottom: 1px solid $light-gray;
-    transition: $global-transition;
     &:hover {
       color: #fff;
       border-bottom-color: $link-color;

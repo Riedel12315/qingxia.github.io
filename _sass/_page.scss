@@ -88,7 +88,7 @@
     }
   }
 
-  /* ── Links in content ── */
+  /* ── Links in content — coral, underline on hover ── */
   a {
     color: $link-color;
     text-decoration: none;
@@ -97,7 +97,7 @@
 
     &:hover {
       color: $link-color-hover;
-      border-bottom-color: rgba(255, 99, 99, 0.3);
+      border-bottom-color: rgba(255, 133, 133, 0.3);
     }
   }
 
