@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Academic Lineage Tree — compact, elegant cascade
+   Academic Lineage Tree — compact enriched cascade
    ========================================================================== */
 
 .lineage-tree {
@@ -8,12 +8,11 @@
   margin: 1em 0;
 }
 
-/* ── Central spine (stops before current person) ── */
+/* ── Central spine ── */
 .lineage-tree__spine {
   position: absolute;
-  left: 20px;
-  top: 0;
-  bottom: 120px; /* leave room for current-person card below */
+  left: 20px; top: 0;
+  bottom: 130px;
   width: 2px;
   background: linear-gradient(to bottom,
     rgba(255,255,255,0.06) 0%,
@@ -24,33 +23,27 @@
   z-index: 0;
 }
 
-/* ── Spine terminus dot → arrow to current ── */
+/* ── Terminus dot ── */
 .lineage-tree__terminus {
-  position: absolute;
-  left: 16px;
-  z-index: 1;
-  width: 10px; height: 10px;
-  border-radius: 50%;
+  position: absolute; left: 16px; z-index: 1;
+  width: 10px; height: 10px; border-radius: 50%;
   background: #FF6363;
   box-shadow: 0 0 12px rgba(255,99,99,0.5);
 }
 
-/* ── Each ancestor row ── */
+/* ── Ancestor row ── */
 .lineage-node {
-  position: relative;
-  z-index: 2;
+  position: relative; z-index: 2;
   margin: 0 0 0 44px;
-  padding: 0.55em 0.85em;
-  background: rgba(255,255,255,0.025);
-  border: 1px solid rgba(255,255,255,0.05);
+  padding: 0.5em 0.75em;
+  background: rgba(255,255,255,0.022);
+  border: 1px solid rgba(255,255,255,0.04);
   border-radius: 8px;
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   transition: all 0.25s cubic-bezier(0.4,0,0.2,1);
-  display: flex;
-  align-items: baseline;
-  flex-wrap: wrap;
-  gap: 0.35em 0.5em;
+  display: flex; align-items: baseline; flex-wrap: wrap;
+  gap: 0.3em 0.5em;
   cursor: default;
 }
 
@@ -61,17 +54,13 @@
   box-shadow: 0 4px 16px rgba(0,0,0,0.3);
 }
 
-/* ── Connector dot on spine for each ancestor ── */
+/* ── Connector dot ── */
 .lineage-node::before {
-  content: '';
-  position: absolute;
-  left: -32px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.2);
-  border: 1px solid rgba(255,255,255,0.10);
+  content: ''; position: absolute;
+  left: -32px; top: 50%; transform: translateY(-50%);
+  width: 6px; height: 6px; border-radius: 50%;
+  background: rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.08);
   transition: all 0.3s ease;
 }
 
@@ -80,73 +69,78 @@
   box-shadow: 0 0 8px rgba(255,99,99,0.3);
 }
 
-/* ── Connector arm from dot to card ── */
+/* ── Connector arm ── */
 .lineage-node::after {
-  content: '';
-  position: absolute;
-  left: -26px;
-  top: 50%;
-  width: 20px;
-  height: 1px;
-  background: rgba(255,255,255,0.08);
+  content: ''; position: absolute;
+  left: -26px; top: 50%;
+  width: 20px; height: 1px;
+  background: rgba(255,255,255,0.07);
+}
+
+/* ── Flag emoji ── */
+.lineage-node__flag {
+  font-size: 0.85em;
+  line-height: 1;
 }
 
 /* ── Name ── */
 .lineage-node__name {
   font-family: 'Inter Tight','Inter',sans-serif;
-  font-size: 0.88em;
-  font-weight: 600;
-  color: #E8E8EC;
-  letter-spacing: -0.005em;
+  font-size: 0.88em; font-weight: 600;
+  color: #E8E8EC; letter-spacing: -0.005em;
   white-space: nowrap;
 }
 
-/* ── Meta: degree + year ── */
+/* ── Degree + year ── */
 .lineage-node__meta {
   font-family: 'Inter',sans-serif;
-  font-size: 0.73em;
-  color: rgba(255,255,255,0.35);
+  font-size: 0.73em; color: rgba(255,255,255,0.35);
   white-space: nowrap;
 }
 
 /* ── University ── */
 .lineage-node__uni {
   font-family: 'Inter',sans-serif;
-  font-size: 0.73em;
-  color: rgba(255,255,255,0.45);
-  font-style: italic;
-  white-space: nowrap;
+  font-size: 0.73em; color: rgba(255,255,255,0.45);
+  font-style: italic; white-space: nowrap;
 }
 
-/* ── Current affiliation tag ── */
+/* ── Current affiliation ── */
 .lineage-node__current {
   font-family: 'Inter',sans-serif;
-  font-size: 0.68em;
-  color: rgba(255,255,255,0.32);
+  font-size: 0.68em; color: rgba(255,255,255,0.30);
   white-space: nowrap;
 }
+.lineage-node__current::before { content: '→ '; }
 
-.lineage-node__current::before {
-  content: '→ ';
+/* ── Notable contribution ── */
+.lineage-node__note {
+  font-family: 'Inter',sans-serif;
+  font-size: 0.66em; color: rgba(255,255,255,0.20);
+  width: 100%; flex-basis: 100%;
+  margin-top: 0.1em;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  transition: color 0.3s ease;
 }
 
-/* ── Current person (Qing Xia) — standout card below the line ── */
+.lineage-node:hover .lineage-node__note {
+  color: rgba(255,255,255,0.35);
+}
+
+/* ── Current person (Qing Xia) ── */
 .lineage-node--current {
   margin: 1.2em 0 0 12px;
-  padding: 0.9em 1.2em;
+  padding: 0.85em 1.1em;
   background: rgba(255,99,99,0.07);
   border: 1px solid rgba(255,99,99,0.22);
   border-radius: 12px;
   box-shadow: 0 6px 30px rgba(255,99,99,0.08);
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.25em;
+  flex-direction: column; align-items: flex-start;
+  gap: 0.2em;
 }
 
 .lineage-node--current::before,
-.lineage-node--current::after {
-  display: none;
-}
+.lineage-node--current::after { display: none; }
 
 .lineage-node--current:hover {
   background: rgba(255,99,99,0.11);
@@ -155,43 +149,27 @@
   box-shadow: 0 8px 40px rgba(255,99,99,0.14);
 }
 
-.lineage-node--current .lineage-node__name {
-  font-size: 1.1em;
-  color: #FFA8A8;
-}
+.lineage-node--current .lineage-node__flag { font-size: 1.1em; }
+.lineage-node--current .lineage-node__name { font-size: 1.1em; color: #FFA8A8; }
+.lineage-node--current .lineage-node__meta { font-size: 0.78em; color: rgba(255,255,255,0.45); }
+.lineage-node--current .lineage-node__uni { font-size: 0.78em; color: rgba(255,255,255,0.5); }
+.lineage-node--current .lineage-node__current { font-size: 0.73em; color: rgba(255,255,255,0.4); }
+.lineage-node--current .lineage-node__note { font-size: 0.7em; color: rgba(255,255,255,0.3); }
+.lineage-node--current:hover .lineage-node__note { color: rgba(255,255,255,0.45); }
 
-.lineage-node--current .lineage-node__meta {
-  font-size: 0.78em;
-  color: rgba(255,255,255,0.45);
-}
-
-.lineage-node--current .lineage-node__uni {
-  font-size: 0.78em;
-  color: rgba(255,255,255,0.5);
-}
-
-.lineage-node--current .lineage-node__current {
-  font-size: 0.73em;
-  color: rgba(255,255,255,0.4);
-}
-
-/* ── Vertical spacing between ancestors ── */
-.lineage-node + .lineage-node {
-  margin-top: 3px;
-}
-
-.lineage-node--current {
-  margin-top: 16px;
-}
+/* ── Spacing ── */
+.lineage-node + .lineage-node { margin-top: 2px; }
+.lineage-node--current { margin-top: 16px; }
 
 /* ── Responsive ── */
 @media (max-width: 600px) {
-  .lineage-tree__spine { left: 12px; bottom: 100px; }
+  .lineage-tree__spine { left: 12px; bottom: 110px; }
   .lineage-tree__terminus { left: 8px; }
-  .lineage-node { margin-left: 32px; padding: 0.45em 0.65em; }
+  .lineage-node { margin-left: 32px; padding: 0.4em 0.6em; }
   .lineage-node::before { left: -24px; }
   .lineage-node::after { left: -18px; width: 12px; }
   .lineage-node__name { font-size: 0.8em; }
   .lineage-node__meta, .lineage-node__uni { font-size: 0.68em; }
+  .lineage-node__note { font-size: 0.62em; }
   .lineage-node--current { margin-left: 4px; }
 }

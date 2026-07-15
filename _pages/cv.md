@@ -44,25 +44,25 @@ Education（教育背景）
 Mathmatics Genealogy Project（学术传承）
 =====
 
-<link rel="stylesheet" href="{{ base_path }}/assets/css/lineage-tree.css?v=2">
+<link rel="stylesheet" href="{{ base_path }}/assets/css/lineage-tree.css?v=3">
 
 <div id="lineage-tree" class="lineage-tree-loading" style="text-align:center;padding:3em 0;color:rgba(255,255,255,0.2);font-family:Inter,sans-serif;font-size:0.85em;">Loading academic lineage...
 <script type="application/json">
 [
-  {"gen":1,"name":"David Hilbert","degree":"Ph.D.","year":"1885","uni":"Universität Königsberg"},
-  {"gen":2,"name":"Richard Courant","degree":"Ph.D.","year":"1910","uni":"Georg-August-Universität Göttingen"},
-  {"gen":3,"name":"Joseph Bishop Keller","degree":"Ph.D.","year":"1948","uni":"New York University"},
-  {"gen":4,"name":"George C. Papanicolaou","degree":"Ph.D.","year":"1969","uni":"New York University","current":"Stanford University"},
-  {"gen":5,"name":"Russel Edward Caflisch","degree":"Ph.D.","year":"1978","uni":"New York University","current":"University of California, Los Angeles"},
-  {"gen":6,"name":"John Samuel Lowengrub","degree":"Ph.D.","year":"1988","uni":"New York University","current":"University of California, Irvine"},
-  {"gen":7,"name":"Jun-Seok Kim","degree":"Ph.D.","year":"2002","uni":"University of Minnesota Minneapolis","current":"Korea University"},
-  {"gen":8,"name":"Yibao Li","degree":"Ph.D.","year":"2013","uni":"Korea University","current":"Xi'an Jiaotong University"},
-  {"gen":9,"name":"Qing Xia","degree":"Ph.D.","year":"2025","uni":"Xi'an Jiaotong University","current":"Huawei Technologies Co., Ltd."}
+  {"name":"David Hilbert","degree":"Ph.D.","year":"1885","uni":"Universität Königsberg","flag":"🇩🇪","note":"23 Problems · Father of Modern Mathematics"},
+  {"name":"Richard Courant","degree":"Ph.D.","year":"1910","uni":"Georg-August-Universität Göttingen","flag":"🇩🇪","note":"Courant Institute · Finite Element Method"},
+  {"name":"Joseph Bishop Keller","degree":"Ph.D.","year":"1948","uni":"New York University","flag":"🇺🇸","note":"Geometrical Theory of Diffraction · Keller–Segel Model"},
+  {"name":"George C. Papanicolaou","degree":"Ph.D.","year":"1969","uni":"New York University","current":"Stanford University","flag":"🇺🇸","note":"Homogenization Theory · Stochastic Analysis"},
+  {"name":"Russel Edward Caflisch","degree":"Ph.D.","year":"1978","uni":"New York University","current":"UCLA","flag":"🇺🇸","note":"Applied PDEs · Thin Film Epitaxy"},
+  {"name":"John Samuel Lowengrub","degree":"Ph.D.","year":"1988","uni":"New York University","current":"UC Irvine","flag":"🇺🇸","note":"Tumor Growth Modeling · Complex Fluids"},
+  {"name":"Jun-Seok Kim","degree":"Ph.D.","year":"2002","uni":"University of Minnesota","current":"Korea University","flag":"🇰🇷","note":"Phase-Field Methods · Computational Fluid Dynamics"},
+  {"name":"Yibao Li","degree":"Ph.D.","year":"2013","uni":"Korea University","current":"Xi'an Jiaotong University","flag":"🇨🇳","note":"3D Printing Simulation · Topology Optimization"},
+  {"name":"Qing Xia","degree":"Ph.D.","year":"2025","uni":"Xi'an Jiaotong University","current":"Huawei Technologies Co., Ltd.","flag":"🇨🇳","note":"Shape Topology Optimization · Multi-Physics Coupling"}
 ]
 </script>
 </div>
 
-<script src="{{ base_path }}/assets/js/lineage-tree.js?v=2"></script>
+<script src="{{ base_path }}/assets/js/lineage-tree.js?v=3"></script>
 
 
   

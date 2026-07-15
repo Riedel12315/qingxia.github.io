@@ -1,6 +1,5 @@
 /**
- * Academic Lineage Tree v2 — compact, elegant cascade.
- * Central spine stops before current person. No Gen badges.
+ * Academic Lineage Tree v3 — enriched with flags + notable contributions.
  */
 (function () {
   'use strict';
@@ -21,59 +20,71 @@
     try { people = JSON.parse(dataScript.textContent); } catch (e) { return; }
     if (!people || !people.length) return;
 
-    // ── Clear ──
     container.innerHTML = '';
     container.className = 'lineage-tree';
 
-    // ── Central spine ──
+    // Central spine
     var spine = document.createElement('div');
     spine.className = 'lineage-tree__spine';
     container.appendChild(spine);
 
-    // ── Terminus dot (end of line, before current person) ──
+    // Terminus dot
     var terminus = document.createElement('div');
     terminus.className = 'lineage-tree__terminus';
     container.appendChild(terminus);
 
-    // ── Render ancestors (all except last) ──
+    // Ancestors (all except last)
     for (var i = 0; i < people.length - 1; i++) {
       container.appendChild(buildNode(people[i], false));
     }
 
-    // ── Render current person (last item) ──
+    // Current person (last)
     container.appendChild(buildNode(people[people.length - 1], true));
 
-    // ── Position terminus dot at end of spine ──
     positionTerminus();
 
     function buildNode(p, isCurrent) {
       var node = document.createElement('div');
       node.className = 'lineage-node' + (isCurrent ? ' lineage-node--current' : '');
 
-      // Name
+      // ── Flag ──
+      var flag = document.createElement('span');
+      flag.className = 'lineage-node__flag';
+      flag.textContent = p.flag || '';
+      node.appendChild(flag);
+
+      // ── Name ──
       var nameEl = document.createElement('span');
       nameEl.className = 'lineage-node__name';
       nameEl.textContent = p.name;
       node.appendChild(nameEl);
 
-      // Meta: degree + year
+      // ── Degree + year ──
       var meta = document.createElement('span');
       meta.className = 'lineage-node__meta';
       meta.textContent = p.degree + ' ' + p.year;
       node.appendChild(meta);
 
-      // University
+      // ── University ──
       var uni = document.createElement('span');
       uni.className = 'lineage-node__uni';
       uni.textContent = p.uni;
       node.appendChild(uni);
 
-      // Current affiliation (if different)
+      // ── Current affiliation ──
       if (p.current) {
         var cur = document.createElement('span');
         cur.className = 'lineage-node__current';
         cur.textContent = p.current;
         node.appendChild(cur);
+      }
+
+      // ── Notable contribution (subtle) ──
+      if (p.note) {
+        var note = document.createElement('span');
+        note.className = 'lineage-node__note';
+        note.textContent = p.note;
+        node.appendChild(note);
       }
 
       return node;
@@ -85,18 +96,15 @@
       if (!lastAncestor) return;
       var cr = container.getBoundingClientRect();
       var lr = lastAncestor.getBoundingClientRect();
-      var y = lr.bottom - cr.top + 8;
-      terminus.style.top = y + 'px';
+      terminus.style.top = (lr.bottom - cr.top + 8) + 'px';
     }
 
-    // ── Reposition on resize ──
     var resizeTimer;
     window.addEventListener('resize', function () {
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(positionTerminus, 200);
     });
 
-    // ── Delay to let fonts load ──
     setTimeout(positionTerminus, 400);
     setTimeout(positionTerminus, 1000);
   }

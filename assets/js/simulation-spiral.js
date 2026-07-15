@@ -81,18 +81,6 @@
     axis.className = 'helix-axis';
     gallery.appendChild(axis);
 
-    var sectionLabels = [];
-    var flatIdx = 0;
-    for (var si2 = 0; si2 < sections.length; si2++) {
-      if (sections[si2].items.length === 0) continue;
-      flatIdx += sections[si2].items.length;
-      var lbl = document.createElement('div');
-      lbl.className = 'spiral-section-label';
-      lbl.textContent = sections[si2].title;
-      gallery.appendChild(lbl);
-      sectionLabels.push({ el: lbl, idx: si2 });
-    }
-
     // ── Create wrappers + items ──
     var wrappers = [];
     var itemEls = [];
@@ -172,13 +160,6 @@
 
     gallery.style.perspective = perspectiveVal + 'px';
     gallery.style.minHeight = (totalHeight + itemSize + 120) + 'px';
-
-    for (var si3 = 0; si3 < sectionLabels.length; si3++) {
-      var sl = sectionLabels[si3];
-      if (sl.idx === 0) { sl.el.style.left = '12px'; sl.el.style.top = '16px'; }
-      else if (sl.idx === sections.length - 1) { sl.el.style.right = '12px'; sl.el.style.bottom = '16px'; sl.el.style.top = 'auto'; sl.el.style.left = 'auto'; }
-      else { sl.el.style.right = '12px'; sl.el.style.top = '45%'; }
-    }
 
     // ── Animation loop ──
     var angle = 0;
