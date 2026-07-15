@@ -1,5 +1,5 @@
 /* ==========================================================================
-   ANIMATIONS — Psychedelic aurora + micro-interactions
+   ANIMATIONS — GPU-optimized aurora + micro-interactions
    ========================================================================== */
 
 @-webkit-keyframes intro {
@@ -13,67 +13,20 @@
 }
 
 /*
-   Aurora borealis — fast, dazzling, ever-shifting
+   Aurora — GPU-friendly: scale + rotate only, no expensive translate
    ========================================================================== */
 
-/* ── Primary layer: big sweeping morph ── */
 @keyframes auroraMorph1 {
-  0%, 100% {
-    transform: scale(1) rotate(0deg) translate(0, 0);
-    opacity: 0.80;
-  }
-  12% {
-    transform: scale(1.22) rotate(1.8deg) translate(-4%, 3%);
-    opacity: 1;
-  }
-  28% {
-    transform: scale(0.85) rotate(-1.2deg) translate(3%, -4%);
-    opacity: 0.60;
-  }
-  44% {
-    transform: scale(1.18) rotate(-2deg) translate(4%, 2%);
-    opacity: 0.95;
-  }
-  58% {
-    transform: scale(0.88) rotate(1deg) translate(-2%, -3%);
-    opacity: 0.65;
-  }
-  72% {
-    transform: scale(1.14) rotate(2.5deg) translate(-3%, 4%);
-    opacity: 0.92;
-  }
-  86% {
-    transform: scale(0.92) rotate(-0.6deg) translate(2%, 2%);
-    opacity: 0.72;
-  }
+  0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.80; }
+  25%  { transform: scale(1.15) rotate(1.5deg); opacity: 0.95; }
+  50%  { transform: scale(0.90) rotate(-1deg); opacity: 0.65; }
+  75%  { transform: scale(1.10) rotate(-1.2deg); opacity: 0.90; }
 }
 
-/* ── Secondary layer: faster, chaotic counter-motion ── */
 @keyframes auroraMorph2 {
-  0%, 100% {
-    transform: scale(1.08) rotate(0deg) translate(0, 0);
-    opacity: 0.70;
-  }
-  15% {
-    transform: scale(0.82) rotate(-2.5deg) translate(5%, -3%);
-    opacity: 1;
-  }
-  35% {
-    transform: scale(1.24) rotate(2deg) translate(-4%, 4%);
-    opacity: 0.55;
-  }
-  52% {
-    transform: scale(0.88) rotate(-1.5deg) translate(-3%, -4%);
-    opacity: 0.92;
-  }
-  68% {
-    transform: scale(1.18) rotate(3deg) translate(4%, 2%);
-    opacity: 0.60;
-  }
-  84% {
-    transform: scale(0.85) rotate(-0.8deg) translate(-2%, 3%);
-    opacity: 0.98;
-  }
+  0%, 100% { transform: scale(1.05) rotate(0deg); opacity: 0.70; }
+  33%  { transform: scale(0.88) rotate(-1.8deg); opacity: 0.92; }
+  66%  { transform: scale(1.12) rotate(1.5deg); opacity: 0.60; }
 }
 
 @keyframes auroraPulse {
@@ -84,4 +37,13 @@
 @keyframes glassShimmer {
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
+}
+
+/* ── Respect reduced-motion preference ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

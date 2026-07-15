@@ -161,32 +161,38 @@
     gallery.style.perspective = perspectiveVal + 'px';
     gallery.style.minHeight = (totalHeight + itemH + 120) + 'px';
 
-    // ── Animation loop ──
+    // ── Animation loop (30fps for performance) ──
     var angle = 0;
-    var speed = 0.006;
+    var speed = 0.012; // doubled since we run at half rate
     var paused = false;
+    var lastTime = 0;
+    var FRAME_INTERVAL = 33; // ~30fps
 
     gallery.addEventListener('mouseenter', function () { paused = true; });
     gallery.addEventListener('mouseleave', function () { paused = false; });
 
-    function frame() {
-      if (!paused) {
-        angle += speed;
-        if (angle > 2 * Math.PI) angle -= 2 * Math.PI;
-      }
+    function frame(ts) {
+      if (!lastTime) lastTime = ts;
+      var elapsed = ts - lastTime;
 
-      for (var i = 0; i < wrappers.length; i++) {
-        var frac = totalItems > 1 ? i / (totalItems - 1) : 0;
-        var itemAngle = frac * totalAngle + angle;
-        var y = (frac - 0.5) * totalHeight;
-        var x = radius * Math.cos(itemAngle);
-        var z = radius * Math.sin(itemAngle);
+      if (elapsed >= FRAME_INTERVAL) {
+        lastTime = ts - (elapsed % FRAME_INTERVAL);
 
-        // Wrapper: position on helix
-        wrappers[i].el.style.transform = 'translate3d(' + x.toFixed(1) + 'px, ' + y.toFixed(1) + 'px, ' + z.toFixed(1) + 'px)';
+        if (!paused) {
+          angle += speed;
+          if (angle > 2 * Math.PI) angle -= 2 * Math.PI;
+        }
 
-        // Item: centered + counter-rotated → thumb+label move as one unit
-        itemEls[i].el.style.transform = 'translate(-50%, -50%) rotateY(' + (-itemAngle).toFixed(4) + 'rad)';
+        for (var i = 0; i < wrappers.length; i++) {
+          var frac = totalItems > 1 ? i / (totalItems - 1) : 0;
+          var itemAngle = frac * totalAngle + angle;
+          var y = (frac - 0.5) * totalHeight;
+          var x = radius * Math.cos(itemAngle);
+          var z = radius * Math.sin(itemAngle);
+
+          wrappers[i].el.style.transform = 'translate3d(' + x.toFixed(1) + 'px, ' + y.toFixed(1) + 'px, ' + z.toFixed(1) + 'px)';
+          itemEls[i].el.style.transform = 'translate(-50%, -50%) rotateY(' + (-itemAngle).toFixed(4) + 'rad)';
+        }
       }
 
       requestAnimationFrame(frame);
