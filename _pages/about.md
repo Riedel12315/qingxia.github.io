@@ -8,25 +8,6 @@ redirect_from:
   - /about.html
 ---
 
-<div class="stats-row" markdown="0">
-  <div class="stat-badge accent">
-    <span class="stat-number">43</span>
-    <span class="stat-label">SCI Papers</span>
-  </div>
-  <div class="stat-badge">
-    <span class="stat-number">32</span>
-    <span class="stat-label">JCR Q1</span>
-  </div>
-  <div class="stat-badge">
-    <span class="stat-number">7</span>
-    <span class="stat-label">Highly Cited</span>
-  </div>
-  <div class="stat-badge">
-    <span class="stat-number">Ph.D.</span>
-    <span class="stat-label">XJTU 2025</span>
-  </div>
-</div>
-
 **Qing Xia** received his Ph.D. degree in June 2025 from the School of Mathematics and Statistics at Xi’an Jiaotong University (XJTU), where he was supervised by Prof. Dr. [Yibao Li](http://gr.xjtu.edu.cn/web/yibaoli). Prior to that, he obtained his B.S. degree from the same school at XJTU in 2019. Recently, he was selected for the **TopMinds** program and joined Huawei.
 
 Research(研究)
