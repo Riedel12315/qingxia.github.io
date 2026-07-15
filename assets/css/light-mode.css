@@ -238,6 +238,69 @@ body.light-mode figure.highlight {
   border-color: rgba(0,0,0,0.06);
 }
 
+/* ── Simulation spiral gallery ── */
+body.light-mode .spiral-gallery { background: transparent; }
+body.light-mode .spiral-item__thumb {
+  background: rgba(0,0,0,0.03);
+  border-color: rgba(0,0,0,0.08);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+}
+body.light-mode .spiral-item__label {
+  color: rgba(0,0,0,0.45);
+  text-shadow: 0 1px 4px rgba(255,255,255,0.5);
+}
+body.light-mode .spiral-item:hover .spiral-item__label { color: #1A1A22; }
+body.light-mode .spiral-modal-overlay { background: rgba(240,240,240,0.85); }
+body.light-mode .spiral-modal {
+  background: rgba(255,255,255,0.95);
+  border-color: rgba(0,0,0,0.06);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.10);
+}
+body.light-mode .spiral-modal__title { color: #1A1A22; }
+body.light-mode .spiral-modal__close {
+  background: rgba(0,0,0,0.05);
+  border-color: rgba(0,0,0,0.08);
+  color: rgba(0,0,0,0.5);
+}
+body.light-mode .spiral-modal__close:hover { background: rgba(224,78,78,0.15); color: #C53030; }
+body.light-mode .spiral-modal__btn--close {
+  background: rgba(0,0,0,0.03);
+  color: rgba(0,0,0,0.5);
+  border-color: rgba(0,0,0,0.08);
+}
+body.light-mode .spiral-modal__btn--close:hover { background: rgba(0,0,0,0.06); color: #1A1A22; }
+body.light-mode .spiral-hint { color: rgba(0,0,0,0.2); }
+body.light-mode .helix-axis {
+  background: linear-gradient(to bottom,
+    transparent 0%, rgba(224,78,78,0.08) 10%,
+    rgba(224,78,78,0.20) 50%,
+    rgba(168,85,247,0.08) 90%, transparent 100%);
+}
+body.light-mode .spiral-section-label { color: rgba(0,0,0,0.18); }
+
+/* ── Social icons in light mode ── */
+body.light-mode .social-icons .fa { color: #555; }
+
+/* ── Well / modal ── */
+body.light-mode .well {
+  background: #FFF;
+  border-color: rgba(0,0,0,0.06);
+}
+body.light-mode .modal {
+  background: #FFF;
+  border-color: rgba(0,0,0,0.06);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.10);
+}
+
+/* ── Breadcrumbs ── */
+body.light-mode .breadcrumbs .current { color: #1A1A22; }
+
+/* ── TOC ── */
+body.light-mode .toc {
+  background: #FFF;
+  border-color: rgba(0,0,0,0.06);
+}
+
 /* ── h2 accent underline ── */
 body.light-mode h2::after { opacity: 0.7; }
 
@@ -245,7 +308,8 @@ body.light-mode h2::after { opacity: 0.7; }
 body, .masthead, .archive__item, .lineage-node, .page__footer,
 .author__urls, .greedy-nav, .greedy-nav .hidden-links,
 input, textarea, select, table, pre, blockquote, hr,
-.lineage-tree__spine {
+.lineage-tree__spine, .spiral-item__thumb, .spiral-item__label,
+.spiral-modal, .spiral-modal-overlay, .well, .modal {
   transition: background-color 0.5s ease, color 0.5s ease,
               border-color 0.5s ease, box-shadow 0.5s ease,
               opacity 0.5s ease;

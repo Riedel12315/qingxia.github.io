@@ -150,16 +150,16 @@
     var totalItems = allItems.length;
     var turns = 3.2;
     var totalAngle = turns * 2 * Math.PI;
-    var radius = 180, itemSize = 130, totalHeight, perspectiveVal = 800;
+    var radius = 180, itemW = 160, itemH = 106, totalHeight, perspectiveVal = 800;
     var vw = window.innerWidth;
 
     if (vw < 480) return; // CSS grid fallback
-    if (vw < 768) { radius = 130; itemSize = 80; perspectiveVal = 700; }
+    if (vw < 768) { radius = 130; itemW = 100; itemH = 66; perspectiveVal = 700; }
 
     totalHeight = Math.min(window.innerHeight * 0.6, 540);
 
     gallery.style.perspective = perspectiveVal + 'px';
-    gallery.style.minHeight = (totalHeight + itemSize + 120) + 'px';
+    gallery.style.minHeight = (totalHeight + itemH + 120) + 'px';
 
     // ── Animation loop ──
     var angle = 0;
@@ -201,11 +201,11 @@
       resizeTimer = setTimeout(function () {
         var nvw = window.innerWidth;
         if (nvw < 480) return;
-        if (nvw < 768) { radius = 130; itemSize = 80; perspectiveVal = 700; }
-        else { radius = 180; itemSize = 130; perspectiveVal = 800; }
+        if (nvw < 768) { radius = 130; itemW = 100; itemH = 66; perspectiveVal = 700; }
+        else { radius = 180; itemW = 160; itemH = 106; perspectiveVal = 800; }
         totalHeight = Math.min(window.innerHeight * 0.6, 540);
         gallery.style.perspective = perspectiveVal + 'px';
-        gallery.style.minHeight = (totalHeight + itemSize + 120) + 'px';
+        gallery.style.minHeight = (totalHeight + itemH + 120) + 'px';
       }, 200);
     });
 
