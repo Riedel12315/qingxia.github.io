@@ -137,6 +137,11 @@ td > code {
   color: $code-accent;
 }
 
+/* ── Override invisible dark-red journal names on dark background ── */
+font[color="#660000"] {
+  color: #FF90A0 !important;
+}
+
 /* ── Links — bright coral, underlined on hover ── */
 a {
   color: $link-color;

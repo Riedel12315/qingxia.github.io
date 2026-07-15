@@ -181,13 +181,13 @@
       // Helix parameters
       var helixRadius, itemSize, totalHeight, turns;
       if (vw < 768) {
-        helixRadius = 160;
-        itemSize = 64;
+        helixRadius = 120;
+        itemSize = 80;
         totalHeight = Math.min(vh * 0.55, 420);
         turns = 2.8;
       } else {
-        helixRadius = 240;
-        itemSize = 110;
+        helixRadius = 175;
+        itemSize = 130;
         totalHeight = Math.min(vh * 0.62, 560);
         turns = 3.2;
       }
