@@ -44,7 +44,7 @@ Education（教育背景）
 Mathmatics Genealogy Project（学术传承）
 =====
 
-<link rel="stylesheet" href="{{ base_path }}/assets/css/lineage-tree.css?v=1">
+<link rel="stylesheet" href="{{ base_path }}/assets/css/lineage-tree.css?v=2">
 
 <div id="lineage-tree" class="lineage-tree-loading" style="text-align:center;padding:3em 0;color:rgba(255,255,255,0.2);font-family:Inter,sans-serif;font-size:0.85em;">Loading academic lineage...
 <script type="application/json">
@@ -62,7 +62,7 @@ Mathmatics Genealogy Project（学术传承）
 </script>
 </div>
 
-<script src="{{ base_path }}/assets/js/lineage-tree.js?v=1"></script>
+<script src="{{ base_path }}/assets/js/lineage-tree.js?v=2"></script>
 
 
   

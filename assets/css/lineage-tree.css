@@ -1,210 +1,197 @@
 /* ==========================================================================
-   Academic Lineage Tree — premium glass cascade
+   Academic Lineage Tree — compact, elegant cascade
    ========================================================================== */
 
 .lineage-tree {
   position: relative;
-  padding: 3em 0 2em;
-  margin: 2em 0;
+  padding: 1.5em 0 1em;
+  margin: 1em 0;
 }
 
-/* ── Central flowing line ── */
-.lineage-tree::before {
-  content: '';
+/* ── Central spine (stops before current person) ── */
+.lineage-tree__spine {
   position: absolute;
-  left: 50%;
+  left: 20px;
   top: 0;
-  bottom: 0;
+  bottom: 120px; /* leave room for current-person card below */
   width: 2px;
   background: linear-gradient(to bottom,
-    rgba(255,255,255,0.03) 0%,
-    rgba(255,255,255,0.10) 10%,
-    rgba(255,99,99,0.25) 50%,
-    rgba(255,99,99,0.50) 85%,
-    rgba(255,99,99,0.80) 100%);
-  transform: translateX(-50%);
+    rgba(255,255,255,0.06) 0%,
+    rgba(255,255,255,0.12) 20%,
+    rgba(255,99,99,0.20) 60%,
+    rgba(255,99,99,0.50) 95%,
+    rgba(255,99,99,0.70) 100%);
   z-index: 0;
 }
 
-/* ── Generation label on the central line ── */
-.lineage-gen-marker {
+/* ── Spine terminus dot → arrow to current ── */
+.lineage-tree__terminus {
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 8px; height: 8px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.3);
-  border: 2px solid rgba(255,255,255,0.15);
+  left: 16px;
   z-index: 1;
-  transition: all 0.3s ease;
-}
-
-.lineage-gen-marker.highlight {
+  width: 10px; height: 10px;
+  border-radius: 50%;
   background: #FF6363;
-  border-color: rgba(255,99,99,0.5);
-  box-shadow: 0 0 16px rgba(255,99,99,0.5);
-  width: 12px; height: 12px;
+  box-shadow: 0 0 12px rgba(255,99,99,0.5);
 }
 
-/* ── Node card — glass, alternating left/right ── */
+/* ── Each ancestor row ── */
 .lineage-node {
   position: relative;
   z-index: 2;
-  width: calc(50% - 50px);
-  margin: 18px 0;
-  padding: 1em 1.25em;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.07);
-  border-radius: 12px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+  margin: 0 0 0 44px;
+  padding: 0.55em 0.85em;
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 8px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: all 0.25s cubic-bezier(0.4,0,0.2,1);
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.35em 0.5em;
   cursor: default;
 }
 
 .lineage-node:hover {
-  background: rgba(255,255,255,0.07);
-  border-color: rgba(255,255,255,0.14);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.4),
-              0 0 0 1px rgba(255,255,255,0.04) inset;
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.12);
+  transform: translateX(4px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
 }
 
-/* ── Alternating sides ── */
-.lineage-node.left {
-  margin-right: auto;
-  margin-left: 0;
-  text-align: right;
+/* ── Connector dot on spine for each ancestor ── */
+.lineage-node::before {
+  content: '';
+  position: absolute;
+  left: -32px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.10);
+  transition: all 0.3s ease;
 }
 
-.lineage-node.right {
-  margin-left: auto;
-  margin-right: 0;
-  text-align: left;
+.lineage-node:hover::before {
+  background: rgba(255,99,99,0.6);
+  box-shadow: 0 0 8px rgba(255,99,99,0.3);
 }
 
-/* ── Connecting arm from node to central line ── */
+/* ── Connector arm from dot to card ── */
 .lineage-node::after {
   content: '';
   position: absolute;
+  left: -26px;
   top: 50%;
-  width: 44px;
+  width: 20px;
   height: 1px;
-  background: rgba(255,255,255,0.12);
-  z-index: 0;
+  background: rgba(255,255,255,0.08);
 }
 
-.lineage-node.left::after {
-  right: -44px;
-}
-
-.lineage-node.right::after {
-  left: -44px;
-}
-
-/* ── Node name ── */
+/* ── Name ── */
 .lineage-node__name {
   font-family: 'Inter Tight','Inter',sans-serif;
-  font-size: 1em;
-  font-weight: 650;
-  color: #FFFFFF;
-  letter-spacing: -0.01em;
-  margin-bottom: 0.2em;
+  font-size: 0.88em;
+  font-weight: 600;
+  color: #E8E8EC;
+  letter-spacing: -0.005em;
+  white-space: nowrap;
 }
 
-/* ── Node meta ── */
+/* ── Meta: degree + year ── */
 .lineage-node__meta {
   font-family: 'Inter',sans-serif;
   font-size: 0.73em;
-  color: rgba(255,255,255,0.4);
-  line-height: 1.5;
+  color: rgba(255,255,255,0.35);
+  white-space: nowrap;
 }
 
-.lineage-node__meta span {
-  color: rgba(255,255,255,0.55);
+/* ── University ── */
+.lineage-node__uni {
+  font-family: 'Inter',sans-serif;
+  font-size: 0.73em;
+  color: rgba(255,255,255,0.45);
+  font-style: italic;
+  white-space: nowrap;
 }
 
-/* ── Institution badge ── */
-.lineage-node__inst {
-  display: inline-block;
-  margin-top: 0.3em;
-  padding: 0.2em 0.6em;
+/* ── Current affiliation tag ── */
+.lineage-node__current {
+  font-family: 'Inter',sans-serif;
   font-size: 0.68em;
-  font-weight: 500;
-  color: rgba(255,255,255,0.5);
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 5px;
+  color: rgba(255,255,255,0.32);
+  white-space: nowrap;
 }
 
-/* ── Current person (Qing Xia) — highlighted ── */
-.lineage-node.current {
-  width: calc(50% - 30px);
-  margin: 28px auto;
-  text-align: center;
-  background: rgba(255,99,99,0.08);
-  border: 1px solid rgba(255,99,99,0.25);
-  box-shadow: 0 8px 40px rgba(255,99,99,0.10),
-              0 0 0 2px rgba(255,99,99,0.05) inset;
+.lineage-node__current::before {
+  content: '→ ';
 }
 
-.lineage-node.current::after {
+/* ── Current person (Qing Xia) — standout card below the line ── */
+.lineage-node--current {
+  margin: 1.2em 0 0 12px;
+  padding: 0.9em 1.2em;
+  background: rgba(255,99,99,0.07);
+  border: 1px solid rgba(255,99,99,0.22);
+  border-radius: 12px;
+  box-shadow: 0 6px 30px rgba(255,99,99,0.08);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25em;
+}
+
+.lineage-node--current::before,
+.lineage-node--current::after {
   display: none;
 }
 
-.lineage-node.current:hover {
-  background: rgba(255,99,99,0.13);
-  border-color: rgba(255,99,99,0.40);
-  box-shadow: 0 12px 50px rgba(255,99,99,0.18);
+.lineage-node--current:hover {
+  background: rgba(255,99,99,0.11);
+  border-color: rgba(255,99,99,0.35);
+  transform: none;
+  box-shadow: 0 8px 40px rgba(255,99,99,0.14);
 }
 
-.lineage-node.current .lineage-node__name {
-  font-size: 1.25em;
-  color: #FFB3B3;
+.lineage-node--current .lineage-node__name {
+  font-size: 1.1em;
+  color: #FFA8A8;
 }
 
-.lineage-node.current .lineage-node__meta {
+.lineage-node--current .lineage-node__meta {
+  font-size: 0.78em;
+  color: rgba(255,255,255,0.45);
+}
+
+.lineage-node--current .lineage-node__uni {
+  font-size: 0.78em;
   color: rgba(255,255,255,0.5);
 }
 
-/* ── Gen badge ── */
-.lineage-gen-badge {
-  display: inline-block;
-  font-family: 'JetBrains Mono','SF Mono',monospace;
-  font-size: 0.65em;
-  font-weight: 500;
-  padding: 0.15em 0.5em;
-  border-radius: 4px;
-  color: rgba(255,255,255,0.35);
-  background: rgba(255,255,255,0.04);
-  margin-bottom: 0.4em;
+.lineage-node--current .lineage-node__current {
+  font-size: 0.73em;
+  color: rgba(255,255,255,0.4);
+}
+
+/* ── Vertical spacing between ancestors ── */
+.lineage-node + .lineage-node {
+  margin-top: 3px;
+}
+
+.lineage-node--current {
+  margin-top: 16px;
 }
 
 /* ── Responsive ── */
-@media (max-width: 700px) {
-  .lineage-node {
-    width: calc(100% - 40px);
-    margin: 12px 0 12px 40px !important;
-    text-align: left !important;
-  }
-
-  .lineage-node::after {
-    left: -36px !important;
-    right: auto !important;
-    width: 30px;
-  }
-
-  .lineage-tree::before {
-    left: 10px;
-  }
-
-  .lineage-gen-marker {
-    left: 10px;
-  }
-
-  .lineage-node.current {
-    width: calc(100% - 40px);
-    margin: 20px 0 20px 40px !important;
-    text-align: left !important;
-  }
+@media (max-width: 600px) {
+  .lineage-tree__spine { left: 12px; bottom: 100px; }
+  .lineage-tree__terminus { left: 8px; }
+  .lineage-node { margin-left: 32px; padding: 0.45em 0.65em; }
+  .lineage-node::before { left: -24px; }
+  .lineage-node::after { left: -18px; width: 12px; }
+  .lineage-node__name { font-size: 0.8em; }
+  .lineage-node__meta, .lineage-node__uni { font-size: 0.68em; }
+  .lineage-node--current { margin-left: 4px; }
 }

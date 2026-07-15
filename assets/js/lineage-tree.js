@@ -1,5 +1,6 @@
 /**
- * Academic Lineage Tree — renders a premium glass-cascade genealogy.
+ * Academic Lineage Tree v2 — compact, elegant cascade.
+ * Central spine stops before current person. No Gen badges.
  */
 (function () {
   'use strict';
@@ -14,100 +15,89 @@
     var container = document.getElementById('lineage-tree');
     if (!container) return;
 
-    // ── Read data from embedded JSON ──
     var dataScript = container.querySelector('script[type="application/json"]');
     if (!dataScript) return;
     var people;
     try { people = JSON.parse(dataScript.textContent); } catch (e) { return; }
     if (!people || !people.length) return;
 
-    // ── Clear container, remove loading ──
+    // ── Clear ──
     container.innerHTML = '';
     container.className = 'lineage-tree';
 
-    // ── Build nodes ──
-    // Alternate left/right, except the last (current person) which is centered
-    var isLeft = true;
+    // ── Central spine ──
+    var spine = document.createElement('div');
+    spine.className = 'lineage-tree__spine';
+    container.appendChild(spine);
 
-    for (var i = 0; i < people.length; i++) {
-      var p = people[i];
-      var isLast = (i === people.length - 1);
+    // ── Terminus dot (end of line, before current person) ──
+    var terminus = document.createElement('div');
+    terminus.className = 'lineage-tree__terminus';
+    container.appendChild(terminus);
 
-      // Gen marker dot on the central line
-      var marker = document.createElement('div');
-      marker.className = 'lineage-gen-marker' + (isLast ? ' highlight' : '');
-      marker.style.top = '0px'; // Will be positioned relative to node
-      container.appendChild(marker);
+    // ── Render ancestors (all except last) ──
+    for (var i = 0; i < people.length - 1; i++) {
+      container.appendChild(buildNode(people[i], false));
+    }
 
-      // Node card
+    // ── Render current person (last item) ──
+    container.appendChild(buildNode(people[people.length - 1], true));
+
+    // ── Position terminus dot at end of spine ──
+    positionTerminus();
+
+    function buildNode(p, isCurrent) {
       var node = document.createElement('div');
-      node.className = 'lineage-node';
-      if (isLast) {
-        node.className += ' current';
-      } else {
-        node.className += isLeft ? ' left' : ' right';
-        isLeft = !isLeft;
-      }
-
-      // Gen badge
-      var badge = document.createElement('div');
-      badge.className = 'lineage-gen-badge';
-      badge.textContent = 'Gen ' + p.gen;
-      node.appendChild(badge);
+      node.className = 'lineage-node' + (isCurrent ? ' lineage-node--current' : '');
 
       // Name
-      var nameEl = document.createElement('div');
+      var nameEl = document.createElement('span');
       nameEl.className = 'lineage-node__name';
       nameEl.textContent = p.name;
       node.appendChild(nameEl);
 
-      // Meta: degree + year + uni
-      var meta = document.createElement('div');
+      // Meta: degree + year
+      var meta = document.createElement('span');
       meta.className = 'lineage-node__meta';
-      meta.innerHTML = '<span>' + p.degree + '</span> · ' + p.year + '<br>' + p.uni;
+      meta.textContent = p.degree + ' ' + p.year;
       node.appendChild(meta);
 
-      // Current institution (if different from PhD uni)
+      // University
+      var uni = document.createElement('span');
+      uni.className = 'lineage-node__uni';
+      uni.textContent = p.uni;
+      node.appendChild(uni);
+
+      // Current affiliation (if different)
       if (p.current) {
-        var inst = document.createElement('div');
-        inst.className = 'lineage-node__inst';
-        inst.textContent = '📍 ' + p.current;
-        node.appendChild(inst);
+        var cur = document.createElement('span');
+        cur.className = 'lineage-node__current';
+        cur.textContent = p.current;
+        node.appendChild(cur);
       }
 
-      container.appendChild(node);
+      return node;
     }
 
-    // ── Position gen markers after layout ──
-    requestAnimationFrame(function () {
-      var markers = container.querySelectorAll('.lineage-gen-marker');
-      var nodes = container.querySelectorAll('.lineage-node');
-      // Skip the first marker (there's one per node)
-      for (var j = 0; j < nodes.length; j++) {
-        var nodeRect = nodes[j].getBoundingClientRect();
-        var containerRect = container.getBoundingClientRect();
-        var markerY = nodeRect.top - containerRect.top + nodeRect.height / 2;
-        if (markers[j]) {
-          markers[j].style.top = markerY + 'px';
-        }
-      }
-    });
+    function positionTerminus() {
+      var nodes = container.querySelectorAll('.lineage-node:not(.lineage-node--current)');
+      var lastAncestor = nodes[nodes.length - 1];
+      if (!lastAncestor) return;
+      var cr = container.getBoundingClientRect();
+      var lr = lastAncestor.getBoundingClientRect();
+      var y = lr.bottom - cr.top + 8;
+      terminus.style.top = y + 'px';
+    }
 
-    // ── Re-position on resize ──
+    // ── Reposition on resize ──
     var resizeTimer;
     window.addEventListener('resize', function () {
       clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(function () {
-        var m = container.querySelectorAll('.lineage-gen-marker');
-        var n = container.querySelectorAll('.lineage-node');
-        var cr = container.getBoundingClientRect();
-        for (var k = 0; k < n.length; k++) {
-          var nr = n[k].getBoundingClientRect();
-          if (m[k]) {
-            m[k].style.top = (nr.top - cr.top + nr.height / 2) + 'px';
-          }
-        }
-      }, 200);
+      resizeTimer = setTimeout(positionTerminus, 200);
     });
+
+    // ── Delay to let fonts load ──
+    setTimeout(positionTerminus, 400);
+    setTimeout(positionTerminus, 1000);
   }
 })();
