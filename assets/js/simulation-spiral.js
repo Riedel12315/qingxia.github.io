@@ -1,7 +1,6 @@
 /**
- * Simulation 3D Helix Gallery v4
- * Full-page 3D spiral using CSS perspective + translate3d.
- * Click to expand, hover to preview.
+ * Simulation 3D DNA Helix v5 — true rotating 3D helix
+ * Items orbit a central axis via CSS 3D rotation.
  */
 (function () {
   'use strict';
@@ -13,15 +12,13 @@
   }
 
   function init() {
-    // ── Find the archive content area ──
     var archive = document.querySelector('.archive');
     if (!archive) return;
 
-    // Hide loading
     var loadingEl = document.querySelector('.spiral-loading');
     if (loadingEl) loadingEl.style.display = 'none';
 
-    // ── Parse content: h1 sections, h2 items, img sources ──
+    // ── Parse markdown content ──
     var allChildren = [];
     var childNodes = archive.childNodes;
     for (var i = 0; i < childNodes.length; i++) {
@@ -77,30 +74,39 @@
     }
     if (allItems.length === 0) return;
 
-    // ── Build 3D gallery DOM ──
+    // ── Build 3D Gallery DOM ──
     var gallery = document.createElement('div');
     gallery.className = 'spiral-gallery';
 
     var hint = document.createElement('div');
     hint.className = 'spiral-hint';
-    hint.textContent = '⟳  Click to expand  ·  3D helix view  ⟳';
+    hint.textContent = '⟳  Continuously rotating  ·  Hover to pause  ·  Click to expand  ⟳';
     gallery.appendChild(hint);
 
-    // Section labels
+    // Central axis visual
+    var axis = document.createElement('div');
+    axis.className = 'helix-axis';
+    gallery.appendChild(axis);
+
+    // Rotating stage
+    var stage = document.createElement('div');
+    stage.className = 'helix-stage';
+    gallery.appendChild(stage);
+
+    // Section labels (outside stage, statically positioned at edges)
     var sectionLabels = [];
     var flatIdx = 0;
     for (var si2 = 0; si2 < sections.length; si2++) {
       if (sections[si2].items.length === 0) continue;
-      var mid = flatIdx + Math.floor(sections[si2].items.length / 2);
       flatIdx += sections[si2].items.length;
       var lbl = document.createElement('div');
       lbl.className = 'spiral-section-label';
       lbl.textContent = sections[si2].title;
       gallery.appendChild(lbl);
-      sectionLabels.push({ el: lbl, index: mid });
+      sectionLabels.push({ el: lbl, sectionIdx: si2, count: sections[si2].items.length });
     }
 
-    // Item cards
+    // Create items inside the rotating stage
     var itemEls = [];
     for (var idx = 0; idx < allItems.length; idx++) {
       (function (item, i) {
@@ -136,19 +142,19 @@
           if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(item, i); }
         });
 
-        gallery.appendChild(el);
+        stage.appendChild(el);
         itemEls.push({ el: el, item: item, idx: i });
       })(allItems[idx], idx);
     }
 
-    // ── Hide original content, insert gallery ──
-    var toHide = archive.querySelectorAll('h1:not(.page__title), h2, img, p > img');
+    // ── Hide original content ──
+    var toHide = archive.querySelectorAll('h1:not(.page__title), h2, img');
     for (var h = 0; h < toHide.length; h++) {
       if (!toHide[h].closest('.spiral-gallery')) toHide[h].style.display = 'none';
     }
     var paragraphs = archive.querySelectorAll('p');
     for (var p = 0; p < paragraphs.length; p++) {
-      if (paragraphs[p].closest('.spiral-gallery') || paragraphs[p].closest('.spiral-modal')) continue;
+      if (paragraphs[p].closest('.spiral-gallery')) continue;
       var hasContent = false;
       for (var c = 0; c < paragraphs[p].childNodes.length; c++) {
         var cn = paragraphs[p].childNodes[c];
@@ -161,8 +167,8 @@
     archive.appendChild(gallery);
 
     // ── 3D Helix positioning ──
-    // Items arranged in a 3D helix: angle around + depth into screen
-    // CSS perspective on container handles the 3D projection
+    // Items placed on the rotating stage. Stage rotates via CSS animation.
+    // Items are positioned in 3D around a central vertical axis.
 
     function positionItems() {
       var rect = gallery.getBoundingClientRect();
@@ -172,81 +178,56 @@
 
       if (vw < 480) return; // CSS grid fallback
 
-      // ── Helix parameters ──
-      var turns = 3.2;
-      var totalAngle = turns * 2 * Math.PI;
-
-      // Radius range — spread across full page width
-      var maxR, minR, itemSize, frontZ, backZ;
+      // Helix parameters
+      var helixRadius, itemSize, totalHeight, turns;
       if (vw < 768) {
+        helixRadius = 160;
         itemSize = 64;
-        maxR = Math.min(rect.width * 0.42, 280);
-        minR = 50;
-        frontZ = 100;
-        backZ = -180;
+        totalHeight = Math.min(vh * 0.55, 420);
+        turns = 2.8;
       } else {
+        helixRadius = 240;
         itemSize = 110;
-        maxR = Math.min(rect.width * 0.43, 380);
-        minR = 70;
-        frontZ = 180;
-        backZ = -350;
+        totalHeight = Math.min(vh * 0.62, 560);
+        turns = 3.2;
       }
 
-      // Set gallery height to fill most of the viewport
-      var neededH = Math.max((maxR + itemSize) * 2 + 80, vh * 0.7);
-      gallery.style.minHeight = neededH + 'px';
+      gallery.style.minHeight = (totalHeight + itemSize + 100) + 'px';
 
-      // Recalc center
-      var newRect = gallery.getBoundingClientRect();
-      var cx = newRect.width / 2;
-      var cy = newRect.height * 0.48; // slightly above center
-
-      var angleStep = totalItems > 1 ? totalAngle / (totalItems - 1) : 0;
+      var totalAngle = turns * 2 * Math.PI;
 
       for (var i = 0; i < itemEls.length; i++) {
         var entry = itemEls[i];
-
-        // ── Helix: angle rotates, z goes from front to back ──
         var frac = totalItems > 1 ? i / (totalItems - 1) : 0;
         var angle = frac * totalAngle;
-        var r = maxR - frac * (maxR - minR); // spiral narrows going deeper
-        var z = frontZ - frac * (frontZ - backZ); // depth: front → back
+        var y = (frac - 0.5) * totalHeight;
 
-        // Scale & opacity by depth
-        var depthScale = 1 - frac * 0.4;
-        var opacity = 1 - frac * 0.25;
+        // Position relative to stage center
+        // Stage is at (50%, 50%) of gallery
+        // Item is at translate3d(x, y, z) from stage origin
+        var x = helixRadius * Math.cos(angle);
+        var z = helixRadius * Math.sin(angle);
 
-        // Elliptical: compress Y slightly
-        var x = r * Math.cos(angle - Math.PI / 2);
-        var y = r * Math.sin(angle - Math.PI / 2) * 0.7;
-
-        // 3D transform
-        entry.el.style.left = '0px';
-        entry.el.style.top = '0px';
-        entry.el.style.transform =
-          'translate3d(' + (cx + x - itemSize / 2) + 'px, ' +
-          (cy + y - itemSize / 2) + 'px, ' +
-          z + 'px) ' +
-          'scale(' + depthScale.toFixed(2) + ')';
-        entry.el.style.opacity = opacity.toFixed(2);
-        entry.el.style.zIndex = Math.round(100 - frac * 80);
+        // Use transform only (no left/top on item — just transforms)
+        entry.el.style.left = '50%';
+        entry.el.style.top = '50%';
+        entry.el.style.transform = 'translate3d(' + x.toFixed(1) + 'px, ' + y.toFixed(1) + 'px, ' + z.toFixed(1) + 'px)';
       }
 
-      // Section labels
+      // Position section labels at edges
       for (var si3 = 0; si3 < sectionLabels.length; si3++) {
         var sl = sectionLabels[si3];
-        var refIdx = Math.min(sl.index, itemEls.length - 1);
-        if (refIdx < 0) continue;
-        var refEntry = itemEls[refIdx];
-        // Position label near its reference item
-        var refTransform = refEntry.el.style.transform;
-        // Hack: extract x,y from transform string
-        var match = refTransform.match(/translate3d\(([^,]+)px,\s*([^,]+)px/);
-        if (match) {
-          var tx = parseFloat(match[1]) + itemSize * 0.7;
-          var ty = parseFloat(match[2]) - 22;
-          sl.el.style.left = tx + 'px';
-          sl.el.style.top = ty + 'px';
+        if (sl.sectionIdx === 0) {
+          sl.el.style.left = '8px';
+          sl.el.style.top = '20px';
+        } else if (sl.sectionIdx === sections.length - 1) {
+          sl.el.style.right = '8px';
+          sl.el.style.bottom = '20px';
+          sl.el.style.top = 'auto';
+          sl.el.style.left = 'auto';
+        } else {
+          sl.el.style.right = '8px';
+          sl.el.style.top = '50%';
         }
       }
     }
