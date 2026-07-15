@@ -1,20 +1,22 @@
 /* ==========================================================================
-   MASTHEAD
+   MASTHEAD — Raycast glass navigation
    ========================================================================== */
 
 .masthead {
-  position: relative;
-  border-bottom: 1px solid $border-color;
-  -webkit-animation: intro 0.3s both;
-          animation: intro 0.3s both;
-  -webkit-animation-delay: 0.15s;
-          animation-delay: 0.15s;
+  position: sticky;
+  top: 0;
   z-index: 20;
+  background: rgba(15, 15, 17, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  animation: intro 0.3s both;
+  animation-delay: 0.15s;
 
   &__inner-wrap {
     @include container;
     @include clearfix;
-    padding: 1em 1em 1em;
+    padding: 0.75em 1em;
     font-family: $sans-serif-narrow;
 
     @include breakpoint($x-large) {
@@ -49,5 +51,12 @@
   &--lg {
     padding-right: 2em;
     font-weight: 700;
+
+    a {
+      color: #FFFFFF !important;
+      font-family: $sans-serif-narrow;
+      font-size: 1.1em;
+      letter-spacing: -0.01em;
+    }
   }
 }

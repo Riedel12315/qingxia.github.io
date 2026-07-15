@@ -1,5 +1,5 @@
 /* ==========================================================================
-   FOOTER
+   FOOTER — Raycast dark footer
    ========================================================================== */
 
 .page__footer {
@@ -9,19 +9,15 @@
   margin-right: 0;
   width: 100%;
   clear: both;
-  /* sticky footer fix start */
   position: absolute;
   bottom: 0em;
   height: auto;
-  /* sticky footer fix end */
   margin-top: 3em;
-  color: mix(#fff, $gray, 25%);
-  -webkit-animation: intro 0.3s both;
-          animation: intro 0.3s both;
-  -webkit-animation-delay: 0.45s;
-          animation-delay: 0.45s;
-  background-color: $lighter-gray;
-  border-top: 1px solid $light-gray;
+  color: $gray;
+  animation: intro 0.3s both;
+  animation-delay: 0.45s;
+  background-color: rgba(255, 255, 255, 0.02);
+  border-top: 1px solid $border-color;
 
   footer {
     @include clearfix;
@@ -37,10 +33,11 @@
   }
 
   a {
-    color: inherit;
+    color: $gray;
     text-decoration: none;
 
     &:hover {
+      color: #FFFFFF;
       text-decoration: underline;
     }
   }
@@ -49,13 +46,14 @@
   .fab,
   .far,
   .fal {
-    color: mix(#fff, $gray, 25%);
+    color: $gray;
   }
 }
 
 .page__footer-copyright {
   font-family: $global-font-family;
   font-size: $type-size-7;
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .page__footer-follow {
@@ -69,9 +67,11 @@
     display: inline-block;
     padding-top: 5px;
     padding-bottom: 5px;
-    font-family: $sans-serif-narrow;
+    font-family: $sans-serif;
     font-size: $type-size-6;
     text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: $gray;
   }
 
   li + li:before {
@@ -81,7 +81,12 @@
 
   a {
     padding-right: 10px;
-    font-weight: bold;
+    font-weight: 600;
+    color: $gray;
+
+    &:hover {
+      color: #FFFFFF;
+    }
   }
 
   .social-icons {

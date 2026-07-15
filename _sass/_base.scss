@@ -1,8 +1,8 @@
 /* ==========================================================================
-   BASE ELEMENTS
+   BASE ELEMENTS — Raycast-inspired dark academic
    ========================================================================== */
+
 html {
-  /* sticky footer fix */
   position: relative;
   min-height: 100%;
 }
@@ -13,10 +13,15 @@ body {
   padding-bottom: 9em;
   color: $text-color;
   font-family: $global-font-family;
-  line-height: 1.5;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.6;
+  background-color: $background-color;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-wrap: pretty;
 
   &.overflow--hidden {
-    /* when primary navigation is visible, the content in the background won't scroll */
     overflow: hidden;
   }
 }
@@ -25,16 +30,20 @@ h1, h2, h3, h4, h5, h6 {
   margin: 2em 0 0.5em;
   line-height: 1.2;
   font-family: $header-font-family;
-  font-weight: bold;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
 }
 
 h1 {
   margin-top: 0;
   font-size: $type-size-3;
+  font-weight: 700;
 }
 
 h2 {
   font-size: $type-size-4;
+  font-weight: 600;
 }
 
 h3 {
@@ -55,6 +64,7 @@ h6 {
 
 small, .small {
   font-size: $type-size-6;
+  color: $gray;
 }
 
 p {
@@ -74,15 +84,13 @@ del a {
   color: inherit;
 }
 
-/* reduce orphans and widows when printing */
-
+/* reduce orphans and widows */
 p, pre, blockquote, ul, ol, dl, figure, table, fieldset {
   orphans: 3;
   widows: 3;
 }
 
 /* abbreviations */
-
 abbr[title],
 abbr[data-original-title] {
   text-decoration: none;
@@ -91,16 +99,18 @@ abbr[data-original-title] {
 }
 
 /* blockquotes */
-
 blockquote {
   margin: 2em 1em 2em 0;
-  padding-left: 1em;
-  padding-right: 1em;
+  padding: 1em 1.5em;
   font-style: italic;
-  border-left: 0.25em solid $primary-color;
+  color: $gray;
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 3px solid $primary-color;
+  border-radius: 0 $border-radius $border-radius 0;
 
   cite {
     font-style: italic;
+    color: $gray;
 
     &:before {
       content: "\2014";
@@ -110,26 +120,33 @@ blockquote {
 }
 
 /* links */
-
 a {
+  color: $link-color;
+  text-decoration: none;
+  transition: $global-transition;
+
   &:focus {
     @extend %tab-focus;
   }
 
   &:hover,
   &:active {
+    color: $link-color-hover;
     outline: 0;
   }
 }
 
 /* code */
-
 tt, code, kbd, samp, pre {
   font-family: $monospace;
 }
 
 pre {
-  overflow-x: auto; /* add scrollbars to wide code blocks*/
+  overflow-x: auto;
+  background: $code-background-color;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  padding: 1em;
 }
 
 p > code,
@@ -137,31 +154,25 @@ a > code,
 li > code,
 figcaption > code,
 td > code {
-  padding-top: 0.1rem;
-  padding-bottom: 0.1rem;
+  padding: 0.1em 0.4em;
   font-size: $type-size-6;
+  font-family: $monospace;
+  font-weight: 500;
   background: $code-background-color;
-  border: 1px solid $lighter-gray;
-  border-radius: $border-radius;
-  box-shadow: $box-shadow;
-
-  &:before, &:after {
-    letter-spacing: -0.2em;
-    content: "\00a0"; /* non-breaking space*/
-  }
+  border: 1px solid $border-color;
+  border-radius: 4px;
+  color: #FF6363;
 }
 
 /* horizontal rule */
-
 hr {
   display: block;
-  margin: 1em 0;
+  margin: 2em 0;
   border: 0;
   border-top: 1px solid $border-color;
 }
 
 /* lists */
-
 ul li,
 ol li {
   margin-bottom: 0.5em;
@@ -172,11 +183,15 @@ li ol {
   margin-top: 0.5em;
 }
 
+/* bold text */
+strong, b {
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
 /*
    Media and embeds
    ========================================================================== */
-
-/* Figures and images */
 
 figure {
   display: -webkit-box;
@@ -197,7 +212,6 @@ figure {
   img {
     width: 100%;
     border-radius: $border-radius;
-    -webkit-transition: $global-transition;
     transition: $global-transition;
   }
 
@@ -232,11 +246,9 @@ figure {
   }
 }
 
-/* Figure captions */
-
 figcaption {
   margin-bottom: 0.5em;
-  color: mix(#fff, $text-color, 25%);
+  color: $gray;
   font-family: $caption-font-family;
   font-size: $type-size-6;
 
@@ -244,18 +256,14 @@ figcaption {
     color: inherit;
     text-decoration: none;
     border-bottom: 1px solid $light-gray;
-    -webkit-transition: $global-transition;
     transition: $global-transition;
 
     &:hover {
-      color: #000;
-      border-bottom-color: #000;
+      color: #fff;
+      border-bottom-color: $link-color;
     }
   }
 }
-
-
-/* Fix IE9 SVG bug */
 
 svg:not(:root) {
   overflow: hidden;
@@ -265,19 +273,6 @@ svg:not(:root) {
 /*
    Navigation lists
    ========================================================================== */
-
-/**
- * Removes margins, padding, and bullet points from navigation lists
- *
- * Example usage:
- * <nav>
- *    <ul>
- *      <li><a href="#link-1">Link 1</a></li>
- *      <li><a href="#link-2">Link 2</a></li>
- *      <li><a href="#link-3">Link 3</a></li>
- *    </ul>
- *  </nav>
- */
 
 nav {
   ul {
@@ -293,7 +288,6 @@ nav {
     text-decoration: none;
   }
 
-  /* override white-space for nested lists */
   ul li,
   ol li {
     margin-bottom: 0;
@@ -310,6 +304,5 @@ nav {
    ========================================================================== */
 
 b, i, strong, em, blockquote, p, q, span, figure, img, h1, h2, header, input, a, tr, td, form button, input[type="submit"], .btn, .highlight, .archive__item-teaser {
-  -webkit-transition: $global-transition;
   transition: $global-transition;
 }

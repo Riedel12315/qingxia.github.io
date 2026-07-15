@@ -1,5 +1,5 @@
 /* ==========================================================================
-   SINGLE PAGE/POST
+   SINGLE PAGE/POST — Raycast dark content
    ========================================================================== */
 
 #main {
@@ -36,7 +36,11 @@
 
 .page__title {
   margin-top: 0;
-  line-height: 1;
+  line-height: 1.1;
+  font-family: $header-font-family;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
 
   & + .page__meta {
     margin-top: -0.5em;
@@ -46,6 +50,7 @@
 .page__lead {
   font-family: $global-font-family;
   font-size: $type-size-4;
+  color: $gray;
 }
 
 .page__content {
@@ -53,17 +58,16 @@
   h2 {
     padding-bottom: 0.5em;
     border-bottom: 1px solid $border-color;
+    color: #FFFFFF;
   }
 
   p, li, dl {
     font-size: 1em;
   }
 
-  /* paragraph indents */
   p {
     margin: 0 0 $indent-var;
 
-    /* sibling indentation*/
     @if $paragraph-indent == true {
       & + p {
         text-indent: $indent-var;
@@ -73,13 +77,15 @@
   }
 
   a {
-    text-decoration: underline;
+    color: $link-color;
+    text-decoration: none;
 
     &:hover {
+      color: $link-color-hover;
       text-decoration: underline;
 
       img {
-        box-shadow: 0 0 10px rgba(#000, 0.25);
+        box-shadow: 0 0 10px rgba(255, 99, 99, 0.25);
       }
     }
   }
@@ -87,20 +93,21 @@
   dt {
     margin-top: 1em;
     font-family: $sans-serif;
-    font-weight: bold;
+    font-weight: 600;
+    color: #FFFFFF;
   }
 
   dd {
     margin-left: 1em;
     font-family: $sans-serif;
     font-size: $type-size-6;
+    color: $gray;
   }
 
   .small {
     font-size: $type-size-6;
   }
 
-  /* blockquote citations */
   blockquote + .small {
     margin-top: -1.5em;
     padding-left: 1.25rem;
@@ -143,7 +150,7 @@
     .page__lead,
     .btn {
       color: #fff;
-      text-shadow: 1px 1px 4px rgba(#000, 0.5);
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
     }
 
     .page__lead {
@@ -218,6 +225,8 @@
   margin-bottom: 10px;
   font-size: $type-size-6;
   text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: $gray;
 }
 
 
@@ -227,7 +236,7 @@
 
 .page__meta {
   margin-top: 2em;
-  color: mix(#fff, $gray, 25%);
+  color: $gray;
   font-family: $sans-serif;
   font-size: $type-size-6;
 
@@ -244,6 +253,7 @@
   margin-bottom: 10px;
   font-size: $type-size-6;
   text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 
@@ -258,6 +268,7 @@
 
   strong {
     margin-right: 10px;
+    color: #FFFFFF;
   }
 }
 
@@ -265,14 +276,19 @@
   display: inline-block;
   margin-right: 5px;
   margin-bottom: 8px;
-  padding: 5px 10px;
+  padding: 5px 12px;
   text-decoration: none;
-  border: 1px solid $light-gray;
-  border-radius: $border-radius;
+  font-size: $type-size-6;
+  color: $gray;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid $border-color;
+  border-radius: 6px;
 
   &:hover {
     text-decoration: none;
-    color: $link-color-hover;
+    color: #FFFFFF;
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.15);
   }
 }
 
@@ -292,11 +308,15 @@
   font-size: $type-size-6;
   border-top: 1px solid $border-color;
   text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #FFFFFF;
 }
 
 .page__comments-form {
   padding: 1em;
-  background: $lighter-gray;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: $border-radius;
+  border: 1px solid $border-color;
   transition: $global-transition;
 
   &.disabled {
@@ -357,6 +377,7 @@
 
 .comment__author {
   margin: 0;
+  color: #FFFFFF;
 
   a {
     text-decoration: none;
@@ -398,4 +419,6 @@
   margin-bottom: 10px;
   font-size: $type-size-6;
   text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #FFFFFF;
 }

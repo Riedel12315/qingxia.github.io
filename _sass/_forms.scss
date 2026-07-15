@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Forms
+   Forms — Dark theme
    ========================================================================== */
 
 form {
@@ -17,9 +17,9 @@ form {
     margin-bottom: 5px * 2;
     *margin-left: -7px;
     padding: 0;
-    color: $text-color;
+    color: #FFFFFF;
     border: 0;
-    border-bottom: 1px solid mix(#fff, #000, 80%);
+    border-bottom: 1px solid $border-color;
     white-space: normal;
   }
 
@@ -63,6 +63,7 @@ label {
 
   small {
     font-size: $type-size-6;
+    color: $gray;
   }
 
   input,
@@ -77,16 +78,23 @@ textarea,
 select {
   display: inline-block;
   width: 100%;
-  padding: 0.25em;
+  padding: 0.5em 0.75em;
   margin-bottom: 0.5em;
   color: $text-color;
-  background-color: #fff;
-  border: 1px solid mix(#fff, #000, 80%);
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid $border-color;
   border-radius: $border-radius;
-  box-shadow: $box-shadow;
+  box-shadow: none;
+  transition: border-color 0.15s ease-out;
 
   &:hover {
-    border-color: mix(#fff, $primary-color, 50%);
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+
+  &:focus {
+    border-color: $primary-color;
+    outline: 0;
+    box-shadow: 0 0 0 3px rgba(255, 99, 99, 0.15);
   }
 }
 
@@ -151,7 +159,8 @@ input[type="file"] {
 
 select {
   width: auto;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.04);
+  color: $text-color;
 }
 
 select[multiple],
@@ -177,7 +186,7 @@ input[type="hidden"] {
 .radio,
 .checkbox {
   padding-left: 18px;
-  font-weight: normal;
+  font-weight: 400;
 }
 
 .radio input[type="radio"],
@@ -210,7 +219,7 @@ textarea[disabled],
 input[readonly],
 select[readonly],
 textarea[readonly] {
-  opacity: 0.5;
+  opacity: 0.3;
   cursor: not-allowed;
 }
 
@@ -283,7 +292,8 @@ select:focus {
 .form-inline .checkbox input[type="checkbox"] {
   float: left;
   margin-left: 0;
-  margin-right: 3px; }
+  margin-right: 3px;
+}
 
 
 /*
@@ -342,7 +352,7 @@ select:focus {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(15, 15, 17, 0.7);
   z-index: 10;
 }
 
@@ -378,11 +388,11 @@ select:focus {
   padding: 8px 20px;
   display: inline-block;
   font-size: $type-size-6;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.04);
   color: #000;
   border-width: 2px !important;
   border-style: solid !important;
-  border-color: lighten(#000,50);
+  border-color: $border-color;
   border-radius: $border-radius;
 }
 

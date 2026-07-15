@@ -1,29 +1,27 @@
 /* ==========================================================================
-   BUTTONS
-   ========================================================================== */
-
-/*
-   Default button
+   BUTTONS — Raycast translucent pills
    ========================================================================== */
 
 .btn {
-  /* default button */
   display: inline-block;
   margin-bottom: 0.25em;
-  padding: 0.5em 1em;
+  padding: 0.5em 1.25em;
   color: #fff !important;
   font-family: $sans-serif;
   font-size: $type-size-6;
-  font-weight: bold;
+  font-weight: 600;
   text-align: center;
   text-decoration: none;
   background-color: $primary-color;
   border: 0 !important;
-  border-radius: $border-radius;
+  border-radius: 8px;
   cursor: pointer;
+  transition: all 0.15s ease-out;
 
   &:hover {
-    background-color: mix(white, #000, 20%);
+    background-color: #FF8A8A;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(255, 99, 99, 0.3);
   }
 
   .icon {
@@ -31,10 +29,8 @@
   }
 
   .icon + .hidden {
-    margin-left: -0.5em; /* override for hidden text*/
+    margin-left: -0.5em;
   }
-
-  /* fills width of parent container */
 
   &--block {
     display: block;
@@ -46,77 +42,77 @@
   }
 
   /* for dark backgrounds */
-
   &--inverse {
     color: $gray !important;
-    border: 1px solid $light-gray !important; /* override*/
-    background-color: #fff;
+    border: 1px solid $border-color !important;
+    background-color: rgba(255, 255, 255, 0.04);
 
     &:hover {
       color: #fff !important;
-      border-color: $gray;
+      background-color: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.15);
+      transform: none;
+      box-shadow: none;
     }
   }
 
   /* light outline */
-
   &--light-outline {
-    border: 1px solid #fff !important; /* override*/
+    border: 1px solid #fff !important;
     background-color: transparent;
   }
 
   /* information */
-
   &--info {
     background-color: $info-color;
 
     &:hover {
-      background-color: mix(#000, $info-color, 20%);
+      background-color: #D4BFFF;
+      box-shadow: 0 4px 16px rgba(196, 166, 255, 0.3);
     }
   }
 
   /* warning */
-
   &--warning {
     background-color: $warning-color;
+    color: #0F0F11 !important;
 
     &:hover {
-      background-color: mix(#000, $warning-color, 20%);
+      background-color: #FFDB5C;
+      box-shadow: 0 4px 16px rgba(245, 200, 66, 0.3);
     }
   }
 
   /* success */
-
   &--success {
     background-color: $success-color;
+    color: #0F0F11 !important;
 
     &:hover {
-      background-color: mix(#000, $success-color, 20%);
+      box-shadow: 0 4px 16px rgba(77, 240, 181, 0.3);
     }
   }
 
   /* danger */
-
   &--danger {
     background-color: $danger-color;
 
     &:hover {
-      background-color: mix(#000, $danger-color, 20%);
+      background-color: #FF8A8A;
+      box-shadow: 0 4px 16px rgba(255, 99, 99, 0.3);
     }
   }
 
   /* disabled */
-
   &--disabled {
     pointer-events: none;
     cursor: not-allowed;
     filter: alpha(opacity=65);
     box-shadow: none;
-    opacity: 0.65;
+    opacity: 0.3;
   }
 
   /* social buttons */
-
   $social:
   (facebook, $facebook-color),
   (twitter, $twitter-color),
@@ -133,19 +129,13 @@
     }
   }
 
-  /* extra large button */
-
   &--x-large {
     font-size: $type-size-4;
   }
 
-  /* large button */
-
   &--large {
     font-size: $type-size-5;
   }
-
-  /* small button */
 
   &--small {
     font-size: $type-size-7;

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   TABLES
+   TABLES — Dark theme
    ========================================================================== */
 
 table {
@@ -8,7 +8,9 @@ table {
   font-family: $global-font-family;
   font-size: $type-size-6;
   border-collapse: collapse;
-  border: 1px solid $light-gray;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  overflow: hidden;
 
   & + table {
     margin-top: 1em;
@@ -16,23 +18,32 @@ table {
 }
 
 thead {
-  background-color: $lighter-gray;
-  border-bottom: 1px solid $light-gray;
+  background-color: rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid $border-color;
 }
 
 th {
-  padding: 0.5em;
-  font-weight: bold;
+  padding: 0.75em 1em;
+  font-weight: 600;
+  font-size: $type-size-7;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   text-align: left;
-  border-right: 1px solid $light-gray;
+  color: $gray;
+  border-right: 1px solid $border-color;
 }
 
 td {
-  padding: 0.5em;
-  border-bottom: 1px solid $light-gray;
-  border-right: 1px solid $light-gray;
+  padding: 0.75em 1em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  border-right: 1px solid rgba(255, 255, 255, 0.04);
+  color: $text-color;
 }
 
 tr, td, th {
   vertical-align: middle;
+}
+
+tr:hover td {
+  background: rgba(255, 255, 255, 0.02);
 }
