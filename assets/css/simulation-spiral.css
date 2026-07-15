@@ -1,0 +1,333 @@
+/* ==========================================================================
+   Simulation Spiral Gallery — Interactive Archimedean spiral layout
+   ========================================================================== */
+
+/* ── Container ── */
+.spiral-gallery {
+  position: relative;
+  width: 100%;
+  min-height: 85vh;
+  margin: 2em 0;
+  overflow: hidden;
+}
+
+/* ── Spiral background path (subtle dotted arc) ── */
+.spiral-gallery__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.15;
+}
+
+/* ── Section label floating in space ── */
+.spiral-section-label {
+  position: absolute;
+  z-index: 2;
+  font-family: 'Inter Tight', 'Inter', sans-serif;
+  font-size: 0.75em;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
+  pointer-events: none;
+  transition: color 0.3s ease;
+}
+
+/* ── Individual spiral item ── */
+.spiral-item {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+  cursor: pointer;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+              z-index 0s;
+  will-change: transform;
+
+  &:hover {
+    z-index: 10 !important;
+  }
+}
+
+/* ── Thumbnail ring ── */
+.spiral-item__thumb {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1.5px solid rgba(255, 255, 255, 0.10);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Glow ring on hover */
+  &::after {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    transition: all 0.35s ease;
+  }
+}
+
+/* ── Item label ── */
+.spiral-item__label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.68em;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.55);
+  text-align: center;
+  max-width: 130px;
+  line-height: 1.3;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Hover state: lift + glow ── */
+.spiral-item:hover .spiral-item__thumb {
+  transform: scale(1.25);
+  border-color: rgba(255, 99, 99, 0.5);
+  box-shadow: 0 12px 48px rgba(255, 99, 99, 0.15),
+              0 0 0 6px rgba(255, 99, 99, 0.06);
+}
+
+.spiral-item:hover .spiral-item__thumb::after {
+  border-color: rgba(255, 99, 99, 0.3);
+}
+
+.spiral-item:hover .spiral-item__label {
+  color: #FFFFFF;
+}
+
+/* ── Active/expanded item ── */
+.spiral-item--active {
+  z-index: 100 !important;
+}
+
+.spiral-item--active .spiral-item__thumb {
+  width: 160px;
+  height: 160px;
+  border-color: rgba(255, 99, 99, 0.6);
+  box-shadow: 0 16px 64px rgba(255, 99, 99, 0.2);
+}
+
+/* ── Modal overlay ── */
+.spiral-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(5, 5, 8, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: overlayIn 0.3s ease;
+  cursor: pointer;
+}
+
+@keyframes overlayIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ── Modal content ── */
+.spiral-modal {
+  position: relative;
+  max-width: min(900px, 92vw);
+  max-height: 90vh;
+  background: rgba(22, 22, 28, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6),
+              0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+  overflow: hidden;
+  cursor: default;
+  animation: modalIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: scale(0.85) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.spiral-modal__image {
+  width: 100%;
+  max-height: 65vh;
+  object-fit: contain;
+  display: block;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.spiral-modal__info {
+  padding: 1.25em 1.75em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1em;
+  flex-wrap: wrap;
+}
+
+.spiral-modal__title {
+  font-family: 'Inter Tight', 'Inter', sans-serif;
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #FFFFFF;
+  letter-spacing: -0.01em;
+  flex: 1;
+}
+
+.spiral-modal__actions {
+  display: flex;
+  gap: 0.5em;
+  flex-shrink: 0;
+}
+
+.spiral-modal__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0.5em 1.1em;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82em;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.spiral-modal__btn--pdf {
+  background: rgba(255, 99, 99, 0.12);
+  color: #FF6363;
+  border: 1px solid rgba(255, 99, 99, 0.2);
+
+  &:hover {
+    background: rgba(255, 99, 99, 0.2);
+    border-color: rgba(255, 99, 99, 0.35);
+    color: #FF8A8A;
+  }
+}
+
+.spiral-modal__btn--close {
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #FFFFFF;
+  }
+}
+
+/* ── Close button in corner ── */
+.spiral-modal__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  &:hover {
+    background: rgba(255, 99, 99, 0.3);
+    border-color: rgba(255, 99, 99, 0.4);
+    color: #FFFFFF;
+  }
+}
+
+/* ── Instruction hint ── */
+.spiral-hint {
+  text-align: center;
+  margin: 0 0 -0.5em;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78em;
+  color: rgba(255, 255, 255, 0.2);
+  letter-spacing: 0.04em;
+  animation: hintPulse 4s ease-in-out infinite;
+}
+
+@keyframes hintPulse {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.45; }
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .spiral-gallery {
+    min-height: auto;
+    padding: 1em 0;
+  }
+
+  .spiral-item__thumb {
+    width: 72px;
+    height: 72px;
+  }
+
+  .spiral-item__label {
+    font-size: 0.6em;
+    max-width: 80px;
+  }
+
+  .spiral-item:hover .spiral-item__thumb {
+    transform: scale(1.15);
+  }
+
+  .spiral-modal__info {
+    padding: 0.8em 1em;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .spiral-modal__title {
+    font-size: 0.95em;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Fallback to compact grid on very small screens */
+  .spiral-gallery {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+    min-height: auto;
+  }
+
+  .spiral-item {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+  }
+}
