@@ -25,34 +25,72 @@
 }
 
 /*
-   Aurora borealis — slow, breathing gradient drift
+   Aurora borealis — psychedelic, ever-shifting, highly visible
    ========================================================================== */
 
-@keyframes auroraDrift {
+/* ── Primary aurora layer: scale + rotate + translate for continuous morph ── */
+@keyframes auroraMorph1 {
   0%, 100% {
-    transform: scale(1) rotate(0deg);
+    transform: scale(1) rotate(0deg) translate(0, 0);
     opacity: 0.85;
   }
-  20% {
-    transform: scale(1.12) rotate(0.8deg);
+  15% {
+    transform: scale(1.18) rotate(1.2deg) translate(-3%, 2%);
     opacity: 1;
   }
-  40% {
-    transform: scale(0.94) rotate(-0.3deg);
-    opacity: 0.7;
+  30% {
+    transform: scale(0.90) rotate(-0.8deg) translate(2%, -3%);
+    opacity: 0.65;
+  }
+  45% {
+    transform: scale(1.14) rotate(-1.5deg) translate(3%, 1%);
+    opacity: 0.95;
   }
   60% {
-    transform: scale(1.08) rotate(-0.5deg);
+    transform: scale(0.92) rotate(0.6deg) translate(-1%, -2%);
+    opacity: 0.7;
+  }
+  75% {
+    transform: scale(1.10) rotate(1.8deg) translate(-2%, 3%);
     opacity: 0.9;
   }
-  80% {
-    transform: scale(0.97) rotate(0.4deg);
+  90% {
+    transform: scale(0.96) rotate(-0.4deg) translate(1%, 1%);
     opacity: 0.75;
   }
 }
 
+/* ── Secondary aurora layer: different speed, opposite direction, more chaotic ── */
+@keyframes auroraMorph2 {
+  0%, 100% {
+    transform: scale(1.05) rotate(0deg) translate(0, 0);
+    opacity: 0.75;
+  }
+  17% {
+    transform: scale(0.85) rotate(-2deg) translate(4%, -2%);
+    opacity: 1;
+  }
+  33% {
+    transform: scale(1.20) rotate(1.5deg) translate(-3%, 3%);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(0.92) rotate(-1deg) translate(-2%, -3%);
+    opacity: 0.9;
+  }
+  67% {
+    transform: scale(1.15) rotate(2.5deg) translate(3%, 1%);
+    opacity: 0.65;
+  }
+  83% {
+    transform: scale(0.88) rotate(-0.5deg) translate(-1%, 2%);
+    opacity: 0.95;
+  }
+}
+
+/* ── Pulse for hint text ── */
 @keyframes auroraPulse {
-  0%, 100% { opacity: 0.6; }
+  0%, 100% { opacity: 0.5; }
   50% { opacity: 1; }
 }
 
@@ -61,10 +99,6 @@
    ========================================================================== */
 
 @keyframes glassShimmer {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }

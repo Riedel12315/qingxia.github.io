@@ -1,6 +1,6 @@
 /**
- * Simulation 3D DNA Helix v5 — true rotating 3D helix
- * Items orbit a central axis via CSS 3D rotation.
+ * Simulation 3D DNA Helix v6
+ * JS-driven rotation with items always facing the viewer.
  */
 (function () {
   'use strict';
@@ -18,7 +18,7 @@
     var loadingEl = document.querySelector('.spiral-loading');
     if (loadingEl) loadingEl.style.display = 'none';
 
-    // ── Parse markdown content ──
+    // ── Parse content ──
     var allChildren = [];
     var childNodes = archive.childNodes;
     for (var i = 0; i < childNodes.length; i++) {
@@ -35,34 +35,29 @@
         for (var j = 0; j < imgs.length; j++) {
           allChildren.push({ type: 'img', el: imgs[j], src: imgs[j].src || imgs[j].getAttribute('src') });
         }
-        var pdfA = node.querySelector('a[href*=".pdf"]');
-        if (pdfA) allChildren.push({ type: 'pdflink', href: pdfA.href });
+        var a = node.querySelector('a[href*=".pdf"]');
+        if (a) allChildren.push({ type: 'pdflink', href: a.href });
       }
     }
 
-    // ── Build sections + items ──
     var sections = [];
-    var currentSection = null;
-    var currentItem = null;
-
+    var curSec = null, curItem = null;
     for (var k = 0; k < allChildren.length; k++) {
-      var child = allChildren[k];
-      if (child.type === 'heading' && child.tag === 'H1') {
-        currentSection = { title: child.text, items: [] };
-        sections.push(currentSection);
-        currentItem = null;
-      } else if (child.type === 'heading' && child.tag === 'H2') {
-        if (!currentSection) { currentSection = { title: 'Results', items: [] }; sections.push(currentSection); }
-        var pdfLink = null;
-        var a = child.el.querySelector('a[href*=".pdf"]');
-        if (a) pdfLink = a.href;
-        var displayTitle = child.text.replace(/\s*\[\(PDF\)\].*$/, '').replace(/\s*\(PDF\).*$/, '').trim();
-        currentItem = { title: displayTitle, section: currentSection.title, images: [], pdfLink: pdfLink };
-        currentSection.items.push(currentItem);
-      } else if (child.type === 'img' && currentItem) {
-        currentItem.images.push(child.src);
-      } else if (child.type === 'pdflink' && currentItem && !currentItem.pdfLink) {
-        currentItem.pdfLink = child.href;
+      var c = allChildren[k];
+      if (c.type === 'heading' && c.tag === 'H1') {
+        curSec = { title: c.text, items: [] }; sections.push(curSec); curItem = null;
+      } else if (c.type === 'heading' && c.tag === 'H2') {
+        if (!curSec) { curSec = { title: 'Results', items: [] }; sections.push(curSec); }
+        var pdf = null;
+        var anchor = c.el.querySelector('a[href*=".pdf"]');
+        if (anchor) pdf = anchor.href;
+        var title = c.text.replace(/\s*\[\(PDF\)\].*$/, '').replace(/\s*\(PDF\).*$/, '').trim();
+        curItem = { title: title, section: curSec.title, images: [], pdfLink: pdf };
+        curSec.items.push(curItem);
+      } else if (c.type === 'img' && curItem) {
+        curItem.images.push(c.src);
+      } else if (c.type === 'pdflink' && curItem && !curItem.pdfLink) {
+        curItem.pdfLink = c.href;
       }
     }
 
@@ -74,7 +69,7 @@
     }
     if (allItems.length === 0) return;
 
-    // ── Build 3D Gallery DOM ──
+    // ── Build DOM ──
     var gallery = document.createElement('div');
     gallery.className = 'spiral-gallery';
 
@@ -83,17 +78,12 @@
     hint.textContent = '⟳  Continuously rotating  ·  Hover to pause  ·  Click to expand  ⟳';
     gallery.appendChild(hint);
 
-    // Central axis visual
+    // Central axis
     var axis = document.createElement('div');
     axis.className = 'helix-axis';
     gallery.appendChild(axis);
 
-    // Rotating stage
-    var stage = document.createElement('div');
-    stage.className = 'helix-stage';
-    gallery.appendChild(stage);
-
-    // Section labels (outside stage, statically positioned at edges)
+    // Section labels
     var sectionLabels = [];
     var flatIdx = 0;
     for (var si2 = 0; si2 < sections.length; si2++) {
@@ -103,19 +93,32 @@
       lbl.className = 'spiral-section-label';
       lbl.textContent = sections[si2].title;
       gallery.appendChild(lbl);
-      sectionLabels.push({ el: lbl, sectionIdx: si2, count: sections[si2].items.length });
+      sectionLabels.push({ el: lbl, idx: si2 });
     }
 
-    // Create items inside the rotating stage
+    // Create item wrappers + items
+    var wrappers = [];
     var itemEls = [];
+
     for (var idx = 0; idx < allItems.length; idx++) {
       (function (item, i) {
+        // Wrapper — positioned on helix
+        var wrapper = document.createElement('div');
+        wrapper.className = 'spiral-item-wrapper';
+        wrapper.style.position = 'absolute';
+        wrapper.style.left = '50%';
+        wrapper.style.top = '50%';
+        wrapper.style.width = '0';
+        wrapper.style.height = '0';
+        wrapper.style.transformStyle = 'preserve-3d';
+
+        // Item — always faces viewer
         var el = document.createElement('div');
         el.className = 'spiral-item';
         el.setAttribute('role', 'button');
         el.setAttribute('tabindex', '0');
         el.setAttribute('aria-label', item.title);
-        el.dataset.index = i;
+        el.style.transformStyle = 'preserve-3d';
 
         var thumb = document.createElement('div');
         thumb.className = 'spiral-item__thumb';
@@ -142,7 +145,9 @@
           if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(item, i); }
         });
 
-        stage.appendChild(el);
+        wrapper.appendChild(el);
+        gallery.appendChild(wrapper);
+        wrappers.push({ el: wrapper, idx: i });
         itemEls.push({ el: el, item: item, idx: i });
       })(allItems[idx], idx);
     }
@@ -155,82 +160,98 @@
     var paragraphs = archive.querySelectorAll('p');
     for (var p = 0; p < paragraphs.length; p++) {
       if (paragraphs[p].closest('.spiral-gallery')) continue;
-      var hasContent = false;
-      for (var c = 0; c < paragraphs[p].childNodes.length; c++) {
-        var cn = paragraphs[p].childNodes[c];
-        if ((cn.nodeType === 3 && cn.textContent.trim()) || (cn.nodeType === 1 && cn.style.display !== 'none')) {
-          hasContent = true; break;
-        }
+      var has = false;
+      for (var cn = 0; cn < paragraphs[p].childNodes.length; cn++) {
+        var n = paragraphs[p].childNodes[cn];
+        if ((n.nodeType === 3 && n.textContent.trim()) || (n.nodeType === 1 && n.style.display !== 'none')) { has = true; break; }
       }
-      if (!hasContent) paragraphs[p].style.display = 'none';
+      if (!has) paragraphs[p].style.display = 'none';
     }
     archive.appendChild(gallery);
 
-    // ── 3D Helix positioning ──
-    // Items placed on the rotating stage. Stage rotates via CSS animation.
-    // Items are positioned in 3D around a central vertical axis.
+    // ── 3D Helix parameters ──
+    var totalItems = allItems.length;
+    var turns = 3.2;
+    var totalAngle = turns * 2 * Math.PI;
+    var radius, itemSize, totalHeight, perspectiveVal;
+    var vw = window.innerWidth;
 
-    function positionItems() {
-      var rect = gallery.getBoundingClientRect();
-      var vw = window.innerWidth;
-      var vh = window.innerHeight;
-      var totalItems = allItems.length;
-
-      if (vw < 480) return; // CSS grid fallback
-
-      // Helix parameters
-      var helixRadius, itemSize, totalHeight, turns;
-      if (vw < 768) {
-        helixRadius = 120;
-        itemSize = 80;
-        totalHeight = Math.min(vh * 0.55, 420);
-        turns = 2.8;
-      } else {
-        helixRadius = 175;
-        itemSize = 130;
-        totalHeight = Math.min(vh * 0.62, 560);
-        turns = 3.2;
-      }
-
-      gallery.style.minHeight = (totalHeight + itemSize + 100) + 'px';
-
-      var totalAngle = turns * 2 * Math.PI;
-
-      for (var i = 0; i < itemEls.length; i++) {
-        var entry = itemEls[i];
-        var frac = totalItems > 1 ? i / (totalItems - 1) : 0;
-        var angle = frac * totalAngle;
-        var y = (frac - 0.5) * totalHeight;
-
-        // Position relative to stage center
-        // Stage is at (50%, 50%) of gallery
-        // Item is at translate3d(x, y, z) from stage origin
-        var x = helixRadius * Math.cos(angle);
-        var z = helixRadius * Math.sin(angle);
-
-        // Use transform only (no left/top on item — just transforms)
-        entry.el.style.left = '50%';
-        entry.el.style.top = '50%';
-        entry.el.style.transform = 'translate3d(' + x.toFixed(1) + 'px, ' + y.toFixed(1) + 'px, ' + z.toFixed(1) + 'px)';
-      }
-
-      // Position section labels at edges
-      for (var si3 = 0; si3 < sectionLabels.length; si3++) {
-        var sl = sectionLabels[si3];
-        if (sl.sectionIdx === 0) {
-          sl.el.style.left = '8px';
-          sl.el.style.top = '20px';
-        } else if (sl.sectionIdx === sections.length - 1) {
-          sl.el.style.right = '8px';
-          sl.el.style.bottom = '20px';
-          sl.el.style.top = 'auto';
-          sl.el.style.left = 'auto';
-        } else {
-          sl.el.style.right = '8px';
-          sl.el.style.top = '50%';
-        }
-      }
+    if (vw < 480) {
+      // CSS grid fallback — no 3D
+      return;
+    } else if (vw < 768) {
+      radius = 130;
+      itemSize = 80;
+      totalHeight = Math.min(window.innerHeight * 0.5, 380);
+      perspectiveVal = 700;
+    } else {
+      radius = 180;
+      itemSize = 130;
+      totalHeight = Math.min(window.innerHeight * 0.6, 540);
+      perspectiveVal = 800;
     }
+
+    gallery.style.perspective = perspectiveVal + 'px';
+    gallery.style.minHeight = (totalHeight + itemSize + 120) + 'px';
+
+    // Position section labels
+    for (var si3 = 0; si3 < sectionLabels.length; si3++) {
+      var sl = sectionLabels[si3];
+      if (sl.idx === 0) { sl.el.style.left = '12px'; sl.el.style.top = '16px'; }
+      else if (sl.idx === sections.length - 1) { sl.el.style.right = '12px'; sl.el.style.bottom = '16px'; sl.el.style.top = 'auto'; sl.el.style.left = 'auto'; }
+      else { sl.el.style.right = '12px'; sl.el.style.top = '45%'; }
+    }
+
+    // ── Animation loop ──
+    var angle = 0;
+    var speed = 0.006; // radians per frame
+    var paused = false;
+    var animId = null;
+
+    gallery.addEventListener('mouseenter', function () { paused = true; });
+    gallery.addEventListener('mouseleave', function () { paused = false; });
+
+    function frame() {
+      if (!paused) {
+        angle += speed;
+        if (angle > 2 * Math.PI) angle -= 2 * Math.PI;
+      }
+
+      for (var i = 0; i < wrappers.length; i++) {
+        var frac = totalItems > 1 ? i / (totalItems - 1) : 0;
+        var itemAngle = frac * totalAngle + angle;
+        var y = (frac - 0.5) * totalHeight;
+        var x = radius * Math.cos(itemAngle);
+        var z = radius * Math.sin(itemAngle);
+
+        // Wrapper positioned on helix
+        wrappers[i].el.style.transform = 'translate3d(' + x.toFixed(1) + 'px, ' + y.toFixed(1) + 'px, ' + z.toFixed(1) + 'px)';
+
+        // Item counter-rotates to ALWAYS face the viewer
+        itemEls[i].el.style.transform = 'rotateY(' + (-itemAngle).toFixed(4) + 'rad)';
+      }
+
+      animId = requestAnimationFrame(frame);
+    }
+
+    animId = requestAnimationFrame(frame);
+
+    // ── Resize recalculation ──
+    var resizeTimer;
+    window.addEventListener('resize', function () {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function () {
+        var nvw = window.innerWidth;
+        if (nvw < 480) return;
+        if (nvw < 768) {
+          radius = 130; itemSize = 80; totalHeight = Math.min(window.innerHeight * 0.5, 380); perspectiveVal = 700;
+        } else {
+          radius = 180; itemSize = 130; totalHeight = Math.min(window.innerHeight * 0.6, 540); perspectiveVal = 800;
+        }
+        gallery.style.perspective = perspectiveVal + 'px';
+        gallery.style.minHeight = (totalHeight + itemSize + 120) + 'px';
+      }, 200);
+    });
 
     // ── Modal ──
     var currentModal = null;
@@ -260,15 +281,13 @@
 
       var info = document.createElement('div');
       info.className = 'spiral-modal__info';
-
-      var title = document.createElement('div');
-      title.className = 'spiral-modal__title';
-      title.textContent = item.title;
-      info.appendChild(title);
+      var titleEl = document.createElement('div');
+      titleEl.className = 'spiral-modal__title';
+      titleEl.textContent = item.title;
+      info.appendChild(titleEl);
 
       var actions = document.createElement('div');
       actions.className = 'spiral-modal__actions';
-
       if (item.pdfLink) {
         var pdfBtn = document.createElement('a');
         pdfBtn.className = 'spiral-modal__btn spiral-modal__btn--pdf';
@@ -278,20 +297,17 @@
         pdfBtn.textContent = '↑ PDF';
         actions.appendChild(pdfBtn);
       }
-
-      var closeAction = document.createElement('button');
-      closeAction.className = 'spiral-modal__btn spiral-modal__btn--close';
-      closeAction.textContent = 'Close';
-      closeAction.addEventListener('click', closeModal);
-      actions.appendChild(closeAction);
-
+      var closeBtn2 = document.createElement('button');
+      closeBtn2.className = 'spiral-modal__btn spiral-modal__btn--close';
+      closeBtn2.textContent = 'Close';
+      closeBtn2.addEventListener('click', closeModal);
+      actions.appendChild(closeBtn2);
       info.appendChild(actions);
       modal.appendChild(info);
       overlay.appendChild(modal);
       document.body.appendChild(overlay);
       document.body.style.overflow = 'hidden';
       currentModal = overlay;
-
       if (itemEls[idx]) itemEls[idx].el.classList.add('spiral-item--active');
     }
 
@@ -305,15 +321,5 @@
     }
 
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
-
-    var resizeTimer;
-    window.addEventListener('resize', function () {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(positionItems, 200);
-    });
-
-    requestAnimationFrame(function () {
-      requestAnimationFrame(positionItems);
-    });
   }
 })();
