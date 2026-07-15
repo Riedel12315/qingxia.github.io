@@ -1,102 +1,85 @@
 /* ==========================================================================
-   ANIMATIONS — Aurora borealis + micro-interactions
+   ANIMATIONS — Psychedelic aurora + micro-interactions
    ========================================================================== */
 
 @-webkit-keyframes intro {
-  0% {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  0% { opacity: 0; transform: translateY(8px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes intro {
-  0% {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  0% { opacity: 0; transform: translateY(8px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 /*
-   Aurora borealis — psychedelic, ever-shifting, highly visible
+   Aurora borealis — fast, dazzling, ever-shifting
    ========================================================================== */
 
-/* ── Primary aurora layer: scale + rotate + translate for continuous morph ── */
+/* ── Primary layer: big sweeping morph ── */
 @keyframes auroraMorph1 {
   0%, 100% {
     transform: scale(1) rotate(0deg) translate(0, 0);
-    opacity: 0.85;
+    opacity: 0.80;
   }
-  15% {
-    transform: scale(1.18) rotate(1.2deg) translate(-3%, 2%);
+  12% {
+    transform: scale(1.22) rotate(1.8deg) translate(-4%, 3%);
     opacity: 1;
   }
-  30% {
-    transform: scale(0.90) rotate(-0.8deg) translate(2%, -3%);
-    opacity: 0.65;
+  28% {
+    transform: scale(0.85) rotate(-1.2deg) translate(3%, -4%);
+    opacity: 0.60;
   }
-  45% {
-    transform: scale(1.14) rotate(-1.5deg) translate(3%, 1%);
+  44% {
+    transform: scale(1.18) rotate(-2deg) translate(4%, 2%);
     opacity: 0.95;
   }
-  60% {
-    transform: scale(0.92) rotate(0.6deg) translate(-1%, -2%);
-    opacity: 0.7;
+  58% {
+    transform: scale(0.88) rotate(1deg) translate(-2%, -3%);
+    opacity: 0.65;
   }
-  75% {
-    transform: scale(1.10) rotate(1.8deg) translate(-2%, 3%);
-    opacity: 0.9;
+  72% {
+    transform: scale(1.14) rotate(2.5deg) translate(-3%, 4%);
+    opacity: 0.92;
   }
-  90% {
-    transform: scale(0.96) rotate(-0.4deg) translate(1%, 1%);
-    opacity: 0.75;
+  86% {
+    transform: scale(0.92) rotate(-0.6deg) translate(2%, 2%);
+    opacity: 0.72;
   }
 }
 
-/* ── Secondary aurora layer: different speed, opposite direction, more chaotic ── */
+/* ── Secondary layer: faster, chaotic counter-motion ── */
 @keyframes auroraMorph2 {
   0%, 100% {
-    transform: scale(1.05) rotate(0deg) translate(0, 0);
-    opacity: 0.75;
+    transform: scale(1.08) rotate(0deg) translate(0, 0);
+    opacity: 0.70;
   }
-  17% {
-    transform: scale(0.85) rotate(-2deg) translate(4%, -2%);
+  15% {
+    transform: scale(0.82) rotate(-2.5deg) translate(5%, -3%);
     opacity: 1;
   }
-  33% {
-    transform: scale(1.20) rotate(1.5deg) translate(-3%, 3%);
-    opacity: 0.6;
+  35% {
+    transform: scale(1.24) rotate(2deg) translate(-4%, 4%);
+    opacity: 0.55;
   }
-  50% {
-    transform: scale(0.92) rotate(-1deg) translate(-2%, -3%);
-    opacity: 0.9;
+  52% {
+    transform: scale(0.88) rotate(-1.5deg) translate(-3%, -4%);
+    opacity: 0.92;
   }
-  67% {
-    transform: scale(1.15) rotate(2.5deg) translate(3%, 1%);
-    opacity: 0.65;
+  68% {
+    transform: scale(1.18) rotate(3deg) translate(4%, 2%);
+    opacity: 0.60;
   }
-  83% {
-    transform: scale(0.88) rotate(-0.5deg) translate(-1%, 2%);
-    opacity: 0.95;
+  84% {
+    transform: scale(0.85) rotate(-0.8deg) translate(-2%, 3%);
+    opacity: 0.98;
   }
 }
 
-/* ── Pulse for hint text ── */
 @keyframes auroraPulse {
   0%, 100% { opacity: 0.5; }
   50% { opacity: 1; }
 }
-
-/*
-   Subtle floating effect for glass surfaces
-   ========================================================================== */
 
 @keyframes glassShimmer {
   0%, 100% { background-position: 0% 50%; }

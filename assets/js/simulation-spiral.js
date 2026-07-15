@@ -1,6 +1,5 @@
 /**
- * Simulation 3D DNA Helix v6
- * JS-driven rotation with items always facing the viewer.
+ * Simulation 3D DNA Helix v7 — unified image+text cards, always face viewer
  */
 (function () {
   'use strict';
@@ -78,12 +77,10 @@
     hint.textContent = '⟳  Continuously rotating  ·  Hover to pause  ·  Click to expand  ⟳';
     gallery.appendChild(hint);
 
-    // Central axis
     var axis = document.createElement('div');
     axis.className = 'helix-axis';
     gallery.appendChild(axis);
 
-    // Section labels
     var sectionLabels = [];
     var flatIdx = 0;
     for (var si2 = 0; si2 < sections.length; si2++) {
@@ -96,23 +93,15 @@
       sectionLabels.push({ el: lbl, idx: si2 });
     }
 
-    // Create item wrappers + items
+    // ── Create wrappers + items ──
     var wrappers = [];
     var itemEls = [];
 
     for (var idx = 0; idx < allItems.length; idx++) {
       (function (item, i) {
-        // Wrapper — positioned on helix
         var wrapper = document.createElement('div');
         wrapper.className = 'spiral-item-wrapper';
-        wrapper.style.position = 'absolute';
-        wrapper.style.left = '50%';
-        wrapper.style.top = '50%';
-        wrapper.style.width = '0';
-        wrapper.style.height = '0';
-        wrapper.style.transformStyle = 'preserve-3d';
 
-        // Item — always faces viewer
         var el = document.createElement('div');
         el.className = 'spiral-item';
         el.setAttribute('role', 'button');
@@ -173,28 +162,17 @@
     var totalItems = allItems.length;
     var turns = 3.2;
     var totalAngle = turns * 2 * Math.PI;
-    var radius, itemSize, totalHeight, perspectiveVal;
+    var radius = 180, itemSize = 130, totalHeight, perspectiveVal = 800;
     var vw = window.innerWidth;
 
-    if (vw < 480) {
-      // CSS grid fallback — no 3D
-      return;
-    } else if (vw < 768) {
-      radius = 130;
-      itemSize = 80;
-      totalHeight = Math.min(window.innerHeight * 0.5, 380);
-      perspectiveVal = 700;
-    } else {
-      radius = 180;
-      itemSize = 130;
-      totalHeight = Math.min(window.innerHeight * 0.6, 540);
-      perspectiveVal = 800;
-    }
+    if (vw < 480) return; // CSS grid fallback
+    if (vw < 768) { radius = 130; itemSize = 80; perspectiveVal = 700; }
+
+    totalHeight = Math.min(window.innerHeight * 0.6, 540);
 
     gallery.style.perspective = perspectiveVal + 'px';
     gallery.style.minHeight = (totalHeight + itemSize + 120) + 'px';
 
-    // Position section labels
     for (var si3 = 0; si3 < sectionLabels.length; si3++) {
       var sl = sectionLabels[si3];
       if (sl.idx === 0) { sl.el.style.left = '12px'; sl.el.style.top = '16px'; }
@@ -204,9 +182,8 @@
 
     // ── Animation loop ──
     var angle = 0;
-    var speed = 0.006; // radians per frame
+    var speed = 0.006;
     var paused = false;
-    var animId = null;
 
     gallery.addEventListener('mouseenter', function () { paused = true; });
     gallery.addEventListener('mouseleave', function () { paused = false; });
@@ -224,30 +201,28 @@
         var x = radius * Math.cos(itemAngle);
         var z = radius * Math.sin(itemAngle);
 
-        // Wrapper positioned on helix
+        // Wrapper: position on helix
         wrappers[i].el.style.transform = 'translate3d(' + x.toFixed(1) + 'px, ' + y.toFixed(1) + 'px, ' + z.toFixed(1) + 'px)';
 
-        // Item counter-rotates to ALWAYS face the viewer
-        itemEls[i].el.style.transform = 'rotateY(' + (-itemAngle).toFixed(4) + 'rad)';
+        // Item: centered + counter-rotated → thumb+label move as one unit
+        itemEls[i].el.style.transform = 'translate(-50%, -50%) rotateY(' + (-itemAngle).toFixed(4) + 'rad)';
       }
 
-      animId = requestAnimationFrame(frame);
+      requestAnimationFrame(frame);
     }
 
-    animId = requestAnimationFrame(frame);
+    requestAnimationFrame(frame);
 
-    // ── Resize recalculation ──
+    // ── Resize ──
     var resizeTimer;
     window.addEventListener('resize', function () {
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(function () {
         var nvw = window.innerWidth;
         if (nvw < 480) return;
-        if (nvw < 768) {
-          radius = 130; itemSize = 80; totalHeight = Math.min(window.innerHeight * 0.5, 380); perspectiveVal = 700;
-        } else {
-          radius = 180; itemSize = 130; totalHeight = Math.min(window.innerHeight * 0.6, 540); perspectiveVal = 800;
-        }
+        if (nvw < 768) { radius = 130; itemSize = 80; perspectiveVal = 700; }
+        else { radius = 180; itemSize = 130; perspectiveVal = 800; }
+        totalHeight = Math.min(window.innerHeight * 0.6, 540);
         gallery.style.perspective = perspectiveVal + 'px';
         gallery.style.minHeight = (totalHeight + itemSize + 120) + 'px';
       }, 200);

@@ -1,137 +1,173 @@
 /**
- * 流星划过效果
- * 独立于鼠标位置，随机在页面上划过
+ * Realistic shooting stars — glowing head + tapered tail, diagonal flight
  */
 (function() {
     'use strict';
 
-    const config = {
-        interval: { min: 2000, max: 6000 },  // 流星出现间隔 (ms)
-        duration: { min: 1200, max: 2200 },   // 流星飞行时长 (ms)
-        size: { min: 140, max: 280 },          // 流星拖尾长度 (px)
-        width: { min: 2, max: 4 },            // 流星线条粗细 (px)
-        maxPerBurst: 5,                        // 每次最多同时出现几颗
-        minPerBurst: 3,                        // 每次最少出现几颗
+    var config = {
+        intervalMin: 2500,
+        intervalMax: 7000,
+        durationMin: 900,
+        durationMax: 1800,
+        tailMin: 100,
+        tailMax: 250,
+        maxPerBurst: 4,
+        minPerBurst: 2,
     };
 
-    let container = null;
+    var container = null;
 
     function init() {
         container = document.createElement('div');
         container.id = 'shooting-stars-container';
-        container.style.cssText = `
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 9997;
-            overflow: hidden;
-        `;
+        container.style.cssText =
+            'position:fixed;top:0;left:0;width:100%;height:100%;' +
+            'pointer-events:none;z-index:9997;overflow:hidden;';
         document.body.appendChild(container);
-
         scheduleNext();
-        console.log('🌠 流星效果已启用');
     }
 
     function scheduleNext() {
-        const delay = config.interval.min + Math.random() * (config.interval.max - config.interval.min);
-        setTimeout(() => {
+        var delay = config.intervalMin + Math.random() * (config.intervalMax - config.intervalMin);
+        setTimeout(function () {
             spawnBurst();
             scheduleNext();
         }, delay);
     }
 
     function spawnBurst() {
-        const count = config.minPerBurst + Math.floor(Math.random() * (config.maxPerBurst - config.minPerBurst + 1));
-        for (let i = 0; i < count; i++) {
-            setTimeout(() => createShootingStar(), Math.random() * 400);
+        var count = config.minPerBurst + Math.floor(Math.random() * (config.maxPerBurst - config.minPerBurst + 1));
+        for (var i = 0; i < count; i++) {
+            setTimeout(function () { createMeteor(); }, Math.random() * 500);
         }
     }
 
-    function createShootingStar() {
-        const star = document.createElement('div');
+    function createMeteor() {
+        var startX = Math.random() * window.innerWidth;
+        var startY = Math.random() * window.innerHeight * 0.5;
+        // Diagonal fall: angle between -20° and -55° from horizontal
+        var angle = -(0.35 + Math.random() * 0.6);
+        var tailLen = config.tailMin + Math.random() * (config.tailMax - config.tailMin);
+        var duration = config.durationMin + Math.random() * (config.durationMax - config.durationMin);
+        var cosA = Math.cos(angle);
+        var sinA = Math.sin(angle);
 
-        // 随机起点和方向
-        const startX = Math.random() * window.innerWidth;
-        const startY = Math.random() * window.innerHeight * 0.6;
-        const angle = (Math.random() - 0.5) * 0.6 - 0.3; // 偏向下落
-        const length = config.size.min + Math.random() * (config.size.max - config.size.min);
-        const endX = startX + Math.cos(angle) * length * 2;
-        const endY = startY + Math.sin(angle) * length * 2;
-        const lineWidth = config.width.min + Math.random() * (config.width.max - config.width.min);
-        const duration = config.duration.min + Math.random() * (config.duration.max - config.duration.min);
+        // Warm star colors
+        var colors = ['#ffffff', '#ffe8d0', '#e0f0ff', '#fff5e0', '#d0e8ff', '#fff0d0'];
+        var color = colors[Math.floor(Math.random() * colors.length)];
 
-        // 颜色：白/浅蓝/浅金
-        const colors = ['#ffffff', '#a0d8ef', '#ffefd5', '#e0f0ff', '#ffe4b5'];
-        const color = colors[Math.floor(Math.random() * colors.length)];
+        // ── Glowing head (small bright dot) ──
+        var head = document.createElement('div');
+        head.style.cssText =
+            'position:absolute;' +
+            'left:' + startX + 'px;' +
+            'top:' + startY + 'px;' +
+            'width:4px;height:4px;' +
+            'margin-left:-2px;margin-top:-2px;' +
+            'border-radius:50%;' +
+            'background:' + color + ';' +
+            'box-shadow: 0 0 6px 2px ' + color + ', 0 0 14px 4px rgba(255,255,255,0.5);' +
+            'opacity:0;' +
+            'animation: meteor-head ' + duration + 'ms ease-out forwards;';
 
-        star.style.cssText = `
-            position: absolute;
-            left: ${startX}px;
-            top: ${startY}px;
-            width: ${length}px;
-            height: ${lineWidth}px;
-            --angle: ${angle}rad;
-            background: linear-gradient(90deg,
-                transparent 0%,
-                rgba(255,255,255,0.1) 30%,
-                ${color} 70%,
-                rgba(255,255,255,0.9) 100%
-            );
-            border-radius: ${lineWidth}px;
-            transform-origin: left center;
-            opacity: 0;
-            animation: shooting-star-fly ${duration}ms ease-out forwards;
-            filter: blur(0.5px);
-            box-shadow: 0 0 ${lineWidth * 2}px ${lineWidth}px ${color};
-        `;
+        // ── Tapered tail (gradient line behind the head) ──
+        var tail = document.createElement('div');
+        tail.style.cssText =
+            'position:absolute;' +
+            'left:' + startX + 'px;' +
+            'top:' + startY + 'px;' +
+            'width:' + tailLen + 'px;' +
+            'height:1.5px;' +
+            'background: linear-gradient(90deg, ' +
+                'transparent 0%, ' +
+                'rgba(255,255,255,0.05) 20%, ' +
+                'rgba(255,255,255,0.2) 50%, ' +
+                color + ' 85%, ' +
+                'rgba(255,255,255,0.95) 100%);' +
+            'border-radius:1px;' +
+            'transform-origin: right center;' +
+            'opacity:0;' +
+            'animation: meteor-tail ' + duration + 'ms ease-out forwards;' +
+            'filter: blur(0.3px);';
 
-        container.appendChild(star);
+        container.appendChild(tail);
+        container.appendChild(head);
 
-        // 动画结束后清理
-        setTimeout(() => {
-            if (star.parentNode) star.parentNode.removeChild(star);
-        }, duration + 100);
+        // Store angle for animation
+        head.style.setProperty('--angle', angle + 'rad');
+        head.style.setProperty('--tail-len', tailLen + 'px');
+        tail.style.setProperty('--angle', angle + 'rad');
+        tail.style.setProperty('--tail-len', tailLen + 'px');
+
+        // ── Animate both together ──
+        var startTime = performance.now();
+
+        function animateMeteor(ts) {
+            var elapsed = ts - startTime;
+            var progress = Math.min(elapsed / duration, 1);
+
+            // Ease out
+            var eased = 1 - Math.pow(1 - progress, 3);
+
+            var dist = (tailLen + 300) * eased;
+            var cx = startX + cosA * dist;
+            var cy = startY + sinA * dist;
+
+            // Fade curve: quick in, slow out
+            var opacity;
+            if (progress < 0.08) {
+                opacity = progress / 0.08;
+            } else if (progress < 0.7) {
+                opacity = 1;
+            } else {
+                opacity = 1 - (progress - 0.7) / 0.3;
+            }
+
+            head.style.left = cx + 'px';
+            head.style.top = cy + 'px';
+            head.style.opacity = opacity;
+
+            tail.style.left = (cx - cosA * tailLen) + 'px';
+            tail.style.top = (cy - sinA * tailLen) + 'px';
+            tail.style.opacity = opacity * 0.8;
+            tail.style.transform = 'rotate(' + angle + 'rad)';
+
+            if (progress < 1) {
+                requestAnimationFrame(animateMeteor);
+            } else {
+                if (head.parentNode) head.parentNode.removeChild(head);
+                if (tail.parentNode) tail.parentNode.removeChild(tail);
+            }
+        }
+
+        requestAnimationFrame(animateMeteor);
     }
 
-    // 注入 keyframes
-    if (!document.getElementById('shooting-stars-style')) {
-        const style = document.createElement('style');
-        style.id = 'shooting-stars-style';
-        style.textContent = `
-            @keyframes shooting-star-fly {
-                0% {
-                    opacity: 0;
-                    transform: rotate(var(--angle, 0.3rad)) scaleX(0.3);
-                    transform-origin: left center;
-                }
-                15% {
-                    opacity: 0.9;
-                }
-                70% {
-                    opacity: 0.6;
-                }
-                100% {
-                    opacity: 0;
-                    transform: rotate(var(--angle, 0.3rad)) scaleX(1);
-                    transform-origin: left center;
-                }
-            }
-            @media print {
-                #shooting-stars-container {
-                    display: none !important;
-                }
-            }
-        `;
+    // Inject keyframes for glow pulse
+    if (!document.getElementById('meteor-style')) {
+        var style = document.createElement('style');
+        style.id = 'meteor-style';
+        style.textContent =
+            '@keyframes meteor-head {' +
+                '0%{opacity:0;transform:scale(0.3)}' +
+                '10%{opacity:1;transform:scale(1.3)}' +
+                '30%{opacity:1;transform:scale(1)}' +
+                '70%{opacity:0.8;transform:scale(0.9)}' +
+                '100%{opacity:0;transform:scale(0.2)}' +
+            '}' +
+            '@keyframes meteor-tail {' +
+                '0%{opacity:0}' +
+                '12%{opacity:0.9}' +
+                '65%{opacity:0.5}' +
+                '100%{opacity:0}' +
+            '}' +
+            '@media print { #shooting-stars-container { display:none !important; } }';
         document.head.appendChild(style);
     }
 
-    // 延迟初始化
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', init);
     } else {
-        setTimeout(init, 200);
+        setTimeout(init, 300);
     }
 })();
