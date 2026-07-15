@@ -43,38 +43,26 @@ Education（教育背景）
  
 Mathmatics Genealogy Project（学术传承）
 =====
-```
-                          ┏━━━━━━━━━━━━━━━━━━━━┓
-                          ┃ Academic Genealogy  ┃
-                          ┗━━━━━━━━━━━━━━━━━━━━┛
 
-  Gen 1  │  David Hilbert
-         │  Ph.D. 1885 · Universität Königsberg 🇩🇪
-         │
-  Gen 2  │  Richard Courant
-         │  Ph.D. 1910 · Georg-August-Universität Göttingen 🇩🇪
-         │
-  Gen 3  │  Joseph Bishop Keller
-         │  Ph.D. 1948 · New York University 🇺🇸
-         │
-  Gen 4  │  George C. Papanicolaou  ⇢  📍 Stanford University
-         │  Ph.D. 1969 · New York University 🇺🇸
-         │
-  Gen 5  │  Russel Edward Caflisch  ⇢  📍 University of California, Los Angeles
-         │  Ph.D. 1978 · New York University 🇺🇸
-         │
-  Gen 6  │  John Samuel Lowengrub  ⇢  📍 University of California, Irvine
-         │  Ph.D. 1988 · New York University 🇺🇸
-         │
-  Gen 7  │  Jun-Seok Kim  ⇢  📍 Korea University
-         │  Ph.D. 2002 · University of Minnesota Minneapolis 🇺🇸
-         │
-  Gen 8  │  Yibao Li  ⇢  📍 Xi'an Jiaotong University
-         │  Ph.D. 2013 · Korea University 🇰🇷
-         │
-  Gen 9  │  Qing Xia  ⇢  📍 Huawei Technologies Co., Ltd.
-         │  Ph.D. 2025 · Xi'an Jiaotong University 🇨🇳
-```
+<link rel="stylesheet" href="{{ base_path }}/assets/css/lineage-tree.css?v=1">
+
+<div id="lineage-tree" class="lineage-tree-loading" style="text-align:center;padding:3em 0;color:rgba(255,255,255,0.2);font-family:Inter,sans-serif;font-size:0.85em;">Loading academic lineage...
+<script type="application/json">
+[
+  {"gen":1,"name":"David Hilbert","degree":"Ph.D.","year":"1885","uni":"Universität Königsberg"},
+  {"gen":2,"name":"Richard Courant","degree":"Ph.D.","year":"1910","uni":"Georg-August-Universität Göttingen"},
+  {"gen":3,"name":"Joseph Bishop Keller","degree":"Ph.D.","year":"1948","uni":"New York University"},
+  {"gen":4,"name":"George C. Papanicolaou","degree":"Ph.D.","year":"1969","uni":"New York University","current":"Stanford University"},
+  {"gen":5,"name":"Russel Edward Caflisch","degree":"Ph.D.","year":"1978","uni":"New York University","current":"University of California, Los Angeles"},
+  {"gen":6,"name":"John Samuel Lowengrub","degree":"Ph.D.","year":"1988","uni":"New York University","current":"University of California, Irvine"},
+  {"gen":7,"name":"Jun-Seok Kim","degree":"Ph.D.","year":"2002","uni":"University of Minnesota Minneapolis","current":"Korea University"},
+  {"gen":8,"name":"Yibao Li","degree":"Ph.D.","year":"2013","uni":"Korea University","current":"Xi'an Jiaotong University"},
+  {"gen":9,"name":"Qing Xia","degree":"Ph.D.","year":"2025","uni":"Xi'an Jiaotong University","current":"Huawei Technologies Co., Ltd."}
+]
+</script>
+</div>
+
+<script src="{{ base_path }}/assets/js/lineage-tree.js?v=1"></script>
 
 
   
