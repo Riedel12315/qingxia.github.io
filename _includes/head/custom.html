@@ -51,4 +51,21 @@
     }
 </style>
 
+<!-- Day/Night theme — zero-flash critical inline check -->
+<script>
+(function(){
+  var h=new Date().getHours(),s=null;
+  try{s=localStorage.getItem('theme-preference')}catch(e){}
+  if(s==='light'||(!s&&h>=6&&h<18)){
+    document.documentElement.className+=' light-mode';
+    // Critical bg fix before CSS loads
+    var st=document.createElement('style');
+    st.textContent='html.light-mode body{background-color:#F6F5F4!important;color:#2D2D35!important}';
+    document.head.appendChild(st);
+  }
+})();
+</script>
+<link rel="stylesheet" href="{{ base_path }}/assets/css/light-mode.css?v=1">
+<script src="{{ base_path }}/assets/js/theme-switcher.js?v=1" defer></script>
+
 <!-- end custom head snippets -->

@@ -1,0 +1,256 @@
+/* ==========================================================================
+   Light Mode — 6:00–18:00 · warm academic
+   ========================================================================== */
+
+body.light-mode {
+  background-color: #F6F5F4;
+  color: #2D2D35;
+}
+
+/* ── Aurora: lighter, gentler ── */
+body.light-mode::before {
+  background:
+    radial-gradient(ellipse 55% 50% at 10% 20%, rgba(99,102,241,0.08) 0%, transparent 50%),
+    radial-gradient(ellipse 48% 55% at 82% 12%, rgba(168,85,247,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse 45% 45% at 58% 70%, rgba(56,189,248,0.05) 0%, transparent 50%),
+    radial-gradient(ellipse 58% 48% at 18% 80%, rgba(34,211,238,0.05) 0%, transparent 50%),
+    radial-gradient(ellipse 46% 52% at 78% 58%, rgba(129,140,248,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse 40% 40% at 42% 35%, rgba(255,99,99,0.04) 0%, transparent 50%),
+    radial-gradient(ellipse 52% 48% at 62% 44%, rgba(236,72,153,0.03) 0%, transparent 50%),
+    radial-gradient(ellipse 42% 46% at 35% 62%, rgba(250,204,21,0.03) 0%, transparent 50%);
+  filter: blur(70px);
+  opacity: 0.7;
+}
+
+body.light-mode::after {
+  background:
+    radial-gradient(ellipse 38% 44% at 74% 26%, rgba(192,132,252,0.06) 0%, transparent 48%),
+    radial-gradient(ellipse 44% 38% at 26% 74%, rgba(45,212,191,0.05) 0%, transparent 48%),
+    radial-gradient(ellipse 36% 48% at 54% 50%, rgba(251,146,60,0.04) 0%, transparent 48%),
+    radial-gradient(ellipse 42% 42% at 66% 72%, rgba(147,51,234,0.05) 0%, transparent 48%),
+    radial-gradient(ellipse 46% 40% at 32% 38%, rgba(6,182,212,0.05) 0%, transparent 48%),
+    radial-gradient(ellipse 38% 44% at 50% 18%, rgba(244,114,182,0.04) 0%, transparent 48%);
+  filter: blur(55px);
+  opacity: 0.65;
+}
+
+/* ── Typography ── */
+body.light-mode,
+body.light-mode p,
+body.light-mode li,
+body.light-mode .page__content p,
+body.light-mode .page__content li { color: #2D2D35; }
+
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode h3,
+body.light-mode h4,
+body.light-mode h5,
+body.light-mode h6,
+body.light-mode .page__title { color: #1A1A22; }
+
+body.light-mode strong,
+body.light-mode b { color: #111118; }
+
+body.light-mode small,
+body.light-mode .small,
+body.light-mode .page__meta,
+body.light-mode figcaption { color: #6B6B78; }
+
+/* ── Links ── */
+body.light-mode a { color: #E04E4E; }
+body.light-mode a:hover { color: #C53030; }
+
+body.light-mode .page__content a:hover {
+  border-bottom-color: rgba(224,78,78,0.3);
+}
+
+/* ── Inline code ── */
+body.light-mode p>code,
+body.light-mode li>code,
+body.light-mode td>code {
+  color: #0D9488;
+  background: rgba(13,148,136,0.06);
+  border-color: rgba(13,148,136,0.12);
+}
+
+/* ── Masthead glass ── */
+body.light-mode .masthead {
+  background: rgba(246,245,244,0.82);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  border-bottom-color: rgba(0,0,0,0.06);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+}
+
+body.light-mode .masthead__menu-item--lg a { color: #1A1A22 !important; }
+body.light-mode .greedy-nav a { color: #555; }
+body.light-mode .greedy-nav a:hover { color: #1A1A22; }
+body.light-mode .greedy-nav .visible-links a::before { background: #E04E4E; }
+
+body.light-mode .greedy-nav .hidden-links {
+  background: #FFF;
+  border-color: rgba(0,0,0,0.08);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.10);
+}
+body.light-mode .greedy-nav .hidden-links a { color: #444; }
+body.light-mode .greedy-nav .hidden-links a:hover {
+  background: rgba(0,0,0,0.04);
+  color: #1A1A22;
+}
+
+/* ── Sidebar ── */
+body.light-mode .author__name { color: #1A1A22; }
+body.light-mode .author__bio,
+body.light-mode .sidebar p,
+body.light-mode .sidebar li { color: #5C5C6A; }
+
+body.light-mode .author__urls {
+  background: rgba(255,255,255,0.95);
+  border-color: rgba(0,0,0,0.06);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+}
+body.light-mode .author__urls a { color: #555; }
+body.light-mode .author__urls a:hover {
+  color: #1A1A22;
+  background: rgba(0,0,0,0.03);
+}
+
+/* ── Content cards / archive ── */
+body.light-mode .archive__item {
+  background: rgba(255,255,255,0.6);
+  border-color: rgba(0,0,0,0.05);
+}
+body.light-mode .archive__item:hover {
+  background: rgba(255,255,255,0.9);
+  border-color: rgba(0,0,0,0.10);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+}
+
+body.light-mode .archive li,
+body.light-mode .page__content li {
+  color: #2D2D35;
+}
+body.light-mode .archive li:hover,
+body.light-mode .page__content li:hover {
+  background: rgba(255,255,255,0.7);
+  border-color: rgba(0,0,0,0.06);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+}
+
+/* ── Tables ── */
+body.light-mode table {
+  border-color: rgba(0,0,0,0.06);
+}
+body.light-mode thead { background: rgba(0,0,0,0.02); }
+body.light-mode th { color: #555; border-color: rgba(0,0,0,0.06); }
+body.light-mode td { color: #2D2D35; border-color: rgba(0,0,0,0.04); }
+body.light-mode tr:hover td { background: rgba(0,0,0,0.01); }
+
+/* ── Forms ── */
+body.light-mode input,
+body.light-mode textarea,
+body.light-mode select {
+  color: #2D2D35;
+  background: #FFF;
+  border-color: rgba(0,0,0,0.10);
+}
+body.light-mode input:focus,
+body.light-mode textarea:focus {
+  border-color: #E04E4E;
+  box-shadow: 0 0 0 3px rgba(224,78,78,0.10);
+}
+
+/* ── Footer ── */
+body.light-mode .page__footer {
+  background: rgba(0,0,0,0.02);
+  border-top-color: rgba(0,0,0,0.04);
+  color: #888;
+}
+body.light-mode .page__footer a { color: #666; }
+body.light-mode .page__footer a:hover { color: #1A1A22; }
+body.light-mode .page__footer-copyright { color: rgba(0,0,0,0.3); }
+
+/* ── Blockquote ── */
+body.light-mode blockquote {
+  background: rgba(0,0,0,0.02);
+  border-color: rgba(0,0,0,0.06);
+  color: #555;
+}
+
+/* ── Code blocks ── */
+body.light-mode pre {
+  background: rgba(0,0,0,0.03);
+  border-color: rgba(0,0,0,0.06);
+}
+
+/* ── HR ── */
+body.light-mode hr {
+  background: linear-gradient(90deg, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.03) 50%, transparent 100%);
+}
+
+/* ── Buttons ── */
+body.light-mode .btn--inverse {
+  color: #555 !important;
+  border-color: rgba(0,0,0,0.10) !important;
+  background: #FFF;
+}
+body.light-mode .btn--inverse:hover {
+  color: #1A1A22 !important;
+  background: rgba(0,0,0,0.03);
+}
+
+/* ── Lineage tree ── */
+body.light-mode .lineage-node {
+  background: rgba(255,255,255,0.5);
+  border-color: rgba(0,0,0,0.04);
+}
+body.light-mode .lineage-node:hover {
+  background: rgba(255,255,255,0.8);
+  border-color: rgba(0,0,0,0.10);
+}
+body.light-mode .lineage-node__name { color: #1A1A22; }
+body.light-mode .lineage-node__meta { color: rgba(0,0,0,0.4); }
+body.light-mode .lineage-node__uni { color: rgba(0,0,0,0.5); }
+body.light-mode .lineage-node__note { color: rgba(0,0,0,0.22); }
+body.light-mode .lineage-node:hover .lineage-node__note { color: rgba(0,0,0,0.4); }
+
+body.light-mode .lineage-node--current {
+  background: rgba(224,78,78,0.04);
+  border-color: rgba(224,78,78,0.2);
+}
+body.light-mode .lineage-node--current .lineage-node__name { color: #C53030; }
+
+body.light-mode .lineage-tree__spine {
+  background: linear-gradient(to bottom,
+    rgba(0,0,0,0.04) 0%, rgba(0,0,0,0.08) 20%,
+    rgba(224,78,78,0.15) 60%, rgba(224,78,78,0.40) 95%,
+    rgba(224,78,78,0.55) 100%);
+}
+
+/* ── Notices ── */
+body.light-mode .notice { background: rgba(0,0,0,0.02); border-color: rgba(0,0,0,0.06); }
+
+/* ── Syntax highlighting ── */
+body.light-mode div.highlighter-rouge,
+body.light-mode figure.highlight {
+  background: rgba(0,0,0,0.02);
+  border-color: rgba(0,0,0,0.06);
+}
+
+/* ── h2 accent underline ── */
+body.light-mode h2::after { opacity: 0.7; }
+
+/* ── Transitions ── */
+body, .masthead, .archive__item, .lineage-node, .page__footer,
+.author__urls, .greedy-nav, .greedy-nav .hidden-links,
+input, textarea, select, table, pre, blockquote, hr,
+.lineage-tree__spine {
+  transition: background-color 0.5s ease, color 0.5s ease,
+              border-color 0.5s ease, box-shadow 0.5s ease,
+              opacity 0.5s ease;
+}
+
+body::before, body::after {
+  transition: opacity 0.8s ease, filter 0.8s ease;
+}
