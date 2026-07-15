@@ -1,13 +1,11 @@
 /* ==========================================================================
-   ARCHIVE — Publication list, glass cards
+   ARCHIVE — Premium glass publication cards
    ========================================================================== */
 
 .archive {
   margin-bottom: 2em;
 
-  @include breakpoint($medium) {
-    @include span(12 of 12);
-  }
+  @include breakpoint($medium) { @include span(12 of 12); }
 
   @include breakpoint($large) {
     @include span(10 of 12 last);
@@ -21,21 +19,20 @@
     &:hover {
       color: $link-color-hover;
       text-decoration: underline;
-
-      img {
-        box-shadow: 0 0 10px rgba(255, 99, 99, 0.25);
-      }
+      img { box-shadow: 0 0 10px rgba(255, 99, 99, 0.25); }
     }
   }
 }
 
 .archive__subtitle {
-  margin: 1.414em 0 0.5em;
-  padding-bottom: 0.5em;
-  font-size: $type-size-5;
+  margin: 1.414em 0 0.6em;
+  padding-bottom: 0.6em;
+  font-size: 1.15em;
   font-weight: 600;
+  font-family: $sans-serif-narrow;
+  letter-spacing: -0.01em;
   color: #FFFFFF;
-  border-bottom: 1px solid $border-color;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 
   + .list__item .archive__item-title {
     margin-top: 0.5em;
@@ -43,18 +40,14 @@
 }
 
 .archive__item-title {
-  margin-bottom: 0.25em;
-  font-family: $sans-serif-narrow;
-  font-weight: 600;
+  margin-bottom: 0.2em;
+  font-family: $sans-serif;
+  font-weight: 500;
 
-  a + a {
-    opacity: 0.5;
-  }
+  a + a { opacity: 0.5; }
 }
 
-/* remove border */
 .page__content {
-
   .archive__item-title {
     margin-top: 1em;
     border-bottom: none;
@@ -66,32 +59,32 @@
   font-size: $type-size-6;
   color: $gray;
 
-  & + p {
-    text-indent: 0;
-  }
+  & + p { text-indent: 0; }
 }
 
 .archive__item-teaser {
   border-radius: $border-radius;
   overflow: hidden;
-  img {
-    width: 100%;
-  }
+  img { width: 100%; }
 }
 
+/* ── Publication card — glass surface with hover lift ── */
 .archive__item {
   padding: 1em 1.25em;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.4em;
   background: rgba(255, 255, 255, 0.02);
-  border: 1px solid transparent;
-  border-radius: $border-radius;
-  transition: all 0.15s ease-out;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 
   &:hover {
-    background: rgba(255, 255, 255, 0.04);
-    border-color: rgba(255, 255, 255, 0.06);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4),
+                0 0 0 1px rgba(255, 255, 255, 0.03) inset;
 
     .archive__item-teaser {
       box-shadow: 0 0 10px rgba(255, 99, 99, 0.15);
@@ -99,29 +92,17 @@
   }
 }
 
-
 /*
    List view
    ========================================================================== */
 
 .list__item {
-  @include breakpoint($medium) {
-    padding-right: $right-sidebar-width-narrow;
-  }
+  @include breakpoint($medium) { padding-right: $right-sidebar-width-narrow; }
+  @include breakpoint($large) { padding-right: $right-sidebar-width; }
+  @include breakpoint($x-large) { padding-right: $right-sidebar-width-wide; }
 
-  @include breakpoint($large) {
-    padding-right: $right-sidebar-width;
-  }
-
-  @include breakpoint($x-large) {
-    padding-right: $right-sidebar-width-wide;
-  }
-
-  .page__meta {
-    margin: 0 0 4px;
-  }
+  .page__meta { margin: 0 0 4px; }
 }
-
 
 /*
    Grid view
@@ -130,42 +111,23 @@
 .grid__item {
   margin-bottom: 2em;
 
-  .page__meta {
-    margin: 0 0 4px;
-  }
-
-  .archive__item-title {
-    margin-top: 0.5em;
-    font-size: $type-size-5;
-  }
-
-  .archive__item-excerpt {
-    display: none;
-  }
+  .page__meta { margin: 0 0 4px; }
+  .archive__item-title { margin-top: 0.5em; font-size: $type-size-5; }
+  .archive__item-excerpt { display: none; }
 
   @include breakpoint($small) {
     @include gallery(5 of 10);
-    .archive__item-teaser {
-      max-height: 200px;
-    }
+    .archive__item-teaser { max-height: 200px; }
   }
 
   @include breakpoint($medium) {
     margin-left: 0;
     margin-right: 0;
     @include gallery(2.5 of 10);
-
-    .archive__item-teaser {
-      max-height: 120px;
-    }
-
-    .archive__item-excerpt {
-      display: block;
-      font-size: $type-size-6;
-    }
+    .archive__item-teaser { max-height: 120px; }
+    .archive__item-excerpt { display: block; font-size: $type-size-6; }
   }
 }
-
 
 /*
    Features
@@ -184,26 +146,15 @@
   @include breakpoint($small) {
     margin-bottom: 0;
     @include gallery(4 of 12);
-
-    .feature__item-teaser {
-      max-height: 200px;
-      overflow: hidden;
-    }
+    .feature__item-teaser { max-height: 200px; overflow: hidden; }
   }
 
   &--left {
     @include full();
     font-size: 1.25rem;
-
-    .archive__item-teaser {
-      margin-bottom: 2em;
-    }
-
+    .archive__item-teaser { margin-bottom: 2em; }
     @include breakpoint($small) {
-      .archive__item-teaser {
-        @include span(5 of 12);
-      }
-
+      .archive__item-teaser { @include span(5 of 12); }
       .archive__item-body {
         @include span(7 of 12 last);
         @include prefix(0.5 of 12);
@@ -215,18 +166,10 @@
   &--right {
     @include full();
     font-size: 1.25rem;
-
-    .archive__item-teaser {
-      margin-bottom: 2em;
-    }
-
+    .archive__item-teaser { margin-bottom: 2em; }
     @include breakpoint($small) {
       text-align: right;
-
-      .archive__item-teaser {
-        @include span(5 of 12 rtl);
-      }
-
+      .archive__item-teaser { @include span(5 of 12 rtl); }
       .archive__item-body {
         @include span(7 of 12 last rtl);
         @include prefix(0.5 of 12);
@@ -238,23 +181,11 @@
   &--center {
     @include full();
     font-size: 1.25rem;
-
-    .archive__item-teaser {
-      margin-bottom: 2em;
-    }
-
+    .archive__item-teaser { margin-bottom: 2em; }
     @include breakpoint($small) {
       text-align: center;
-
-      .archive__item-teaser {
-        margin: 0 auto;
-        width: span(5 of 12);
-      }
-
-      .archive__item-body {
-        margin: 0 auto;
-        width: span(7 of 12);
-      }
+      .archive__item-teaser { margin: 0 auto; width: span(5 of 12); }
+      .archive__item-body { margin: 0 auto; width: span(7 of 12); }
     }
   }
 }

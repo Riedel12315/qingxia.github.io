@@ -1,5 +1,5 @@
 /* ==========================================================================
-   ANIMATIONS
+   ANIMATIONS — Aurora borealis + micro-interactions
    ========================================================================== */
 
 @-webkit-keyframes intro {
@@ -24,15 +24,47 @@
   }
 }
 
-/* Subtle background gradient animation for hero area */
-@keyframes gradientShift {
-  0% {
+/*
+   Aurora borealis — slow, breathing gradient drift
+   ========================================================================== */
+
+@keyframes auroraDrift {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.85;
+  }
+  20% {
+    transform: scale(1.12) rotate(0.8deg);
+    opacity: 1;
+  }
+  40% {
+    transform: scale(0.94) rotate(-0.3deg);
+    opacity: 0.7;
+  }
+  60% {
+    transform: scale(1.08) rotate(-0.5deg);
+    opacity: 0.9;
+  }
+  80% {
+    transform: scale(0.97) rotate(0.4deg);
+    opacity: 0.75;
+  }
+}
+
+@keyframes auroraPulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/*
+   Subtle floating effect for glass surfaces
+   ========================================================================== */
+
+@keyframes glassShimmer {
+  0%, 100% {
     background-position: 0% 50%;
   }
   50% {
     background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
   }
 }

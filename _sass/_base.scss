@@ -1,10 +1,11 @@
 /* ==========================================================================
-   BASE ELEMENTS — Raycast-inspired dark academic
+   BASE ELEMENTS — Aurora glass-morphism dark academic
    ========================================================================== */
 
 html {
   position: relative;
   min-height: 100%;
+  background-color: #0F0F11;
 }
 
 body {
@@ -15,15 +16,57 @@ body {
   font-family: $global-font-family;
   font-size: 15px;
   font-weight: 400;
-  line-height: 1.6;
-  background-color: $background-color;
+  line-height: 1.7;
+  background-color: #0F0F11;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-wrap: pretty;
 
+  /* ── Aurora borealis background ── */
+  &::before {
+    content: '';
+    position: fixed;
+    inset: -30%;
+    z-index: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 45% 40% at 15% 25%, rgba(99, 102, 241, 0.10) 0%, transparent 55%),
+      radial-gradient(ellipse 40% 45% at 78% 18%, rgba(168, 85, 247, 0.08) 0%, transparent 55%),
+      radial-gradient(ellipse 35% 35% at 55% 65%, rgba(56, 189, 248, 0.07) 0%, transparent 55%),
+      radial-gradient(ellipse 50% 38% at 25% 75%, rgba(34, 211, 238, 0.06) 0%, transparent 55%),
+      radial-gradient(ellipse 38% 42% at 72% 55%, rgba(129, 140, 248, 0.07) 0%, transparent 55%),
+      radial-gradient(ellipse 28% 30% at 48% 40%, rgba(255, 99, 99, 0.04) 0%, transparent 55%);
+    filter: blur(90px);
+    animation: auroraDrift 28s ease-in-out infinite;
+  }
+
+  /* ── Second aurora layer for depth ── */
+  &::after {
+    content: '';
+    position: fixed;
+    inset: -20%;
+    z-index: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 30% 35% at 70% 30%, rgba(192, 132, 252, 0.07) 0%, transparent 50%),
+      radial-gradient(ellipse 35% 30% at 30% 70%, rgba(45, 212, 191, 0.05) 0%, transparent 50%),
+      radial-gradient(ellipse 25% 40% at 50% 50%, rgba(251, 146, 60, 0.04) 0%, transparent 50%);
+    filter: blur(70px);
+    animation: auroraDrift 22s ease-in-out infinite reverse;
+  }
+
   &.overflow--hidden {
     overflow: hidden;
   }
+}
+
+/* ── Ensure content sits above aurora ── */
+.masthead,
+#main,
+.page__footer,
+.sidebar {
+  position: relative;
+  z-index: 1;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -37,30 +80,46 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   margin-top: 0;
-  font-size: $type-size-3;
+  font-size: 2em;
   font-weight: 700;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, #FFFFFF 0%, #C8CAD0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 h2 {
-  font-size: $type-size-4;
+  font-size: 1.35em;
   font-weight: 600;
+  letter-spacing: -0.015em;
+  margin-top: 2.5em;
+  padding-bottom: 0.6em;
+  position: relative;
+
+  /* Subtle accent underline */
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 2em;
+    height: 2px;
+    background: $primary-color;
+    border-radius: 1px;
+    opacity: 0.6;
+  }
 }
 
 h3 {
-  font-size: $type-size-5;
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #EDEDEF;
 }
 
-h4 {
-  font-size: $type-size-6;
-}
-
-h5 {
-  font-size: $type-size-6;
-}
-
-h6 {
-  font-size: $type-size-6;
-}
+h4 { font-size: $type-size-6; }
+h5 { font-size: $type-size-6; }
+h6 { font-size: $type-size-6; }
 
 small, .small {
   font-size: $type-size-6;
@@ -69,28 +128,23 @@ small, .small {
 
 p {
   margin-bottom: 1.3em;
+  line-height: 1.75;
 }
 
 u,
 ins {
   text-decoration: none;
   border-bottom: 1px solid $text-color;
-  a {
-    color: inherit;
-  }
+  a { color: inherit; }
 }
 
-del a {
-  color: inherit;
-}
+del a { color: inherit; }
 
-/* reduce orphans and widows */
 p, pre, blockquote, ul, ol, dl, figure, table, fieldset {
   orphans: 3;
   widows: 3;
 }
 
-/* abbreviations */
 abbr[title],
 abbr[data-original-title] {
   text-decoration: none;
@@ -98,55 +152,52 @@ abbr[data-original-title] {
   border-bottom: 1px dotted $text-color;
 }
 
-/* blockquotes */
+/* ── Blockquotes — elegant pull quote ── */
 blockquote {
-  margin: 2em 1em 2em 0;
-  padding: 1em 1.5em;
+  margin: 2em 0;
+  padding: 1.25em 1.75em;
   font-style: italic;
-  color: $gray;
+  color: #B0B3B8;
   background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   border-left: 3px solid $primary-color;
   border-radius: 0 $border-radius $border-radius 0;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 
   cite {
     font-style: italic;
     color: $gray;
-
-    &:before {
-      content: "\2014";
-      padding-right: 5px;
-    }
+    &:before { content: "\2014"; padding-right: 5px; }
   }
 }
 
-/* links */
+/* ── Links ── */
 a {
   color: $link-color;
   text-decoration: none;
-  transition: $global-transition;
+  transition: all 0.2s ease;
 
-  &:focus {
-    @extend %tab-focus;
-  }
-
-  &:hover,
-  &:active {
+  &:focus { @extend %tab-focus; }
+  &:hover, &:active {
     color: $link-color-hover;
     outline: 0;
   }
 }
 
-/* code */
+/* ── Code ── */
 tt, code, kbd, samp, pre {
   font-family: $monospace;
 }
 
 pre {
   overflow-x: auto;
-  background: $code-background-color;
+  background: rgba(255, 255, 255, 0.04);
   border: 1px solid $border-color;
   border-radius: $border-radius;
-  padding: 1em;
+  padding: 1.25em;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 p > code,
@@ -154,28 +205,30 @@ a > code,
 li > code,
 figcaption > code,
 td > code {
-  padding: 0.1em 0.4em;
-  font-size: $type-size-6;
+  padding: 0.15em 0.5em;
+  font-size: 0.85em;
   font-family: $monospace;
   font-weight: 500;
-  background: $code-background-color;
-  border: 1px solid $border-color;
+  background: rgba(255, 99, 99, 0.10);
+  border: 1px solid rgba(255, 99, 99, 0.15);
   border-radius: 4px;
   color: #FF6363;
 }
 
-/* horizontal rule */
+/* ── Horizontal rule ── */
 hr {
   display: block;
-  margin: 2em 0;
+  margin: 2.5em 0;
   border: 0;
-  border-top: 1px solid $border-color;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 50%, transparent 100%);
 }
 
-/* lists */
+/* ── Lists ── */
 ul li,
 ol li {
-  margin-bottom: 0.5em;
+  margin-bottom: 0.6em;
+  line-height: 1.65;
 }
 
 li ul,
@@ -183,9 +236,9 @@ li ol {
   margin-top: 0.5em;
 }
 
-/* bold text */
+/* ── Bold — premium crisp white ── */
 strong, b {
-  color: #FFFFFF;
+  color: #F0F0F3;
   font-weight: 600;
 }
 
@@ -194,18 +247,13 @@ strong, b {
    ========================================================================== */
 
 figure {
-  display: -webkit-box;
   display: flex;
-  -webkit-box-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: start;
-          align-items: flex-start;
+  justify-content: space-between;
+  align-items: flex-start;
   flex-wrap: wrap;
   margin: 2em 0;
 
-  img,
-  iframe,
-  .fluid-width-video-wrapper {
+  img, iframe, .fluid-width-video-wrapper {
     margin-bottom: 1em;
   }
 
@@ -215,34 +263,20 @@ figure {
     transition: $global-transition;
   }
 
-  > a {
-    display: block;
-  }
+  > a { display: block; }
 
   &.half {
-    > a,
-    > img {
-      @include breakpoint($small) {
-        width: calc(50% - 0.5em);
-      }
+    > a, > img {
+      @include breakpoint($small) { width: calc(50% - 0.5em); }
     }
-
-    figcaption {
-      width: 100%;
-    }
+    figcaption { width: 100%; }
   }
 
   &.third {
-    > a,
-    > img {
-      @include breakpoint($small) {
-        width: calc(33.3333% - 0.5em);
-      }
+    > a, > img {
+      @include breakpoint($small) { width: calc(33.3333% - 0.5em); }
     }
-
-    figcaption {
-      width: 100%;
-    }
+    figcaption { width: 100%; }
   }
 }
 
@@ -257,7 +291,6 @@ figcaption {
     text-decoration: none;
     border-bottom: 1px solid $light-gray;
     transition: $global-transition;
-
     &:hover {
       color: #fff;
       border-bottom-color: $link-color;
@@ -265,38 +298,18 @@ figcaption {
   }
 }
 
-svg:not(:root) {
-  overflow: hidden;
-}
-
+svg:not(:root) { overflow: hidden; }
 
 /*
    Navigation lists
    ========================================================================== */
 
 nav {
-  ul {
-    margin: 0;
-    padding: 0;
-  }
-
-  li {
-    list-style: none;
-  }
-
-  a {
-    text-decoration: none;
-  }
-
-  ul li,
-  ol li {
-    margin-bottom: 0;
-  }
-
-  li ul,
-  li ol {
-    margin-top: 0;
-  }
+  ul { margin: 0; padding: 0; }
+  li { list-style: none; }
+  a { text-decoration: none; }
+  ul li, ol li { margin-bottom: 0; }
+  li ul, li ol { margin-top: 0; }
 }
 
 /*

@@ -1,15 +1,15 @@
 /* ==========================================================================
-   SINGLE PAGE/POST — Raycast dark content
+   SINGLE PAGE/POST — Premium dark content
    ========================================================================== */
 
 #main {
   @include container;
   @include clearfix;
-  margin-top: 2em;
+  margin-top: 2.5em;
   padding-left: 1em;
   padding-right: 1em;
-  animation: intro 0.3s both;
-  animation-delay: 0.35s;
+  animation: intro 0.4s both;
+  animation-delay: 0.25s;
 
   @include breakpoint($x-large) {
     max-width: $x-large;
@@ -36,37 +36,49 @@
 
 .page__title {
   margin-top: 0;
-  line-height: 1.1;
+  line-height: 1.15;
   font-family: $header-font-family;
   font-weight: 700;
-  letter-spacing: -0.02em;
+  font-size: 2.2em;
+  letter-spacing: -0.03em;
   color: #FFFFFF;
 
   & + .page__meta {
-    margin-top: -0.5em;
+    margin-top: -0.3em;
   }
 }
 
 .page__lead {
   font-family: $global-font-family;
-  font-size: $type-size-4;
+  font-size: 1.15em;
   color: $gray;
+  line-height: 1.7;
 }
 
 .page__content {
 
+  /* ── Section headings ── */
   h2 {
-    padding-bottom: 0.5em;
-    border-bottom: 1px solid $border-color;
+    padding-bottom: 0.7em;
+    border-bottom: none; /* replaced by ::after in base */
     color: #FFFFFF;
+    font-size: 1.4em;
+    margin-top: 3em;
+  }
+
+  h3 {
+    color: #E0E0E5;
+    font-size: 1.1em;
+    margin-top: 1.8em;
   }
 
   p, li, dl {
     font-size: 1em;
+    line-height: 1.75;
   }
 
   p {
-    margin: 0 0 $indent-var;
+    margin: 0 0 1.2em;
 
     @if $paragraph-indent == true {
       & + p {
@@ -76,18 +88,23 @@
     }
   }
 
+  /* ── Links in content ── */
   a {
     color: $link-color;
     text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s ease;
 
     &:hover {
       color: $link-color-hover;
-      text-decoration: underline;
-
-      img {
-        box-shadow: 0 0 10px rgba(255, 99, 99, 0.25);
-      }
+      border-bottom-color: rgba(255, 99, 99, 0.3);
     }
+  }
+
+  /* ── Bold stat numbers ── */
+  strong {
+    color: #FFFFFF;
+    font-weight: 650;
   }
 
   dt {
@@ -106,11 +123,65 @@
 
   .small {
     font-size: $type-size-6;
+    color: $gray;
   }
 
   blockquote + .small {
     margin-top: -1.5em;
     padding-left: 1.25rem;
+  }
+
+  /* ── List items as news entries ── */
+  ul li, ol li {
+    padding: 0.15em 0;
+    position: relative;
+  }
+}
+
+/* ── Stat badges row ── */
+.stats-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75em;
+  margin: 0 0 2em;
+}
+
+.stat-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.5em 1em;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  font-family: $sans-serif;
+  font-size: 0.85em;
+  color: $gray;
+
+  .stat-number {
+    font-family: $sans-serif-narrow;
+    font-size: 1.4em;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.8em;
+    line-height: 1.3;
+    letter-spacing: 0.01em;
+  }
+
+  &.accent {
+    border-color: rgba(255, 99, 99, 0.2);
+    background: rgba(255, 99, 99, 0.06);
+
+    .stat-number {
+      color: $primary-color;
+    }
   }
 }
 
@@ -118,8 +189,8 @@
   position: relative;
   margin-bottom: 2em;
   @include clearfix;
-  animation: intro 0.3s both;
-  animation-delay: 0.25s;
+  animation: intro 0.4s both;
+  animation-delay: 0.2s;
 
   &--overlay {
     position: relative;
@@ -129,20 +200,15 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    animation: intro 0.3s both;
-    animation-delay: 0.25s;
+    animation: intro 0.4s both;
+    animation-delay: 0.2s;
 
-    a {
-      color: #fff;
-    }
+    a { color: #fff; }
 
     .wrapper {
       padding-left: 1em;
       padding-right: 1em;
-
-      @include breakpoint($x-large) {
-        max-width: $x-large;
-      }
+      @include breakpoint($x-large) { max-width: $x-large; }
     }
 
     .page__title,
@@ -153,16 +219,11 @@
       text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
     }
 
-    .page__lead {
-      max-width: $medium;
-    }
+    .page__lead { max-width: $medium; }
 
     .page__title {
       font-size: $type-size-2;
-
-      @include breakpoint($small) {
-        font-size: $type-size-1;
-      }
+      @include breakpoint($small) { font-size: $type-size-1; }
     }
   }
 }
@@ -188,14 +249,9 @@
   opacity: 0.5;
   border-radius: $border-radius 0 $border-radius 0;
 
-  @include breakpoint($large) {
-    padding: 5px 10px;
-  }
+  @include breakpoint($large) { padding: 5px 10px; }
 
-  a {
-    color: #fff;
-    text-decoration: none;
-  }
+  a { color: #fff; text-decoration: none; }
 }
 
 /*
@@ -225,10 +281,9 @@
   margin-bottom: 10px;
   font-size: $type-size-6;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
   color: $gray;
 }
-
 
 /*
    Page meta
@@ -240,36 +295,24 @@
   font-family: $sans-serif;
   font-size: $type-size-6;
 
-  p {
-    margin: 0;
-  }
-
-  a {
-    color: inherit;
-  }
+  p { margin: 0; }
+  a { color: inherit; }
 }
 
 .page__meta-title {
   margin-bottom: 10px;
   font-size: $type-size-6;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
 }
-
 
 /*
    Page taxonomy
    ========================================================================== */
 
 .page__taxonomy {
-  .sep {
-    display: none;
-  }
-
-  strong {
-    margin-right: 10px;
-    color: #FFFFFF;
-  }
+  .sep { display: none; }
+  strong { margin-right: 10px; color: #FFFFFF; }
 }
 
 .page__taxonomy-item {
@@ -292,14 +335,11 @@
   }
 }
 
-
 /*
    Comments
    ========================================================================== */
 
-.page__comments {
-  @include full();
-}
+.page__comments { @include full(); }
 
 .page__comments-title {
   margin-top: 2rem;
@@ -308,7 +348,7 @@
   font-size: $type-size-6;
   border-top: 1px solid $border-color;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
   color: #FFFFFF;
 }
 
@@ -317,13 +357,12 @@
   background: rgba(255, 255, 255, 0.03);
   border-radius: $border-radius;
   border: 1px solid $border-color;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   transition: $global-transition;
 
   &.disabled {
-    input,
-    button,
-    textarea,
-    label {
+    input, button, textarea, label {
       pointer-events: none;
       cursor: not-allowed;
       filter: alpha(opacity=65);
@@ -346,18 +385,13 @@
   float: left;
   width: 60px;
   height: 60px;
-
-  @include breakpoint($large) {
-    width: 100px;
-    height: 100px;
-  }
+  @include breakpoint($large) { width: 100px; height: 100px; }
 }
 
 .comment__avatar {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-
   @include breakpoint($large) {
     width: 80px;
     height: 80px;
@@ -369,30 +403,20 @@
 .comment__content-wrapper {
   float: right;
   width: calc(100% - 60px);
-
-  @include breakpoint($large) {
-    width: calc(100% - 100px);
-  }
+  @include breakpoint($large) { width: calc(100% - 100px); }
 }
 
 .comment__author {
   margin: 0;
   color: #FFFFFF;
-
-  a {
-    text-decoration: none;
-  }
+  a { text-decoration: none; }
 }
 
 .comment__date {
   @extend .page__meta;
   margin: 0;
-
-  a {
-    text-decoration: none;
-  }
+  a { text-decoration: none; }
 }
-
 
 /*
    Related
@@ -404,21 +428,15 @@
   border-top: 1px solid $border-color;
   @include clearfix();
   float: left;
+  @include breakpoint($large) { @include pre(2.5 of 12); }
 
-  @include breakpoint($large) {
-    @include pre(2.5 of 12);
-  }
-
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
+  a { color: inherit; text-decoration: none; }
 }
 
 .page__related-title {
   margin-bottom: 10px;
   font-size: $type-size-6;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
   color: #FFFFFF;
 }

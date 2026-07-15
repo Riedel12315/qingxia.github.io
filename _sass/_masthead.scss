@@ -1,40 +1,36 @@
 /* ==========================================================================
-   MASTHEAD — Raycast glass navigation
+   MASTHEAD — Premium glass navigation
    ========================================================================== */
 
 .masthead {
   position: sticky;
   top: 0;
   z-index: 20;
-  background: rgba(15, 15, 17, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: rgba(15, 15, 17, 0.75);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  animation: intro 0.3s both;
-  animation-delay: 0.15s;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.03) inset,
+              0 -1px 0 rgba(0, 0, 0, 0.2);
+  animation: intro 0.4s both;
+  animation-delay: 0.1s;
 
   &__inner-wrap {
     @include container;
     @include clearfix;
-    padding: 0.75em 1em;
+    padding: 0.75em 1.5em;
     font-family: $sans-serif-narrow;
 
     @include breakpoint($x-large) {
       max-width: $x-large;
     }
 
-    nav {
-      z-index: 10;
-    }
-
-    a {
-      text-decoration: none;
-    }
+    nav { z-index: 10; }
+    a { text-decoration: none; }
   }
 }
 
 .masthead__menu {
-
   ul {
     margin: 0;
     padding: 0;
