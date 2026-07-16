@@ -143,15 +143,15 @@
     var totalItems = allItems.length;
     var turns = 3.2;
     var totalAngle = turns * 2 * Math.PI;
-    var radius, itemW, itemH, perspectiveVal, spreadHeight;
+    var radius, itemW, itemH, perspectiveVal;
     var vw = window.innerWidth;
 
-    if (vw < 480) { radius = 100; itemW = 110; itemH = 75; perspectiveVal = 600; spreadHeight = 300; }
-    else if (vw < 768) { radius = 160; itemW = 150; itemH = 105; perspectiveVal = 800; spreadHeight = 420; }
-    else { radius = 280; itemW = 240; itemH = 170; perspectiveVal = 1000; spreadHeight = 560; }
+    if (vw < 480) { radius = 100; itemW = 110; itemH = 75; perspectiveVal = 600; spreadHeight = 0; }
+    else if (vw < 768) { radius = 160; itemW = 150; itemH = 105; perspectiveVal = 800; spreadHeight = 0; }
+    else { radius = 280; itemW = 240; itemH = 170; perspectiveVal = 1000; spreadHeight = 0; }
 
     gallery.style.perspective = perspectiveVal + 'px';
-    gallery.style.minHeight = (spreadHeight + itemH + 40) + 'px';
+    gallery.style.minHeight = (itemH * 3 + 80) + 'px';
 
     // ── Rotation: auto when idle, scroll-driven when user interacts ──
     var angle = 0;
@@ -188,44 +188,18 @@
     }, { passive: true });
 
     function positionItems() {
-      // Auto-rotate slowly when user is idle
       if (!userActive) {
         targetAngle += AUTO_SPEED;
       }
-      // Smooth interpolation toward target
       angle += (targetAngle - angle) * 0.12;
-
-      // Find which item is closest to the front (angle 0 relative to viewer)
-      var frontIdx = 0;
-      var minDist = Infinity;
-      for (var i = 0; i < totalItems; i++) {
-        var frac = totalItems > 1 ? i / (totalItems - 1) : 0;
-        var itemAngle = frac * totalAngle + angle;
-        // Normalize to [-π, π]
-        var normAngle = itemAngle % (2 * Math.PI);
-        if (normAngle > Math.PI) normAngle -= 2 * Math.PI;
-        if (normAngle < -Math.PI) normAngle += 2 * Math.PI;
-        if (Math.abs(normAngle) < minDist) {
-          minDist = Math.abs(normAngle);
-          frontIdx = i;
-        }
-      }
-
-      // Y-offset of the front item on the helix (its natural Y position)
-      var frontFrac = totalItems > 1 ? frontIdx / (totalItems - 1) : 0;
-      var frontY = (frontFrac - 0.5) * spreadHeight;
 
       for (var i = 0; i < wrappers.length; i++) {
         var frac = totalItems > 1 ? i / (totalItems - 1) : 0;
         var itemAngle = frac * totalAngle + angle;
-        // Natural Y position on helix
-        var naturalY = (frac - 0.5) * spreadHeight;
-        // Shift so front item is at Y=0 (eye level)
-        var y = naturalY - frontY;
         var x = radius * Math.cos(itemAngle);
         var z = radius * Math.sin(itemAngle);
 
-        wrappers[i].el.style.transform = 'translate3d(' + x.toFixed(1) + 'px, ' + y.toFixed(1) + 'px, ' + z.toFixed(1) + 'px)';
+        wrappers[i].el.style.transform = 'translate3d(' + x.toFixed(1) + 'px, 0px, ' + z.toFixed(1) + 'px)';
         itemEls[i].el.style.transform = 'translate(-50%, -50%) rotateY(' + (-itemAngle).toFixed(4) + 'rad)';
       }
     }
@@ -242,11 +216,11 @@
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(function () {
         var nvw = window.innerWidth;
-        if (nvw < 480) { radius = 100; itemW = 110; itemH = 75; perspectiveVal = 600; spreadHeight = 300; }
-        else if (nvw < 768) { radius = 160; itemW = 150; itemH = 105; perspectiveVal = 800; spreadHeight = 420; }
-        else { radius = 280; itemW = 240; itemH = 170; perspectiveVal = 1000; spreadHeight = 560; }
+        if (nvw < 480) { radius = 100; itemW = 110; itemH = 75; perspectiveVal = 600; }
+        else if (nvw < 768) { radius = 160; itemW = 150; itemH = 105; perspectiveVal = 800; }
+        else { radius = 280; itemW = 240; itemH = 170; perspectiveVal = 1000; }
         gallery.style.perspective = perspectiveVal + 'px';
-        gallery.style.minHeight = (spreadHeight + itemH + 40) + 'px';
+        gallery.style.minHeight = (itemH * 3 + 80) + 'px';
       }, 200);
     });
 
