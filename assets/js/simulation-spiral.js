@@ -156,10 +156,14 @@
     if (vw < 480) return; // CSS grid fallback
     if (vw < 768) { radius = 130; itemW = 100; itemH = 66; perspectiveVal = 700; }
 
-    totalHeight = Math.min(window.innerHeight * 0.6, 540);
+    // On portrait, use more vertical space; on landscape, cap at reasonable height
+    var isPortrait = window.innerHeight > window.innerWidth;
+    totalHeight = isPortrait ? Math.min(window.innerHeight * 0.55, 700) : Math.min(window.innerHeight * 0.6, 540);
 
     gallery.style.perspective = perspectiveVal + 'px';
-    gallery.style.minHeight = (totalHeight + itemH + 120) + 'px';
+    // Fill the viewport on all screen ratios
+    var availH = window.innerHeight - gallery.getBoundingClientRect().top - 40;
+    gallery.style.minHeight = Math.max(totalHeight + itemH + 120, availH) + 'px';
 
     // ── Animation loop (30fps for performance) ──
     var angle = 0;
@@ -209,9 +213,11 @@
         if (nvw < 480) return;
         if (nvw < 768) { radius = 130; itemW = 100; itemH = 66; perspectiveVal = 700; }
         else { radius = 180; itemW = 160; itemH = 106; perspectiveVal = 800; }
-        totalHeight = Math.min(window.innerHeight * 0.6, 540);
+        var isPortrait2 = window.innerHeight > window.innerWidth;
+        totalHeight = isPortrait2 ? Math.min(window.innerHeight * 0.55, 700) : Math.min(window.innerHeight * 0.6, 540);
         gallery.style.perspective = perspectiveVal + 'px';
-        gallery.style.minHeight = (totalHeight + itemH + 120) + 'px';
+        var availH2 = window.innerHeight - gallery.getBoundingClientRect().top - 40;
+        gallery.style.minHeight = Math.max(totalHeight + itemH + 120, availH2) + 'px';
       }, 200);
     });
 

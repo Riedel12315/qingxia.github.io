@@ -52,8 +52,12 @@
         var cosA = Math.cos(angle);
         var sinA = Math.sin(angle);
 
-        // Warm star colors
-        var colors = ['#ffffff', '#ffe8d0', '#e0f0ff', '#fff5e0', '#d0e8ff', '#fff0d0'];
+        // Adaptive colors: bright on dark bg, vivid on light bg
+        var isLight = document.body.classList.contains('light-mode') ||
+                      document.documentElement.classList.contains('light-mode');
+        var colors = isLight ?
+            ['#4A90D9', '#7B68EE', '#FF6B8A', '#5B9BD5', '#9370DB', '#FF85A2', '#6495ED', '#C71585'] :
+            ['#ffffff', '#ffe8d0', '#e0f0ff', '#fff5e0', '#d0e8ff', '#fff0d0'];
         var color = colors[Math.floor(Math.random() * colors.length)];
 
         // ── Glowing head (small bright dot) ──
