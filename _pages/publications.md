@@ -183,21 +183,21 @@ In Preparation
     "badges": [{"type":"q1","label":"JCR Q1"}],
     "abstract": "Triply periodic minimal surfaces (TPMSs) have been proven experimentally to be highly suitable for tissue scaffolds. We propose a simple and efficient volume merging method for triply periodic minimal structures. A novel merging algorithm for unit TPMS structures in the implicit function framework is developed. A modified Allen–Cahn-type equation with a correction term ensures constant mean curvature on the surface. The proposed numerical scheme can be applied to a GPU-accelerated discrete cosine transform implementation, executed multiple times faster than CPU-only alternatives."
   },
-  "fingerprint image restoration phase-field model": {
+  "robust efficient fingerprint restoration nonlocal Cahn-Hilliard diblock copolymer": {
     "title": "A robust and efficient fingerprint image restoration method based on a phase-field model",
     "authors": "Yibao Li, Qing Xia, Chaeyoung Lee, Sangkwon Kim, Junseok Kim",
     "journal": "Pattern Recognition, 123, 108405",
     "year": "2022",
     "badges": [{"type":"q1","label":"JCR Q1 · TOP"}],
-    "abstract": "This paper presents a robust and efficient fingerprint image restoration algorithm based on the nonlocal Cahn–Hilliard equation. The approach works by taking a small local region containing the damaged domain and solving the nonlocal CH equation to restore the fingerprint image. The numerical solution uses a Gauss–Seidel type iterative method. A key advantage is that pixel values in the damaged area are reconstructed using image information from the surrounding undamaged region, ensuring accurate restoration at low computational cost."
+    "abstract": "This paper presents a robust and efficient fingerprint image restoration algorithm based on the nonlocal Cahn–Hilliard (CH) equation, which was originally proposed for modeling microphase separation in diblock copolymers. The method takes a small local region containing the damaged domain and solves the nonlocal CH equation to restore the fingerprint image. The numerical solution is computed using a Gauss–Seidel type iterative method, which is efficient and easy to implement. The advantage of this method is that pixel values in the damaged fingerprint area can be restored using image information from outside the damaged region. Fingerprint restoration based on neighboring pixel information ensures the accuracy of fingerprint information at low computational cost. Computational experiments demonstrate the superior performance of the proposed fingerprint restoration algorithm."
   },
-  "binary thermal fluids computation arbitrary surfaces": {
+  "binary thermal fluids arbitrary curved surfaces Laplace-Beltrami triangular": {
     "title": "Binary thermal fluids computation over arbitrary surfaces with second-order accuracy and unconditional energy stability based on phase-field model",
     "authors": "Qing Xia, Yuehan Liu, Junseok Kim, Yibao Li",
     "journal": "Journal of Computational and Applied Mathematics, 433, 115319",
     "year": "2023",
     "badges": [{"type":"q1","label":"JCR Q1 · TOP"}],
-    "abstract": "We propose an efficient surface computational system with second-order spatial and temporal accuracy to solve multiple physical field coupling problems over arbitrary surfaces. The system couples the heat transfer equation and incompressible Navier–Stokes equation based on a phase-field model. Using triangular grid discretization, we define gradient, divergence, and Laplace–Beltrami operators with second-order spatial accuracy. The discrete system is provably unconditionally stable with mass conservation, enabling large time steps."
+    "abstract": "In this paper, we propose an efficient surface computational system with second-order spatial and temporal accuracy to solve multiple physical field coupling problems over arbitrary surfaces. The computational system is coupled with heat transfer equation and incompressible Navier–Stokes equation based on a phase-field model. Due to the discretization of the triangular grids, we define the discretized gradient operator, divergence operator and the Laplace–Beltrami operator with second-order spatial accuracy. The Crank–Nicolson-type scheme is used to confirm the temporal accuracy. The Navier–Stokes equation is solved by the projection method. We use the biconjugate gradient stabilized method to solve the involved equations. The discrete system is provable to be unconditionally stable and the mass conservation law is satisfied during the computation, which implies that the proposed method is not limited by the temporal step. Several computational tests are conducted to show the efficiency, robustness and accuracy of the proposed scheme."
   },
   "unconditionally energy stable binary incompressible heat conductive fluids": {
     "title": "An unconditionally energy stable method for binary incompressible heat conductive fluids based on the phase–field model",
