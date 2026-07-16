@@ -231,6 +231,30 @@ In Preparation
     "badges": [],
     "abstract": "We present a novel phase-field-based topology optimization method that eliminates curvature effects. The original method simplifies gridding and discretization, but interface motion driven by curvature effects affects structural performance and causes ill-conditioned normal vectors. We propose a modified phase-field method with nonlinear preconditioning to eliminate curvature effects and an adaptive preconditioning process to capture more shape details. The finite element method and finite difference method are coupled to solve the compliance minimization problem."
   },
+  "grain boundary evolution crystal nucleation multiphase crystalline": {
+    "title": "A phase-field model for investigating the coupled dynamics of grain boundary evolution and crystal nucleation in multiphase crystalline systems",
+    "authors": "Qing Xia, Jingjie Cheng, Yibao Li",
+    "journal": "International Journal of Mechanical Sciences, 306, 110790",
+    "year": "2025",
+    "badges": [],
+    "abstract": "Solid-state recrystallization in polycrystalline materials involves complex interactions between crystal nucleation and grain boundary migration, which significantly affect microstructure evolution and material properties. Modeling this coupled behavior is challenging due to its inherent multiscale nature. This work presents a phase-field model that captures the coupled dynamics of recrystallization nucleation and grain boundary evolution. The model integrates mesoscale boundary migration with microscale nucleation in a thermodynamically consistent framework. Based on Landau theory, a variational formulation is used to derive the governing equations, accounting for multiple energy contributions. To handle nonlinearities and multiscale coupling, a space- and time-dependent Lagrange multiplier is introduced to improve energy stability. Time discretization combines the Crank–Nicolson and Adams–Bashforth methods, while spatial derivatives are solved using Fourier spectral method with O(N log N) complexity. The energy stability of our model is rigorously analyzed. Numerical results demonstrate its accuracy, efficiency, and robustness in reproducing recrystallization pathways and nucleation–boundary interactions."
+  },
+  "ternary component liquid-solid phase transition mass conservation": {
+    "title": "On the unconditionally stable phase field model of ternary components system considering mass conservation and liquid-solid phase transition",
+    "authors": "Yibao Li, Zhixian Lv, Qing Xia",
+    "journal": "Journal of Computational Physics",
+    "year": "2025",
+    "badges": [{"type":"q1","label":"JCR Q1 · TOP"}],
+    "abstract": "This study develops an unconditionally stable phase-field model for a ternary system considering liquid-solid phase transitions. The model modifies the Cahn-Hilliard equation to describe the interface between gas and the liquid-solid mixture, while the Allen-Cahn equation models the phase transition between the liquid and solid phases. Additionally, momentum and energy equations are introduced to simulate the quasi-incompressible three-phase flow dynamics. The resulting governing equations account for the coupling effects of phase transition, fluid flow, and heat transfer, effectively capturing the dynamic behavior of the mixture. The system satisfies mass conservation and adheres to the energy dissipation principle. A second-order numerical discretization scheme is developed and validated through a series of tests to confirm its mass conservation and unconditional energy stability. Numerical results demonstrate that the model accurately captures the evolution of the interface morphology, temperature field, and velocity field, showing excellent numerical stability and efficiency."
+  },
+  "biological transport networks complex domains obstacles parasitic": {
+    "title": "On the adaption of biological transport networks affected by complex domains",
+    "authors": "Yibao Li, Zhixian Lv, Qing Xia",
+    "journal": "Physics of Fluids, 36, 101906",
+    "year": "2024",
+    "badges": [{"type":"q1","label":"JCR Q1 · TOP"}],
+    "abstract": "This paper aims to simulate and analyze scenarios involving obstacles and parasitic organisms during the growth of biological structures. We introduce an innovative model of biological transport networks in complex domains. By manipulating sources and sinks, we simulate two distinct types of domains. One obstructs nutrient transport without absorbing energy. The other obstructs transport and absorbs energy. Our model adheres to the continuous functional energy dissipation law. Employing a Crank–Nicolson type method ensures second-order time accuracy. The phase field-based discrete system is decoupled, linear, and unconditionally stable, facilitating straightforward implementation of the algorithm. Our scheme maintains stability in addressing the stiffness of the hybrid system. Our research demonstrates that effective mathematical modeling and numerical methods can accurately simulate and analyze the growth of biological transport networks in complex domains."
+  },
   "unconditional energy stable data assimilation Navier-Stokes-Cahn-Hilliard": {
     "title": "An unconditional energy stable data assimilation scheme for Navier-Stokes-Cahn-Hilliard equations with local discretized observed data",
     "authors": "Xin Song, Qing Xia, Junseok Kim, Yibao Li",
