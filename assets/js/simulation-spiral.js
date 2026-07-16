@@ -1,5 +1,5 @@
 /**
- * Simulation 3D DNA Helix — scroll-driven, front item always eye-level.
+ * Simulation 3D DNA Helix — scroll to explore, auto-rotate.
  */
 (function () {
   'use strict';
@@ -74,7 +74,7 @@
 
     var hint = document.createElement('div');
     hint.className = 'spiral-hint';
-    hint.textContent = '⟳  Auto-rotating  ·  Scroll to control  ·  Click to expand  ⟳';
+    hint.textContent = '⟳  Scroll to explore  ·  Click to expand  ⟳';
     gallery.appendChild(hint);
 
     var axis = document.createElement('div');
@@ -83,7 +83,6 @@
 
     var wrappers = [];
     var itemEls = [];
-
     for (var idx = 0; idx < allItems.length; idx++) {
       (function (item, i) {
         var wrapper = document.createElement('div');
@@ -139,68 +138,44 @@
     }
     archive.appendChild(gallery);
 
-    // ── 3D parameters ──
+    // ── Parameters ──
     var totalItems = allItems.length;
-    var turns = 3.2;
+    var turns = 2.8;
     var totalAngle = turns * 2 * Math.PI;
-    var radius, itemW, itemH, perspectiveVal;
     var vw = window.innerWidth;
+    var radius, itemW, itemH, perspectiveVal, spreadHeight;
 
-    if (vw < 480) { radius = 100; itemW = 110; itemH = 75; perspectiveVal = 600; spreadHeight = 0; }
-    else if (vw < 768) { radius = 160; itemW = 150; itemH = 105; perspectiveVal = 800; spreadHeight = 0; }
-    else { radius = 280; itemW = 240; itemH = 170; perspectiveVal = 1000; spreadHeight = 0; }
+    if (vw < 480)      { radius = 100; itemW = 110; itemH = 75;  perspectiveVal = 600; spreadHeight = 400; }
+    else if (vw < 768) { radius = 170; itemW = 150; itemH = 105; perspectiveVal = 800; spreadHeight = 600; }
+    else               { radius = 280; itemW = 240; itemH = 170; perspectiveVal = 1000; spreadHeight = 900; }
 
     gallery.style.perspective = perspectiveVal + 'px';
-    gallery.style.minHeight = (itemH * 3 + 80) + 'px';
+    gallery.style.minHeight = (spreadHeight + itemH + 160) + 'px';
 
-    // ── Rotation: auto when idle, scroll-driven when user interacts ──
+    // ── Auto-rotation (slow, continuous) ──
     var angle = 0;
-    var targetAngle = 0;
-    var SCROLL_SPEED = 0.0008;
-    var AUTO_SPEED = 0.0015; // slow auto-rotation
-    var idleTimer = null;
-    var IDLE_DELAY = 1800; // resume auto after 1.8s of no scroll
-    var userActive = false;
-
-    function markActive() {
-      userActive = true;
-      clearTimeout(idleTimer);
-      idleTimer = setTimeout(function () { userActive = false; }, IDLE_DELAY);
-    }
-
-    gallery.addEventListener('wheel', function (e) {
-      e.preventDefault();
-      targetAngle += e.deltaY * SCROLL_SPEED;
-      markActive();
-    }, { passive: false });
-
-    // Touch support
-    var touchStartY = 0;
-    gallery.addEventListener('touchstart', function (e) {
-      touchStartY = e.touches[0].clientY;
-      markActive();
-    }, { passive: true });
-    gallery.addEventListener('touchmove', function (e) {
-      var dy = touchStartY - e.touches[0].clientY;
-      touchStartY = e.touches[0].clientY;
-      targetAngle += dy * SCROLL_SPEED * 2;
-      markActive();
-    }, { passive: true });
+    var AUTO_SPEED = 0.002;
 
     function positionItems() {
-      if (!userActive) {
-        targetAngle += AUTO_SPEED;
-      }
-      angle += (targetAngle - angle) * 0.12;
+      angle += AUTO_SPEED;
 
       for (var i = 0; i < wrappers.length; i++) {
         var frac = totalItems > 1 ? i / (totalItems - 1) : 0;
         var itemAngle = frac * totalAngle + angle;
+        var y = (frac - 0.5) * spreadHeight;
         var x = radius * Math.cos(itemAngle);
         var z = radius * Math.sin(itemAngle);
 
-        wrappers[i].el.style.transform = 'translate3d(' + x.toFixed(1) + 'px, 0px, ' + z.toFixed(1) + 'px)';
+        wrappers[i].el.style.transform = 'translate3d(' + x.toFixed(1) + 'px, ' + y.toFixed(1) + 'px, ' + z.toFixed(1) + 'px)';
         itemEls[i].el.style.transform = 'translate(-50%, -50%) rotateY(' + (-itemAngle).toFixed(4) + 'rad)';
+      }
+
+      // Scale central axis to match spread
+      var axisH = spreadHeight * 0.85;
+      var axisEl = gallery.querySelector('.helix-axis');
+      if (axisEl) {
+        axisEl.style.height = axisH + 'px';
+        axisEl.style.marginTop = (-axisH / 2) + 'px';
       }
     }
 
@@ -216,11 +191,11 @@
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(function () {
         var nvw = window.innerWidth;
-        if (nvw < 480) { radius = 100; itemW = 110; itemH = 75; perspectiveVal = 600; }
-        else if (nvw < 768) { radius = 160; itemW = 150; itemH = 105; perspectiveVal = 800; }
-        else { radius = 280; itemW = 240; itemH = 170; perspectiveVal = 1000; }
+        if (nvw < 480)      { radius = 100; itemW = 110; itemH = 75;  perspectiveVal = 600; spreadHeight = 400; }
+        else if (nvw < 768) { radius = 170; itemW = 150; itemH = 105; perspectiveVal = 800; spreadHeight = 600; }
+        else                { radius = 280; itemW = 240; itemH = 170; perspectiveVal = 1000; spreadHeight = 900; }
         gallery.style.perspective = perspectiveVal + 'px';
-        gallery.style.minHeight = (itemH * 3 + 80) + 'px';
+        gallery.style.minHeight = (spreadHeight + itemH + 160) + 'px';
       }, 200);
     });
 
