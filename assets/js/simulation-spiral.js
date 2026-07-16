@@ -153,7 +153,7 @@
 
     // On portrait, use more vertical space; on landscape, cap at reasonable height
     var isPortrait = window.innerHeight > window.innerWidth;
-    totalHeight = isPortrait ? Math.min(window.innerHeight * 0.95, 1400) : Math.min(window.innerHeight * 0.95, 1200);
+    totalHeight = isPortrait ? Math.min(window.innerHeight * 1.7, 2400) : Math.min(window.innerHeight * 1.6, 2000);
 
     gallery.style.perspective = perspectiveVal + 'px';
     // Fill the viewport on all screen ratios
@@ -209,7 +209,7 @@
         if (nvw < 768) { radius = 160; itemW = 180; itemH = 120; perspectiveVal = 800; }
         else { radius = 260; itemW = 300; itemH = 200; perspectiveVal = 1000; }
         var isPortrait2 = window.innerHeight > window.innerWidth;
-        totalHeight = isPortrait2 ? Math.min(window.innerHeight * 0.95, 1400) : Math.min(window.innerHeight * 0.95, 1200);
+        totalHeight = isPortrait2 ? Math.min(window.innerHeight * 1.7, 2400) : Math.min(window.innerHeight * 1.6, 2000);
         gallery.style.perspective = perspectiveVal + 'px';
         var availH2 = window.innerHeight - gallery.getBoundingClientRect().top - 40;
         gallery.style.minHeight = Math.max(totalHeight + itemH + 120, availH2) + 'px';
