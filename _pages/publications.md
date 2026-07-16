@@ -351,6 +351,86 @@ In Preparation
     "badges": [],
     "abstract": "We propose a novel model for discrimination of complex three-dimensional connected regions, grounded on the Allen–Cahn equation. The modified equation maintains original interface dynamics while avoiding unbounded diffusion behavior, enabling accurate population and extraction of complex connectivity regions. A semi-implicit Crank–Nicolson scheme ensures second-order accuracy in time and space. We provide rigorous proof of unconditional energy stability, affirming numerical stability and physical rationality. The discriminative ability for 3D complex connected regions is validated."
   },
+  "integrated 3D printing design optimization simulation phase field": {
+    "title": "On the integrated 3D printing research for design, optimization and simulation within phase field framework",
+    "authors": "Qing Xia, Qian Yu, Yibao Li",
+    "journal": "Journal on Numerical Methods and Computer Applications, 45(3), 189–236",
+    "year": "2024",
+    "badges": [],
+    "abstract": "Component design, performance optimization, and process simulation are three critical modules in 3D printing. This research introduces integrated modeling and algorithmic studies within the phase field framework. In the digitalization module, we present 3D reconstruction models, repair models, and lightweight support structure design. In the optimization module, we introduce multi-scale, multi-physical field, and multi-material coupled topology optimization. In the simulation module, we discuss macroscopic to microscopic coupling theories and laser-thermal-flow-solid physical field couplings for FDM and SLM processes. This integrated approach shortens product development cycles and provides theoretical basis for quality traceability of 3D printed components."
+  },
+  "unified algorithm multimaterial topology optimization graded interfaces": {
+    "title": "A Unified Algorithm Framework for Phase-Field Based Multimaterial Topology Optimization With Various Graded Interfaces",
+    "authors": "Qian Yu, Qing Xia, Yibao Li, Chao Yang",
+    "journal": "International Journal for Numerical Methods in Engineering, 126, e70048",
+    "year": "2025",
+    "badges": [],
+    "abstract": "We present a unified algorithm framework for multimaterial topology optimization with various graded interfaces based on the phase field method. The topology optimization problem is transformed into solving a set of linear PDEs. A scalar variable grades material property, and an auxiliary variable substitutes nonlinear transformations for a linear elliptic equation system. A second-order Crank–Nicolson scheme treats high-order nonlinear terms semi-explicitly. We prove unconditional energy stability and demonstrate stability and accuracy through benchmark problems with different interfacial behaviors."
+  },
+  "thermo-mechanical-phase interaction laser melting additive phase-field": {
+    "title": "Numerical investigation of thermo-mechanical-phase interaction in laser melting additive manufacturing process incorporating phase-field framework",
+    "authors": "Sijing Lai, Qing Xia, Junseok Kim, Yibao Li",
+    "journal": "Physics of Fluids, 37, 087164",
+    "year": "2025",
+    "badges": [],
+    "abstract": "This study proposes a multiphysics coupling model to simulate interacting phenomena during selective laser melting. The model integrates three key components: a heat conduction equation characterizing temperature field evolution with latent thermal effects, thermoelastic equations describing strain response and stress evolution, and phase-field equations simulating solid–liquid interface dynamics. The model incorporates real SLM process parameters such as laser power and scanning speed. Numerical tests validate accurate simulation of temperature field dynamics, hierarchical structure evolution, thermally induced microstrain, and macroscopic stress evolution."
+  },
+  "data-driven reduced-order hydrogen-fueled supersonic combustion": {
+    "title": "Data-driven reduced-order modeling of hydrogen-fueled supersonic combustion",
+    "authors": "Zhixian Lv, Jiachen Feng, Qing Xia, Jiahao Huang, Xing Sun, Junseok Kim, Yibao Li",
+    "journal": "Physics of Fluids, 37, 077110",
+    "year": "2025",
+    "badges": [],
+    "abstract": "Efficient modeling of supersonic combustion processes is crucial in aerospace applications. We present a novel residual variational autoencoder-transformer (ResVAE-Trans) model for dimensionality reduction and prediction of multi-physics fields in hydrogen-fueled supersonic combustion. The ResVAE projects high-dimensional dynamic systems onto a low-dimensional latent space, and the transformer constructs a reduced-order model within this space. Multi-physics data from irregular domains is mapped onto a structured grid and normalized. The framework is demonstrated through scramjet engine simulations at the German Aerospace Center (DLR), achieving accurate multi-physics field predictions."
+  },
+  "U-shaped spatial-channel attention neural operator Navier-Stokes-Cahn-Hilliard": {
+    "title": "Simulation of the coupled Navier-Stokes-Cahn-Hilliard-heat transfer system via a U-shaped spatial-channel attention neural operator",
+    "authors": "Zhixian Lv, Yuhong Li, Qing Xia, Junseok Kim, Yibao Li",
+    "journal": "Communications in Nonlinear Science and Numerical Simulation, 154, 109537",
+    "year": "2026",
+    "badges": [],
+    "abstract": "Efficiently simulating the coupled Navier-Stokes-Cahn-Hilliard-heat transfer system remains a significant challenge. We present a U-shaped spatial-channel attention neural operator (U-SCANO) designed for phase-field simulation of binary incompressible heat-conductive fluids. The U-SCANO employs a U-shaped architecture to extract multi-scale features and incorporates a spatial-channel attention mechanism to enhance model capability. The operator restores outputs to original resolution through an upsampling operator, offering an efficient deep-learning-based alternative to traditional numerical methods for two-phase thermodynamic flows."
+  },
+  "phase-field fiber-based thermal diffusion FDM phase transitions": {
+    "title": "Phase-field modeling of fiber-based thermal diffusion and phase transitions in the fused deposition modeling process",
+    "authors": "Binhu Xia, Sijing Lai, Qing Xia, Xiang Liu, Junseok Kim, Yibao Li",
+    "journal": "Communications in Nonlinear Science and Numerical Simulation",
+    "year": "2025",
+    "badges": [],
+    "abstract": "This paper introduces an advanced phase-field equation designed to accurately simulate solid–liquid phase transitions and thermal transport during FDM. Key features include bidirectional coupling between phase transitions and thermal diffusion, dynamic accounting for the moving heat source by integrating a temperature field evolving with nozzle movement, and a heat convection term coupled with the nozzle velocity field. The algorithm ensures consistency between digital simulation and real-world physical quantities, enabling effective simulation of temperature distribution and resulting geometry changes in printed parts."
+  },
+  "VAE-LSTM reduced-order Cahn-Hilliard deep learning": {
+    "title": "Enhanced Reduced-Order Modeling with VAE and LSTM for Predicting the Cahn-Hilliard Equation",
+    "authors": "Zhixian Lv, Xin Song, Jiachen Feng, Qing Xia, Binhu Xia, Yibao Li",
+    "journal": "Engineering Analysis with Boundary Elements, 172, 106118",
+    "year": "2025",
+    "badges": [],
+    "abstract": "This study proposes an end-to-end deep learning framework integrating Variational Autoencoders (VAE) for feature extraction and Long Short-Term Memory (LSTM) networks for temporal prediction of the Cahn–Hilliard equation. The VAE compresses high-dimensional data into a low-dimensional latent space using a progressive channel reduction strategy. The LSTM captures time-dependent dynamics. The unified architecture simplifies design and training. Validation on the CH equation demonstrates superior performance over traditional dimensionality reduction methods (POD, PCA, SVD). Hyperparameter analysis identifies optimal configurations, establishing this as an effective tool for modeling complex PDE-governed dynamic systems."
+  },
+  "VAE-LSTM ensemble Kalman phase field crystal microstructural": {
+    "title": "Microstructural evolution prediction in the phase field crystal model with VAE-LSTM and ensemble Kalman filtering",
+    "authors": "Jiachen Feng, Wenxuan Xie, Zhixian Lv, Qing Xia, Junseok Kim, Yibao Li",
+    "journal": "Communications in Nonlinear Science and Numerical Simulation, 163, 110522",
+    "year": "2026",
+    "badges": [],
+    "abstract": "Accurately predicting microstructural evolution under uncertain parameters is a significant challenge. We present a data assimilation framework integrating the phase field crystal model with a VAE-LSTM neural network and the Ensemble Kalman Filter (EnKF). The VAE-LSTM reduces dimensionality of high-fidelity simulations and captures complex temporal dependencies. The EnKF enhances the framework by assimilating observational data for precise parameter estimation. Extensive 2D and 3D numerical experiments demonstrate scalability and efficiency, significantly reducing computational costs. This highlights the potential of combining deep learning and data assimilation for complex, high-dimensional problems in materials science."
+  },
+  "color-correction L0 gradient minimization scanned images": {
+    "title": "An efficient method for scanned images by using color-correction and L0 gradient minimization",
+    "authors": "Jing Ji, Suping Fang, Qing Xia, Zhengyuan Shi",
+    "journal": "Optik, 247, 167820",
+    "year": "2021",
+    "badges": [],
+    "abstract": "To improve the quality of scanned images, we propose a novel method using color-correction and L0 gradient minimization. First, a polynomial model derives a colorimetric mapping between digital RGB signals and real image values by considering interrelations among standard color spaces (digital RGB, sRGB, CIEXYZ, CIELAB). Polynomial root terms are extended to improve transformation accuracy. Second, L0 gradient minimization removes image noise and sharpens prominent edges. Based on the half-quadratic splitting method, an iterative algorithm is developed with optimal O(N log N) complexity. Various tests demonstrate robustness and efficiency."
+  },
+  "nonlinear polynomial color characterization interrelations color spaces": {
+    "title": "An efficient nonlinear polynomial color characterization method based on interrelations of color spaces",
+    "authors": "Jing Ji, Suping Fang, Zhengyuan Shi, Qing Xia, Yibao Li",
+    "journal": "Color Research & Application, 45(6), 1023–1039",
+    "year": "2020",
+    "badges": [],
+    "abstract": "A well-known color characterization method maps digital RGBs to corresponding CIEXYZs using a color chart. However, prediction errors are generally large in CIELAB space due to nonlinear transformation. We propose an efficient nonlinear method for color characterization of input devices. The approach derives a colorimetric mapping between digital RGB signals and CIELAB tristimulus values using polynomial modeling considering interrelations among standard CIE color spaces. Polynomial root terms extension further improves accuracy. Only a least-squares mapping needs to be solved, making implementation simple. Various computational results demonstrate efficiency and capability."
+  },
   "fluid-based topology optimization unconditionally energy stable": {
     "title": "Unconditionally energy stable schemes for fluid-based topology optimization",
     "authors": "Yibao Li, Kunyang Wang, Qian Yu, Qing Xia, Junseok Kim",
