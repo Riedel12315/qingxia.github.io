@@ -14,8 +14,6 @@
   padding: 4em 0;
 }
 
-.helix-stage { display: none; }
-
 /* ── Central axis glow ── */
 .helix-axis {
   position: absolute;

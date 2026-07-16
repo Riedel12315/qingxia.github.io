@@ -1,5 +1,5 @@
 /**
- * Simulation 3D DNA Helix v7 — unified image+text cards, always face viewer
+ * Simulation 3D DNA Helix — scroll-driven, front item always eye-level.
  */
 (function () {
   'use strict';
@@ -74,14 +74,13 @@
 
     var hint = document.createElement('div');
     hint.className = 'spiral-hint';
-    hint.textContent = '⟳  Continuously rotating  ·  Hover to pause  ·  Click to expand  ⟳';
+    hint.textContent = '⟳  Scroll to rotate  ·  Click to expand  ⟳';
     gallery.appendChild(hint);
 
     var axis = document.createElement('div');
     axis.className = 'helix-axis';
     gallery.appendChild(axis);
 
-    // ── Create wrappers + items ──
     var wrappers = [];
     var itemEls = [];
 
@@ -97,7 +96,6 @@
         el.setAttribute('aria-label', item.title);
         el.style.transformStyle = 'preserve-3d';
 
-        // Image — bare, no wrapper
         var img = document.createElement('img');
         img.className = 'spiral-item__img';
         img.src = item.images[0] || '';
@@ -141,61 +139,87 @@
     }
     archive.appendChild(gallery);
 
-    // ── 3D Helix parameters ──
+    // ── 3D parameters ──
     var totalItems = allItems.length;
     var turns = 3.2;
     var totalAngle = turns * 2 * Math.PI;
-    var radius = 280, itemW = 240, itemH = 170, totalHeight, perspectiveVal = 1000;
+    var radius, itemW, itemH, perspectiveVal, spreadHeight;
     var vw = window.innerWidth;
 
-    if (vw < 480) { radius = 110; itemW = 110; itemH = 75; perspectiveVal = 600; }
-    else if (vw < 768) { radius = 180; itemW = 150; itemH = 105; perspectiveVal = 800; }
-
-    // On portrait, use more vertical space; on landscape, cap at reasonable height
-    var isPortrait = window.innerHeight > window.innerWidth;
-    totalHeight = 0; // all items at same eye level — no vertical spread
+    if (vw < 480) { radius = 100; itemW = 110; itemH = 75; perspectiveVal = 600; spreadHeight = 350; }
+    else if (vw < 768) { radius = 160; itemW = 150; itemH = 105; perspectiveVal = 800; spreadHeight = 500; }
+    else { radius = 280; itemW = 240; itemH = 170; perspectiveVal = 1000; spreadHeight = 700; }
 
     gallery.style.perspective = perspectiveVal + 'px';
-    gallery.style.minHeight = Math.max(500, (window.innerHeight - gallery.getBoundingClientRect().top) * 0.55) + 'px';
+    gallery.style.minHeight = (spreadHeight + itemH + 200) + 'px';
 
-    // ── Animation loop (30fps for performance) ──
+    // ── Scroll-driven rotation ──
     var angle = 0;
-    var speed = 0.012; // doubled since we run at half rate
-    var paused = false;
-    var lastTime = 0;
-    var FRAME_INTERVAL = 33; // ~30fps
+    var targetAngle = 0;
+    var SCROLL_SPEED = 0.0008;
 
-    gallery.addEventListener('mouseenter', function () { paused = true; });
-    gallery.addEventListener('mouseleave', function () { paused = false; });
+    gallery.addEventListener('wheel', function (e) {
+      e.preventDefault();
+      targetAngle += e.deltaY * SCROLL_SPEED;
+      // Keep angle in range
+      targetAngle = targetAngle % (2 * Math.PI);
+    }, { passive: false });
 
-    function frame(ts) {
-      if (!lastTime) lastTime = ts;
-      var elapsed = ts - lastTime;
+    // Touch support
+    var touchStartY = 0;
+    gallery.addEventListener('touchstart', function (e) {
+      touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+    gallery.addEventListener('touchmove', function (e) {
+      var dy = touchStartY - e.touches[0].clientY;
+      touchStartY = e.touches[0].clientY;
+      targetAngle += dy * SCROLL_SPEED * 2;
+      targetAngle = targetAngle % (2 * Math.PI);
+    }, { passive: true });
 
-      if (elapsed >= FRAME_INTERVAL) {
-        lastTime = ts - (elapsed % FRAME_INTERVAL);
+    function positionItems() {
+      // Smooth interpolation toward target
+      angle += (targetAngle - angle) * 0.12;
 
-        if (!paused) {
-          angle += speed;
-          if (angle > 2 * Math.PI) angle -= 2 * Math.PI;
-        }
-
-        for (var i = 0; i < wrappers.length; i++) {
-          var frac = totalItems > 1 ? i / (totalItems - 1) : 0;
-          var itemAngle = frac * totalAngle + angle;
-          var y = (frac - 0.5) * totalHeight;
-          var x = radius * Math.cos(itemAngle);
-          var z = radius * Math.sin(itemAngle);
-
-          wrappers[i].el.style.transform = 'translate3d(' + x.toFixed(1) + 'px, ' + y.toFixed(1) + 'px, ' + z.toFixed(1) + 'px)';
-          // Counter-rotate Y only — all items at same eye level
-          itemEls[i].el.style.transform = 'translate(-50%, -50%) rotateY(' + (-itemAngle).toFixed(4) + 'rad)';
+      // Find which item is closest to the front (angle 0 relative to viewer)
+      var frontIdx = 0;
+      var minDist = Infinity;
+      for (var i = 0; i < totalItems; i++) {
+        var frac = totalItems > 1 ? i / (totalItems - 1) : 0;
+        var itemAngle = frac * totalAngle + angle;
+        // Normalize to [-π, π]
+        var normAngle = itemAngle % (2 * Math.PI);
+        if (normAngle > Math.PI) normAngle -= 2 * Math.PI;
+        if (normAngle < -Math.PI) normAngle += 2 * Math.PI;
+        if (Math.abs(normAngle) < minDist) {
+          minDist = Math.abs(normAngle);
+          frontIdx = i;
         }
       }
 
-      requestAnimationFrame(frame);
+      // Y-offset of the front item on the helix (its natural Y position)
+      var frontFrac = totalItems > 1 ? frontIdx / (totalItems - 1) : 0;
+      var frontY = (frontFrac - 0.5) * spreadHeight;
+
+      for (var i = 0; i < wrappers.length; i++) {
+        var frac = totalItems > 1 ? i / (totalItems - 1) : 0;
+        var itemAngle = frac * totalAngle + angle;
+        // Natural Y position on helix
+        var naturalY = (frac - 0.5) * spreadHeight;
+        // Shift so front item is at Y=0 (eye level)
+        var y = naturalY - frontY;
+        var x = radius * Math.cos(itemAngle);
+        var z = radius * Math.sin(itemAngle);
+
+        wrappers[i].el.style.transform = 'translate3d(' + x.toFixed(1) + 'px, ' + y.toFixed(1) + 'px, ' + z.toFixed(1) + 'px)';
+        itemEls[i].el.style.transform = 'translate(-50%, -50%) rotateY(' + (-itemAngle).toFixed(4) + 'rad)';
+      }
     }
 
+    function frame() {
+      positionItems();
+      requestAnimationFrame(frame);
+    }
     requestAnimationFrame(frame);
 
     // ── Resize ──
@@ -204,13 +228,11 @@
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(function () {
         var nvw = window.innerWidth;
-        if (nvw < 480) { radius = 110; itemW = 110; itemH = 75; perspectiveVal = 600; }
-        else if (nvw < 768) { radius = 180; itemW = 150; itemH = 105; perspectiveVal = 800; }
-        else { radius = 280; itemW = 240; itemH = 170; perspectiveVal = 1000; }
-        totalHeight = 0;
+        if (nvw < 480) { radius = 100; itemW = 110; itemH = 75; perspectiveVal = 600; spreadHeight = 350; }
+        else if (nvw < 768) { radius = 160; itemW = 150; itemH = 105; perspectiveVal = 800; spreadHeight = 500; }
+        else { radius = 280; itemW = 240; itemH = 170; perspectiveVal = 1000; spreadHeight = 700; }
         gallery.style.perspective = perspectiveVal + 'px';
-        var availH2 = window.innerHeight - gallery.getBoundingClientRect().top - 40;
-        gallery.style.minHeight = Math.max(500, (window.innerHeight - gallery.getBoundingClientRect().top) * 0.55) + 'px';
+        gallery.style.minHeight = (spreadHeight + itemH + 200) + 'px';
       }, 200);
     });
 
