@@ -294,8 +294,8 @@ body.light-mode figure.highlight {
 /* ── Simulation spiral gallery ── */
 body.light-mode .spiral-gallery { background: transparent; }
 body.light-mode .spiral-item__thumb {
-  background: rgba(0,0,0,0.03);
-  border-color: rgba(0,0,0,0.08);
+  background: transparent;
+  border: none;
   box-shadow: 0 6px 24px rgba(0,0,0,0.08);
 }
 body.light-mode .spiral-item__label {

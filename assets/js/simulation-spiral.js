@@ -150,15 +150,15 @@
     var totalItems = allItems.length;
     var turns = 3.2;
     var totalAngle = turns * 2 * Math.PI;
-    var radius = 180, itemW = 160, itemH = 106, totalHeight, perspectiveVal = 800;
+    var radius = 260, itemW = 300, itemH = 200, totalHeight, perspectiveVal = 1000;
     var vw = window.innerWidth;
 
     if (vw < 480) return; // CSS grid fallback
-    if (vw < 768) { radius = 130; itemW = 100; itemH = 66; perspectiveVal = 700; }
+    if (vw < 768) { radius = 160; itemW = 180; itemH = 120; perspectiveVal = 800; }
 
     // On portrait, use more vertical space; on landscape, cap at reasonable height
     var isPortrait = window.innerHeight > window.innerWidth;
-    totalHeight = isPortrait ? Math.min(window.innerHeight * 0.90, 1100) : Math.min(window.innerHeight * 0.92, 900);
+    totalHeight = isPortrait ? Math.min(window.innerHeight * 0.95, 1400) : Math.min(window.innerHeight * 0.95, 1200);
 
     gallery.style.perspective = perspectiveVal + 'px';
     // Fill the viewport on all screen ratios
@@ -211,10 +211,10 @@
       resizeTimer = setTimeout(function () {
         var nvw = window.innerWidth;
         if (nvw < 480) return;
-        if (nvw < 768) { radius = 130; itemW = 100; itemH = 66; perspectiveVal = 700; }
-        else { radius = 180; itemW = 160; itemH = 106; perspectiveVal = 800; }
+        if (nvw < 768) { radius = 160; itemW = 180; itemH = 120; perspectiveVal = 800; }
+        else { radius = 260; itemW = 300; itemH = 200; perspectiveVal = 1000; }
         var isPortrait2 = window.innerHeight > window.innerWidth;
-        totalHeight = isPortrait2 ? Math.min(window.innerHeight * 0.90, 1100) : Math.min(window.innerHeight * 0.92, 900);
+        totalHeight = isPortrait2 ? Math.min(window.innerHeight * 0.95, 1400) : Math.min(window.innerHeight * 0.95, 1200);
         gallery.style.perspective = perspectiveVal + 'px';
         var availH2 = window.innerHeight - gallery.getBoundingClientRect().top - 40;
         gallery.style.minHeight = Math.max(totalHeight + itemH + 120, availH2) + 'px';
