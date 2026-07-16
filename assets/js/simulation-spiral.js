@@ -74,7 +74,7 @@
 
     var hint = document.createElement('div');
     hint.className = 'spiral-hint';
-    hint.textContent = '⟳  Scroll to rotate  ·  Click to expand  ⟳';
+    hint.textContent = '⟳  Auto-rotating  ·  Scroll to control  ·  Click to expand  ⟳';
     gallery.appendChild(hint);
 
     var axis = document.createElement('div');
@@ -146,38 +146,55 @@
     var radius, itemW, itemH, perspectiveVal, spreadHeight;
     var vw = window.innerWidth;
 
-    if (vw < 480) { radius = 100; itemW = 110; itemH = 75; perspectiveVal = 600; spreadHeight = 350; }
-    else if (vw < 768) { radius = 160; itemW = 150; itemH = 105; perspectiveVal = 800; spreadHeight = 500; }
-    else { radius = 280; itemW = 240; itemH = 170; perspectiveVal = 1000; spreadHeight = 700; }
+    if (vw < 480) { radius = 100; itemW = 110; itemH = 75; perspectiveVal = 600; spreadHeight = 300; }
+    else if (vw < 768) { radius = 160; itemW = 150; itemH = 105; perspectiveVal = 800; spreadHeight = 420; }
+    else { radius = 280; itemW = 240; itemH = 170; perspectiveVal = 1000; spreadHeight = 560; }
 
     gallery.style.perspective = perspectiveVal + 'px';
-    gallery.style.minHeight = (spreadHeight + itemH + 200) + 'px';
+    gallery.style.minHeight = (spreadHeight + itemH + 40) + 'px';
 
-    // ── Scroll-driven rotation ──
+    // ── Rotation: auto when idle, scroll-driven when user interacts ──
     var angle = 0;
     var targetAngle = 0;
     var SCROLL_SPEED = 0.0008;
+    var AUTO_SPEED = 0.0015; // slow auto-rotation
+    var idleTimer = null;
+    var IDLE_DELAY = 1800; // resume auto after 1.8s of no scroll
+    var userActive = false;
+
+    function markActive() {
+      userActive = true;
+      clearTimeout(idleTimer);
+      idleTimer = setTimeout(function () { userActive = false; }, IDLE_DELAY);
+    }
 
     gallery.addEventListener('wheel', function (e) {
       e.preventDefault();
       targetAngle += e.deltaY * SCROLL_SPEED;
-      // Keep angle in range
       targetAngle = targetAngle % (2 * Math.PI);
+      markActive();
     }, { passive: false });
 
     // Touch support
     var touchStartY = 0;
     gallery.addEventListener('touchstart', function (e) {
       touchStartY = e.touches[0].clientY;
+      markActive();
     }, { passive: true });
     gallery.addEventListener('touchmove', function (e) {
       var dy = touchStartY - e.touches[0].clientY;
       touchStartY = e.touches[0].clientY;
       targetAngle += dy * SCROLL_SPEED * 2;
       targetAngle = targetAngle % (2 * Math.PI);
+      markActive();
     }, { passive: true });
 
     function positionItems() {
+      // Auto-rotate slowly when user is idle
+      if (!userActive) {
+        targetAngle += AUTO_SPEED;
+        targetAngle = targetAngle % (2 * Math.PI);
+      }
       // Smooth interpolation toward target
       angle += (targetAngle - angle) * 0.12;
 
@@ -228,11 +245,11 @@
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(function () {
         var nvw = window.innerWidth;
-        if (nvw < 480) { radius = 100; itemW = 110; itemH = 75; perspectiveVal = 600; spreadHeight = 350; }
-        else if (nvw < 768) { radius = 160; itemW = 150; itemH = 105; perspectiveVal = 800; spreadHeight = 500; }
-        else { radius = 280; itemW = 240; itemH = 170; perspectiveVal = 1000; spreadHeight = 700; }
+        if (nvw < 480) { radius = 100; itemW = 110; itemH = 75; perspectiveVal = 600; spreadHeight = 300; }
+        else if (nvw < 768) { radius = 160; itemW = 150; itemH = 105; perspectiveVal = 800; spreadHeight = 420; }
+        else { radius = 280; itemW = 240; itemH = 170; perspectiveVal = 1000; spreadHeight = 560; }
         gallery.style.perspective = perspectiveVal + 'px';
-        gallery.style.minHeight = (spreadHeight + itemH + 200) + 'px';
+        gallery.style.minHeight = (spreadHeight + itemH + 40) + 'px';
       }, 200);
     });
 

@@ -11,7 +11,7 @@
   perspective: 1000px;
   perspective-origin: 50% 50%;
   transform-style: preserve-3d;
-  padding: 4em 0;
+  padding: 1em 0;
 }
 
 /* ── Central axis glow ── */
@@ -141,7 +141,7 @@
 
 /* ── Responsive — 3D on all screens ── */
 @media (max-width:768px) {
-  .spiral-gallery { min-height:60vh; perspective:800px; perspective-origin:50% 50%; padding:2em 0; }
+  .spiral-gallery { min-height:55vh; perspective:800px; perspective-origin:50% 50%; padding:0.5em 0; }
   .spiral-item__img { max-width:150px; max-height:105px; }
   .spiral-item__label { font-size:0.5em; max-width:150px; }
 }
