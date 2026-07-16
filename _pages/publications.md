@@ -174,6 +174,70 @@ In Preparation
     "year": "2025",
     "badges": [{"type":"q1","label":"JCR Q1 · TOP"}],
     "abstract": "Based on the variational principle, this model minimizes a free energy functional to guarantee energy dissipation. It integrates phase field equations for interface evolution, Navier–Stokes equations for fluid motion, and an energy equation for temperature distribution. A semi-implicit Crank–Nicolson scheme ensures unconditional energy stability. Numerical tests confirm the model accurately captures interface morphology, temperature fields, and flow patterns in selective laser melting processes."
+  },
+  "simple efficient volume merging triply periodic minimal": {
+    "title": "A simple and efficient volume merging method for triply periodic minimal structures",
+    "authors": "Yibao Li, Qing Xia, Sungha Yoon, Chaeyoung Lee, Bingheng Lu, Junseok Kim",
+    "journal": "Computer Physics Communications, 264, 107956",
+    "year": "2021",
+    "badges": [{"type":"q1","label":"JCR Q1"}],
+    "abstract": "Triply periodic minimal surfaces (TPMSs) have been proven experimentally to be highly suitable for tissue scaffolds. We propose a simple and efficient volume merging method for triply periodic minimal structures. A novel merging algorithm for unit TPMS structures in the implicit function framework is developed. A modified Allen–Cahn-type equation with a correction term ensures constant mean curvature on the surface. The proposed numerical scheme can be applied to a GPU-accelerated discrete cosine transform implementation, executed multiple times faster than CPU-only alternatives."
+  },
+  "fingerprint image restoration phase-field model": {
+    "title": "A robust and efficient fingerprint image restoration method based on a phase-field model",
+    "authors": "Yibao Li, Qing Xia, Chaeyoung Lee, Sangkwon Kim, Junseok Kim",
+    "journal": "Pattern Recognition, 123, 108405",
+    "year": "2022",
+    "badges": [{"type":"q1","label":"JCR Q1 · TOP"}],
+    "abstract": "This paper presents a robust and efficient fingerprint image restoration algorithm based on the nonlocal Cahn–Hilliard equation. The approach works by taking a small local region containing the damaged domain and solving the nonlocal CH equation to restore the fingerprint image. The numerical solution uses a Gauss–Seidel type iterative method. A key advantage is that pixel values in the damaged area are reconstructed using image information from the surrounding undamaged region, ensuring accurate restoration at low computational cost."
+  },
+  "binary thermal fluids computation arbitrary surfaces": {
+    "title": "Binary thermal fluids computation over arbitrary surfaces with second-order accuracy and unconditional energy stability based on phase-field model",
+    "authors": "Qing Xia, Yuehan Liu, Junseok Kim, Yibao Li",
+    "journal": "Journal of Computational and Applied Mathematics, 433, 115319",
+    "year": "2023",
+    "badges": [{"type":"q1","label":"JCR Q1 · TOP"}],
+    "abstract": "We propose an efficient surface computational system with second-order spatial and temporal accuracy to solve multiple physical field coupling problems over arbitrary surfaces. The system couples the heat transfer equation and incompressible Navier–Stokes equation based on a phase-field model. Using triangular grid discretization, we define gradient, divergence, and Laplace–Beltrami operators with second-order spatial accuracy. The discrete system is provably unconditionally stable with mass conservation, enabling large time steps."
+  },
+  "unconditionally energy stable binary incompressible heat conductive fluids": {
+    "title": "An unconditionally energy stable method for binary incompressible heat conductive fluids based on the phase–field model",
+    "authors": "Qing Xia, Junseok Kim, Binhu Xia, Yibao Li",
+    "journal": "Computers & Mathematics with Applications, 123, 26–39",
+    "year": "2023",
+    "badges": [{"type":"q1","label":"JCR Q1"}],
+    "abstract": "This paper proposes an unconditionally energy stable method for incompressible heat conductive fluids under the phase–field framework, combining the Navier–Stokes, Cahn–Hilliard, and heat transfer equations. A Crank–Nicolson type scheme achieves second-order temporal accuracy. The unconditional energy stability is proved, enabling significantly larger time steps. The biconjugate gradient method and Fourier transform method are used to solve the discrete system."
+  },
+  "modeling simulation multi-component immiscible flows modified Cahn-Hilliard": {
+    "title": "Modeling and simulation of multi-component immiscible flows based on a modified Cahn–Hilliard equation",
+    "authors": "Qing Xia, Junseok Kim, Yibao Li",
+    "journal": "European Journal of Mechanics / B Fluids, 95, 194–204",
+    "year": "2022",
+    "badges": [],
+    "abstract": "An efficient method is developed for the phase-field model of multi-component immiscible phases. The formulation of surface tension requires interfaces to satisfy the hyperbolic tangent property, but interfacial transitions between different phases are not hyperbolic tangent profiles in the original model. We apply the modified Cahn–Hilliard model to the multi-phase system, forcing interfaces to be hyperbolic tangent. Surface tension computational accuracy is improved, mass loss of each phase is reduced, and enclosed area is preserved."
+  },
+  "practical algorithm porous scaffold triply periodic structures": {
+    "title": "A practical algorithm for the design of multiple-sized porous scaffolds with triply periodic structures",
+    "authors": "Yibao Li, Qing Xia, Seungyoon Kang, Soobin Kwak, Junseok Kim",
+    "journal": "Mathematics and Computers in Simulation, 220, 481–495",
+    "year": "2024",
+    "badges": [],
+    "abstract": "We present a practical volume-merging method for generating multiple-sized porous structures with TPMS lattice geometries. The three-stage method designs physical models with signed distance fields, performs merging operations for porous scaffolds, and assembles different units into composite structures. The method is independent of model shape, maintains smooth surfaces with constant mean curvature, and has low computational complexity. A Boolean union operation of basic TPMS units enables efficient assembly of large-scale models."
+  },
+  "effective phase field topology optimization without curvature effects": {
+    "title": "An effective phase field method for topology optimization without the curvature effects",
+    "authors": "Wenxuan Xie, Qing Xia, Qian Yu, Yibao Li",
+    "journal": "Computers & Mathematics with Applications, 146, 200–212",
+    "year": "2023",
+    "badges": [],
+    "abstract": "We present a novel phase-field-based topology optimization method that eliminates curvature effects. The original method simplifies gridding and discretization, but interface motion driven by curvature effects affects structural performance and causes ill-conditioned normal vectors. We propose a modified phase-field method with nonlinear preconditioning to eliminate curvature effects and an adaptive preconditioning process to capture more shape details. The finite element method and finite difference method are coupled to solve the compliance minimization problem."
+  },
+  "unconditional energy stable data assimilation Navier-Stokes-Cahn-Hilliard": {
+    "title": "An unconditional energy stable data assimilation scheme for Navier-Stokes-Cahn-Hilliard equations with local discretized observed data",
+    "authors": "Xin Song, Qing Xia, Junseok Kim, Yibao Li",
+    "journal": "Computers & Mathematics with Applications, 164, 21–33",
+    "year": "2024",
+    "badges": [{"type":"highly-cited","label":"Highly Cited Paper"}],
+    "abstract": "We introduce modified Navier-Stokes-Cahn-Hilliard equations with a data assimilation term to utilize observed data information. Based on feedback control, this term nudges solutions to observed data sampled from the reference process. Using the Crank-Nicolson formula and scalar auxiliary variable approach, we introduce an efficient numerical scheme. Properties of mass conservation and unconditional energy stability are proved. Various experiments explore the robustness and efficiency of the proposed scheme."
   }
 }
 </script>
