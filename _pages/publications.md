@@ -5,7 +5,7 @@ permalink: /publications/
 author_profile: true
 ---
 
-<link rel="stylesheet" href="{{ base_path }}/assets/css/abstract-modal.css?v=1">
+<link rel="stylesheet" href="{{ base_path }}/assets/css/abstract-modal.css?v=2">
 
 Publications
 =======
@@ -466,5 +466,5 @@ In Preparation
 }
 </script>
 
-<script src="{{ base_path }}/assets/js/abstract-modal.js?v=1"></script>
+<script src="{{ base_path }}/assets/js/abstract-modal.js?v=2"></script>
 

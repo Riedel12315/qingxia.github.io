@@ -27,19 +27,22 @@
 
     items.forEach(function (li) {
       var text = li.textContent || '';
-      // Try to match against abstract data by finding key phrases
-      var matchedKey = null;
+      var textLower = text.toLowerCase();
+      // Find the BEST matching key (highest keyword overlap), not just the first
+      var bestKey = null;
+      var bestScore = 0;
       for (var i = 0; i < keys.length; i++) {
-        // Check if key phrases from the title appear in this list item
-        var phrases = keys[i].toLowerCase().split(/\s+/).filter(function (w) { return w.length > 5; });
+        var phrases = keys[i].toLowerCase().split(/\s+/).filter(function (w) { return w.length > 4; });
         var matchCount = 0;
         for (var j = 0; j < phrases.length; j++) {
-          if (text.toLowerCase().indexOf(phrases[j]) !== -1) matchCount++;
+          if (textLower.indexOf(phrases[j]) !== -1) matchCount++;
         }
-        if (matchCount >= 2) { matchedKey = keys[i]; break; }
+        // Score = matches / total phrases (ratio), prefer higher match count
+        var score = matchCount >= 3 ? matchCount : 0; // need at least 3 keyword matches
+        if (score > bestScore) { bestScore = score; bestKey = keys[i]; }
       }
 
-      if (matchedKey && abstracts[matchedKey]) {
+      if (bestKey && abstracts[bestKey]) {
         // Make this item clickable
         li.style.cursor = 'pointer';
         li.title = 'Click to view abstract';
@@ -51,12 +54,13 @@
         badge.title = 'View abstract';
         li.appendChild(badge);
 
-        li.addEventListener('click', function (e) {
-          // Don't trigger if user clicked a link
-          if (e.target.tagName === 'A') return;
-          e.stopPropagation();
-          showAbstract(abstracts[matchedKey]);
-        });
+        (function (key) {
+          li.addEventListener('click', function (e) {
+            if (e.target.tagName === 'A') return;
+            e.stopPropagation();
+            showAbstract(abstracts[key]);
+          });
+        })(bestKey);
       }
     });
 
