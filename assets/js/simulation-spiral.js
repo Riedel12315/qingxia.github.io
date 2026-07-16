@@ -190,7 +190,9 @@
           var z = radius * Math.sin(itemAngle);
 
           wrappers[i].el.style.transform = 'translate3d(' + x.toFixed(1) + 'px, ' + y.toFixed(1) + 'px, ' + z.toFixed(1) + 'px)';
-          itemEls[i].el.style.transform = 'translate(-50%, -50%) rotateY(' + (-itemAngle).toFixed(4) + 'rad)';
+          // Counter-rotate around BOTH axes to always face the viewer
+          var xAngle = -Math.atan2(y, perspectiveVal);
+          itemEls[i].el.style.transform = 'translate(-50%, -50%) rotateY(' + (-itemAngle).toFixed(4) + 'rad) rotateX(' + xAngle.toFixed(4) + 'rad)';
         }
       }
 
