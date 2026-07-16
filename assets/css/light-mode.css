@@ -103,27 +103,49 @@ body.light-mode .greedy-nav .hidden-links a:hover {
   color: #1A1A22;
 }
 
-/* ── Sidebar — seamless, no glass box ── */
+/* ── Sidebar — invisible by default, glass lift on hover ── */
 body.light-mode .author__name { color: #1A1A22; }
-body.light-mode .author__bio,
-body.light-mode .sidebar p,
-body.light-mode .sidebar li { color: #5C5C6A; }
+body.light-mode .author__bio { color: #6B6B78; }
 
+body.light-mode .sidebar p,
+body.light-mode .sidebar li {
+  color: #5C5C6A;
+}
+
+/* Each link row: transparent normally, glass panel on hover */
 body.light-mode .author__urls {
   background: transparent;
   border: none;
   box-shadow: none;
   padding: 0;
 }
+
+body.light-mode .author__urls li {
+  border-radius: 6px;
+  transition: all 0.25s cubic-bezier(0.4,0,0.2,1);
+  border: 1px solid transparent;
+}
+
+body.light-mode .author__urls li:hover {
+  background: rgba(255,255,255,0.6);
+  border-color: rgba(0,0,0,0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  transform: translateX(3px);
+}
+
 body.light-mode .author__urls a {
   color: #666;
-  padding: 2px 0;
+  display: block;
+  padding: 3px 8px;
   border-radius: 0;
+  background: transparent;
 }
 body.light-mode .author__urls a:hover {
   color: #C53030;
   background: transparent;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 body.light-mode .author__avatar img {
@@ -131,11 +153,12 @@ body.light-mode .author__avatar img {
   box-shadow: 0 2px 12px rgba(0,0,0,0.06) !important;
 }
 
-/* Mobile author dropdown — light but not glassy */
+/* Mobile dropdown fallback */
 body.light-mode .author__urls-wrapper .author__urls {
   background: #FFF;
   border: 1px solid rgba(0,0,0,0.06);
   box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  padding: 8px;
 }
 
 /* ── Content cards / archive ── */
