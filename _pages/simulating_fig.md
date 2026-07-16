@@ -9,7 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
-<link rel="stylesheet" href="{{ base_path }}/assets/css/simulation-spiral.css?v=19">
+<link rel="stylesheet" href="{{ base_path }}/assets/css/simulation-spiral.css?v=20">
 
 <div class="spiral-loading" style="text-align:center;padding:4em 0;color:rgba(255,255,255,0.3);font-family:Inter,sans-serif;font-size:0.9em;">Loading spiral gallery...</div>
 
@@ -69,4 +69,4 @@ redirect_from:
 <img src="/images/simulation/jS8DZJFENX5oIW6.png"
  width="900px" />
 
-<script src="{{ base_path }}/assets/js/simulation-spiral.js?v=19"></script>
+<script src="{{ base_path }}/assets/js/simulation-spiral.js?v=20"></script>
