@@ -103,21 +103,39 @@ body.light-mode .greedy-nav .hidden-links a:hover {
   color: #1A1A22;
 }
 
-/* ── Sidebar ── */
+/* ── Sidebar — seamless, no glass box ── */
 body.light-mode .author__name { color: #1A1A22; }
 body.light-mode .author__bio,
 body.light-mode .sidebar p,
 body.light-mode .sidebar li { color: #5C5C6A; }
 
 body.light-mode .author__urls {
-  background: rgba(255,255,255,0.95);
-  border-color: rgba(0,0,0,0.06);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
 }
-body.light-mode .author__urls a { color: #555; }
+body.light-mode .author__urls a {
+  color: #666;
+  padding: 2px 0;
+  border-radius: 0;
+}
 body.light-mode .author__urls a:hover {
-  color: #1A1A22;
-  background: rgba(0,0,0,0.03);
+  color: #C53030;
+  background: transparent;
+  text-decoration: underline;
+}
+
+body.light-mode .author__avatar img {
+  border-color: transparent !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06) !important;
+}
+
+/* Mobile author dropdown — light but not glassy */
+body.light-mode .author__urls-wrapper .author__urls {
+  background: #FFF;
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
 }
 
 /* ── Content cards / archive ── */
