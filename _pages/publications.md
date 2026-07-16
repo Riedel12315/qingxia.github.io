@@ -5,6 +5,8 @@ permalink: /publications/
 author_profile: true
 ---
 
+<link rel="stylesheet" href="{{ base_path }}/assets/css/abstract-modal.css?v=1">
+
 Publications
 =======
 (# First Author, * Corresponding Author)
@@ -107,4 +109,74 @@ In Preparation
 3. 李义宝，赖思静，**夏青**，沈安伟，一种三维模型复杂联通区域的处理方法、系统、介质、芯片及设备。
 
 
+<script type="application/json" id="abstract-data">
+{
+  "multi-scale modeling additive manufacturing fused deposition": {
+    "title": "Multi-scale modeling and simulation of additive manufacturing based on fused deposition technique",
+    "authors": "Qing Xia, Gangming Sun, Junseok Kim, Yibao Li",
+    "journal": "Physics of Fluids, 35, 034116",
+    "year": "2023",
+    "badges": [{"type":"highly-cited","label":"Cover Article / Featured / Scilight"}],
+    "abstract": "The issue of multi-scale modeling of the filament-based material extrusion has received considerable critical attention for 3D printing, which involves complex physicochemical phase transitions and thermodynamic behavior. We develop a multi-scale system to describe the fused deposition process coupled with the conductive heat transfer model and the dendritic solidification model. The proposed system is capable of simulating the material state with proper parameters at the macro- and micro-scale and is directly used to capture multiple physical phenomena. The main contribution is establishing a totally integrated simulation system by considering multi-scale and multi-physical properties."
+  },
+  "conservative phase-field method N-component incompressible flows": {
+    "title": "On the conservative phase-field method with the N-component incompressible flows",
+    "authors": "Qing Xia, Junxiang Yang, Yibao Li",
+    "journal": "Physics of Fluids, 35, 012120",
+    "year": "2023",
+    "badges": [{"type":"highly-cited","label":"Highly Cited Paper"}],
+    "abstract": "This paper presents a conservative Allen–Cahn model coupled with the incompressible Navier–Stokes equation for tracking the interface with the N-component immiscible fluids system. The improved phase-field-based method combines nonlinear preprocessing guided by the level-set method with local artificial viscosity stabilization. The third-order Runge-Kutta time discretization and second-order spatial discretization are applied. Several quantitative and qualitative numerical tests demonstrate that our method works well for interface tracing with high numerical accuracy."
+  },
+  "phase field based model crystalline transition nucleation Lagrange multiplier": {
+    "title": "On the phase field based model for the crystalline transition and nucleation within the Lagrange multiplier framework",
+    "authors": "Qing Xia, Junxiang Yang, Junseok Kim, Yibao Li",
+    "journal": "Journal of Computational Physics, 513, 113158",
+    "year": "2024",
+    "badges": [],
+    "abstract": "Understanding the complexity of nucleation and transition between crystalline and quasicrystalline states is significant because structural incommensurability is anisotropic and reveals material properties. This paper investigates two- and three-dimensional nucleation and transition from quasicrystals to crystals using a phase field method based on the Lifshitz–Petrich model. We construct two phase field models with tenth- and eighth-order, apply a Lagrange multiplier method, and solve them by the Fourier spectral method. The algorithm achieves O(N log N) complexity and can be directly implemented on a GPU."
+  },
+  "second-order accuracy unconditionally energy stable binary fluid flows curved surfaces": {
+    "title": "A second-order accurate, unconditionally energy stable numerical scheme for binary fluid flows on arbitrarily curved surfaces",
+    "authors": "Qing Xia, Qian Yu, Yibao Li",
+    "journal": "Computer Methods in Applied Mechanics and Engineering, 384, 113987",
+    "year": "2021",
+    "badges": [{"type":"q1","label":"JCR Q1 · TOP"}],
+    "abstract": "A second-order temporal and spatial accurate, unconditionally energy stable scheme for binary fluid flows on arbitrarily curved surfaces is proposed. We construct a novel surface discrete finite volume method with second-order spatial accuracy based on triangular surface meshes. A Crank–Nicolson-type method achieves second-order temporal accuracy under the projection framework. The scheme is proved to be unconditionally energy stable with mass conservation. Various numerical experiments demonstrate the efficiency and robustness of the proposed method."
+  },
+  "modified efficient phase field model biological transport network": {
+    "title": "A modified and efficient phase field model for the biological transport network",
+    "authors": "Qing Xia, Xiaoyu Jiang, Yibao Li",
+    "journal": "Journal of Computational Physics, 488, 112192",
+    "year": "2023",
+    "badges": [{"type":"q1","label":"JCR Q1 · TOP"}],
+    "abstract": "This paper establishes a biological transport network based on the phase field model. The authors generate biological networks with sufficient information based on leaf venation distributions represented by the reaction-diffusion model. Three governing equations are derived: a Poisson-type equation for pressure, a reaction-diffusion equation for conductance, and an Allen–Cahn-type equation for the phase field. A key innovation is coupling terms that inhibit perpendicular nutrient transport, generating thin branches from the trunk. The discrete energy dissipation is provably preserved."
+  },
+  "thermal-fluid topology optimization unconditional energy stability": {
+    "title": "Thermal-fluid topology optimization with unconditional energy stability and second-order accuracy via phase-field model",
+    "authors": "Qing Xia, Gangming Sun, Qian Yu, Junseok Kim, Yibao Li",
+    "journal": "Communications in Nonlinear Science and Numerical Simulation, 116, 106782",
+    "year": "2023",
+    "badges": [{"type":"highly-cited","label":"Highly Cited Paper"}],
+    "abstract": "This paper establishes a novel topology optimization method for thermal-fluid systems. The governing system includes the phase-field model, steady-state Darcy equation, and heat transfer equation. Under multiple physical field constraints, we prove the existence of minimal solutions. A Crank–Nicolson scheme with multigrid method is used. We prove boundedness and unconditional stability of the original energy, enabling large time steps. The proposed discrete system is second-order accurate in both space and time."
+  },
+  "triply periodic minimal surfaces topology optimization hydrodynamic convective heat transfer": {
+    "title": "Triply periodic minimal surfaces based topology optimization for the hydrodynamic and convective heat transfer",
+    "authors": "Qing Xia, Junxia Zhu, Qian Yu, Junseok Kim, Yibao Li",
+    "journal": "Communications in Nonlinear Science and Numerical Simulation, 131, 107819",
+    "year": "2024",
+    "badges": [{"type":"highly-cited","label":"Highly Cited Paper"}],
+    "abstract": "This study develops an innovative topology optimization method based on triply periodic minimal surfaces (TPMS) for channel shape design, maximizing heat dissipation and mass flux while maintaining constant mean curvature. The governing system encompasses the phase field model, Darcy–Stokes model, and reaction–diffusion heat transfer model. Using the Crank–Nicolson method and central difference method, we establish unconditional energy stability. Numerical tests verify the effectiveness in enhancing heat and mass transfer capabilities."
+  },
+  "phase field modeling melting solidification dynamics metallic powders bed fusion": {
+    "title": "Phase field modeling of melting and solidification dynamics in metallic powders during the bed fusion process",
+    "authors": "Qing Xia, Sijing Lai, Junseok Kim, Yibao Li",
+    "journal": "Communications in Nonlinear Science and Numerical Simulation, 146, 108762",
+    "year": "2025",
+    "badges": [{"type":"q1","label":"JCR Q1 · TOP"}],
+    "abstract": "Based on the variational principle, this model minimizes a free energy functional to guarantee energy dissipation. It integrates phase field equations for interface evolution, Navier–Stokes equations for fluid motion, and an energy equation for temperature distribution. A semi-implicit Crank–Nicolson scheme ensures unconditional energy stability. Numerical tests confirm the model accurately captures interface morphology, temperature fields, and flow patterns in selective laser melting processes."
+  }
+}
+</script>
+
+<script src="{{ base_path }}/assets/js/abstract-modal.js?v=1"></script>
 
