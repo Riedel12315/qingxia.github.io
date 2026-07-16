@@ -153,12 +153,10 @@
 
     // On portrait, use more vertical space; on landscape, cap at reasonable height
     var isPortrait = window.innerHeight > window.innerWidth;
-    totalHeight = isPortrait ? Math.min(window.innerHeight * 1.1, 1600) : Math.min(window.innerHeight * 1.05, 1300);
+    totalHeight = 0; // all items at same eye level — no vertical spread
 
     gallery.style.perspective = perspectiveVal + 'px';
-    // Fill the viewport on all screen ratios
-    var availH = window.innerHeight - gallery.getBoundingClientRect().top - 40;
-    gallery.style.minHeight = Math.max(totalHeight + itemH + 120, availH) + 'px';
+    gallery.style.minHeight = Math.max(500, (window.innerHeight - gallery.getBoundingClientRect().top) * 0.55) + 'px';
 
     // ── Animation loop (30fps for performance) ──
     var angle = 0;
@@ -190,9 +188,8 @@
           var z = radius * Math.sin(itemAngle);
 
           wrappers[i].el.style.transform = 'translate3d(' + x.toFixed(1) + 'px, ' + y.toFixed(1) + 'px, ' + z.toFixed(1) + 'px)';
-          // Counter-rotate around BOTH axes to always face the viewer
-          var xAngle = -Math.atan2(y, perspectiveVal);
-          itemEls[i].el.style.transform = 'translate(-50%, -50%) rotateY(' + (-itemAngle).toFixed(4) + 'rad) rotateX(' + xAngle.toFixed(4) + 'rad)';
+          // Counter-rotate Y only — all items at same eye level
+          itemEls[i].el.style.transform = 'translate(-50%, -50%) rotateY(' + (-itemAngle).toFixed(4) + 'rad)';
         }
       }
 
@@ -210,11 +207,10 @@
         if (nvw < 480) { radius = 110; itemW = 110; itemH = 75; perspectiveVal = 600; }
         else if (nvw < 768) { radius = 180; itemW = 150; itemH = 105; perspectiveVal = 800; }
         else { radius = 280; itemW = 240; itemH = 170; perspectiveVal = 1000; }
-        var isPortrait2 = window.innerHeight > window.innerWidth;
-        totalHeight = isPortrait2 ? Math.min(window.innerHeight * 1.1, 1600) : Math.min(window.innerHeight * 1.05, 1300);
+        totalHeight = 0;
         gallery.style.perspective = perspectiveVal + 'px';
         var availH2 = window.innerHeight - gallery.getBoundingClientRect().top - 40;
-        gallery.style.minHeight = Math.max(totalHeight + itemH + 120, availH2) + 'px';
+        gallery.style.minHeight = Math.max(500, (window.innerHeight - gallery.getBoundingClientRect().top) * 0.55) + 'px';
       }, 200);
     });
 
