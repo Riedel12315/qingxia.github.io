@@ -247,6 +247,126 @@ In Preparation
     "badges": [{"type":"q1","label":"JCR Q1 · TOP"}],
     "abstract": "This study develops an unconditionally stable phase-field model for a ternary system considering liquid-solid phase transitions. The model modifies the Cahn-Hilliard equation to describe the interface between gas and the liquid-solid mixture, while the Allen-Cahn equation models the phase transition between the liquid and solid phases. Additionally, momentum and energy equations are introduced to simulate the quasi-incompressible three-phase flow dynamics. The resulting governing equations account for the coupling effects of phase transition, fluid flow, and heat transfer, effectively capturing the dynamic behavior of the mixture. The system satisfies mass conservation and adheres to the energy dissipation principle. A second-order numerical discretization scheme is developed and validated through a series of tests to confirm its mass conservation and unconditional energy stability. Numerical results demonstrate that the model accurately captures the evolution of the interface morphology, temperature field, and velocity field, showing excellent numerical stability and efficiency."
   },
+  "fast image restoration L0 L1 L2 gradient minimization": {
+    "title": "Fast Image Restoration Method Based on the L0, L1, and L2 Gradient Minimization",
+    "authors": "Jin Wang, Qing Xia, Binhu Xia",
+    "journal": "Mathematics, 10(17), 3107",
+    "year": "2022",
+    "badges": [],
+    "abstract": "We propose a novel image denoising method by coupling L0, L1 and L2 gradient minimization. The method smoothes the gradient difference between image pixels and noise pixels and sharpens edges by increasing the steepness of transition. We focus on global noise processing and adaptively process noise signals with different characteristics. Based on the half-quadratic splitting method, we perform a smoothing step via a Poisson approach and two edge-preserving steps through optimization. This iterative method is fast, simple, and easy to implement. The numerical scheme can be performed with discrete cosine transform and parallel GPU computing."
+  },
+  "phase field systematic multiscale topology optimization porous structures": {
+    "title": "A phase field-based systematic multiscale topology optimization method for porous structures design",
+    "authors": "Qian Yu, Qing Xia, Yibao Li",
+    "journal": "Journal of Computational Physics, 466, 111383",
+    "year": "2022",
+    "badges": [{"type":"q1","label":"JCR Q1 · TOP"}],
+    "abstract": "We propose a novel and systematic phase field-based multiscale topology optimization method for porous structures design. The approach adopts multi-regional microstructural composites and fixed microstructural shapes to balance optimization objectives while addressing connectivity issues between different microstructures. Both macro- and micro-scale design variables are updated using Allen-Cahn type equations. An efficient merging algorithm handles connectivity by smoothly connecting boundaries while satisfying the minimum surface theorem. Numerical examples include cantilever beam, Michell-type structure, and MBB beam test cases."
+  },
+  "efficient linear unconditionally stable phase field sintering": {
+    "title": "An efficient linear and unconditionally stable numerical scheme for the phase field sintering model",
+    "authors": "Jingjie Cheng, Qing Xia, Junseok Kim, Yibao Li",
+    "journal": "Communications in Nonlinear Science and Numerical Simulation, 127, 107529",
+    "year": "2023",
+    "badges": [],
+    "abstract": "The phase field sintering model, composed of a Cahn–Hilliard type equation and several Allen–Cahn type equations, is considered. On the scalar auxiliary variable framework, we propose a theoretically efficient and stable method for solid-state sintering. To overcome nonlinear issues, a stabilized scalar auxiliary variable method is defined. The scheme consists of several decoupled diffusion equations at every time step, making it easy to implement. We prove that the numerical discrete energy is unconditionally stable. Several 2D and 3D numerical simulations demonstrate the robustness of the method."
+  },
+  "efficient second-order fluid-surfactant curved surfaces unconditional energy": {
+    "title": "Efficient second-order accurate scheme for fluid–surfactant systems on curved surfaces with unconditional energy stability",
+    "authors": "Bing Jiang, Qing Xia, Junseok Kim, Yibao Li",
+    "journal": "Communications in Nonlinear Science and Numerical Simulation, 135, 108054",
+    "year": "2024",
+    "badges": [],
+    "abstract": "Accurately simulating the interplay between fluids and surfactants is challenging, especially ensuring both mass conservation and energy stability. We propose a highly accurate numerical scheme for the water–oil–surfactant system coupled with Navier–Stokes. Second-order accurate discrete operators on triangular grids represent curved surfaces. The Crank–Nicolson method achieves second-order temporal accuracy. The consistency-enhanced Scalar Auxiliary Variable method handles high-order nonlinearities. The projection method tackles Navier–Stokes. These techniques guarantee unconditional stability, enabling larger time steps with lower computational cost."
+  },
+  "phase-field modeling simulation selective laser melting additive manufacturing": {
+    "title": "Phase-field based modeling and simulation for selective laser melting techniques in additive manufacturing",
+    "authors": "Sijing Lai, Qing Xia, Junseok Kim, Yibao Li",
+    "journal": "Communications in Nonlinear Science and Numerical Simulation, 138, 108239",
+    "year": "2024",
+    "badges": [],
+    "abstract": "We develop a phase-field model to describe solid–liquid phase changes and heat conduction during selective laser melting. The model is based on the variational principle of minimizing free energy functional, integrating the phase-field equation and energy equation to capture interfacial evolution dynamics. A semi-implicit Crank–Nicolson scheme with central difference ensures second-order accuracy in time and space. The scheme is unconditional energy stable. We rigorously prove energy stability, confirming numerical stability and physical rationality. This model effectively simulates energy transfer and shape changes during SLM, providing reliable prediction and optimization."
+  },
+  "non-isothermal hydrodynamic flow boiling microchannels heat exchanger": {
+    "title": "Non-isothermal hydrodynamic modeling and analysis for the flow boiling in microchannels based heat exchanger",
+    "authors": "Jingjie Cheng, Qing Xia, Junseok Kim, Yibao Li",
+    "journal": "Communications in Nonlinear Science and Numerical Simulation, 152, 109181",
+    "year": "2026",
+    "badges": [],
+    "abstract": "In order to investigate interfacial transport phenomena and the dynamics of two-phase flow in complex microchannel-based heat exchangers using phase field theory, a non-isothermal hydrodynamic model is formulated for quasi-incompressible binary fluids. The governing equations comprise Cahn–Hilliard equations, quasi-incompressible Navier–Stokes equations, and an energy equation. A strict theoretical system proves the second law of thermodynamics and energy conservation. This system upgrades previous models for interfacial problems. Semi-discrete numerical schemes using the Crank–Nicolson method yield an efficient and stable algorithm. The second law of thermodynamics and energy conservation law are proved valid in numerical schemes."
+  },
+  "decoupled efficient structure-preserving non-isothermal sintering": {
+    "title": "Decoupled, efficient and structure-preserving numerical scheme for a non-isothermal phase field sintering model",
+    "authors": "Jingjie Cheng, Qing Xia, Binhu Xia, Junseok Kim, Yibao Li",
+    "journal": "Computers & Mathematics with Applications, 196, 49–63",
+    "year": "2025",
+    "badges": [],
+    "abstract": "To investigate the impact of temperature in the selective laser sintering industrial process, we develop a non-isothermal phase-field sintering model combining phase field equations with the thermodynamic framework. A Lagrange multiplier method handles nonlinear terms and a second-order accurate scheme uses the backward differentiation formula framework. The system is transformed into linear quadratic harmonic equations. Only one nonlinear equation needs Newton iteration to update the Lagrange multiplier. The discrete scheme is rigorously proved to follow the second law of thermodynamics. Numerical simulations demonstrate grain deformation under thermal driving, validating stability, accuracy, and efficiency."
+  },
+  "continuous data assimilation Cahn-Hilliard-Navier-Stokes": {
+    "title": "Continuous Data Assimilation Algorithm for the Two Dimensional Cahn–Hilliard–Navier–Stokes System",
+    "authors": "Bo You, Qing Xia",
+    "journal": "Applied Mathematics & Optimization, 85, 5",
+    "year": "2022",
+    "badges": [],
+    "abstract": "Based on the fact that dissipative dynamical systems possess finite degrees of freedom, a new continuous data assimilation algorithm for the two dimensional Cahn–Hilliard–Navier–Stokes system is introduced. We provide suitable conditions on the nudging parameters and the size of the spatial coarse mesh observables, sufficient to show that the solution of the proposed algorithm converges at an exponential rate, asymptotically in time, to the unique exact unknown reference solution under the assumption that observed data are error-free. This enables future predictions of the exact solution by the approximation solution when initial data is missing."
+  },
+  "second-order Lifshitz-Petrich curved surfaces unconditional energy": {
+    "title": "A second-order accurate numerical method with unconditional energy stability for the Lifshitz–Petrich equation on curved surfaces",
+    "authors": "Xiaochuan Hu, Qing Xia, Binhu Xia, Yibao Li",
+    "journal": "Applied Mathematics Letters, 163, 109439",
+    "year": "2025",
+    "badges": [],
+    "abstract": "This paper introduces an efficient numerical algorithm for solving the Lifshitz–Petrich equation on closed surfaces. The algorithm discretizes the surface using a triangular mesh, enabling explicit definition of the Laplace–Beltrami operator based on neighborhood information. To achieve second-order temporal accuracy, the backward differentiation formula and scalar auxiliary variable method are employed. The discrete system is solved using the biconjugate gradient stabilized method with incomplete LU decomposition as preprocessor. The algorithm is simple to implement with second-order precision in both spatial and temporal domains."
+  },
+  "second-order unconditionally stable dendritic crystal growth orientation": {
+    "title": "A second-order unconditionally stable method for the anisotropic dendritic crystal growth model with an orientation-field",
+    "authors": "Yibao Li, Kang Qin, Qing Xia, Junseok Kim",
+    "journal": "Applied Numerical Mathematics, 184, 512–526",
+    "year": "2022",
+    "badges": [{"type":"highly-cited","label":"Highly Cited Paper"}],
+    "abstract": "We develop a linear, unconditionally energy stable computational scheme for the dendritic crystal growth model with orientational field. The phase field model describes crystal evolution with rotation. The model couples the heat equation and anisotropic Allen–Cahn type equation in a complex nonlinear system. Time integration uses the second-order Crank–Nicolson method. The anisotropic coefficient is treated by invariant energy quadratization. We mathematically prove unconditional energy stability. Second-order spatial and temporal accuracy is preserved. Various computational tests show accuracy, stability, and efficiency."
+  },
+  "first second-order multi-component Cahn-Hilliard surfaces": {
+    "title": "First- and second-order unconditionally stable direct discretization methods for multi-component Cahn–Hilliard system on surfaces",
+    "authors": "Yibao Li, Rui Liu, Qing Xia, Chenxi He, Zhong Li",
+    "journal": "Journal of Computational and Applied Mathematics, 401, 113778",
+    "year": "2022",
+    "badges": [],
+    "abstract": "We propose first- and second-order unconditionally stable direct discretization methods based on a surface mesh consisting of piecewise triangles and dual-surface polygonal tessellation for solving the N-component Cahn–Hilliard system. We define discretizations of gradient, divergence, and Laplace–Beltrami operators on triangle surfaces, and prove unconditional energy stability. The scheme is solved by the biconjugate gradient stabilized method, which can be straightforwardly applied to GPU-accelerated implementation using the Matlab Parallel Computing Toolbox."
+  },
+  "coupled Cahn-Hilliard copolymer homopolymer mixtures": {
+    "title": "An unconditionally energy-stable second-order time-accurate numerical scheme for the coupled Cahn–Hilliard system in copolymer/homopolymer mixtures",
+    "authors": "Yibao Li, Lujing Zhang, Qing Xia, Qian Yu, Junseok Kim",
+    "journal": "Computational Materials Science, 200, 110809",
+    "year": "2021",
+    "badges": [],
+    "abstract": "We present an unconditional energy stable numerical method for the coupled Cahn–Hilliard system for homopolymer and copolymer mixtures in 2D and 3D. By combining a Crank–Nicolson-type method with a nonlinearly stabilized splitting method, a second-order accurate numerical scheme is constructed. A fast iterative Fourier transform method efficiently solves the discrete system. We prove unconditional energy stability, enabling large time steps. Various numerical experiments demonstrate the performance of the proposed scheme."
+  },
+  "phase-field algorithm distinguishing connected regions digital": {
+    "title": "On the phase-field algorithm for distinguishing connected regions in digital model",
+    "authors": "Sijing Lai, Bing Jiang, Qing Xia, Binhu Xia, Junseok Kim, Yibao Li",
+    "journal": "Engineering Analysis with Boundary Elements, 168, 105918",
+    "year": "2024",
+    "badges": [],
+    "abstract": "We propose a novel model for discrimination of complex three-dimensional connected regions, grounded on the Allen–Cahn equation. The modified equation maintains original interface dynamics while avoiding unbounded diffusion behavior, enabling accurate population and extraction of complex connectivity regions. A semi-implicit Crank–Nicolson scheme ensures second-order accuracy in time and space. We provide rigorous proof of unconditional energy stability, affirming numerical stability and physical rationality. The discriminative ability for 3D complex connected regions is validated."
+  },
+  "fluid-based topology optimization unconditionally energy stable": {
+    "title": "Unconditionally energy stable schemes for fluid-based topology optimization",
+    "authors": "Yibao Li, Kunyang Wang, Qian Yu, Qing Xia, Junseok Kim",
+    "journal": "Communications in Nonlinear Science and Numerical Simulation, 111, 106433",
+    "year": "2022",
+    "badges": [],
+    "abstract": "We present first- and second-order unconditionally energy stable schemes for fluid-based topology optimization. The objective functional includes mechanical property, Ginzburg–Landau energy, penalized terms, and volume constraint. By coupling a Stokes type equation and the Allen–Cahn equation, we obtain the evolutionary equation. The backward Euler and Crank–Nicolson methods discretize the system. We prove unconditional energy stability. The preconditioned conjugate gradient method solves the system. Several numerical tests verify efficiency and accuracy."
+  },
+  "design shell-infill structures phase field topology optimization": {
+    "title": "Design of the shell-infill structures using a phase field-based topology optimization method",
+    "authors": "Wenxuan Xie, Jiachen Feng, Qing Xia, Junseok Kim, Yibao Li",
+    "journal": "Computer Methods in Applied Mechanics and Engineering, 429, 117138",
+    "year": "2024",
+    "badges": [],
+    "abstract": "The design of shell-infill structures has been a focal point in topology optimization due to advantages in energy absorption, strength-to-weight ratio, and buckling resistance. We introduce a phase field-based topology optimization method for designing shell-infill structures. Interface-related issues are easily addressed through the phase field function. A coupled topology optimization process establishes the connection between shell and infill. Shell thickness, infill pattern, and infill volume percentage are naturally controlled by model parameters. Multiscale phase field topology optimization integrates numerical homogenization to evaluate the effective elasticity matrix of microstructural infill."
+  },
   "biological transport networks complex domains obstacles parasitic": {
     "title": "On the adaption of biological transport networks affected by complex domains",
     "authors": "Yibao Li, Zhixian Lv, Qing Xia",
