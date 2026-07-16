@@ -293,9 +293,7 @@ body.light-mode figure.highlight {
 
 /* ── Simulation spiral gallery ── */
 body.light-mode .spiral-gallery { background: transparent; }
-body.light-mode .spiral-item__thumb {
-  background: transparent;
-  border: none;
+body.light-mode .spiral-item__img {
   box-shadow: 0 6px 24px rgba(0,0,0,0.08);
 }
 body.light-mode .spiral-item__label {
@@ -361,7 +359,7 @@ body.light-mode h2::after { opacity: 0.7; }
 body, .masthead, .archive__item, .lineage-node, .page__footer,
 .author__urls, .greedy-nav, .greedy-nav .hidden-links,
 input, textarea, select, table, pre, blockquote, hr,
-.lineage-tree__spine, .spiral-item__thumb, .spiral-item__label,
+.lineage-tree__spine, .spiral-item__img, .spiral-item__label,
 .spiral-modal, .spiral-modal-overlay, .well, .modal {
   transition: background-color 0.5s ease, color 0.5s ease,
               border-color 0.5s ease, box-shadow 0.5s ease,

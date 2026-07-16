@@ -97,24 +97,19 @@
         el.setAttribute('aria-label', item.title);
         el.style.transformStyle = 'preserve-3d';
 
-        var thumb = document.createElement('div');
-        thumb.className = 'spiral-item__thumb';
+        // Image — bare, no wrapper
         var img = document.createElement('img');
+        img.className = 'spiral-item__img';
         img.src = item.images[0] || '';
         img.alt = item.title;
         img.loading = 'lazy';
-        img.onerror = function () {
-          img.style.display = 'none';
-          thumb.style.background = 'rgba(255,99,99,0.1)';
-        };
-        thumb.appendChild(img);
 
         var labelEl = document.createElement('div');
         labelEl.className = 'spiral-item__label';
         labelEl.textContent = item.title;
         labelEl.title = item.title;
 
-        el.appendChild(thumb);
+        el.appendChild(img);
         el.appendChild(labelEl);
 
         el.addEventListener('click', function (e) { e.stopPropagation(); openModal(item, i); });
