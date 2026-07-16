@@ -171,7 +171,6 @@
     gallery.addEventListener('wheel', function (e) {
       e.preventDefault();
       targetAngle += e.deltaY * SCROLL_SPEED;
-      targetAngle = targetAngle % (2 * Math.PI);
       markActive();
     }, { passive: false });
 
@@ -185,7 +184,6 @@
       var dy = touchStartY - e.touches[0].clientY;
       touchStartY = e.touches[0].clientY;
       targetAngle += dy * SCROLL_SPEED * 2;
-      targetAngle = targetAngle % (2 * Math.PI);
       markActive();
     }, { passive: true });
 
@@ -193,7 +191,6 @@
       // Auto-rotate slowly when user is idle
       if (!userActive) {
         targetAngle += AUTO_SPEED;
-        targetAngle = targetAngle % (2 * Math.PI);
       }
       // Smooth interpolation toward target
       angle += (targetAngle - angle) * 0.12;
