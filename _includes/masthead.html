@@ -2,6 +2,14 @@
 
 <div class="masthead">
   <div class="masthead__inner-wrap">
+    <!-- Mobile: mini author profile inside masthead -->
+    <div class="masthead__author">
+      {% if site.author.avatar %}
+        <img src="{{ site.author.avatar | prepend: '/images/' | prepend: base_path }}" class="masthead__author-avatar" alt="{{ site.author.name }}">
+      {% endif %}
+      <span class="masthead__author-name">{{ site.author.name }}</span>
+    </div>
+
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
         <button><div class="navicon"></div></button>

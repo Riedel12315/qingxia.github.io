@@ -18,7 +18,7 @@
   &__inner-wrap {
     @include container;
     @include clearfix;
-    padding: 0.75em 1.5em;
+    padding: 0.65em 1.2em;
     font-family: $sans-serif-narrow;
 
     @include breakpoint($x-large) {
@@ -54,5 +54,121 @@
       font-size: 1.1em;
       letter-spacing: -0.01em;
     }
+  }
+}
+
+/* ── Mobile: mini author profile inside masthead ── */
+.masthead__author {
+  display: none;
+  align-items: center;
+  gap: 10px;
+
+  @include breakpoint(max-width $large) {
+    display: flex;
+    float: left;
+  }
+}
+
+.masthead__author-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid rgba(255,255,255,0.12);
+  flex-shrink: 0;
+}
+
+.masthead__author-name {
+  font-family: $sans-serif-narrow;
+  font-size: 0.95em;
+  font-weight: 650;
+  color: #FFFFFF;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.masthead__author-bio {
+  display: none;
+  font-family: $sans-serif;
+  font-size: 0.7em;
+  color: $gray;
+  white-space: nowrap;
+
+  @include breakpoint(max-width $large) {
+    display: inline;
+  }
+}
+
+/* ── Mobile: clean sidebar below masthead ── */
+@include breakpoint(max-width $large) {
+  .sidebar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0.75em 1.2em;
+    margin: 0;
+    background: rgba(255,255,255,0.02);
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+
+    .author__avatar {
+      display: none; // hidden on mobile — shown in masthead instead
+    }
+
+    .author__content {
+      display: none; // hidden on mobile
+    }
+
+    .author__urls-wrapper {
+      display: block;
+      width: 100%;
+    }
+
+    .author__urls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 14px;
+      position: static;
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      padding: 0;
+
+      li {
+        display: inline-flex;
+      }
+
+      a {
+        font-size: 0.75em;
+        color: $gray;
+        padding: 2px 0;
+        margin: 0;
+
+        &:hover {
+          color: #FFFFFF;
+          background: transparent;
+        }
+      }
+    }
+
+    button.btn {
+      display: none; // hide "Follow" button on mobile
+    }
+  }
+
+  // Hide original sidebar image on mobile
+  .author__avatar img {
+    // already hidden via .author__avatar display:none
+  }
+}
+
+/* ── Light mode mobile sidebar overrides (see also light-mode.css) ── */
+body.light-mode {
+  @include breakpoint(max-width $large) {
+    .sidebar {
+      background: rgba(0,0,0,0.015);
+      border-bottom-color: rgba(0,0,0,0.05);
+    }
+    .sidebar .author__urls a { color: #666; }
+    .sidebar .author__urls a:hover { color: #C53030; }
   }
 }

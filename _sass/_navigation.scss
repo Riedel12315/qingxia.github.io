@@ -178,8 +178,13 @@
 
 .greedy-nav {
   position: relative;
-  min-width: 250px;
+  min-width: 200px;
   background: transparent;
+
+  @include breakpoint(max-width $large) {
+    float: right;
+    min-width: auto;
+  }
 
   a {
     display: block;
@@ -190,6 +195,11 @@
     font-size: 0.9em;
     font-weight: 500;
     letter-spacing: -0.005em;
+
+    @include breakpoint(max-width $large) {
+      margin: 0 0.5rem;
+      font-size: 0.82em;
+    }
 
     &:hover {
       color: $masthead-link-color-hover;
@@ -212,6 +222,10 @@
   .visible-links {
     display: table;
 
+    @include breakpoint(max-width $large) {
+      display: none; // hidden on mobile — only hamburger
+    }
+
     li {
       display: table-cell;
       vertical-align: middle;
@@ -222,6 +236,10 @@
 
         a {
           margin-left: 0;
+        }
+
+        @include breakpoint(max-width $large) {
+          display: table-cell; // keep site title visible
         }
       }
 
@@ -249,6 +267,20 @@
 
       &:hover:before {
         transform: scaleX(1);
+      }
+    }
+  }
+
+  // Mobile: show only the site title, hide other nav links
+  @include breakpoint(max-width $large) {
+    .visible-links {
+      display: table;
+      li {
+        display: none;
+        &:first-child {
+          display: table-cell;
+          a { margin: 0; }
+        }
       }
     }
   }

@@ -87,6 +87,20 @@ body.light-mode .masthead {
   box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
 }
 
+body.light-mode .masthead__author-name { color: #1A1A22; }
+body.light-mode .masthead__author-bio { color: #6B6B78; }
+body.light-mode .masthead__author-avatar { border-color: rgba(0,0,0,0.10); }
+
+/* Mobile sidebar in light mode */
+@media (max-width: 924px) {
+  body.light-mode .sidebar {
+    background: rgba(0,0,0,0.015);
+    border-bottom-color: rgba(0,0,0,0.05);
+  }
+  body.light-mode .sidebar .author__urls a { color: #666; }
+  body.light-mode .sidebar .author__urls a:hover { color: #C53030; }
+}
+
 body.light-mode .masthead__menu-item--lg a { color: #1A1A22 !important; }
 body.light-mode .greedy-nav a { color: #555; }
 body.light-mode .greedy-nav a:hover { color: #1A1A22; }
