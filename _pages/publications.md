@@ -303,13 +303,13 @@ In Preparation
     "badges": [],
     "abstract": "To investigate the impact of temperature in the selective laser sintering industrial process, we develop a non-isothermal phase-field sintering model combining phase field equations with the thermodynamic framework. A Lagrange multiplier method handles nonlinear terms and a second-order accurate scheme uses the backward differentiation formula framework. The system is transformed into linear quadratic harmonic equations. Only one nonlinear equation needs Newton iteration to update the Lagrange multiplier. The discrete scheme is rigorously proved to follow the second law of thermodynamics. Numerical simulations demonstrate grain deformation under thermal driving, validating stability, accuracy, and efficiency."
   },
-  "continuous data assimilation Cahn-Hilliard-Navier-Stokes": {
+  "continuous data assimilation two dimensional Cahn-Hilliard-Navier-Stokes nudging exponential": {
     "title": "Continuous Data Assimilation Algorithm for the Two Dimensional Cahn–Hilliard–Navier–Stokes System",
     "authors": "Bo You, Qing Xia",
     "journal": "Applied Mathematics & Optimization, 85, 5",
     "year": "2022",
     "badges": [],
-    "abstract": "Based on the fact that dissipative dynamical systems possess finite degrees of freedom, a new continuous data assimilation algorithm for the two dimensional Cahn–Hilliard–Navier–Stokes system is introduced. We provide suitable conditions on the nudging parameters and the size of the spatial coarse mesh observables, sufficient to show that the solution of the proposed algorithm converges at an exponential rate, asymptotically in time, to the unique exact unknown reference solution under the assumption that observed data are error-free. This enables future predictions of the exact solution by the approximation solution when initial data is missing."
+    "abstract": "Based on the fact that dissipative dynamical systems possess finite degrees of freedom, a new continuous data assimilation algorithm for the two dimensional Cahn–Hilliard–Navier–Stokes system is introduced. In this paper, we provide some suitable conditions on the nudging parameters and the size of the spatial coarse mesh observables, which are sufficient to show that the solution of the proposed algorithm converges at an exponential rate, asymptotically in time, to the unique exact unknown reference solution of the original system under the assumption that the observed data are free of error. Thus, we can make the future predictions of the exact solution by the approximation solution of the continuous data assimilation algorithm if the initial data is missing, which usually appears in the fields of geophysical and biological sciences."
   },
   "second-order Lifshitz-Petrich curved surfaces unconditional energy": {
     "title": "A second-order accurate numerical method with unconditional energy stability for the Lifshitz–Petrich equation on curved surfaces",
@@ -399,13 +399,13 @@ In Preparation
     "badges": [],
     "abstract": "This paper introduces an advanced phase-field equation designed to accurately simulate solid–liquid phase transitions and thermal transport during FDM. Key features include bidirectional coupling between phase transitions and thermal diffusion, dynamic accounting for the moving heat source by integrating a temperature field evolving with nozzle movement, and a heat convection term coupled with the nozzle velocity field. The algorithm ensures consistency between digital simulation and real-world physical quantities, enabling effective simulation of temperature distribution and resulting geometry changes in printed parts."
   },
-  "VAE-LSTM reduced-order Cahn-Hilliard deep learning": {
-    "title": "Enhanced Reduced-Order Modeling with VAE and LSTM for Predicting the Cahn-Hilliard Equation",
+  "reduced-order prediction Cahn-Hilliard deep learning VAE LSTM progressive channel": {
+    "title": "Reduced-order prediction model for the Cahn–Hilliard equation based on deep learning",
     "authors": "Zhixian Lv, Xin Song, Jiachen Feng, Qing Xia, Binhu Xia, Yibao Li",
     "journal": "Engineering Analysis with Boundary Elements, 172, 106118",
     "year": "2025",
     "badges": [],
-    "abstract": "This study proposes an end-to-end deep learning framework integrating Variational Autoencoders (VAE) for feature extraction and Long Short-Term Memory (LSTM) networks for temporal prediction of the Cahn–Hilliard equation. The VAE compresses high-dimensional data into a low-dimensional latent space using a progressive channel reduction strategy. The LSTM captures time-dependent dynamics. The unified architecture simplifies design and training. Validation on the CH equation demonstrates superior performance over traditional dimensionality reduction methods (POD, PCA, SVD). Hyperparameter analysis identifies optimal configurations, establishing this as an effective tool for modeling complex PDE-governed dynamic systems."
+    "abstract": "This study presents an end-to-end deep learning framework for nonlinear reduced-order modeling and prediction, combining Variational Autoencoders (VAE) for feature extraction and Long Short-Term Memory (LSTM) networks for temporal prediction. The framework simplifies the modeling process by integrating multiple steps into a unified architecture, improving both design and training efficiency. The VAE compresses input data into a low-dimensional latent space while using a progressive channel reduction strategy to retain key features and minimize redundancy. The LSTM network captures temporal dependencies, ensuring accurate predictions based on historical data. The framework is validated through applications to the Cahn–Hilliard (CH) equation, demonstrating superior performance over traditional dimensionality reduction and prediction models. A comprehensive hyperparameter analysis identifies optimal configurations, and the model's extrapolation capabilities and computational efficiency are thoroughly assessed. Results highlight the framework's potential as an effective tool for modeling and predicting complex dynamic systems governed by partial differential equations."
   },
   "VAE-LSTM ensemble Kalman phase field crystal microstructural": {
     "title": "Microstructural evolution prediction in the phase field crystal model with VAE-LSTM and ensemble Kalman filtering",
