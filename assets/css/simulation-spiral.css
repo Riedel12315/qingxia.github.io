@@ -57,8 +57,8 @@
 /* ── Image — bare, no container, no bg ── */
 .spiral-item__img {
   display: block;
-  max-width: 300px;
-  max-height: 200px;
+  max-width: 240px;
+  max-height: 170px;
   width: auto; height: auto;
   object-fit: contain;
   border-radius: 8px;
@@ -144,13 +144,13 @@
 /* ── Responsive — 3D on all screens ── */
 @media (max-width:768px) {
   .spiral-gallery { min-height:60vh; perspective:800px; padding:2em 0; }
-  .spiral-item__img { max-width:180px; max-height:120px; }
-  .spiral-item__label { font-size:0.5em; max-width:180px; }
+  .spiral-item__img { max-width:150px; max-height:105px; }
+  .spiral-item__label { font-size:0.5em; max-width:150px; }
 }
 @media (max-width:480px) {
   .spiral-gallery { min-height:70vh; perspective:600px; padding:2.5em 0; }
-  .spiral-item__img { max-width:120px; max-height:80px; }
-  .spiral-item__label { font-size:0.45em; max-width:120px; }
+  .spiral-item__img { max-width:110px; max-height:75px; }
+  .spiral-item__label { font-size:0.45em; max-width:110px; }
   .helix-axis { height:40vh; margin-top:-20vh; }
   .spiral-hint { font-size:0.65em; }
 }
