@@ -141,15 +141,16 @@
 }
 .spiral-modal__close:hover { background:rgba(255,99,99,0.3); color:#FFF; }
 
-/* ── Responsive ── */
+/* ── Responsive — 3D on all screens ── */
 @media (max-width:768px) {
   .spiral-gallery { min-height:60vh; perspective:800px; padding:2em 0; }
   .spiral-item__img { max-width:180px; max-height:120px; }
   .spiral-item__label { font-size:0.5em; max-width:180px; }
 }
 @media (max-width:480px) {
-  .spiral-gallery { display:grid !important; grid-template-columns:repeat(2,1fr); gap:1em; min-height:auto; perspective:none; padding:1em 0; }
-  .helix-axis { display:none; }
-  .spiral-item-wrapper { position:relative !important; left:auto !important; top:auto !important; width:auto !important; height:auto !important; transform:none !important; }
-  .spiral-item { transform:none !important; }
+  .spiral-gallery { min-height:70vh; perspective:600px; padding:2.5em 0; }
+  .spiral-item__img { max-width:120px; max-height:80px; }
+  .spiral-item__label { font-size:0.45em; max-width:120px; }
+  .helix-axis { height:40vh; margin-top:-20vh; }
+  .spiral-hint { font-size:0.65em; }
 }

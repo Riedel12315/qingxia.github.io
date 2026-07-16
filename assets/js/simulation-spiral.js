@@ -148,12 +148,12 @@
     var radius = 260, itemW = 300, itemH = 200, totalHeight, perspectiveVal = 1000;
     var vw = window.innerWidth;
 
-    if (vw < 480) return; // CSS grid fallback
-    if (vw < 768) { radius = 160; itemW = 180; itemH = 120; perspectiveVal = 800; }
+    if (vw < 480) { radius = 100; itemW = 120; itemH = 80; perspectiveVal = 600; }
+    else if (vw < 768) { radius = 160; itemW = 180; itemH = 120; perspectiveVal = 800; }
 
     // On portrait, use more vertical space; on landscape, cap at reasonable height
     var isPortrait = window.innerHeight > window.innerWidth;
-    totalHeight = isPortrait ? Math.min(window.innerHeight * 1.7, 2400) : Math.min(window.innerHeight * 1.6, 2000);
+    totalHeight = isPortrait ? Math.min(window.innerHeight * 1.4, 2000) : Math.min(window.innerHeight * 1.3, 1600);
 
     gallery.style.perspective = perspectiveVal + 'px';
     // Fill the viewport on all screen ratios
@@ -205,11 +205,11 @@
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(function () {
         var nvw = window.innerWidth;
-        if (nvw < 480) return;
-        if (nvw < 768) { radius = 160; itemW = 180; itemH = 120; perspectiveVal = 800; }
+        if (nvw < 480) { radius = 100; itemW = 120; itemH = 80; perspectiveVal = 600; }
+        else if (nvw < 768) { radius = 160; itemW = 180; itemH = 120; perspectiveVal = 800; }
         else { radius = 260; itemW = 300; itemH = 200; perspectiveVal = 1000; }
         var isPortrait2 = window.innerHeight > window.innerWidth;
-        totalHeight = isPortrait2 ? Math.min(window.innerHeight * 1.7, 2400) : Math.min(window.innerHeight * 1.6, 2000);
+        totalHeight = isPortrait2 ? Math.min(window.innerHeight * 1.4, 2000) : Math.min(window.innerHeight * 1.3, 1600);
         gallery.style.perspective = perspectiveVal + 'px';
         var availH2 = window.innerHeight - gallery.getBoundingClientRect().top - 40;
         gallery.style.minHeight = Math.max(totalHeight + itemH + 120, availH2) + 'px';
