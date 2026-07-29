@@ -10,8 +10,11 @@ main:
   - title: "Simulation（模拟）"
     url: /simulation/
 
+  - title: "3D Printing（3D打印）"
+    url: /3dprinting/
+
   #- title: "Talks"
-   # url: /talks/    
+   # url: /talks/
 
   - title: "Teaching（教学）"
     url: /teaching/    
