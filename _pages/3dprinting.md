@@ -87,6 +87,16 @@ author_profile: true
     <span class="feature-tag">🧠 AI 深度估计</span>
     <span class="feature-tag">📦 STL 直接下载</span>
   </div>
+  <div style="margin-top:1.5em;">
+    <a id="launch-btn" href="#" target="_blank" rel="noopener"
+       style="display:inline-block;background:#4F46E5;color:white;padding:0.9em 2.5em;
+              border-radius:12px;font-size:1.15em;font-weight:600;text-decoration:none;
+              box-shadow:0 4px 16px rgba(79,70,229,0.35);transition:transform 0.2s,box-shadow 0.2s;"
+       onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 24px rgba(79,70,229,0.45)';"
+       onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 16px rgba(79,70,229,0.35)';">
+      🚀 打开 3D 打印工具
+    </a>
+  </div>
 </div>
 
 <div class="print-frame">
@@ -124,20 +134,17 @@ author_profile: true
 </div>
 
 <script>
-  // ╔══════════════════════════════════════════════════════════════╗
-  // ║  🔧 部署: 修改下面的地址指向你的 Gradio Web UI 后端        ║
-  // ║                                                             ║
-  // ║  Hugging Face Spaces: https://YOUR-USERNAME-xxx.hf.space    ║
-  // ║  Gradio share:        https://xxxxx.gradio.live             ║
-  // ║  自部署:              https://your-domain.com               ║
-  // ╚══════════════════════════════════════════════════════════════╝
-  var PRINT_TOOL_URL = "https://989b9116ee64c3.lhr.life";
+  var TOOL_URL = "https://989b9116ee64c3.lhr.life";
 
   (function() {
-    if (PRINT_TOOL_URL) {
-      document.getElementById("print-tool").src = PRINT_TOOL_URL;
+    if (TOOL_URL) {
+      // 设置启动按钮
+      var btn = document.getElementById("launch-btn");
+      if (btn) btn.href = TOOL_URL;
+      // 设置 iframe
+      var frame = document.getElementById("print-tool");
+      if (frame) frame.src = TOOL_URL;
     } else {
-      // 未配置 URL 时显示提示
       var placeholder = document.createElement("div");
       placeholder.style.cssText = "text-align:center;padding:4em 2em;color:#888;";
       placeholder.innerHTML =
@@ -145,7 +152,8 @@ author_profile: true
         '<p style="font-size:1.2em;margin-bottom:0.8em;">3D 打印服务暂未上线</p>' +
         '<p style="font-size:0.95em;">Web 后端正在部署中，请稍后访问。<br>' +
         '或前往 <a href="https://github.com/Riedel12315/2dto3dprinting" target="_blank" style="color:#667eea;">GitHub</a> 本地运行。</p>';
-      document.getElementById("print-tool").replaceWith(placeholder);
+      var frame = document.getElementById("print-tool");
+      if (frame) frame.replaceWith(placeholder);
     }
   })();
 </script>
