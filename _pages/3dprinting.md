@@ -131,7 +131,7 @@ author_profile: true
   // ║  Gradio share:        https://xxxxx.gradio.live             ║
   // ║  自部署:              https://your-domain.com               ║
   // ╚══════════════════════════════════════════════════════════════╝
-  var PRINT_TOOL_URL = "";
+  var PRINT_TOOL_URL = "https://26dfd026b96c335f-120-229-82-2.serveousercontent.com";
 
   (function() {
     if (PRINT_TOOL_URL) {
