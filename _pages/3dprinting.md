@@ -88,7 +88,7 @@ author_profile: true
     <span class="feature-tag">📦 STL 直接下载</span>
   </div>
   <div style="margin-top:1.5em;">
-    <a id="launch-btn" href="https://3efc78271b4f43ae-120-229-82-2.serveousercontent.com" target="_blank" rel="noopener"
+    <a id="launch-btn" href="https://1014e2657e16b933-120-229-82-2.serveousercontent.com" target="_blank" rel="noopener"
        style="display:inline-block;background:#4F46E5;color:white;padding:0.9em 2.5em;
               border-radius:12px;font-size:1.15em;font-weight:600;text-decoration:none;
               box-shadow:0 4px 16px rgba(79,70,229,0.35);transition:transform 0.2s,box-shadow 0.2s;"
@@ -117,7 +117,7 @@ author_profile: true
   -->
   <iframe
     id="print-tool"
-    src="https://3efc78271b4f43ae-120-229-82-2.serveousercontent.com"
+    src="https://1014e2657e16b933-120-229-82-2.serveousercontent.com"
     title="2D → 3D 浮雕生成器"
     loading="lazy"
   >
