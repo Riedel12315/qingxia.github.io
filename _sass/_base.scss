@@ -82,6 +82,29 @@ body {
   z-index: 1;
 }
 
+/* ── Liquid flow background (WebGL canvas) ──
+   Replaces the aurora gradients when liquid-bg.js is active.
+   Falls back to the aurora automatically if WebGL is unavailable. */
+#liquid-bg-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+html.liquid-bg-active body::before,
+html.liquid-bg-active body::after {
+  display: none;
+}
+
+@media print {
+  #liquid-bg-canvas {
+    display: none;
+  }
+}
+
 /* ── Headings ── */
 h1, h2, h3, h4, h5, h6 {
   margin: 2em 0 0.5em;
