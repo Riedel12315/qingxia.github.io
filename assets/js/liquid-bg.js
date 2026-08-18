@@ -18,11 +18,11 @@
   'use strict';
 
   // ── 可调参数 ─────────────────────────────────────────────────────────────
-  var MAX_V   = 0.5;    // 流速场在纹理中的编码范围（±0.5，aspect 空间/秒）
+  var MAX_V   = 0.7;    // 流速场在纹理中的编码范围（±0.7，aspect 空间/秒）
   var GRID_H  = 80;     // 流速场纵向格数（横向按宽高比折算）
-  var DECAY   = 0.60;   // 流速场指数衰减率（/秒）—— 越小液体越"粘"，回弹越慢
-  var DIFFUSE = 0.26;   // 每帧向四邻域扩散的比例
-  var IMPULSE = 0.22;   // 鼠标速度注入强度
+  var DECAY   = 0.45;   // 流速场指数衰减率（/秒）—— 越小尾迹越绵长
+  var DIFFUSE = 0.24;   // 每帧向四邻域扩散的比例
+  var IMPULSE = 0.42;   // 鼠标速度注入强度（拖动尾迹明显）
   var CURL    = 0.85;   // 鼠标转向时产生的旋涡强度
 
   // ── 运行时状态 ───────────────────────────────────────────────────────────
@@ -95,28 +95,28 @@
     '  vec2 uv = gl_FragCoord.xy / res;',
     '  vec2 p = vec2(uv.x * ar, uv.y);            // aspect 空间',
     '',
-    '  float t = u_time * 0.05;',
+    '  float t = u_time * 0.075;',
     '  vec2 pb = p * 1.18;                        // 未漂移的基准坐标',
     '  vec2 pp = pb + vec2(t * 0.5, t * 0.32);    // 环境缓慢流动',
     '',
     '  // ── 累积流速场：鼠标搅动过的区域带着惯性继续流动 ──',
     '  vec2 fuv = vec2(p.x / ar, p.y);',
     '  vec2 flowV = texture2D(u_flow, fuv).rg * 2.0 - 1.0;',
-    '  vec2 disp = flowV * u_flowStr * 0.85;',
+    '  vec2 disp = flowV * u_flowStr * 1.35;',
     '',
-    '  // ── 光标即时反馈：沿运动方向拉伸 + 环绕光标旋涡（粘稠感，克制） ──',
+    '  // ── 光标即时反馈：沿运动方向拉伸 + 环绕光标旋涡（粘稠感） ──',
     '  vec2 d = pb - u_mouse;',
     '  float r2 = dot(d, d);',
-    '  float fall = exp(-r2 / 0.05);',
+    '  float fall = exp(-r2 / 0.07);',
     '  float w = u_drag * fall;',
-    '  disp += normalize(u_vel + vec2(0.0001)) * w * 0.03;',
-    '  disp += vec2(-d.y, d.x) / (sqrt(r2) + 0.001) * w * 0.06;',
+    '  disp += normalize(u_vel + vec2(0.0001)) * w * 0.06;',
+    '  disp += vec2(-d.y, d.x) / (sqrt(r2) + 0.001) * w * 0.12;',
     '',
     '  // ── 域扭曲 fbm：让色场像液体一样融合流动 ──',
     '  vec2 q = vec2(fbm(pp + disp), fbm(pp + disp + vec2(5.2, 1.3)));',
-    '  vec2 r = vec2(fbm(pp + disp + 1.4 * q + vec2(1.7, 9.2)),',
-    '                fbm(pp + disp + 1.4 * q + vec2(8.3, 2.8)));',
-    '  float f = fbm(pp + disp + 1.3 * r);',
+    '  vec2 r = vec2(fbm(pp + disp + 1.7 * q + vec2(1.7, 9.2)),',
+    '                fbm(pp + disp + 1.7 * q + vec2(8.3, 2.8)));',
+    '  float f = fbm(pp + disp + 1.6 * r);',
     '',
     '  // ── 深色配色（纯深蓝系，克制不花哨） ──',
     '  vec3 navy   = vec3(0.025, 0.055, 0.115);',
@@ -151,6 +151,13 @@
     '  vec3 baseCol = mix(navy, lBase, u_theme);',
     '  float pull = mix(0.40, 0.30, u_theme);',
     '  col = mix(col, baseCol, pull);',
+    '',
+    '  // ── 被搅动的液体发亮：拖尾 = 柔和的蓝色辉光（DeepSeek 手感的关键） ──',
+    '  float flowMag = length(flowV) * u_flowStr;',
+    '  float glow = smoothstep(0.10, 0.62, flowMag);',
+    '  vec3 glowCol = mix(vec3(0.28, 0.48, 0.95), vec3(0.33, 0.55, 0.96), u_theme);',
+    '  col = mix(col, glowCol, glow * 0.42);',
+    '  col = mix(col, glowCol, u_drag * fall * 0.33);',
     '',
     '  // 暗角',
     '  vec2 vc = p - vec2(ar * 0.5, 0.5);',
@@ -269,7 +276,7 @@
     var ivy = (ny - lastY) / dtv;
     lastX = nx;
     lastY = ny;
-    var kv = Math.min(1, dtv * 8);
+    var kv = Math.min(1, dtv * 5);
     mouse.vx += (ivx - mouse.vx) * kv;
     mouse.vy += (ivy - mouse.vy) * kv;
     // 转向曲率（叉积），转向时产生旋涡
@@ -329,17 +336,17 @@
     mouseFresh = false;
 
     var speed = Math.sqrt(mouse.vx * mouse.vx + mouse.vy * mouse.vy);
-    // 带死区：轻微移动不响应，大幅移动才搅动（避免"动一点点就满屏流动"）
-    var target = hasMouse ? Math.min(1, Math.max(0, speed - 0.15) * 2.2) : 0;
+    // 带小死区：手指级轻微移动不响应，正常拖动即产生明显尾迹
+    var target = hasMouse ? Math.min(1, Math.max(0, speed - 0.08) * 2.4) : 0;
     // 快速拉起、缓慢回落 → 粘稠手感
-    var up = Math.min(1, dt * (target > mouse.drag ? 9 : 2.2));
+    var up = Math.min(1, dt * (target > mouse.drag ? 9 : 1.8));
     mouse.drag += (target - mouse.drag) * up;
 
     if (hasMouse && mouse.drag > 0.02) {
       var cx = (mouse.x / ar) * gridW;
       var cy = mouse.y * gridH;
-      var radius = 1.5 + Math.min(2.5, speed * 5.0);
-      var s = IMPULSE * dt * Math.min(1, Math.max(0, speed - 0.15) * 2.5) * (0.35 + 0.65 * mouse.drag);
+      var radius = 2.5 + Math.min(3.5, speed * 5.5);
+      var s = IMPULSE * dt * Math.min(1, Math.max(0, speed - 0.08) * 2.5) * (0.35 + 0.65 * mouse.drag);
       // 沿运动方向注入（拉伸）
       splat(cx, cy, radius, mouse.vx, mouse.vy, s);
       // 转向时注入垂直分量（旋涡）
