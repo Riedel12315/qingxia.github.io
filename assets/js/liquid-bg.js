@@ -1,8 +1,8 @@
 /**
  * Liquid Flow Background — DeepSeek-style flowing gradient liquid
  * ============================================================================
- * 整体：WebGL 片元着色器，用域扭曲 fbm 噪声生成缓慢流动的蓝紫渐变"液体"，
- *       视觉参考 DeepSeek 官网背景（深海军蓝底 + 流动的蓝/紫/青光斑）。
+ * 整体：WebGL 片元着色器，用域扭曲 fbm 噪声生成缓慢流动的纯蓝系渐变"液体"，
+ *       深色模式=深蓝，浅色模式=浅蓝，整体克制不花哨。
  * 鼠标：不再使用"彩色光点汇聚"特效。鼠标移动时向一张低分辨率"流速场"
  *       （flow map）注入速度冲量，流速场缓慢扩散、指数衰减 —— 液体会被
  *       "搅动"并在鼠标离开后带着惯性慢慢回弹，形成粘稠液体的手感。
@@ -20,9 +20,9 @@
   // ── 可调参数 ─────────────────────────────────────────────────────────────
   var MAX_V   = 0.5;    // 流速场在纹理中的编码范围（±0.5，aspect 空间/秒）
   var GRID_H  = 80;     // 流速场纵向格数（横向按宽高比折算）
-  var DECAY   = 0.85;   // 流速场指数衰减率（/秒）—— 越小液体越"粘"，回弹越慢（粘稠度较初版 +30%）
-  var DIFFUSE = 0.20;   // 每帧向四邻域扩散的比例
-  var IMPULSE = 0.36;   // 鼠标速度注入强度（搅动性较初版 -20%）
+  var DECAY   = 0.60;   // 流速场指数衰减率（/秒）—— 越小液体越"粘"，回弹越慢
+  var DIFFUSE = 0.26;   // 每帧向四邻域扩散的比例
+  var IMPULSE = 0.22;   // 鼠标速度注入强度
   var CURL    = 0.85;   // 鼠标转向时产生的旋涡强度
 
   // ── 运行时状态 ───────────────────────────────────────────────────────────
@@ -102,54 +102,55 @@
     '  // ── 累积流速场：鼠标搅动过的区域带着惯性继续流动 ──',
     '  vec2 fuv = vec2(p.x / ar, p.y);',
     '  vec2 flowV = texture2D(u_flow, fuv).rg * 2.0 - 1.0;',
-    '  vec2 disp = flowV * u_flowStr * 1.15;',
+    '  vec2 disp = flowV * u_flowStr * 0.85;',
     '',
-    '  // ── 光标即时反馈：沿运动方向拉伸 + 环绕光标旋涡（粘稠感） ──',
+    '  // ── 光标即时反馈：沿运动方向拉伸 + 环绕光标旋涡（粘稠感，克制） ──',
     '  vec2 d = pb - u_mouse;',
     '  float r2 = dot(d, d);',
-    '  float fall = exp(-r2 / 0.085);',
+    '  float fall = exp(-r2 / 0.05);',
     '  float w = u_drag * fall;',
-    '  disp += normalize(u_vel + vec2(0.0001)) * w * 0.10;',
-    '  disp += vec2(-d.y, d.x) / (sqrt(r2) + 0.001) * w * 0.20;',
+    '  disp += normalize(u_vel + vec2(0.0001)) * w * 0.03;',
+    '  disp += vec2(-d.y, d.x) / (sqrt(r2) + 0.001) * w * 0.06;',
     '',
     '  // ── 域扭曲 fbm：让色场像液体一样融合流动 ──',
     '  vec2 q = vec2(fbm(pp + disp), fbm(pp + disp + vec2(5.2, 1.3)));',
-    '  vec2 r = vec2(fbm(pp + disp + 2.0 * q + vec2(1.7, 9.2)),',
-    '                fbm(pp + disp + 2.0 * q + vec2(8.3, 2.8)));',
-    '  float f = fbm(pp + disp + 1.9 * r);',
+    '  vec2 r = vec2(fbm(pp + disp + 1.4 * q + vec2(1.7, 9.2)),',
+    '                fbm(pp + disp + 1.4 * q + vec2(8.3, 2.8)));',
+    '  float f = fbm(pp + disp + 1.3 * r);',
     '',
-    '  // ── 深色配色（DeepSeek 蓝紫系） ──',
-    '  vec3 navy   = vec3(0.030, 0.042, 0.088);',
-    '  vec3 blue   = vec3(0.190, 0.330, 0.950);',
-    '  vec3 purple = vec3(0.470, 0.250, 0.920);',
-    '  vec3 cyan   = vec3(0.120, 0.620, 0.930);',
-    '  vec3 pink   = vec3(0.930, 0.320, 0.560);',
+    '  // ── 深色配色（纯深蓝系，克制不花哨） ──',
+    '  vec3 navy   = vec3(0.025, 0.055, 0.115);',
+    '  vec3 deep   = vec3(0.070, 0.260, 0.720);',
+    '  vec3 blue   = vec3(0.100, 0.340, 0.860);',
+    '  vec3 sky    = vec3(0.160, 0.520, 0.900);',
+    '  vec3 aqua   = vec3(0.130, 0.560, 0.820);',
     '',
     '  vec3 col = navy;',
-    '  col = mix(col, blue,   smoothstep(0.0, 0.85, f));',
-    '  col = mix(col, purple, smoothstep(0.30, 0.90, q.y) * 0.66);',
-    '  col = mix(col, cyan,   smoothstep(0.40, 0.95, r.x) * 0.68);',
-    '  col = mix(col, pink,   smoothstep(0.55, 0.95, r.y) * 0.40);',
-    '  col += vec3(0.14, 0.16, 0.34) * pow(f, 2.0) * 0.38;',
-    '  col += vec3(0.30, 0.16, 0.55) * pow(r.y, 3.0) * 0.30;',
+    '  col = mix(col, deep, smoothstep(0.0, 0.85, f) * 0.70);',
+    '  col = mix(col, blue, smoothstep(0.30, 0.92, q.y) * 0.45);',
+    '  col = mix(col, sky,  smoothstep(0.45, 0.95, r.x) * 0.40);',
+    '  col = mix(col, aqua, smoothstep(0.60, 0.98, r.y) * 0.28);',
+    '  col += vec3(0.07, 0.15, 0.38) * pow(f, 2.0) * 0.26;',
+    '  col += vec3(0.08, 0.18, 0.40) * pow(r.y, 3.0) * 0.14;',
     '',
-    '  // ── 浅色配色（柔和粉彩） ──',
-    '  vec3 lBase   = vec3(0.968, 0.963, 0.955);',
-    '  vec3 lBlue   = vec3(0.760, 0.830, 1.000);',
-    '  vec3 lPurple = vec3(0.870, 0.820, 1.000);',
-    '  vec3 lCyan   = vec3(0.730, 0.920, 1.000);',
-    '  vec3 lPink   = vec3(1.000, 0.840, 0.890);',
+    '  // ── 浅色配色（清爽浅蓝） ──',
+    '  vec3 lBase   = vec3(0.955, 0.966, 0.980);',
+    '  vec3 lBlue   = vec3(0.760, 0.870, 1.000);',
+    '  vec3 lBlue2  = vec3(0.810, 0.900, 1.000);',
+    '  vec3 lSky    = vec3(0.760, 0.930, 1.000);',
+    '  vec3 lMist   = vec3(0.880, 0.930, 1.000);',
     '  vec3 lcol = lBase;',
-    '  lcol = mix(lcol, lBlue,   smoothstep(0.0, 0.85, f) * 0.75);',
-    '  lcol = mix(lcol, lPurple, smoothstep(0.30, 0.90, q.y) * 0.55);',
-    '  lcol = mix(lcol, lCyan,   smoothstep(0.40, 0.95, r.x) * 0.55);',
-    '  lcol = mix(lcol, lPink,   smoothstep(0.55, 0.95, r.y) * 0.34);',
+    '  lcol = mix(lcol, lBlue,  smoothstep(0.0, 0.85, f) * 0.62);',
+    '  lcol = mix(lcol, lBlue2, smoothstep(0.30, 0.92, q.y) * 0.45);',
+    '  lcol = mix(lcol, lSky,   smoothstep(0.45, 0.95, r.x) * 0.38);',
+    '  lcol = mix(lcol, lMist,  smoothstep(0.60, 0.98, r.y) * 0.24);',
     '',
     '  col = mix(col, lcol, u_theme);',
     '',
-    '  // 保持氛围感，不让背景压过内容',
+    '  // 保持氛围感，不让背景压过内容（浅色模式压得更轻，保留浅蓝感）',
     '  vec3 baseCol = mix(navy, lBase, u_theme);',
-    '  col = mix(col, baseCol, 0.22);',
+    '  float pull = mix(0.40, 0.30, u_theme);',
+    '  col = mix(col, baseCol, pull);',
     '',
     '  // 暗角',
     '  vec2 vc = p - vec2(ar * 0.5, 0.5);',
@@ -328,7 +329,8 @@
     mouseFresh = false;
 
     var speed = Math.sqrt(mouse.vx * mouse.vx + mouse.vy * mouse.vy);
-    var target = hasMouse ? Math.min(1, speed * 2.6) : 0;
+    // 带死区：轻微移动不响应，大幅移动才搅动（避免"动一点点就满屏流动"）
+    var target = hasMouse ? Math.min(1, Math.max(0, speed - 0.15) * 2.2) : 0;
     // 快速拉起、缓慢回落 → 粘稠手感
     var up = Math.min(1, dt * (target > mouse.drag ? 9 : 2.2));
     mouse.drag += (target - mouse.drag) * up;
@@ -336,8 +338,8 @@
     if (hasMouse && mouse.drag > 0.02) {
       var cx = (mouse.x / ar) * gridW;
       var cy = mouse.y * gridH;
-      var radius = 2.0 + Math.min(3.0, speed * 6.0);
-      var s = IMPULSE * dt * Math.min(1, speed * 3.0) * (0.35 + 0.65 * mouse.drag);
+      var radius = 1.5 + Math.min(2.5, speed * 5.0);
+      var s = IMPULSE * dt * Math.min(1, Math.max(0, speed - 0.15) * 2.5) * (0.35 + 0.65 * mouse.drag);
       // 沿运动方向注入（拉伸）
       splat(cx, cy, radius, mouse.vx, mouse.vy, s);
       // 转向时注入垂直分量（旋涡）
