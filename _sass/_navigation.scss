@@ -1,9 +1,5 @@
 /* ==========================================================================
-   NAVIGATION — Raycast-style nav
-   ========================================================================== */
-
-/*
-   Breadcrumb navigation links
+   NAVIGATION — solid light nav, static current-state bar
    ========================================================================== */
 
 .breadcrumbs {
@@ -14,46 +10,24 @@
   padding-left: 2em;
   padding-right: 2em;
   font-family: $sans-serif;
-  animation: intro 0.3s both;
-  animation-delay: 0.30s;
 
-  @include breakpoint($large) {
-    padding-left: 1em;
-    padding-right: 1em;
-  }
-
-  @include breakpoint($x-large) {
-    max-width: $x-large;
-  }
+  @include breakpoint($large)  { padding-left: 1em; padding-right: 1em; }
+  @include breakpoint($x-large){ max-width: $x-large; }
 
   ol {
     padding: 0;
     list-style: none;
     font-size: $type-size-6;
-
-    @include breakpoint($large) {
-      @include span(10 of 12 last);
-    }
-
-    @include breakpoint($x-large) {
-      @include prefix(0.5 of 12);
-    }
+    @include breakpoint($large)  { @include span(10 of 12 last); }
+    @include breakpoint($x-large){ @include prefix(0.5 of 12); }
   }
 
-  li {
-    display: inline;
-    color: $gray;
-  }
-
-  .current {
-    font-weight: 600;
-    color: #FFFFFF;
-  }
+  li { display: inline; color: $ink-3; }
+  .current { font-weight: 600; color: $ink; }
 }
 
-
 /*
-   Post pagination navigation links
+   Post pagination
    ========================================================================== */
 
 .pagination {
@@ -62,12 +36,7 @@
   margin-top: 1em;
   padding-top: 1em;
 
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    font-family: $sans-serif;
-  }
+  ul { margin: 0; padding: 0; list-style-type: none; font-family: $sans-serif; }
 
   li {
     display: block;
@@ -75,52 +44,30 @@
     margin-left: -1px;
 
     a {
-      margin-bottom: 0.25em;
-      padding: 0.5em 1em;
+      margin-bottom: .25em;
+      padding: .5em 1em;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
       font-family: $sans-serif;
       font-size: 14px;
       font-weight: 600;
       line-height: 1.5;
       text-align: center;
       text-decoration: none;
-      color: $gray;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid $border-color;
+      color: $ink-2;
+      background: $surface;
+      border: 1px solid $line-strong;
       border-radius: 0;
 
-      &:hover {
-        color: #FFFFFF;
-        background: rgba(255, 255, 255, 0.06);
-      }
+      &:hover { color: $accent; background: $accent-soft; }
 
-      &.current {
-        color: #FFFFFF;
-        background: $primary-color;
-        border-color: $primary-color;
-      }
-
-      &.disabled {
-        color: rgba(255, 255, 255, 0.2);
-        pointer-events: none;
-        cursor: not-allowed;
-      }
+      &.current { color: $accent; background: $accent-soft; border-color: $accent; }
+      &.disabled { color: $ink-3; opacity: .55; pointer-events: none; cursor: not-allowed; }
     }
 
-    &:first-child {
-      margin-left: 0;
-
-      a {
-        border-top-left-radius: $border-radius;
-        border-bottom-left-radius: $border-radius;
-      }
-    }
-
-    &:last-child {
-      a {
-        border-top-right-radius: $border-radius;
-        border-bottom-right-radius: $border-radius;
-      }
-    }
+    &:first-child { margin-left: 0; a { border-top-left-radius: $border-radius; border-bottom-left-radius: $border-radius; } }
+    &:last-child  { a { border-top-right-radius: $border-radius; border-bottom-right-radius: $border-radius; } }
   }
 
   &--pager {
@@ -128,52 +75,32 @@
     padding: 1em 2em;
     float: left;
     width: 50%;
+    min-height: 44px;
     font-family: $sans-serif;
     font-size: $type-size-5;
     font-weight: 600;
     text-align: center;
     text-decoration: none;
-    color: $gray;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid $border-color;
+    color: $ink-2;
+    background: $surface;
+    border: 1px solid $line-strong;
     border-radius: $border-radius;
 
-    &:hover {
-      color: #FFFFFF;
-      background: rgba(255, 255, 255, 0.06);
-    }
-
-    &:first-child {
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
-    }
-
-    &:last-child {
-      margin-left: -1px;
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
-    }
-
-    &.disabled {
-      color: rgba(255, 255, 255, 0.2);
-      pointer-events: none;
-      cursor: not-allowed;
-    }
+    &:hover { color: $accent; background: $accent-soft; }
+    &:first-child { border-top-right-radius: 0; border-bottom-right-radius: 0; }
+    &:last-child  { margin-left: -1px; border-top-left-radius: 0; border-bottom-left-radius: 0; }
+    &.disabled { color: $ink-3; opacity: .55; pointer-events: none; cursor: not-allowed; }
   }
 }
 
 .page__content + .pagination,
 .page__meta + .pagination,
 .page__share + .pagination,
-.page__comments + .pagination {
-  margin-top: 2em;
-  padding-top: 2em;
-  border-top: 1px solid $border-color;
-}
+.page__comments + .pagination { margin-top: 2em; padding-top: 2em; border-top: 1px solid $line; }
 
 
 /*
-   Priority plus navigation
+   Priority plus navigation (greedy-nav, driven by main.min.js)
    ========================================================================== */
 
 .greedy-nav {
@@ -181,106 +108,67 @@
   min-width: 200px;
   background: transparent;
 
-  @include breakpoint(max-width $large) {
-    float: right;
-    min-width: auto;
-  }
+  @include breakpoint(max-width $large) { float: right; min-width: auto; }
 
   a {
     display: block;
     margin: 0 1rem;
-    padding: 0.5rem 0;
+    padding: 1.375rem 0;
+    line-height: 1.2;
     color: $masthead-link-color;
     text-decoration: none;
-    font-size: 0.9em;
+    font-size: .9em;
     font-weight: 500;
     letter-spacing: -0.005em;
+    border-bottom: 2px solid transparent;
+    transition: $global-transition;
 
-    @include breakpoint(max-width $large) {
-      margin: 0 0.5rem;
-      font-size: 0.82em;
-    }
+    @include breakpoint(max-width $large) { margin: 0 .5rem; padding: 1.125rem 0; font-size: .82em; }
 
-    &:hover {
-      color: $masthead-link-color-hover;
-    }
+    &:hover { color: $masthead-link-color-hover; }
+
+    /* static current state: accent text + 2px bottom bar, no slide */
+    &[aria-current="page"] { color: $accent; border-bottom-color: $accent; font-weight: 600; }
   }
 
   button {
     position: absolute;
     height: 100%;
+    min-width: 44px;
+    min-height: 44px;
     right: 0;
-    padding: 0 0.5rem;
+    padding: 0 .5rem;
     border: 0;
-    outline: none;
-    background-color: $primary-color;
-    color: #fff;
+    background-color: $accent;
+    color: $surface;
     cursor: pointer;
-    border-radius: 6px;
+    border-radius: $border-radius;
+    transition: $global-transition;
+
+    &:hover { background-color: $accent-hover; }
   }
 
   .visible-links {
     display: table;
 
-    @include breakpoint(max-width $large) {
-      display: none; // hidden on mobile — only hamburger
-    }
+    @include breakpoint(max-width $large) { display: none; }
 
     li {
       display: table-cell;
       vertical-align: middle;
 
-      &:first-child {
-        font-weight: 700;
-        letter-spacing: -0.01em;
-
-        a {
-          margin-left: 0;
-        }
-
-        @include breakpoint(max-width $large) {
-          display: table-cell; // keep site title visible
-        }
-      }
-
-      &:last-child {
-        a {
-          margin-right: 0;
-        }
-      }
-    }
-
-    a {
-      position: relative;
-
-      &:before {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        height: 2px;
-        background: $primary-color;
-        width: 100%;
-        transition: transform 0.2s ease-out;
-        transform: scaleX(0);
-      }
-
-      &:hover:before {
-        transform: scaleX(1);
-      }
+      &:first-child { font-weight: 700; letter-spacing: -0.01em; a { margin-left: 0; } }
+      &:last-child  { a { margin-right: 0; } }
     }
   }
 
-  // Mobile: show only the site title, hide other nav links
+  /* Mobile: show only the site title, hamburger holds the rest. */
   @include breakpoint(max-width $large) {
     .visible-links {
       display: table;
       li {
         display: none;
-        &:first-child {
-          display: table-cell;
-          a { margin: 0; }
-        }
+        &:first-child { display: table-cell; a { margin: 0; } }
       }
     }
   }
@@ -289,187 +177,112 @@
     position: absolute;
     top: 100%;
     right: 0;
-    margin-top: 12px;
+    margin-top: 8px;
     padding: 8px;
-    border: 1px solid $border-color;
+    border: 1px solid $line-strong;
     border-radius: $border-radius;
-    background: #1A1A1E;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+    background: $surface;
+    box-shadow: $box-shadow;
 
     a {
       margin: 0;
-      padding: 10px 20px;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      padding: 0 1rem;
       font-size: $type-size-5;
+      border-bottom: 0;
       border-radius: 6px;
+      color: $ink-2;
 
-      &:hover {
-        color: #FFFFFF;
-        background: rgba(255, 255, 255, 0.06);
-      }
+      &:hover { color: $accent; background: $accent-soft; }
     }
 
-    &:before {
-      content: "";
-      position: absolute;
-      top: -11px;
-      right: 10px;
-      width: 0;
-      border-style: solid;
-      border-width: 0 10px 10px;
-      border-color: $border-color transparent;
-      display: block;
-      z-index: 0;
-    }
-
-    &:after {
-      content: "";
-      position: absolute;
-      top: -10px;
-      right: 10px;
-      width: 0;
-      border-style: solid;
-      border-width: 0 10px 10px;
-      border-color: #1A1A1E transparent;
-      display: block;
-      z-index: 1;
-    }
-
-    li {
-      display: block;
-      border-bottom: 1px solid $border-color;
-
-      &:last-child {
-        border-bottom: none;
-      }
-    }
+    li { display: block; border-bottom: 1px solid $line; }
+    li:last-child { border-bottom: none; }
   }
 }
 
 
 /*
-   Navigation list
+   Navigation list / TOC
    ========================================================================== */
 
 .nav__list {
   font-size: 1.25rem;
-
-  ul {
-    margin-bottom: 1em;
-  }
+  ul { margin-bottom: 1em; }
 
   a {
-    display: block;
-    padding: 0.25em 0.5em;
-    color: $gray;
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: .25em .5em;
+    color: $ink-2;
     border-radius: 6px;
-    transition: all 0.15s ease-out;
+    transition: $global-transition;
 
-    &:hover {
-      color: #FFFFFF;
-      background: rgba(255, 255, 255, 0.04);
-      text-decoration: none;
-    }
+    &:hover { color: $accent; background: $surface-2; text-decoration: none; }
   }
 
   .active {
-    margin-left: -0.5em;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
-    color: #FFFFFF;
+    margin-left: -.5em;
+    padding-left: .5em;
+    padding-right: .5em;
+    color: $accent;
     font-weight: 600;
-    background: $primary-color;
+    background: $accent-soft;
+    border: 1px solid $accent;
     border-radius: $border-radius;
-
-    &:hover {
-      color: #FFFFFF;
-    }
   }
 }
 
-.nav__title {
-  margin: 0;
-  padding: 0.5rem 1rem;
-  font-family: $sans-serif-narrow;
-  font-size: $type-size-5;
-  font-weight: 600;
-  color: #FFFFFF;
-}
-
+.nav__title { margin: 0; padding: .5rem 1rem; font-family: $sans-serif; font-size: $type-size-5; font-weight: 600; color: $ink; }
 .nav__sub-title {
   display: block;
-  margin: 0.5rem 0;
-  padding: 0.5rem 0;
-  font-family: $sans-serif-narrow;
+  margin: .5rem 0;
+  padding: .5rem 0;
+  font-family: $sans-serif;
   font-size: $type-size-6;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: $gray;
-  border-bottom: 1px solid $border-color;
+  letter-spacing: .05em;
+  color: $ink-3;
+  border-bottom: 1px solid $line;
 }
-
-
-/*
-   Table of contents navigation
-   ========================================================================== */
 
 .toc {
   font-family: $sans-serif;
-  color: $gray;
+  color: $ink-2;
   text-transform: uppercase;
   letter-spacing: 1px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid $border-color;
+  background: $surface;
+  border: 1px solid $line-strong;
   border-radius: $border-radius;
   box-shadow: $box-shadow;
 
-  .nav__title {
-    color: #fff;
-    font-size: $type-size-6;
-    background: $primary-color;
-    border-top-left-radius: $border-radius;
-    border-top-right-radius: $border-radius;
-  }
+  .nav__title { color: $accent; font-size: $type-size-6; background: $accent-soft; border-top-left-radius: $border-radius; border-top-right-radius: $border-radius; }
 }
 
 .toc__menu {
-  margin: 0;
-  padding: 0;
-  width: 100%;
+  margin: 0; padding: 0; width: 100%;
   list-style: none;
-  font-size: 0.8rem;
+  font-size: .8rem;
 
   a {
-    display: block;
-    padding: 0.5rem 1rem;
-    color: $gray;
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: .5rem 1rem;
+    color: $ink-2;
     font-size: $type-size-7;
     font-weight: 500;
     line-height: 1.5;
-    border-bottom: 1px solid $border-color;
+    border-bottom: 1px solid $line;
 
-    &:hover {
-      color: #fff;
-      background: rgba(255, 255, 255, 0.04);
-    }
+    &:hover { color: $accent; background: $surface-2; }
   }
 
-  > li:last-child {
-    a {
-      border-bottom: none;
-    }
-  }
-
-  li ul > li a {
-    padding-left: 2rem;
-    font-weight: 400;
-  }
-
-  li > ul li {
-    display: none;
-
-    @include breakpoint($medium) {
-      display: block;
-    }
-  }
+  > li:last-child a { border-bottom: none; }
+  li ul > li a { padding-left: 2rem; font-weight: 400; }
+  li > ul li { display: none; @include breakpoint($medium) { display: block; } }
 }

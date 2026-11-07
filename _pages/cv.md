@@ -9,15 +9,13 @@ redirect_from:
 
 {% include base_path %}
 
-Curriculum Vitae（简历）
-=====
+## Curriculum Vitae（简历）
 [English CV](https://qingxiaxjtu.com/files/CV-EN.pdf)   
 [中文 CV full](https://qingxiaxjtu.com/files/CV-CN.pdf)   
 [中文 CV 1页版](https://qingxiaxjtu.com/files/CV-CN2.pdf)   
 [中文 CV 2页版](https://qingxiaxjtu.com/files/CV-CN3.pdf)   
 
-Education（教育背景）
-======
+## Education（教育背景）
 ### Xi’an Jiaotong University (Sep 2021 - Jun 2025)
 + Ph.D. in Applied Mathematics
 + Advisor: Prof. Dr. [Yibao Li](http://gr.xjtu.edu.cn/web/yibaoli)
@@ -41,47 +39,41 @@ Education（教育背景）
     - Image and Geometry Processing
     - 3D Printing
  
-Mathmatics Genealogy Project（学术传承）
-=====
+## Mathmatics Genealogy Project（学术传承）
 
-<link rel="stylesheet" href="{{ base_path }}/assets/css/lineage-tree.css?v=3">
+<link rel="stylesheet" href="{{ base_path }}/assets/css/lineage-tree.css">
 
-<div id="lineage-tree" class="lineage-tree-loading" style="text-align:center;padding:3em 0;color:rgba(255,255,255,0.2);font-family:Inter,sans-serif;font-size:0.85em;">Loading academic lineage...
-<script type="application/json">
-[
-  {"name":"David Hilbert","degree":"Ph.D.","year":"1885","uni":"Universität Königsberg","flag":"🇩🇪","note":"23 Problems · Father of Modern Mathematics"},
-  {"name":"Richard Courant","degree":"Ph.D.","year":"1910","uni":"Georg-August-Universität Göttingen","flag":"🇩🇪","note":"Courant Institute · Finite Element Method"},
-  {"name":"Joseph Bishop Keller","degree":"Ph.D.","year":"1948","uni":"New York University","flag":"🇺🇸","note":"Geometrical Theory of Diffraction · Keller–Segel Model"},
-  {"name":"George C. Papanicolaou","degree":"Ph.D.","year":"1969","uni":"New York University","current":"Stanford University","flag":"🇺🇸","note":"Homogenization Theory · Stochastic Analysis"},
-  {"name":"Russel Edward Caflisch","degree":"Ph.D.","year":"1978","uni":"New York University","current":"UCLA","flag":"🇺🇸","note":"Applied PDEs · Thin Film Epitaxy"},
-  {"name":"John Samuel Lowengrub","degree":"Ph.D.","year":"1988","uni":"New York University","current":"UC Irvine","flag":"🇺🇸","note":"Tumor Growth Modeling · Complex Fluids"},
-  {"name":"Jun-Seok Kim","degree":"Ph.D.","year":"2002","uni":"University of Minnesota","current":"Korea University","flag":"🇰🇷","note":"Phase-Field Methods · Computational Fluid Dynamics"},
-  {"name":"Yibao Li","degree":"Ph.D.","year":"2013","uni":"Korea University","current":"Xi'an Jiaotong University","flag":"🇨🇳","note":"3D Printing Simulation · Topology Optimization"},
-  {"name":"Qing Xia","degree":"Ph.D.","year":"2025","uni":"Xi'an Jiaotong University","current":"Huawei Technologies Co., Ltd.","flag":"🇨🇳","note":"Shape Topology Optimization · Multi-Physics Coupling"}
-]
-</script>
-</div>
+<!-- Server-rendered content: readable with JavaScript disabled. -->
+<ol class="lineage-tree" id="lineage-tree">
+  <li class="lineage-node"><span class="lineage-node__flag">🇩🇪</span><span class="lineage-node__name">David Hilbert</span><span class="lineage-node__meta">Ph.D. 1885</span><span class="lineage-node__uni">Universität Königsberg</span><span class="lineage-node__note">23 Problems · Father of Modern Mathematics</span></li>
+  <li class="lineage-node"><span class="lineage-node__flag">🇩🇪</span><span class="lineage-node__name">Richard Courant</span><span class="lineage-node__meta">Ph.D. 1910</span><span class="lineage-node__uni">Georg-August-Universität Göttingen</span><span class="lineage-node__note">Courant Institute · Finite Element Method</span></li>
+  <li class="lineage-node"><span class="lineage-node__flag">🇺🇸</span><span class="lineage-node__name">Joseph Bishop Keller</span><span class="lineage-node__meta">Ph.D. 1948</span><span class="lineage-node__uni">New York University</span><span class="lineage-node__note">Geometrical Theory of Diffraction · Keller–Segel Model</span></li>
+  <li class="lineage-node"><span class="lineage-node__flag">🇺🇸</span><span class="lineage-node__name">George C. Papanicolaou</span><span class="lineage-node__meta">Ph.D. 1969</span><span class="lineage-node__uni">New York University</span><span class="lineage-node__current">Stanford University</span><span class="lineage-node__note">Homogenization Theory · Stochastic Analysis</span></li>
+  <li class="lineage-node"><span class="lineage-node__flag">🇺🇸</span><span class="lineage-node__name">Russel Edward Caflisch</span><span class="lineage-node__meta">Ph.D. 1978</span><span class="lineage-node__uni">New York University</span><span class="lineage-node__current">UCLA</span><span class="lineage-node__note">Applied PDEs · Thin Film Epitaxy</span></li>
+  <li class="lineage-node"><span class="lineage-node__flag">🇺🇸</span><span class="lineage-node__name">John Samuel Lowengrub</span><span class="lineage-node__meta">Ph.D. 1988</span><span class="lineage-node__uni">New York University</span><span class="lineage-node__current">UC Irvine</span><span class="lineage-node__note">Tumor Growth Modeling · Complex Fluids</span></li>
+  <li class="lineage-node"><span class="lineage-node__flag">🇰🇷</span><span class="lineage-node__name">Jun-Seok Kim</span><span class="lineage-node__meta">Ph.D. 2002</span><span class="lineage-node__uni">University of Minnesota</span><span class="lineage-node__current">Korea University</span><span class="lineage-node__note">Phase-Field Methods · Computational Fluid Dynamics</span></li>
+  <li class="lineage-node"><span class="lineage-node__flag">🇨🇳</span><span class="lineage-node__name">Yibao Li</span><span class="lineage-node__meta">Ph.D. 2013</span><span class="lineage-node__uni">Korea University</span><span class="lineage-node__current">Xi'an Jiaotong University</span><span class="lineage-node__note">3D Printing Simulation · Topology Optimization</span></li>
+  <li class="lineage-node lineage-node--current"><span class="lineage-node__flag">🇨🇳</span><span class="lineage-node__name">Qing Xia</span><span class="lineage-node__meta">Ph.D. 2025</span><span class="lineage-node__uni">Xi'an Jiaotong University</span><span class="lineage-node__current">Huawei Technologies Co., Ltd.</span><span class="lineage-node__note">Shape Topology Optimization · Multi-Physics Coupling</span></li>
+</ol>
 
-<script src="{{ base_path }}/assets/js/lineage-tree.js?v=3"></script>
+<noscript>
+<p>Academic lineage (学术传承), nine scholars in order: David Hilbert (Ph.D. 1885, Universität Königsberg) → Richard Courant (Ph.D. 1910, Georg-August-Universität Göttingen) → Joseph Bishop Keller (Ph.D. 1948, New York University) → George C. Papanicolaou (Ph.D. 1969, New York University) → Russel Edward Caflisch (Ph.D. 1978, New York University) → John Samuel Lowengrub (Ph.D. 1988, New York University) → Jun-Seok Kim (Ph.D. 2002, University of Minnesota) → Yibao Li (Ph.D. 2013, Korea University) → Qing Xia (Ph.D. 2025, Xi'an Jiaotong University).</p>
+</noscript>
+
+<script src="{{ base_path }}/assets/js/lineage-tree.js"></script>
 
 
   
-Research interest（研究兴趣）
-=====
+## Research interest（研究兴趣）
 + Computational fluid dynamics
 + Image processing and surface computation
 + 3D Printing and topology optimization
 
-Teaching Assistant（助教）
-======
-+ Numerical Analysis(A)   
-Instructor: Prof. Dr. Yibao Li, Iharbour, Fall 2020
-+ Numerical Analysis(B)   
-Instructor: Prof. Dr. Yibao Li, Iharbour, Fall 2019   
+## Teaching Assistant（助教）
++ Numerical Analysis(A) Instructor: Prof. Dr. Yibao Li, Iharbour, Fall 2020; Numerical Analysis(B) Instructor: Prof. Dr. Yibao Li, Iharbour, Fall 2019
   
   
-Contact（联系方式）
-======
+## Contact（联系方式）
 School of Mathematics and Statistics   
 No.28, West Xianning Road, Xi'an, Shaanxi, 710049,P.R. China   
 Email:xiaqing151701@stu.xjtu.edu.cn, qingxia151701@gmail.com, qingxia151701@outlook.com

@@ -1,81 +1,42 @@
 /* ==========================================================================
-   UTILITIES — Dark theme updates
+   UTILITIES — light theme, no forced declarations, no 3D transforms
    ========================================================================== */
 
-/*
-   Visibility
-   ========================================================================== */
-
-.hidden {
-  display: none;
-  visibility: hidden;
-}
-
-.load {
-  display: none;
-}
-
-.transparent {
-  opacity: 0;
-}
+.hidden { display: none; visibility: hidden; }
+.load { display: none; }
+.transparent { opacity: 0; }
 
 .visually-hidden,
 .screen-reader-text,
 .screen-reader-text span,
 .screen-reader-shortcut {
-  position: absolute !important;
+  position: absolute;
   clip: rect(1px, 1px, 1px, 1px);
-  height: 1px !important;
-  width: 1px !important;
-  border: 0 !important;
+  height: 1px;
+  width: 1px;
+  border: 0;
   overflow: hidden;
 }
 
-body:hover .visually-hidden a,
-body:hover .visually-hidden input,
-body:hover .visually-hidden button {
-  display: none !important;
-}
-
 .screen-reader-text:focus,
-.screen-reader-shortcut:focus  {
-  clip: auto !important;
-  height: auto !important;
-  width: auto !important;
+.screen-reader-shortcut:focus {
+  clip: auto;
+  height: auto;
+  width: auto;
   display: block;
   font-size: 1em;
   font-weight: bold;
   padding: 15px 23px 14px;
-  background: #1A1A1E;
+  background: $surface;
+  color: $accent;
   z-index: 100000;
   text-decoration: none;
-  box-shadow: 0 0 2px 2px rgba(255, 99, 99, 0.6);
-  color: #FFFFFF;
+  border: 1px solid $line-strong;
+  border-radius: $border-radius;
 }
 
-
-/*
-   Skip links
-   ========================================================================== */
-
-.skip-link {
-  position: fixed;
-  z-index: 20;
-  margin: 0;
-  font-family: $sans-serif;
-  white-space: nowrap;
-}
-
-.skip-link li {
-  height: 0;
-  width: 0;
-  list-style: none;
-}
-
-
-/*
-   Type
-   ========================================================================== */
+.skip-link { position: fixed; z-index: 20; margin: 0; font-family: $sans-serif; white-space: nowrap; }
+.skip-link li { height: 0; width: 0; list-style: none; }
 
 .text-left { text-align: left; }
 .text-center { text-align: center; }
@@ -83,229 +44,66 @@ body:hover .visually-hidden button {
 .text-justify { text-align: justify; }
 .text-nowrap { white-space: nowrap; }
 
-
-/*
-   Alignment
-   ========================================================================== */
-
 .cf { clear: both; }
+.wrapper { @include container(); }
 
-.wrapper {
-  @include container();
-}
+.align-left, .align-right, .align-center { display: block; }
+.align-left  { margin-left: auto; margin-right: auto; @include breakpoint($small) { float: left; margin-right: 1em; } }
+.align-right { margin-left: auto; margin-right: auto; @include breakpoint($small) { float: right; margin-left: 1em; } }
+.align-center { margin-left: auto; margin-right: auto; }
 
-
-/*
-   Images
-   ========================================================================== */
-
-.align-left {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-
-  @include breakpoint($small) {
-    float: left;
-    margin-right: 1em;
-  }
-}
-
-.align-right {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-
-  @include breakpoint($small) {
-    float: right;
-    margin-left: 1em;
-  }
-}
-
-.align-center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.full {
-  @include breakpoint($large){
-    margin-right: -1 * span(2.5 of 12) !important;
-  }
-}
-
-/*
-   Icons
-   ========================================================================== */
+.full { @include breakpoint($large) { margin-right: -1 * span(2.5 of 12); } }
 
 .icon {
   display: inline-block;
   fill: currentColor;
-  width: 1em;
-  height: 1.1em;
+  width: 1em; height: 1.1em;
   line-height: 1;
   position: relative;
-  top: -0.1em;
+  top: -.1em;
   vertical-align: middle;
 }
 
-/* social icons — dark mode */
-.social-icons {
-  .fa {
-    color: $gray;
-  }
-
-  .fa-behance,
-  .fa-behance-square {
-    color: $behance-color;
-  }
-
-  .fa-dribbble {
-    color: $dribbble-color;
-  }
-
-  .fa-facebook,
-  .fa-facebook-square {
-    color: $facebook-color;
-  }
-
-  .fa-flickr {
-    color: $flickr-color;
-  }
-
-  .fa-foursquare {
-    color: $foursquare-color;
-  }
-
-  .fa-github,
-  .fa-github-alt,
-  .fa-github-square {
-    color: $github-color;
-  }
-
-  .fa-google-plus,
-  .fa-google-plus-square {
-    color: $google-plus-color;
-  }
-
-  .fa-instagram {
-    color: $instagram-color;
-  }
-
-  .fa-lastfm,
-  .fa-lastfm-square {
-    color: $lastfm-color;
-  }
-
-  .fa-linkedin,
-  .fa-linkedin-square {
-    color: $linkedin-color;
-  }
-
-  .fa-pinterest,
-  .fa-pinterest-p,
-  .fa-pinterest-square {
-    color: $pinterest-color;
-  }
-
-  .fa-rss,
-  .fa-rss-square {
-    color: $rss-color;
-  }
-
-  .fa-soundcloud {
-    color: $soundcloud-color;
-  }
-
-  .fa-stack-exchange,
-  .fa-stack-overflow {
-    color: $stackoverflow-color;
-  }
-
-  .fa-tumblr,
-  .fa-tumblr-square {
-    color: $tumblr-color;
-  }
-
-  .fa-twitter,
-  .fa-twitter-square {
-    color: $twitter-color;
-  }
-
-  .fa-vimeo,
-  .fa-vimeo-square {
-    color: $vimeo-color;
-  }
-
-  .fa-vine {
-    color: $vine-color;
-  }
-
-  .fa-youtube,
-  .fa-youtube-square,
-  .fa-youtube-play {
-    color: $youtube-color;
-  }
-
-  .fa-xing,
-  .fa-xing-square {
-    color: $xing-color;
-  }
-}
-
+/* All social icons share the neutral ink colour (no brand colour family). */
+.social-icons .fa,
+.social-icons .fas,
+.social-icons .fab { color: $ink-3; transition: $global-transition; }
+.social-icons a:hover .fa,
+.social-icons a:hover .fas,
+.social-icons a:hover .fab { color: $accent; }
 
 /*
-   Navicons
+   Navicons — 2D rotation only
    ========================================================================== */
 
 .navicon {
   position: relative;
   width: $navicon-width;
   height: $navicon-height;
-  background: #fff;
+  background: $surface;
   margin: auto;
-  transition: 0.3s;
+  transition: background-color 120ms ease-out;
 
-  &:before,
-  &:after {
+  &:before, &:after {
     content: "";
     position: absolute;
     left: 0;
     width: $navicon-width;
     height: $navicon-height;
-    background: #fff;
-    transition: 0.3s;
+    background: $surface;
+    transition: transform 120ms ease-out, top 120ms ease-out, bottom 120ms ease-out;
   }
-
-  &:before {
-    top: (-2 * $navicon-height);
-  }
-
-  &:after {
-    bottom: (-2 * $navicon-height);
-  }
+  &:before { top: (-2 * $navicon-height); }
+  &:after  { bottom: (-2 * $navicon-height); }
 }
 
 .close .navicon {
   background: transparent;
 
-  &:before, &:after{
-    transform-origin: 50% 50%;
-    top: 0;
-    width: $navicon-width;
-  }
-
-  &:before{
-    transform: rotate3d(0,0,1,45deg);
-  }
-  &:after{
-    transform: rotate3d(0,0,1,-45deg);
-  }
+  &:before, &:after { transform-origin: 50% 50%; top: 0; width: $navicon-width; }
+  &:before { transform: rotate(45deg); }
+  &:after  { transform: rotate(-45deg); }
 }
-
-
-/*
-   Sticky, fixed to top content
-   ========================================================================== */
 
 .sticky {
   @include breakpoint($large) {
@@ -313,31 +111,18 @@ body:hover .visually-hidden button {
     position: -webkit-sticky;
     position: sticky;
     top: 2em;
-
-    > * {
-      display: block;
-    }
+    > * { display: block; }
   }
 }
-
-
-/*
-   Wells
-   ========================================================================== */
 
 .well {
   min-height: 20px;
   padding: 19px;
   margin-bottom: 20px;
-  background-color: rgba(255, 255, 255, 0.03);
-  border: 1px solid $border-color;
+  background-color: $surface-2;
+  border: 1px solid $line-strong;
   border-radius: $border-radius;
 }
-
-
-/*
-   Modals
-   ========================================================================== */
 
 .show-modal {
   overflow: hidden;
@@ -346,86 +131,39 @@ body:hover .visually-hidden button {
   &:before {
     position: absolute;
     content: "";
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
     z-index: 999;
-    background-color: rgba(15, 15, 17, 0.85);
+    background-color: $overlay;
   }
-
-  .modal {
-    display: block;
-  }
+  .modal { display: block; }
 }
 
 .modal {
   display: none;
   position: fixed;
   width: 300px;
-  top: 50%;
-  left: 50%;
-  margin-left: -150px;
-  margin-top: -150px;
+  top: 50%; left: 50%;
+  margin-left: -150px; margin-top: -150px;
   min-height: 0;
   z-index: 9999;
-  background: #1A1A1E;
-  border: 1px solid $border-color;
+  background: $surface;
+  border: 1px solid $line-strong;
   border-radius: $border-radius;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  box-shadow: $box-shadow;
 
-  &__title {
-    margin: 0;
-    padding: 0.5em 1em;
-    color: #FFFFFF;
-  }
-
-  &__supporting-text {
-    padding: 0 1em 0.5em 1em;
-    color: $gray;
-  }
-
-  &__actions {
-    padding: 0.5em 1em;
-    border-top: 1px solid $border-color;
-  }
+  &__title { margin: 0; padding: .5em 1em; color: $ink; }
+  &__supporting-text { padding: 0 1em .5em 1em; color: $ink-2; }
+  &__actions { padding: .5em 1em; border-top: 1px solid $line; }
 }
 
-
-/*
-   Footnotes
-   ========================================================================== */
-
-.footnote {
-  color: $gray;
-  text-decoration: none;
-}
-
-.footnotes {
-  color: $gray;
-
-  ol, li, p {
-    margin-bottom: 0;
-    font-size: $type-size-6;
-  }
-}
+.footnote { color: $ink-3; text-decoration: none; }
+.footnotes { color: $ink-3; ol, li, p { margin-bottom: 0; font-size: $type-size-6; } }
 
 a.reversefootnote {
-  color: $gray;
+  color: $ink-3;
   text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-    color: $link-color;
-  }
+  &:hover { text-decoration: underline; color: $accent; }
 }
 
-
-/*
-   Required
-   ========================================================================== */
-
-.required {
-  color: $danger-color;
-  font-weight: bold;
-}
+.required { color: $danger-color; font-weight: bold; }

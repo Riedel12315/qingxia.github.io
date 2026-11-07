@@ -2,64 +2,34 @@
 
 <!-- start custom head snippets -->
 
-<!-- Raycast-inspired redesign: Inter + Inter Tight + JetBrains Mono -->
+<!-- One web font only: Inter variable 400–700. Chinese uses the system stack. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..600&family=Inter+Tight:wght@600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<link rel="apple-touch-icon" sizes="57x57" href="{{ base_path }}/images/apple-touch-icon-57x57.png?v=M44lzPylqQ">
-<link rel="apple-touch-icon" sizes="60x60" href="{{ base_path }}/images/apple-touch-icon-60x60.png?v=M44lzPylqQ">
-<link rel="apple-touch-icon" sizes="72x72" href="{{ base_path }}/images/apple-touch-icon-72x72.png?v=M44lzPylqQ">
-<link rel="apple-touch-icon" sizes="76x76" href="{{ base_path }}/images/apple-touch-icon-76x76.png?v=M44lzPylqQ">
-<link rel="apple-touch-icon" sizes="114x114" href="{{ base_path }}/images/apple-touch-icon-114x114.png?v=M44lzPylqQ">
-<link rel="apple-touch-icon" sizes="120x120" href="{{ base_path }}/images/apple-touch-icon-120x120.png?v=M44lzPylqQ">
-<link rel="apple-touch-icon" sizes="144x144" href="{{ base_path }}/images/apple-touch-icon-144x144.png?v=M44lzPylqQ">
-<link rel="apple-touch-icon" sizes="152x152" href="{{ base_path }}/images/apple-touch-icon-152x152.png?v=M44lzPylqQ">
-<link rel="apple-touch-icon" sizes="180x180" href="{{ base_path }}/images/apple-touch-icon-180x180.png?v=M44lzPylqQ">
-<link rel="icon" type="image/png" href="{{ base_path }}/images/favicon-32x32.png?v=M44lzPylqQ" sizes="32x32">
-<link rel="icon" type="image/png" href="{{ base_path }}/images/android-chrome-192x192.png?v=M44lzPylqQ" sizes="192x192">
-<link rel="icon" type="image/png" href="{{ base_path }}/images/favicon-96x96.png?v=M44lzPylqQ" sizes="96x96">
-<link rel="icon" type="image/png" href="{{ base_path }}/images/favicon-16x16.png?v=M44lzPylqQ" sizes="16x16">
-<link rel="manifest" href="{{ base_path }}/images/manifest.json?v=M44lzPylqQ">
-<link rel="mask-icon" href="{{ base_path }}/images/safari-pinned-tab.svg?v=M44lzPylqQ" color="#000000">
-<link rel="shortcut icon" href="/images/favicon.ico?v=M44lzPylqQ">
-<meta name="msapplication-TileColor" content="#000000">
-<meta name="msapplication-TileImage" content="{{ base_path }}/images/mstile-144x144.png?v=M44lzPylqQ">
-<meta name="msapplication-config" content="{{ base_path }}/images/browserconfig.xml?v=M44lzPylqQ">
-<meta name="theme-color" content="#0F0F11">
+<!-- favicon — only assets that actually exist in images/ (no 404).
+     Both links point at the same real tile icon; no generated icon plugin. -->
+<link rel="icon" type="image/png" sizes="144x144" href="{{ base_path }}/images/mstile-144x144.png">
+<link rel="apple-touch-icon" href="{{ base_path }}/images/mstile-144x144.png">
+<link rel="mask-icon" href="{{ base_path }}/images/safari-pinned-tab.svg?v=M44lzPylqQ" color="#14566B">
+<meta name="msapplication-TileColor" content="#14566B">
+<meta name="theme-color" content="#FAF9F6">
+<meta name="color-scheme" content="light">
+
 <link rel="stylesheet" href="{{ base_path }}/assets/css/academicons.css"/>
 
-<script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } }); </script>
+<!-- MathJax loaded only on pages that actually contain '$' math delimiters -->
+{% assign has_math = false %}
+{% if page.content contains '$' %}{% assign has_math = true %}{% endif %}
+{% if content contains '$' %}{% assign has_math = true %}{% endif %}
+{% if has_math %}
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-      processEscapes: true
-    }
+    TeX: { equationNumbers: { autoNumber: "all" } },
+    tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], processEscapes: true }
   });
 </script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML' async></script>
-
-<!-- 液体流动背景（DeepSeek 风格），鼠标搅动产生粘稠流动 -->
-<script src="{{ base_path }}/assets/js/liquid-bg.js?v=4" defer></script>
-<!-- 流星划过效果 -->
-<script src="{{ base_path }}/assets/js/shooting-stars.js?v=3" defer></script>
-
-<!-- Day/Night theme — zero-flash critical inline check -->
-<script>
-(function(){
-  var h=new Date().getHours(),s=null;
-  try{s=localStorage.getItem('theme-preference')}catch(e){}
-  if(s==='light'||(!s&&h>=6&&h<18)){
-    document.documentElement.className+=' light-mode';
-    // Critical bg fix before CSS loads
-    var st=document.createElement('style');
-    st.textContent='html.light-mode body{background-color:#F6F5F4!important;color:#2D2D35!important}';
-    document.head.appendChild(st);
-  }
-})();
-</script>
-<link rel="stylesheet" href="{{ base_path }}/assets/css/light-mode.css?v=7">
-<script src="{{ base_path }}/assets/js/theme-switcher.js?v=2" defer></script>
+{% endif %}
 
 <!-- end custom head snippets -->

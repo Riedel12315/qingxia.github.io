@@ -39,3 +39,7 @@
 @import "vendor/font-awesome/brands";
 @import "vendor/magnific-popup/magnific-popup";
 @import "print";
+
+/* Custom light-theme tokens + components (must stay last). No simulation import here:
+   the Simulation module ships its own CSS referenced from its own page. */
+@import "custom";

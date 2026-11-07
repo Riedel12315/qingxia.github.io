@@ -1,0 +1,207 @@
+/* assets/css/simulation.css — Simulation 分组静态网格 + 灯箱
+   独立文件，由 _pages/simulating_fig.md 内 <link> 引入；不依赖 _sass/ 与 main.scss。
+   纸白 #FAF9F6 / 白 #FFFFFF / 线 #E3E6E2 / 控件边 #82908E / 强调 #14566B。 */
+
+.sim-page { container-type: inline-size; container-name: simpage; color: #1B2429; }
+
+/* 分组标题：1px 底分隔线 + 右侧静态计数 */
+.sim-group { margin: 0 0 4rem; }
+.sim-group:last-child { margin-bottom: 0; }
+.sim-group__title {
+  display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .5rem 1rem;
+  margin: 0 0 1.5rem; padding-bottom: .75rem; border-bottom: 1px solid #E3E6E2;
+  font-size: 1.5rem; font-weight: 600; line-height: 1.35; color: #1B2429;
+}
+.sim-group__count { font-size: .875rem; font-weight: 400; color: #626F75; white-space: nowrap; }
+
+/* 外网格：容器宽 >=700px 才 2 列；默认（含降级）单列 */
+.sim-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; align-items: start; }
+@container simpage (min-width: 700px) {
+  .sim-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* 卡片 */
+.sim-item {
+  container-type: inline-size; container-name: simitem; min-width: 0;
+  padding: 1rem; background: #FFFFFF; border: 1px solid #E3E6E2; border-radius: 6px;
+  box-shadow: 0 1px 2px rgba(27, 36, 41, .04); transition: border-color 120ms ease-out;
+}
+.sim-item:hover { border-color: #82908E; }
+.sim-item--wide { grid-column: 1 / -1; }
+.sim-item__title {
+  margin: 0 0 1rem; font-size: 1.1875rem; font-weight: 600; line-height: 1.45; color: #1B2429;
+  white-space: normal; overflow-wrap: anywhere; text-overflow: clip;
+}
+
+/* 图片序列：默认单列，按 .sim-item 容器宽决定内部列数 */
+.sim-figs { display: grid; grid-template-columns: 1fr; gap: 1rem; margin: 0; padding: 0; list-style: none; }
+.sim-figs__cell { min-width: 0; }
+
+/* 主题通用 li 规则会污染网格单元：本页 layout: archive，.sim-page 被包在
+   .archive 内，_sass/_base.scss:122 的 `ul li`、_sass/_archive.scss:55/:64/:70
+   的 `.archive li` / `.archive > ul > li` / `.archive li:hover` 会给 16 个
+   <li> 加 .5em/.6em 下外边距、文字色、圆角与 hover 灰底，破坏网格对齐。
+   用 .sim-page 前缀提高特异性做限定重置（正常态 + hover 态），不改 _sass/。 */
+.sim-page .sim-figs > .sim-figs__cell,
+.sim-page .sim-figs > .sim-figs__cell:hover {
+  margin: 0; padding: 0; border: 0; border-radius: 0;
+  background: transparent; color: inherit; font-size: inherit;
+  line-height: normal; list-style: none; transition: none;
+}
+@container simitem (min-width: 520px) {
+  .sim-figs--count-2 { grid-template-columns: 1fr 1fr; }
+}
+@container simitem (min-width: 700px) {
+  .sim-figs--count-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@container simitem (min-width: 460px) and (max-width: 699px) {
+  .sim-figs--count-3 { grid-template-columns: 1fr 1fr; }
+  .sim-figs--count-3 > :last-child { grid-column: 1 / -1; }
+}
+/* 仅 cfd-01：原稿 640px 主图 + 240px 对比小图 */
+.sim-figs--weighted { grid-template-columns: 2fr 1fr; }
+@container simitem (max-width: 519px) {
+  .sim-figs--weighted { grid-template-columns: 1fr; }
+}
+/* 不支持容器查询时安全降级为单列，中间宽度不冒进 2 列 */
+@supports not (container-type: inline-size) {
+  .sim-grid, .sim-figs, .sim-figs--weighted { grid-template-columns: 1fr; }
+  .sim-item--wide { grid-column: auto; }
+}
+
+.sim-figure { margin: 0; min-width: 0; }
+.sim-figure__media { position: relative; background: #F3F4F1; border-radius: 4px; }
+.sim-figure__open { display: block; border-radius: 4px; }
+.sim-figure__img {
+  display: block; width: 100%; height: auto; max-height: 320px;
+  object-fit: contain; object-position: center;
+  border-radius: 4px;
+}
+.sim-figure__caption {
+  margin-top: .75rem;
+  white-space: normal; overflow-wrap: anywhere; text-overflow: clip;
+}
+.sim-figure__title { display: block; font-size: 1rem; font-weight: 600; line-height: 1.5; color: #1B2429; }
+.sim-figure__meta { display: block; font-size: .875rem; line-height: 1.6; color: #626F75; }
+.sim-figure__status { display: block; margin-top: .25rem; font-size: .875rem; line-height: 1.6; color: #49565C; }
+.sim-figure__giflink { display: inline-block; margin-top: .25rem; font-size: .875rem; color: #14566B; text-decoration: underline; }
+
+/* 播放按钮：44x44 命中区，内部 28x28 才是视觉盒（命中区与视觉盒解耦） */
+.sim-play {
+  position: absolute; top: 0; right: 0;
+  width: 44px; height: 44px; padding: 0;
+  display: grid; place-items: center;
+  border: 0; background: transparent; cursor: pointer;
+}
+.sim-play__icon {
+  width: 28px; height: 28px;
+  display: grid; place-items: center;
+  background: #FFFFFF; border: 1px solid #82908E; border-radius: 6px;
+  font-size: 12px; line-height: 1; color: #14566B;
+  transition: color 120ms ease-out, border-color 120ms ease-out, background-color 120ms ease-out;
+}
+.sim-play:hover .sim-play__icon,
+.sim-play[aria-pressed="true"] .sim-play__icon { border-color: #14566B; color: #0E4152; background: #E9F2F4; }
+
+/* reduced-motion 的 CONFIRM 条 / 加载失败的 ERROR 条：静态、无动画 */
+.sim-confirm, .sim-error {
+  margin-top: .5rem; padding: .75rem;
+  background: #FFFFFF; border: 1px solid #82908E; border-radius: 6px;
+  font-size: .875rem; line-height: 1.6; color: #49565C;
+}
+.sim-error__text { color: #A33A3A; }
+.sim-confirm__actions { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .5rem; }
+.sim-confirm__btn, .sim-error__btn {
+  min-width: 44px; min-height: 44px; padding: 0 .75rem;
+  background: #FFFFFF; border: 1px solid #82908E; border-radius: 6px;
+  font-size: .875rem; font-weight: 600; color: #14566B; cursor: pointer;
+  transition: color 120ms ease-out, border-color 120ms ease-out, background-color 120ms ease-out;
+}
+.sim-confirm__btn:hover, .sim-error__btn:hover { border-color: #14566B; background: #E9F2F4; }
+.sim-error__btn { margin-left: .5rem; }
+
+/* PDF 按钮：右对齐描边按钮，视觉高 36px、命中 >=44px */
+.sim-item__actions { display: flex; justify-content: flex-end; margin-top: 1rem; }
+.sim-page .sim-pdf {
+  display: inline-flex; align-items: center; justify-content: center; gap: .375rem;
+  min-height: 44px; padding: .5rem 1rem;
+  background: #FFFFFF; border: 1px solid #82908E; border-radius: 6px;
+  font-size: .875rem; font-weight: 600; line-height: 1.2; color: #49565C; text-decoration: none;
+  transition: color 120ms ease-out, border-color 120ms ease-out, background-color 120ms ease-out;
+}
+.sim-page .sim-pdf:hover { color: #14566B; border-color: #14566B; background: #F3F4F1; }
+
+/* 统一 focus：仅 :focus-visible，2px 描边 + 4px 光环 */
+.sim-page :focus-visible, .sim-lightbox :focus-visible {
+  outline: 2px solid #14566B; outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(20, 86, 107, .15);
+}
+
+/* hidden 必须压过上面的 display:grid/block，否则默认隐藏失效 */
+.sim-page [hidden], .sim-lightbox [hidden] { display: none; }
+
+/* 灯箱：白底、无 blur、仅 opacity 120ms、无 scale/translate/弹跳 */
+.sim-lightbox {
+  position: fixed; inset: 0; z-index: 9999;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none;
+  transition: opacity 120ms ease-out;
+}
+.sim-lightbox.is-open { opacity: 1; pointer-events: auto; }
+.sim-lightbox[hidden] { display: none; }
+.sim-lightbox__overlay { position: absolute; inset: 0; background: rgba(20, 32, 36, .68); }
+.sim-lightbox__panel {
+  position: relative; z-index: 1; width: 100%;
+  max-width: min(960px, 92vw); max-height: 88vh; overflow: auto;
+  padding: 1.5rem; background: #FFFFFF;
+  border: 1px solid #E3E6E2; border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(27, 36, 41, .04);
+}
+.sim-lightbox__head { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; }
+.sim-lightbox__title { margin: 0; font-size: 1.1875rem; font-weight: 600; line-height: 1.45; color: #1B2429; overflow-wrap: anywhere; }
+.sim-lightbox__close {
+  flex: 0 0 auto; width: 44px; height: 44px; padding: 0;
+  display: grid; place-items: center; border: 0; background: transparent; cursor: pointer;
+}
+.sim-lightbox__close::before {
+  content: "✕"; width: 32px; height: 32px;
+  display: grid; place-items: center;
+  background: #F3F4F1; border-radius: 6px;
+  font-size: 14px; color: #49565C;
+  transition: color 120ms ease-out, background-color 120ms ease-out;
+}
+.sim-lightbox__close:hover::before { color: #14566B; background: #E9F2F4; }
+.sim-lightbox__media {
+  margin-top: 1rem; padding: .5rem;
+  background: #F3F4F1; border-radius: 4px; text-align: center;
+}
+.sim-lightbox__img { display: block; margin: 0 auto; max-width: 100%; max-height: min(70vh, 720px); object-fit: contain; }
+.sim-lightbox__foot { margin-top: 1rem; }
+.sim-lightbox__caption { white-space: normal; overflow-wrap: anywhere; text-overflow: clip; }
+.sim-lightbox__cz { display: block; font-size: 1rem; font-weight: 600; color: #1B2429; }
+.sim-lightbox__ce { display: block; font-size: .875rem; color: #49565C; }
+.sim-lightbox__count { display: block; margin-top: .25rem; font-size: .875rem; color: #626F75; font-variant-numeric: tabular-nums; }
+.sim-lightbox__controls { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1rem; }
+.sim-lb-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 44px; min-height: 44px; padding: 0 .75rem;
+  background: #FFFFFF; border: 1px solid #82908E; border-radius: 6px;
+  font-size: .875rem; font-weight: 600; color: #49565C; text-decoration: none; cursor: pointer;
+  transition: color 120ms ease-out, border-color 120ms ease-out, background-color 120ms ease-out;
+}
+.sim-lb-btn:hover { color: #14566B; border-color: #14566B; background: #F3F4F1; }
+.sim-lightbox__status { display: block; margin-top: .5rem; font-size: .875rem; color: #49565C; }
+.sim-lightbox__status[data-error="true"] { color: #A33A3A; }
+
+@media (max-width: 719px) {
+  .sim-lightbox__panel { padding: 1rem; }
+}
+
+/* reduced-motion：全部过渡 0ms；靠高特异性覆盖上面的 transition，无需提升优先级 */
+@media (prefers-reduced-motion: reduce) {
+  .sim-page, .sim-page *, .sim-lightbox, .sim-lightbox * { transition-duration: 0ms; animation: none; }
+}
+html[data-reduced-motion] .sim-page,
+html[data-reduced-motion] .sim-page *,
+html[data-reduced-motion] .sim-lightbox,
+html[data-reduced-motion] .sim-lightbox * { transition-duration: 0ms; animation: none; }

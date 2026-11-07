@@ -1,5 +1,5 @@
 /* ==========================================================================
-   TABLES — Dark theme
+   TABLES — light theme
    ========================================================================== */
 
 table {
@@ -8,42 +8,32 @@ table {
   font-family: $global-font-family;
   font-size: $type-size-6;
   border-collapse: collapse;
-  border: 1px solid $border-color;
+  border: 1px solid $line-strong;
   border-radius: $border-radius;
   overflow: hidden;
 
-  & + table {
-    margin-top: 1em;
-  }
+  & + table { margin-top: 1em; }
 }
 
-thead {
-  background-color: rgba(255, 255, 255, 0.04);
-  border-bottom: 1px solid $border-color;
-}
+thead { background-color: $surface-2; border-bottom: 1px solid $line; }
 
 th {
-  padding: 0.75em 1em;
+  padding: .75em 1em;
   font-weight: 600;
-  font-size: $type-size-7;
+  font-size: $type-size-6;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: .05em;
   text-align: left;
-  color: $gray;
-  border-right: 1px solid $border-color;
+  color: $ink-2;
+  border-right: 1px solid $line;
 }
 
 td {
-  padding: 0.75em 1em;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-  border-right: 1px solid rgba(255, 255, 255, 0.04);
-  color: $text-color;
+  padding: .75em 1em;
+  border-bottom: 1px solid $line;
+  border-right: 1px solid $line;
+  color: $ink;
 }
 
-tr, td, th {
-  vertical-align: middle;
-}
-
-tr:hover td {
-  background: rgba(255, 255, 255, 0.02);
-}
+tr, td, th { vertical-align: middle; }
+tr:hover td { background: $surface-2; }

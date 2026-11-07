@@ -1,143 +1,49 @@
 /* ==========================================================================
-   BUTTONS — Raycast translucent pills
+   BUTTONS — two variants only: solid .btn and outlined .btn--inverse
    ========================================================================== */
 
 .btn {
-  display: inline-block;
-  margin-bottom: 0.25em;
-  padding: 0.5em 1.25em;
-  color: #fff !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  margin-bottom: .25em;
+  padding: .5rem 1rem;
+  color: $surface;
   font-family: $sans-serif;
   font-size: $type-size-6;
   font-weight: 600;
   text-align: center;
   text-decoration: none;
-  background-color: $primary-color;
-  border: 0 !important;
-  border-radius: 8px;
+  background-color: $accent;
+  border: 1px solid $accent;
+  border-radius: $border-radius;
   cursor: pointer;
-  transition: all 0.15s ease-out;
+  transition: $global-transition;
 
-  &:hover {
-    background-color: #FF8A8A;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 16px rgba(255, 99, 99, 0.3);
-  }
+  &:hover { color: $surface; background-color: $accent-hover; border-color: $accent-hover; }
 
-  .icon {
-    margin-right: 0.5em;
-  }
-
-  .icon + .hidden {
-    margin-left: -0.5em;
-  }
+  .icon { margin-right: .5em; }
+  .icon + .hidden { margin-left: -.5em; }
 
   &--block {
-    display: block;
+    display: flex;
     width: 100%;
-
-    + .btn--block {
-      margin-top: 0.25em;
-    }
+    + .btn--block { margin-top: .25em; }
   }
 
-  /* for dark backgrounds */
+  /* outlined variant */
   &--inverse {
-    color: $gray !important;
-    border: 1px solid $border-color !important;
-    background-color: rgba(255, 255, 255, 0.04);
+    color: $ink-2;
+    background-color: $surface;
+    border: 1px solid $line-strong;
 
-    &:hover {
-      color: #fff !important;
-      background-color: rgba(255, 255, 255, 0.08);
-      border-color: rgba(255, 255, 255, 0.15);
-      transform: none;
-      box-shadow: none;
-    }
+    &:hover { color: $accent; background-color: $accent-soft; border-color: $accent; }
   }
 
-  /* light outline */
-  &--light-outline {
-    border: 1px solid #fff !important;
-    background-color: transparent;
-  }
+  &--x-large { font-size: $type-size-4; }
+  &--large   { font-size: $type-size-5; }
+  &--small   { font-size: $type-size-7; }
 
-  /* information */
-  &--info {
-    background-color: $info-color;
-
-    &:hover {
-      background-color: #D4BFFF;
-      box-shadow: 0 4px 16px rgba(196, 166, 255, 0.3);
-    }
-  }
-
-  /* warning */
-  &--warning {
-    background-color: $warning-color;
-    color: #0F0F11 !important;
-
-    &:hover {
-      background-color: #FFDB5C;
-      box-shadow: 0 4px 16px rgba(245, 200, 66, 0.3);
-    }
-  }
-
-  /* success */
-  &--success {
-    background-color: $success-color;
-    color: #0F0F11 !important;
-
-    &:hover {
-      box-shadow: 0 4px 16px rgba(77, 240, 181, 0.3);
-    }
-  }
-
-  /* danger */
-  &--danger {
-    background-color: $danger-color;
-
-    &:hover {
-      background-color: #FF8A8A;
-      box-shadow: 0 4px 16px rgba(255, 99, 99, 0.3);
-    }
-  }
-
-  /* disabled */
-  &--disabled {
-    pointer-events: none;
-    cursor: not-allowed;
-    filter: alpha(opacity=65);
-    box-shadow: none;
-    opacity: 0.3;
-  }
-
-  /* social buttons */
-  $social:
-  (facebook, $facebook-color),
-  (twitter, $twitter-color),
-  (google-plus, $google-plus-color),
-  (linkedin, $linkedin-color);
-
-  @each $socialnetwork, $color in $social {
-    &--#{$socialnetwork} {
-      background-color: $color;
-
-      &:hover {
-        background-color: mix(#000, $color, 20%);
-      }
-    }
-  }
-
-  &--x-large {
-    font-size: $type-size-4;
-  }
-
-  &--large {
-    font-size: $type-size-5;
-  }
-
-  &--small {
-    font-size: $type-size-7;
-  }
+  &--disabled, &:disabled { opacity: .5; pointer-events: none; cursor: not-allowed; }
 }

@@ -123,6 +123,9 @@ include:
   - _pages
   - files
 exclude:
+  - .design/
+  - preview.html
+  - tools/
   - "*.sublime-project"
   - "*.sublime-workspace"
   - .asset-cache

@@ -1,12 +1,11 @@
 /* ==========================================================================
-   ARCHIVE — Publication glass cards with hover reveal
+   ARCHIVE — divider list, no glass cards
    ========================================================================== */
 
 .archive {
-  margin-bottom: 2em;
+  margin-bottom: 2rem;
 
   @include breakpoint($medium) { @include span(12 of 12); }
-
   @include breakpoint($large) {
     @include span(10 of 12 last);
     @include prefix(0.5 of 12);
@@ -15,134 +14,61 @@
   a {
     color: $link-color;
     text-decoration: none;
-
-    &:hover {
-      color: $link-color-hover;
-      text-decoration: underline;
-      img { box-shadow: 0 0 10px rgba(255, 99, 99, 0.25); }
-    }
+    &:hover { color: $link-color-hover; text-decoration: underline; }
   }
 }
 
 .archive__subtitle {
-  margin: 1.414em 0 0.6em;
-  padding-bottom: 0.6em;
-  font-size: 1.15em;
+  margin: 1.414em 0 .6em;
+  padding-bottom: .6em;
+  font-size: 1.5rem;
   font-weight: 600;
-  font-family: $sans-serif-narrow;
-  letter-spacing: -0.01em;
-  color: #FFFFFF;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-
-  + .list__item .archive__item-title { margin-top: 0.5em; }
-}
-
-.archive__item-title {
-  margin-bottom: 0.2em;
   font-family: $sans-serif;
-  font-weight: 500;
-  a + a { opacity: 0.5; }
+  letter-spacing: -0.01em;
+  color: $ink;
+  border-bottom: 1px solid $line;
+
+  + .list__item .archive__item-title { margin-top: .5em; }
 }
 
-.page__content {
-  .archive__item-title {
-    margin-top: 1em;
-    border-bottom: none;
-  }
-}
+.archive__item-title { margin-bottom: .2em; font-family: $sans-serif; font-weight: 600; color: $ink; a + a { opacity: .5; } }
+.archive__item-excerpt { margin-top: 0; font-size: $type-size-6; color: $ink-2; & + p { text-indent: 0; } }
+.archive__item-teaser { border-radius: $border-radius; overflow: hidden; img { width: 100%; } }
 
-.archive__item-excerpt {
-  margin-top: 0;
-  font-size: $type-size-6;
-  color: $gray;
-  & + p { text-indent: 0; }
-}
+.page__content .archive__item-title { margin-top: 1em; border-bottom: 0; }
 
-.archive__item-teaser {
-  border-radius: $border-radius;
-  overflow: hidden;
-  img { width: 100%; }
-}
-
-/* ── Publication card with glass-frame hover ── */
+/* ── Publication entry: transparent, 1px rule, no halo / transform / shadow ── */
 .archive__item {
   position: relative;
-  padding: 1em 1.25em;
-  margin-bottom: 0.4em;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.04);
-  border-radius: 10px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  padding: 1.25rem 0;
+  margin: 0;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid $line;
+  border-radius: 0;
+  transition: $global-transition;
 
-  &::before {
-    content: '';
-    position: absolute;
-    inset: -2px;
-    border-radius: 12px;
-    border: 2px solid rgba(255, 255, 255, 0.12);
-    background: transparent;
-    pointer-events: none;
-    opacity: 0;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 10px;
-    background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, transparent 50%);
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  &:hover {
-    background: rgba(255, 255, 255, 0.06);
-    border-color: rgba(255, 255, 255, 0.10);
-    transform: translateY(-2px) scale(1.01);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5),
-                0 0 0 1px rgba(255, 255, 255, 0.05) inset;
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    z-index: 2;
-
-    &::before {
-      opacity: 1;
-      border-color: rgba(255, 255, 255, 0.20);
-      box-shadow: 0 0 20px rgba(255, 99, 99, 0.12);
-    }
-
-    &::after {
-      opacity: 1;
-    }
-  }
+  &:hover { background: $surface-2; }
 }
 
-/* ── Content list items (publications, news) — glass hover ── */
-.archive li,
-.page__content li {
-  padding: 0.5em 0.75em;
-  margin-bottom: 0.3em;
-  position: relative;
-  border-radius: 8px;
-  border: 1px solid transparent;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+/* ── Content list items: same quiet treatment, colour-only hover ── */
+.archive li, .page__content li {
+  padding: 0;
+  margin-bottom: .5em;
+  border: 0;
+  border-radius: 0;
   color: $text-color;
-
-  &:hover {
-    background: rgba(255, 255, 255, 0.06);
-    border-color: rgba(255, 255, 255, 0.10);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35),
-                0 0 0 1px rgba(255, 255, 255, 0.04) inset;
-    transform: translateX(2px);
-  }
+  transition: $global-transition;
 }
 
+.archive > ul > li, .archive > ol > li {
+  padding: 1.25rem 0;
+  margin-bottom: 0;
+  border-bottom: 1px solid $line;
+}
+
+.archive li:hover { background: $surface-2; }
+.archive__item:hover .archive__item-title { color: $accent; }
 
 /*
    List view
@@ -150,8 +76,8 @@
 
 .list__item {
   @include breakpoint($medium) { padding-right: $right-sidebar-width-narrow; }
-  @include breakpoint($large) { padding-right: $right-sidebar-width; }
-  @include breakpoint($x-large) { padding-right: $right-sidebar-width-wide; }
+  @include breakpoint($large)  { padding-right: $right-sidebar-width; }
+  @include breakpoint($x-large){ padding-right: $right-sidebar-width-wide; }
   .page__meta { margin: 0 0 4px; }
 }
 
@@ -162,7 +88,7 @@
 .grid__item {
   margin-bottom: 2em;
   .page__meta { margin: 0 0 4px; }
-  .archive__item-title { margin-top: 0.5em; font-size: $type-size-5; }
+  .archive__item-title { margin-top: .5em; font-size: $type-size-5; }
   .archive__item-excerpt { display: none; }
 
   @include breakpoint($small) {
@@ -182,11 +108,7 @@
    Features
    ========================================================================== */
 
-.feature__wrapper {
-  @include clearfix();
-  margin-bottom: 2em;
-  border-bottom: 1px solid $border-color;
-}
+.feature__wrapper { @include clearfix(); margin-bottom: 2em; border-bottom: 1px solid $line; }
 
 .feature__item {
   margin-bottom: 2em;
@@ -198,9 +120,13 @@
     .feature__item-teaser { max-height: 200px; overflow: hidden; }
   }
 
-  &--left {
-    @include full(); font-size: 1.25rem;
+  &--left, &--right, &--center {
+    @include full();
+    font-size: 1.25rem;
     .archive__item-teaser { margin-bottom: 2em; }
+  }
+
+  &--left {
     @include breakpoint($small) {
       .archive__item-teaser { @include span(5 of 12); }
       .archive__item-body { @include span(7 of 12 last); @include prefix(0.5 of 12); @include suffix(1 of 12); }
@@ -208,8 +134,6 @@
   }
 
   &--right {
-    @include full(); font-size: 1.25rem;
-    .archive__item-teaser { margin-bottom: 2em; }
     @include breakpoint($small) {
       text-align: right;
       .archive__item-teaser { @include span(5 of 12 rtl); }
@@ -218,8 +142,6 @@
   }
 
   &--center {
-    @include full(); font-size: 1.25rem;
-    .archive__item-teaser { margin-bottom: 2em; }
     @include breakpoint($small) {
       text-align: center;
       .archive__item-teaser { margin: 0 auto; width: span(5 of 12); }

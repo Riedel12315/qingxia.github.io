@@ -1,0 +1,116 @@
+/* ==========================================================================
+   Custom layer — runtime design tokens + components the theme does not cover.
+   Imported last from assets/css/main.scss.
+   No forced declarations, no alternate-skin selectors, no second colour set.
+   ========================================================================== */
+
+:root {
+  --c-bg:#FAF9F6; --c-surface:#FFFFFF; --c-surface-2:#F3F4F1;
+  --c-ink:#1B2429; --c-ink-2:#49565C; --c-ink-3:#626F75;
+  --c-line:#E3E6E2; --c-line-strong:#82908E;
+  --c-accent:#14566B; --c-accent-hover:#0E4152; --c-accent-soft:#E9F2F4;
+  --c-focus:#14566B; --c-focus-halo:rgba(20,86,107,.15);
+  --c-link-underline:rgba(20,86,107,.6);
+  --c-code-bg:#F2F4F1; --c-code-ink:#9A3B4C;
+  --c-overlay:rgba(20,32,36,.68); --c-selection:#D7E8ED;
+  --c-success:#2E6B4F; --c-warning:#8A6212; --c-danger:#A33A3A;
+  --c-shadow:rgba(27,36,41,.04);
+  --r-sm:4px; --r-md:6px; --r-lg:8px;
+  --t-fast:120ms ease-out; --t-base:160ms ease-out;
+  --focus-ring:0 0 0 4px var(--c-focus-halo);
+}
+
+/* Neutralise the theme's 18px root at >=768px so the rem/4px scale holds. */
+html { font-size: 16px; }
+html, body { background-color: var(--c-bg); color: var(--c-ink); }
+::selection, ::-moz-selection { color: var(--c-ink); background: var(--c-selection); }
+
+/* Focus contract: mouse focus quiet, keyboard focus visible. */
+a:focus, button:focus, summary:focus, input:focus, select:focus,
+textarea:focus, [tabindex]:focus { outline: none; box-shadow: none; }
+a:focus-visible, button:focus-visible, summary:focus-visible,
+input:focus-visible, select:focus-visible, textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--c-focus);
+  outline-offset: 2px;
+  box-shadow: var(--focus-ring);
+}
+
+/* Body links — 60% underline, 100% on hover (WCAG 1.4.1). */
+.page__content a:not(.btn):not(.abstract-trigger),
+.archive a:not(.btn),
+.page__footer a {
+  text-decoration: underline;
+  text-decoration-color: var(--c-link-underline);
+  text-decoration-thickness: 1px;
+  text-underline-offset: .18em;
+}
+.page__content a:not(.btn):hover,
+.page__content a:not(.btn):focus-visible,
+.archive a:not(.btn):hover,
+.page__footer a:hover { text-decoration-color: var(--c-accent); }
+
+/* Journal names — replaces the legacy hardcoded dark-red font tags. */
+.journal { color: var(--c-code-ink); font-weight: 600; }
+
+/* Tables, quotes, code, controls. */
+table { border: 1px solid var(--c-line); }
+thead { background: var(--c-surface-2); }
+th { color: var(--c-ink-2); border-right: 1px solid var(--c-line); }
+td { color: var(--c-ink); border-bottom: 1px solid var(--c-line); border-right: 1px solid var(--c-line); }
+tr:hover td { background: var(--c-surface-2); }
+blockquote {
+  font-style: normal; color: var(--c-ink-2); background: var(--c-surface-2);
+  border-left: 3px solid var(--c-accent);
+  border-radius: 0 var(--r-md) var(--r-md) 0;
+}
+blockquote cite { color: var(--c-ink-3); }
+pre { background: var(--c-code-bg); border: 1px solid var(--c-line); }
+input, textarea, select {
+  background: var(--c-surface); color: var(--c-ink);
+  border: 1px solid var(--c-line-strong); border-radius: var(--r-md);
+}
+input:hover, textarea:hover, select:hover,
+input:focus, textarea:focus, select:focus { border-color: var(--c-accent); }
+
+/* >=44x44 hit areas while the visual box stays 28/32/36px. */
+.btn, .abstract-trigger, .abstract-modal__close,
+.greedy-nav button { position: relative; }
+.btn::after, .abstract-trigger::after,
+.abstract-modal__close::after, .greedy-nav button::after {
+  content: ""; position: absolute; top: 50%; left: 50%;
+  width: max(100%, 44px); height: max(100%, 44px);
+  transform: translate(-50%, -50%);
+}
+
+/* Native <details> folding — zero JS, 44px summary hit area. */
+details { margin: 0 0 1.5rem; }
+summary {
+  display: flex; align-items: center; gap: .5rem;
+  min-height: 44px; padding: .25rem 0;
+  font-size: .875rem; font-weight: 500;
+  color: var(--c-accent); cursor: pointer; list-style: none;
+  text-decoration: underline;
+  text-decoration-color: var(--c-link-underline);
+  text-underline-offset: .18em;
+}
+summary::-webkit-details-marker { display: none; }
+summary::before { content: "+"; font-weight: 600; text-decoration: none; }
+details[open] > summary::before { content: "\2212"; }
+summary:hover { color: var(--c-accent-hover); text-decoration-color: var(--c-accent); }
+.home-more { margin: 1.5rem 0; }
+.page__content details li {
+  padding: 1.25rem 0;
+  margin-bottom: 0;
+  border-bottom: 1px solid var(--c-line);
+}
+
+/* Precise abstract trigger (data-abstract-key, no keyword fuzzy match). */
+.abstract-trigger {
+  display: inline-block; margin-left: .5rem; padding: .2rem .5rem;
+  font: 500 .75rem/1.4 'Inter', sans-serif;
+  color: var(--c-accent); background: var(--c-accent-soft);
+  border: 1px solid var(--c-line); border-radius: var(--r-sm);
+  cursor: pointer; vertical-align: baseline;
+}
+.abstract-trigger:hover { color: var(--c-accent-hover); border-color: var(--c-accent); }

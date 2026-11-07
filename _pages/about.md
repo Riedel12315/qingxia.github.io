@@ -10,12 +10,10 @@ redirect_from:
 
 **Qing Xia** received his Ph.D. degree in June 2025 from the School of Mathematics and Statistics at Xi’an Jiaotong University (XJTU), where he was supervised by Prof. Dr. [Yibao Li](http://gr.xjtu.edu.cn/web/yibaoli). Prior to that, he obtained his B.S. degree from the same school at XJTU in 2019. Recently, he was selected for the **TopMinds** program and joined Huawei.
 
-Research(研究)
-======
+## Research(研究)
 My research interests mainly lie in **Shape topology optimization in 3D printing** and **multi-scale multi-physics coupled computation**.  My research interests also include computer vision on the digital twin, entropy analysis and numerical analysis. My main work is to project the physical models from real space to digital space for equivalent experiments, which can eliminate the environment and material cost constraints of real physical experiment. Since 2019, I have published **43 SCI** papers on the international academic journals such as *Comput. Methods Appl. Mech. Eng.,  J. Comput. Phys., Comput. Phys., Commun., Phys. Fluids, Pattern Recognit.*, **32** of them are included in **JCR Q1** journals, **7** of them have been chosen as the **Highly Cited paper** by Web of Science.
 
-News（新闻）
-======
+## News（新闻）
 + May 15, 2025. **Qing Xia** successfully obtained his Ph.D. in Science.
 + May 01, 2025. Our paper 'A Unified Algorithm Framework for Phase-Field Based Multimaterial Topology Optimization with Various Graded Interfaces' authored by Qian Yu, **Qing Xia**, Yibao Li, Chao Yang has been accepted for publication in *International Journal for Numerical Methods in Engineering*.
 + Apr 22, 2025. Our paper 'Data-driven reduced-order modeling of hydrogen-fueled supersonic combustion' authored by Zhixian Lv, Jiachen Feng, **Qing Xia**, Jiahao Huang, Xing Sun, Junseok Kim, and Yibao Li has been accepted for publication in *Physics of Fluids*.
@@ -24,6 +22,10 @@ News（新闻）
 + Jan 11, 2025. Our paper 'Triply periodic minimal surfaces based topology optimization for the hydrodynamic and convective heat transfer' has been chosen as the [Highly Cited paper](https://riedel12315.github.io/qingxia.github.io/files/HighlyCited4.pdf) by Web of Science.
 + Jan 11, 2025. Our paper 'An unconditional energy stable data assimilation scheme for Navier-Stokes-Cahn-Hilliard equations with local discretized observed data' has been chosen as the [Highly Cited paper](https://riedel12315.github.io/qingxia.github.io/files/HighlyCited5.pdf) by Web of Science.
 + Jan 09, 2025. Our paper 'Enhanced Reduced-Order Modeling with VAE and LSTM for Predicting the Cahn-Hilliard Equation' authored by Zhixian Lv, Xin Song, Jiachen Feng, **Qing Xia**, Yibao Li* has been accepted for publication in *Engineering Analysis with Boundary Elements*.
+
+<details class="home-more" markdown="1">
+<summary>展开更早的动态（2024–2022，共 31 条）</summary>
+
 + Dec 18, 2024. Our paper 'A second-order accurate numerical method with unconditional energy stability for the Lifshitz-Petrich equation on curved surfaces' authored by Xiaochuan Hu, **Qing Xia**, Binhu Xia, and Yibao Li has been accepted for publication in *Applied Mathematical Letter*.
 + Oct 30, 2024. **Qing Xia** won the Xu Zongben Applied Mathematics Paper Award(Second prize).
 + Sep 11, 2024. Our paper 'On the adaption of biological transport networks affected by complex domains' authored by Yibao Li, Zhixian Lv, **Qing Xia**, has been accepted for publication in *Physics of Fluids*. 
@@ -56,13 +58,18 @@ News（新闻）
 + Oct 28, 2022. **Qing Xia** won the 'National Scholarship for Doctoral students(2022)'.
 + Oct 28, 2022. **Qing Xia** won the '[Outstanding Model for the Doctoral students of Xi'an Jiaotong University(2022)](http://news.xjtu.edu.cn/info/1033/189087.htm)'.
 
-Magnum Opus（代表作）
-======
+</details>
+
+## Magnum Opus（代表作）
 + **Qing Xia**#, Gangming Sun, Junseok Kim, Yibao Li, Multi-scale modeling and simulation of additive manufacturing based on fused deposition technique, *Physics of Fluids*, 35 (2023) 034116, (**Cover Article/Featured/Scilight Article of AIP publishing**). 
 + **Qing Xia**#, Junxiang Yang, Yibao Li, On the conservative phase-field method with the N-component incompressible flows, *Physics of Fluids*, 35 (2023) 012120. (JCR Q1, TOP, [Highly Cited paper](https://riedel12315.github.io/qingxia.github.io/files/HighlyCited.pdf)). 
 + Yibao Li#, Zhixian Lv, **Qing Xia***, On the adaption of biological transport networks affected by complex domains, *Physics of Fluids*. (JCR Q1, TOP )
 + **Qing Xia**#, Qian Yu, Yibao Li, A second-order accuracy, unconditionally energy stable numerical scheme for binary fluid flows on arbitrarily curved surfaces,   *Computer Methods in Applied Mechanics and Engineering*, 384 (2021) 113987. (JCR Q1, TOP). 
 + **Qing Xia**#, Junxiang Yang, Junseok Kim, Yibao Li, On the phase field based model for the crystalline transition and nucleation within the Lagrange multiplier framework, *Journal of Computational Physics*, 513 (2024) 113158. (JCR Q1, TOP).
+
+<details class="home-more" markdown="1">
+<summary>展开更多代表作（第 6–15 条，共 10 条）</summary>
+
 + **Qing Xia**#, Xiaoyu Jiang, Yibao Li, A modified and efficient phase field model for the biological transport network, *Journal of Computational Physics*, (2023). (JCR Q1, TOP).
 + **Qing Xia**#, Gangming Sun, Qian Yu, Yibao Li, Thermal-fluid topology optimization with unconditional energy stability and second-order accuracy via phase-field model, *Communications in Nonlinear Science and Numerical Simulation*, 116 (2023) 106782. (JCR Q1, TOP).
 + **Qing Xia**#, Junxia Zhu, Qian Yu, Junseok Kim, Yibao Li, Triply periodic minimal surfaces based topology optimization for the hydrodynamic and convective heat transfer, *Communications in Nonlinear Science and Numerical Simulation*, 131 (2024) 107819. (JCR Q1, TOP). 
@@ -74,8 +81,9 @@ Magnum Opus（代表作）
 + Yibao Li#, **Qing Xia**, Sungha Yoon, Junseok Kim, Simple and efficient fingerprint image restoration method based on a phase-field model, *Pattern Recognition*, 123 (2020) 108405.  (JCR Q1, TOP).
 + Yibao Li#, **Qing Xia**, Seungyoon Kang, Soobin Kwak, Junseok Kim, A simple and practical volume merging algorithm for the porous scaffold design with triply periodic structures, *Mathematics and Computers in Simulation*, 481(2024)481-495, (JCR Q2).
 
-Awards（获奖）
-======
+</details>
+
+## Awards（获奖）
 + [Outstanding achievements of scientific and technological research of Shaanxi Province](https://riedel12315.github.io/qingxia.github.io/files/jiaoyutingjiang.pdf)(2024年度**陕西高等学校科学技术研究优秀成果一等奖（第三完成人）**)
 + [The 10th Xu Zongben Applied Mathematics Paper Award](https://riedel12315.github.io/qingxia.github.io/files/xuzongbenlunwenjiang.pdf)(**第十届徐宗本应用数学论文奖**)
 + [National Scholarship for Doctoral students(2023)](https://riedel12315.github.io/qingxia.github.io/files/2023guojiang.pdf).(2024年度**国家奖学金**)

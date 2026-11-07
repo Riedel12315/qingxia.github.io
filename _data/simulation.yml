@@ -1,0 +1,192 @@
+# _data/simulation.yml —— Simulation 页唯一内容真源
+#
+# 计数：3 组 / 13 子项 / 16 图 / 10 PDF（3 个子项无 PDF）
+# 来源：_pages/simulating_fig.md 逐字核对；文件名、中英标题、PDF URL 原样保留。
+# width/height 由 Pillow 13.0.0 实测 16 个原文件的固有像素尺寸（见 tools/make_posters.py 同目录校验）。
+# meta：原页面没有任何期刊 / 年份 / 方法信息，无可靠来源，故全部省略（不从文件名臆造）。
+# pdf：3 个无 PDF 子项直接省略该键，Liquid 用 {% if item.pdf %} 跳过整块。
+# type gif 的图：data-gif 指向 GIF 本体；data-full 同 GIF；网格 <img> 指向 .poster.jpg 静帧。
+# emphasis：仅 cfd-01 使用，驱动 .sim-figs--weighted 的 2fr 1fr（原稿 640px 主图 + 240px 对比小图）。
+
+groups:
+  - id: cad
+    title: "CAD for 3D printing"
+    items:
+      - id: cad-01
+        title_zh: "机械结构优化"
+        title_en: "Mechanical structure optimization"
+        pdf: "https://riedel12315.github.io/qingxia.github.io/files/paper12.pdf"
+        images:
+          - file: "H4SAIPtXNed53CB.jpg"
+            type: still
+            width: 883
+            height: 416
+            alt: "机械结构拓扑优化后的构型结果图，显示承载路径与镂空分布"
+            caption: "机械结构优化 / Mechanical structure optimization"
+
+      - id: cad-02
+        title_zh: "生物网络拓扑优化"
+        title_en: "Biological network topology optimization"
+        pdf: "https://riedel12315.github.io/qingxia.github.io/files/paper18.pdf"
+        images:
+          - file: "AzaXE6i7PINRrl9.gif"
+            type: gif
+            width: 875
+            height: 293
+            alt: "生物网络拓扑优化演化动画的静态首帧：分支状网络构型"
+            caption: "生物网络拓扑优化 / Biological network topology optimization"
+
+      - id: cad-03
+        title_zh: "轻量化支撑结构设计"
+        title_en: "Lightweight scaffold design"
+        pdf: "https://riedel12315.github.io/qingxia.github.io/files/paper2.pdf"
+        images:
+          - file: "ybGhM2HQBKnTZCo.jpg"
+            type: still
+            width: 619
+            height: 453
+            alt: "轻量化点阵支撑结构设计的三维模型结果图"
+            caption: "轻量化支撑结构设计 / Lightweight scaffold design"
+
+      - id: cad-04
+        title_zh: "FDM工艺数值模拟"
+        title_en: "Digital twin with fused deposition technique"
+        pdf: "https://riedel12315.github.io/qingxia.github.io/files/paper17.pdf"
+        images:
+          - file: "Di28hBWA6M4sVPq.gif"
+            type: gif
+            width: 800
+            height: 204
+            alt: "FDM 熔融沉积数字孪生模拟首帧：熔丝逐层铺展过程"
+            caption: "FDM工艺数值模拟（1/3） / Digital twin with fused deposition technique (1/3)"
+          - file: "Mc1ZOyBC682HEDl.gif"
+            type: gif
+            width: 1120
+            height: 420
+            alt: "FDM 工艺温度场演化模拟的静态首帧：热分布云图"
+            caption: "FDM工艺数值模拟（2/3） / Digital twin with fused deposition technique (2/3)"
+          - file: "cVWNwOCZLH46XUG.png"
+            type: still
+            width: 3000
+            height: 3750
+            alt: "FDM 工艺数值模拟最终成形件与截面结果的静态图"
+            caption: "FDM工艺数值模拟（3/3） / Digital twin with fused deposition technique (3/3)"
+
+      - id: cad-05
+        title_zh: "选择性激光熔融技术模拟"
+        title_en: "2D simulations of Selective Laser Melting(SLM)"
+        images:
+          - file: "K1Gv8QXltkZE3r7.gif"
+            type: gif
+            width: 1201
+            height: 216
+            alt: "选择性激光熔融二维模拟的静态首帧：熔池与粉末床形貌"
+            caption: "选择性激光熔融技术模拟 / 2D simulations of Selective Laser Melting(SLM)"
+
+      - id: cad-06
+        title_zh: ""
+        title_en: "Transition of different crystalline and quasicrystalline states"
+        images:
+          - file: "INqhYJLjSXtRsdy.gif"
+            type: gif
+            width: 600
+            height: 429
+            alt: "晶体态与准晶态之间相变过程的模拟静态首帧：有序畴分布"
+            caption: "Transition of different crystalline and quasicrystalline states"
+
+  - id: cfd
+    title: "Computational fluids flow(CFD)"
+    items:
+      - id: cfd-01
+        title_zh: "曲面流体流动计算"
+        title_en: "CFD on surfaces"
+        pdf: "https://riedel12315.github.io/qingxia.github.io/files/paper3.pdf"
+        images:
+          - file: "AM6axXyzCZenmb8.png"
+            type: still
+            emphasis: primary
+            width: 950
+            height: 240
+            alt: "曲面上流体流动计算的主结果图：表面流线与速度云图"
+            caption: "曲面流体流动计算（主图） / CFD on surfaces (main)"
+          - file: "eRqTnblB2joIWSG.gif"
+            type: gif
+            emphasis: secondary
+            width: 875
+            height: 656
+            alt: "曲面流体流动随时间演化的对比小图静态首帧"
+            caption: "曲面流体流动计算（演化） / CFD on surfaces (evolution)"
+
+      - id: cfd-02
+        title_zh: "热流计算"
+        title_en: "CFD with heat transfer"
+        pdf: "https://riedel12315.github.io/qingxia.github.io/files/paper13.pdf"
+        images:
+          - file: "rORb1N96YUSQfmA.png"
+            type: still
+            width: 1035
+            height: 664
+            alt: "含传热效应的流体计算温度场与流场耦合结果图"
+            caption: "热流计算 / CFD with heat transfer"
+
+      - id: cfd-03
+        title_zh: "多相流计算"
+        title_en: "CFD with multi-component model"
+        pdf: "https://riedel12315.github.io/qingxia.github.io/files/paper10.pdf"
+        images:
+          - file: "lYviAZdCo2XLMsc.gif"
+            type: gif
+            width: 849
+            height: 283
+            alt: "多组分多相流模型模拟的静态首帧：组分界面分布"
+            caption: "多相流计算 / CFD with multi-component model"
+
+      - id: cfd-04
+        title_zh: "颗粒流"
+        title_en: "CFD based on Smoothed Partical Hydrodynamic(SPH) method"
+        images:
+          - file: "V12h3sc9jgSTHPY.gif"
+            type: gif
+            width: 600
+            height: 173
+            alt: "基于 SPH 粒子法的流体模拟静态首帧：粒子离散与飞溅"
+            caption: "颗粒流 / CFD based on Smoothed Partical Hydrodynamic(SPH) method"
+
+      - id: cfd-05
+        title_zh: "守恒的相场方法研究"
+        title_en: "CFD with conservative phase-field method"
+        pdf: "https://riedel12315.github.io/qingxia.github.io/files/paper16.pdf"
+        images:
+          - file: "OZhxirCEqVbc7o5.gif"
+            type: gif
+            width: 697
+            height: 343
+            alt: "守恒相场方法模拟两相界面的静态首帧：界面演化云图"
+            caption: "守恒的相场方法研究 / CFD with conservative phase-field method"
+
+  - id: img
+    title: "Image processing"
+    items:
+      - id: img-01
+        title_zh: "指纹修补"
+        title_en: "Fingerprint restoration"
+        pdf: "https://riedel12315.github.io/qingxia.github.io/files/paper7.pdf"
+        images:
+          - file: "sWkfSq3ZENQJ7h5.jpg"
+            type: still
+            width: 695
+            height: 555
+            alt: "指纹图像修补结果：断裂脊线被重建后的对比图"
+            caption: "指纹修补 / Fingerprint restoration"
+
+      - id: img-02
+        title_zh: "图像降噪和颜色矫正"
+        title_en: "Color correction and L0-denoising"
+        pdf: "https://riedel12315.github.io/qingxia.github.io/files/paper5.pdf"
+        images:
+          - file: "jS8DZJFENX5oIW6.png"
+            type: still
+            width: 989
+            height: 461
+            alt: "图像降噪与颜色矫正（L0 平滑）处理前后的结果对比图"
+            caption: "图像降噪和颜色矫正 / Color correction and L0-denoising"

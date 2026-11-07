@@ -1,49 +1,12 @@
 /* ==========================================================================
-   ANIMATIONS — GPU-optimized aurora + micro-interactions
+   ANIMATIONS — all continuous / decorative motion removed.
+   Only the reduced-motion guard remains. Its forced declarations are the
+   single documented exception: they must beat every element-level transition.
    ========================================================================== */
 
-@-webkit-keyframes intro {
-  0% { opacity: 0; transform: translateY(8px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes intro {
-  0% { opacity: 0; transform: translateY(8px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-/*
-   Aurora — GPU-friendly: scale + rotate only, no expensive translate
-   ========================================================================== */
-
-@keyframes auroraMorph1 {
-  0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.80; }
-  25%  { transform: scale(1.15) rotate(1.5deg); opacity: 0.95; }
-  50%  { transform: scale(0.90) rotate(-1deg); opacity: 0.65; }
-  75%  { transform: scale(1.10) rotate(-1.2deg); opacity: 0.90; }
-}
-
-@keyframes auroraMorph2 {
-  0%, 100% { transform: scale(1.05) rotate(0deg); opacity: 0.70; }
-  33%  { transform: scale(0.88) rotate(-1.8deg); opacity: 0.92; }
-  66%  { transform: scale(1.12) rotate(1.5deg); opacity: 0.60; }
-}
-
-@keyframes auroraPulse {
-  0%, 100% { opacity: 0.5; }
-  50% { opacity: 1; }
-}
-
-@keyframes glassShimmer {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
-
-/* ── Respect reduced-motion preference ── */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    animation: none !important;
+    transition: none !important;
   }
 }

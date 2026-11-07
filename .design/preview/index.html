@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>主页改造预览 · Qing Xia / 夏青</title>
+<link rel="stylesheet" href="assets/main.css">
+<link rel="stylesheet" href="../../assets/css/simulation.css">
+<style>
+/* ---- Preview-only shell scaffolding. No colour tokens are overridden here:
+       the palette comes entirely from the compiled main.css + simulation.css. ---- */
+:root {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+               'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
+               'Noto Sans CJK SC', sans-serif;
+}
+body { margin: 0; }
+[hidden] { display: none !important; }
+
+/* Jekyll archive layout emits <div id="main"> with .sidebar + .archive as
+   children. The task asks for a .page class on #main; neutralise only the
+   two box-model declarations that would otherwise shrink/float the grid. */
+#main.page { float: none; width: auto; }
+
+header.masthead .masthead__inner-wrap {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1.5rem; flex-wrap: wrap;
+}
+header.masthead .greedy-nav { float: none; }
+header.masthead .greedy-nav .visible-links { display: flex; flex-wrap: wrap; align-items: center; }
+header.masthead .greedy-nav .visible-links li { display: block; }
+header.masthead .greedy-nav button { display: none; } /* greedy-nav JS is not loaded */
+
+.preview-toolbar {
+  display: flex; flex-wrap: wrap; align-items: center; gap: .5rem;
+  margin: 0 0 2rem; padding-bottom: 1rem; border-bottom: 1px solid #E3E6E2;
+}
+.preview-toolbar__label { font-size: .875rem; color: #626F75; margin-right: .25rem; }
+.preview-tab {
+  min-height: 44px; padding: .5rem 1rem;
+  font-family: inherit; font-size: .875rem; font-weight: 600; line-height: 1.2;
+  color: #49565C;
+  background: #FFFFFF; border: 1px solid #82908E; border-radius: 6px;
+  cursor: pointer;
+}
+.preview-tab[aria-pressed="true"] { color: #FFFFFF; background: #14566B; border-color: #14566B; }
+.preview-tab:hover { border-color: #14566B; }
+.preview-hint {
+  padding: .75rem 1rem; background: #FFFFFF; border: 1px solid #E3E6E2;
+  border-radius: 6px; font-size: .875rem; color: #49565C;
+}
+.preview-notes {
+  position: fixed; right: 1rem; bottom: 1rem; z-index: 30;
+  width: 250px; max-width: calc(100vw - 2rem);
+  margin: 0; padding: .75rem 1rem;
+  background: #FFFFFF; border: 1px solid #E3E6E2; border-radius: 6px;
+  box-shadow: 0 1px 2px rgba(27,36,41,.04);
+  font-size: .75rem; line-height: 1.7; color: #49565C;
+}
+.preview-notes summary { min-height: 44px; font-size: .8125rem; }
+.preview-notes ul { margin: .5rem 0 0; padding-left: 1.1rem; }
+.preview-notes code { font-size: .75rem; }
+@media (max-width: 900px) {
+  .preview-notes { position: static; width: auto; max-width: none; margin: 2rem 0 0; }
+}
+.preview-reduce {
+  display: inline-flex; align-items: center; gap: .5rem; min-height: 44px;
+  margin-left: auto; font-size: .875rem; color: #49565C; cursor: pointer;
+}
+html[data-reduced-motion] *,
+html[data-reduced-motion] *::before,
+html[data-reduced-motion] *::after {
+  transition-duration: 0ms !important;
+  animation-duration: 0ms !important;
+  animation: none !important;
+}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__author">
+      <img src="../../images/QingXia1.png" class="masthead__author-avatar" alt="Qing Xia">
+      <span class="masthead__author-name">Qing Xia / 夏青</span>
+    </div>
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <button type="button" aria-expanded="false" aria-controls="site-nav-hidden" aria-label="展开导航菜单" hidden><div class="navicon"></div></button>
+        <ul class="visible-links">
+          <li class="masthead__menu-item masthead__menu-item--lg"><a id="nav-home" aria-label="Qing Xia / 夏青 — 返回首页" href="#view-home" data-view-target="home">Qing Xia / 夏青</a></li>
+          <li class="masthead__menu-item"><a href="#view-home" data-view-target="home">Biography（简介）</a></li>
+          <li class="masthead__menu-item"><a href="#view-home" data-view-target="home">Publications（论文）</a></li>
+          <li class="masthead__menu-item"><a id="nav-sim" href="#view-simulation" data-view-target="simulation" aria-current="page">Simulation（模拟）</a></li>
+          <li class="masthead__menu-item"><a href="#view-home" data-view-target="home">Teaching（教学）</a></li>
+          <li class="masthead__menu-item"><a href="#view-home" data-view-target="home">Instants（瞬间）</a></li>
+        </ul>
+        <ul id="site-nav-hidden" class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div id="main" role="main" class="page">
+  <div class="sidebar sticky">
+    <div itemscope itemtype="http://schema.org/Person">
+      <div class="author__avatar">
+        <img src="../../images/QingXia1.png" class="author__avatar" alt="Qing Xia / 夏青">
+      </div>
+      <div class="author__content">
+        <h3 class="author__name">Qing Xia / 夏青</h3>
+        <p class="author__bio">Ph.D. in Science · Xi'an, China</p>
+      </div>
+      <div class="author__links-wrapper">
+        <ul class="author__links social-icons">
+          <li><a aria-label="Xi'an, China" href="#view-home" data-view-target="home">Xi'an, China</a></li>
+          <li><a aria-label="Google Scholar" href="https://scholar.google.com/citations?user=pWXuL4EAAAAJ&amp;hl=zh-CN">Google Scholar ↗</a></li>
+          <li><a aria-label="ResearchGate" href="https://www.researchgate.net/profile/Qing-Xia-12">ResearchGate ↗</a></li>
+          <li><a aria-label="ORCID" href="https://orcid.org/0000-0003-1608-415X">ORCID ↗</a></li>
+          <li><a aria-label="Email" href="mailto:xiaqing151701@stu.xjtu.edu.cn">Email ↗</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="archive">
+    <h1 class="page__title" id="preview-title">Simulation</h1>
+
+    <div class="preview-toolbar" role="group" aria-label="预览视图切换">
+      <span class="preview-toolbar__label">选择视图：</span>
+      <button class="preview-tab" type="button" data-view-target="simulation" aria-pressed="true">Simulation（模拟结果）</button>
+      <button class="preview-tab" type="button" data-view-target="home" aria-pressed="false">首页概览</button>
+      <label class="preview-reduce"><input type="checkbox" id="reduce-motion"> 模拟减少动效</label>
+    </div>
+
+    <section class="preview-view" id="view-simulation" aria-label="Simulation 模拟结果网格">
+<div class="sim-page">
+  <section class="sim-group" id="cad" aria-labelledby="cad-h" data-group="cad" data-group-index="0">
+    <h2 id="cad-h" class="sim-group__title">CAD for 3D printing <span class="sim-group__count">6 项 · 8 图</span></h2>
+    <div class="sim-grid">
+      <article class="sim-item" id="cad-01" aria-labelledby="cad-01-h" data-group="cad" data-item="cad-01" data-figure-count="1">
+        <h3 id="cad-01-h" class="sim-item__title">Mechanical structure optimization（机械结构优化）</h3>
+        <ul class="sim-figs sim-figs--count-1">
+          <li class="sim-figs__cell">
+            <figure class="sim-figure" data-fig-index="0" data-item="cad-01" data-full="../../images/simulation/H4SAIPtXNed53CB.jpg" data-gif="" data-poster="../../images/simulation/H4SAIPtXNed53CB.poster.jpg" data-pdf="https://riedel12315.github.io/qingxia.github.io/files/paper12.pdf" data-caption-zh="机械结构优化" data-caption-en="Mechanical structure optimization">
+              <div class="sim-figure__media">
+                <a class="sim-figure__open" href="../../images/simulation/H4SAIPtXNed53CB.jpg" target="_blank" rel="noopener noreferrer" aria-haspopup="dialog" aria-label="放大查看：机械结构优化 / Mechanical structure optimization"><img class="sim-figure__img" src="../../images/simulation/H4SAIPtXNed53CB.poster.jpg" alt="机械结构拓扑优化后的构型结果图，显示承载路径与镂空分布" width="883" height="416" loading="lazy" decoding="async" fetchpriority="high"></a>
+              </div>
+              <figcaption class="sim-figure__caption"><span class="sim-figure__title">机械结构优化 / Mechanical structure optimization</span></figcaption>
+            </figure>
+          </li>
+        </ul>
+        <div class="sim-item__actions"><a class="btn btn--inverse sim-pdf" href="https://riedel12315.github.io/qingxia.github.io/files/paper12.pdf" target="_blank" rel="noopener noreferrer" aria-label="打开 PDF：Mechanical structure optimization（在新窗口打开）">PDF <span aria-hidden="true">↗</span></a></div>
+      </article>
+      <article class="sim-item" id="cad-02" aria-labelledby="cad-02-h" data-group="cad" data-item="cad-02" data-figure-count="1">
+        <h3 id="cad-02-h" class="sim-item__title">Biological network topology optimization（生物网络拓扑优化）</h3>
+        <ul class="sim-figs sim-figs--count-1">
+          <li class="sim-figs__cell">
+            <figure class="sim-figure" data-fig-index="1" data-item="cad-02" data-full="../../images/simulation/AzaXE6i7PINRrl9.gif" data-gif="../../images/simulation/AzaXE6i7PINRrl9.gif" data-poster="../../images/simulation/AzaXE6i7PINRrl9.poster.jpg" data-pdf="https://riedel12315.github.io/qingxia.github.io/files/paper18.pdf" data-caption-zh="生物网络拓扑优化" data-caption-en="Biological network topology optimization">
+              <div class="sim-figure__media">
+                <a class="sim-figure__open" href="../../images/simulation/AzaXE6i7PINRrl9.gif" target="_blank" rel="noopener noreferrer" aria-haspopup="dialog" aria-label="放大查看：生物网络拓扑优化 / Biological network topology optimization"><img class="sim-figure__img" src="../../images/simulation/AzaXE6i7PINRrl9.poster.jpg" alt="生物网络拓扑优化演化动画的静态首帧：分支状网络构型" width="875" height="293" loading="lazy" decoding="async"></a>
+                <button class="sim-play" type="button" hidden aria-pressed="false" aria-label="播放动画：Biological network topology optimization"><span class="sim-play__icon" aria-hidden="true">▶</span></button>
+              </div>
+              <figcaption class="sim-figure__caption"><span class="sim-figure__title">生物网络拓扑优化 / Biological network topology optimization</span></figcaption>
+              <span class="sim-figure__status" role="status" aria-live="polite"></span>
+              <noscript><a class="sim-figure__giflink" href="../../images/simulation/AzaXE6i7PINRrl9.gif">查看动画原始文件（GIF）</a></noscript>
+            </figure>
+          </li>
+        </ul>
+        <div class="sim-item__actions"><a class="btn btn--inverse sim-pdf" href="https://riedel12315.github.io/qingxia.github.io/files/paper18.pdf" target="_blank" rel="noopener noreferrer" aria-label="打开 PDF：Biological network topology optimization（在新窗口打开）">PDF <span aria-hidden="true">↗</span></a></div>
+      </article>
+      <article class="sim-item" id="cad-03" aria-labelledby="cad-03-h" data-group="cad" data-item="cad-03" data-figure-count="1">
+        <h3 id="cad-03-h" class="sim-item__title">Lightweight scaffold design（轻量化支撑结构设计）</h3>
+        <ul class="sim-figs sim-figs--count-1">
+          <li class="sim-figs__cell">
+            <figure class="sim-figure" data-fig-index="2" data-item="cad-03" data-full="../../images/simulation/ybGhM2HQBKnTZCo.jpg" data-gif="" data-poster="../../images/simulation/ybGhM2HQBKnTZCo.poster.jpg" data-pdf="https://riedel12315.github.io/qingxia.github.io/files/paper2.pdf" data-caption-zh="轻量化支撑结构设计" data-caption-en="Lightweight scaffold design">
+              <div class="sim-figure__media">
+                <a class="sim-figure__open" href="../../images/simulation/ybGhM2HQBKnTZCo.jpg" target="_blank" rel="noopener noreferrer" aria-haspopup="dialog" aria-label="放大查看：轻量化支撑结构设计 / Lightweight scaffold design"><img class="sim-figure__img" src="../../images/simulation/ybGhM2HQBKnTZCo.poster.jpg" alt="轻量化点阵支撑结构设计的三维模型结果图" width="619" height="453" loading="lazy" decoding="async"></a>
+              </div>
+              <figcaption class="sim-figure__caption"><span class="sim-figure__title">轻量化支撑结构设计 / Lightweight scaffold design</span></figcaption>
+            </figure>
+          </li>
+        </ul>
+        <div class="sim-item__actions"><a class="btn btn--inverse sim-pdf" href="https://riedel12315.github.io/qingxia.github.io/files/paper2.pdf" target="_blank" rel="noopener noreferrer" aria-label="打开 PDF：Lightweight scaffold design（在新窗口打开）">PDF <span aria-hidden="true">↗</span></a></div>
+      </article>
+      <article class="sim-item sim-item--wide" id="cad-04" aria-labelledby="cad-04-h" data-group="cad" data-item="cad-04" data-figure-count="3">
+        <h3 id="cad-04-h" class="sim-item__title">Digital twin with fused deposition technique（FDM工艺数值模拟）</h3>
+        <ul class="sim-figs sim-figs--count-3">
+          <li class="sim-figs__cell">
+            <figure class="sim-figure" data-fig-index="3" data-item="cad-04" data-full="../../images/simulation/Di28hBWA6M4sVPq.gif" data-gif="../../images/simulation/Di28hBWA6M4sVPq.gif" data-poster="../../images/simulation/Di28hBWA6M4sVPq.poster.jpg" data-pdf="https://riedel12315.github.io/qingxia.github.io/files/paper17.pdf" data-caption-zh="FDM工艺数值模拟" data-caption-en="Digital twin with fused deposition technique">
+              <div class="sim-figure__media">
+                <a class="sim-figure__open" href="../../images/simulation/Di28hBWA6M4sVPq.gif" target="_blank" rel="noopener noreferrer" aria-haspopup="dialog" aria-label="放大查看：FDM工艺数值模拟（1/3） / Digital twin with fused deposition technique (1/3)"><img class="sim-figure__img" src="../../images/simulation/Di28hBWA6M4sVPq.poster.jpg" alt="FDM 熔融沉积数字孪生模拟首帧：熔丝逐层铺展过程" width="800" height="204" loading="lazy" decoding="async"></a>
+                <button class="sim-play" type="button" hidden aria-pressed="false" aria-label="播放动画：Digital twin with fused deposition technique"><span class="sim-play__icon" aria-hidden="true">▶</span></button>
+              </div>
+              <figcaption class="sim-figure__caption"><span class="sim-figure__title">FDM工艺数值模拟（1/3） / Digital twin with fused deposition technique (1/3)</span></figcaption>
+              <span class="sim-figure__status" role="status" aria-live="polite"></span>
+              <noscript><a class="sim-figure__giflink" href="../../images/simulation/Di28hBWA6M4sVPq.gif">查看动画原始文件（GIF）</a></noscript>
+            </figure>
+          </li>
+          <li class="sim-figs__cell">
+            <figure class="sim-figure" data-fig-index="4" data-item="cad-04" data-full="../../images/simulation/Mc1ZOyBC682HEDl.gif" data-gif="../../images/simulation/Mc1ZOyBC682HEDl.gif" data-poster="../../images/simulation/Mc1ZOyBC682HEDl.poster.jpg" data-pdf="https://riedel12315.github.io/qingxia.github.io/files/paper17.pdf" data-caption-zh="FDM工艺数值模拟" data-caption-en="Digital twin with fused deposition technique">
+              <div class="sim-figure__media">
+                <a class="sim-figure__open" href="../../images/simulation/Mc1ZOyBC682HEDl.gif" target="_blank" rel="noopener noreferrer" aria-haspopup="dialog" aria-label="放大查看：FDM工艺数值模拟（2/3） / Digital twin with fused deposition technique (2/3)"><img class="sim-figure__img" src="../../images/simulation/Mc1ZOyBC682HEDl.poster.jpg" alt="FDM 工艺温度场演化模拟的静态首帧：热分布云图" width="1120" height="420" loading="lazy" decoding="async"></a>
+                <button class="sim-play" type="button" hidden aria-pressed="false" aria-label="播放动画：Digital twin with fused deposition technique"><span class="sim-play__icon" aria-hidden="true">▶</span></button>
+              </div>
+              <figcaption class="sim-figure__caption"><span class="sim-figure__title">FDM工艺数值模拟（2/3） / Digital twin with fused deposition technique (2/3)</span></figcaption>
+              <span class="sim-figure__status" role="status" aria-live="polite"></span>
+              <noscript><a class="sim-figure__giflink" href="../../images/simulation/Mc1ZOyBC682HEDl.gif">查看动画原始文件（GIF）</a></noscript>
+            </figure>
+          </li>
+          <li class="sim-figs__cell">
+            <figure class="sim-figure" data-fig-index="5" data-item="cad-04" data-full="../../images/simulation/cVWNwOCZLH46XUG.png" data-gif="" data-poster="../../images/simulation/cVWNwOCZLH46XUG.poster.jpg" data-pdf="https://riedel12315.github.io/qingxia.github.io/files/paper17.pdf" data-caption-zh="FDM工艺数值模拟" data-caption-en="Digital twin with fused deposition technique">
+              <div class="sim-figure__media">
+                <a class="sim-figure__open" href="../../images/simulation/cVWNwOCZLH46XUG.png" target="_blank" rel="noopener noreferrer" aria-haspopup="dialog" aria-label="放大查看：FDM工艺数值模拟（3/3） / Digital twin with fused deposition technique (3/3)"><img class="sim-figure__img" src="../../images/simulation/cVWNwOCZLH46XUG.poster.jpg" alt="FDM 工艺数值模拟最终成形件与截面结果的静态图" width="3000" height="3750" loading="lazy" decoding="async"></a>
+              </div>
+              <figcaption class="sim-figure__caption"><span class="sim-figure__title">FDM工艺数值模拟（3/3） / Digital twin with fused deposition technique (3/3)</span></figcaption>
+            </figure>
+          </li>
+        </ul>
+        <div class="sim-item__actions"><a class="btn btn--inverse sim-pdf" href="https://riedel12315.github.io/qingxia.github.io/files/paper17.pdf" target="_blank" rel="noopener noreferrer" aria-label="打开 PDF：Digital twin with fused deposition technique（在新窗口打开）">PDF <span aria-hidden="true">↗</span></a></div>
+      </article>
+      <article class="sim-item" id="cad-05" aria-labelledby="cad-05-h" data-group="cad" data-item="cad-05" data-figure-count="1">
+        <h3 id="cad-05-h" class="sim-item__title">2D simulations of Selective Laser Melting(SLM)（选择性激光熔融技术模拟）</h3>
+        <ul class="sim-figs sim-figs--count-1">
+          <li class="sim-figs__cell">
+            <figure class="sim-figure" data-fig-index="6" data-item="cad-05" data-full="../../images/simulation/K1Gv8QXltkZE3r7.gif" data-gif="../../images/simulation/K1Gv8QXltkZE3r7.gif" data-poster="../../images/simulation/K1Gv8QXltkZE3r7.poster.jpg" data-pdf="" data-caption-zh="选择性激光熔融技术模拟" data-caption-en="2D simulations of Selective Laser Melting(SLM)">
+              <div class="sim-figure__media">
+                <a class="sim-figure__open" href="../../images/simulation/K1Gv8QXltkZE3r7.gif" target="_blank" rel="noopener noreferrer" aria-haspopup="dialog" aria-label="放大查看：选择性激光熔融技术模拟 / 2D simulations of Selective Laser Melting(SLM)"><img class="sim-figure__img" src="../../images/simulation/K1Gv8QXltkZE3r7.poster.jpg" alt="选择性激光熔融二维模拟的静态首帧：熔池与粉末床形貌" width="1201" height="216" loading="lazy" decoding="async"></a>
+                <button class="sim-play" type="button" hidden aria-pressed="false" aria-label="播放动画：2D simulations of Selective Laser Melting(SLM)"><span class="sim-play__icon" aria-hidden="true">▶</span></button>
+              </div>
+              <figcaption class="sim-figure__caption"><span class="sim-figure__title">选择性激光熔融技术模拟 / 2D simulations of Selective Laser Melting(SLM)</span></figcaption>
+              <span class="sim-figure__status" role="status" aria-live="polite"></span>
+              <noscript><a class="sim-figure__giflink" href="../../images/simulation/K1Gv8QXltkZE3r7.gif">查看动画原始文件（GIF）</a></noscript>
+            </figure>
+          </li>
+        </ul>
+      </article>
+      <article class="sim-item" id="cad-06" aria-labelledby="cad-06-h" data-group="cad" data-item="cad-06" data-figure-count="1">
+        <h3 id="cad-06-h" class="sim-item__title">Transition of different crystalline and quasicrystalline states</h3>
+        <ul class="sim-figs sim-figs--count-1">
+          <li class="sim-figs__cell">
+            <figure class="sim-figure" data-fig-index="7" data-item="cad-06" data-full="../../images/simulation/INqhYJLjSXtRsdy.gif" data-gif="../../images/simulation/INqhYJLjSXtRsdy.gif" data-poster="../../images/simulation/INqhYJLjSXtRsdy.poster.jpg" data-pdf="" data-caption-zh="" data-caption-en="Transition of different crystalline and quasicrystalline states">
+              <div class="sim-figure__media">
+                <a class="sim-figure__open" href="../../images/simulation/INqhYJLjSXtRsdy.gif" target="_blank" rel="noopener noreferrer" aria-haspopup="dialog" aria-label="放大查看：Transition of different crystalline and quasicrystalline states"><img class="sim-figure__img" src="../../images/simulation/INqhYJLjSXtRsdy.poster.jpg" alt="晶体态与准晶态之间相变过程的模拟静态首帧：有序畴分布" width="600" height="429" loading="lazy" decoding="async"></a>
+                <button class="sim-play" type="button" hidden aria-pressed="false" aria-label="播放动画：Transition of different crystalline and quasicrystalline states"><span class="sim-play__icon" aria-hidden="true">▶</span></button>
+              </div>
+              <figcaption class="sim-figure__caption"><span class="sim-figure__title">Transition of different crystalline and quasicrystalline states</span></figcaption>
+              <span class="sim-figure__status" role="status" aria-live="polite"></span>
+              <noscript><a class="sim-figure__giflink" href="../../images/simulation/INqhYJLjSXtRsdy.gif">查看动画原始文件（GIF）</a></noscript>
+            </figure>
+          </li>
+        </ul>
+      </article>
+    </div>
+  </section>
+  <section class="sim-group" id="cfd" aria-labelledby="cfd-h" data-group="cfd" data-group-index="1">
+    <h2 id="cfd-h" class="sim-group__title">Computational fluids flow(CFD) <span class="sim-group__count">5 项 · 6 图</span></h2>
+    <div class="sim-grid">
+      <article class="sim-item sim-item--wide" id="cfd-01" aria-labelledby="cfd-01-h" data-group="cfd" data-item="cfd-01" data-figure-count="2">
+        <h3 id="cfd-01-h" class="sim-item__title">CFD on surfaces（曲面流体流动计算）</h3>
+        <ul class="sim-figs sim-figs--count-2 sim-figs--weighted">
+          <li class="sim-figs__cell">
+            <figure class="sim-figure" data-fig-index="8" data-item="cfd-01" data-full="../../images/simulation/AM6axXyzCZenmb8.png" data-gif="" data-poster="../../images/simulation/AM6axXyzCZenmb8.poster.jpg" data-pdf="https://riedel12315.github.io/qingxia.github.io/files/paper3.pdf" data-caption-zh="曲面流体流动计算" data-caption-en="CFD on surfaces">
+              <div class="sim-figure__media">
+                <a class="sim-figure__open" href="../../images/simulation/AM6axXyzCZenmb8.png" target="_blank" rel="noopener noreferrer" aria-haspopup="dialog" aria-label="放大查看：曲面流体流动计算（主图） / CFD on surfaces (main)"><img class="sim-figure__img" src="../../images/simulation/AM6axXyzCZenmb8.poster.jpg" alt="曲面上流体流动计算的主结果图：表面流线与速度云图" width="950" height="240" loading="lazy" decoding="async"></a>
+              </div>
+              <figcaption class="sim-figure__caption"><span class="sim-figure__title">曲面流体流动计算（主图） / CFD on surfaces (main)</span></figcaption>
+            </figure>
+          </li>
+          <li class="sim-figs__cell">
+            <figure class="sim-figure" data-fig-index="9" data-item="cfd-01" data-full="../../images/simulation/eRqTnblB2joIWSG.gif" data-gif="../../images/simulation/eRqTnblB2joIWSG.gif" data-poster="../../images/simulation/eRqTnblB2joIWSG.poster.jpg" data-pdf="https://riedel12315.github.io/qingxia.github.io/files/paper3.pdf" data-caption-zh="曲面流体流动计算" data-caption-en="CFD on surfaces">
+              <div class="sim-figure__media">
+                <a class="sim-figure__open" href="../../images/simulation/eRqTnblB2joIWSG.gif" target="_blank" rel="noopener noreferrer" aria-haspopup="dialog" aria-label="放大查看：曲面流体流动计算（演化） / CFD on surfaces (evolution)"><img class="sim-figure__img" src="../../images/simulation/eRqTnblB2joIWSG.poster.jpg" alt="曲面流体流动随时间演化的对比小图静态首帧" width="875" height="656" loading="lazy" decoding="async"></a>
+                <button class="sim-play" type="button" hidden aria-pressed="false" aria-label="播放动画：CFD on surfaces"><span class="sim-play__icon" aria-hidden="true">▶</span></button>
+              </div>
+              <figcaption class="sim-figure__caption"><span class="sim-figure__title">曲面流体流动计算（演化） / CFD on surfaces (evolution)</span></figcaption>
+              <span class="sim-figure__status" role="status" aria-live="polite"></span>
+              <noscript><a class="sim-figure__giflink" href="../../images/simulation/eRqTnblB2joIWSG.gif">查看动画原始文件（GIF）</a></noscript>
+            </figure>
+          </li>
+        </ul>
+        <div class="sim-item__actions"><a class="btn btn--inverse sim-pdf" href="https://riedel12315.github.io/qingxia.github.io/files/paper3.pdf" target="_blank" rel="noopener noreferrer" aria-label="打开 PDF：CFD on surfaces（在新窗口打开）">PDF <span aria-hidden="true">↗</span></a></div>
+      </article>
+      <article class="sim-item" id="cfd-02" aria-labelledby="cfd-02-h" data-group="cfd" data-item="cfd-02" data-figure-count="1">
+        <h3 id="cfd-02-h" class="sim-item__title">CFD with heat transfer（热流计算）</h3>
+        <ul class="sim-figs sim-figs--count-1">
+          <li class="sim-figs__cell">
+            <figure class="sim-figure" data-fig-index="10" data-item="cfd-02" data-full="../../images/simulation/rORb1N96YUSQfmA.png" data-gif="" data-poster="../../images/simulation/rORb1N96YUSQfmA.poster.jpg" data-pdf="https://riedel12315.github.io/qingxia.github.io/files/paper13.pdf" data-caption-zh="热流计算" data-caption-en="CFD with heat transfer">
+              <div class="sim-figure__media">
+                <a class="sim-figure__open" href="../../images/simulation/rORb1N96YUSQfmA.png" target="_blank" rel="noopener noreferrer" aria-haspopup="dialog" aria-label="放大查看：热流计算 / CFD with heat transfer"><img class="sim-figure__img" src="../../images/simulation/rORb1N96YUSQfmA.poster.jpg" alt="含传热效应的流体计算温度场与流场耦合结果图" width="1035" height="664" loading="lazy" decoding="async"></a>
+              </div>
+              <figcaption class="sim-figure__caption"><span class="sim-figure__title">热流计算 / CFD with heat transfer</span></figcaption>
+            </figure>
+          </li>
+        </ul>
+        <div class="sim-item__actions"><a class="btn btn--inverse sim-pdf" href="https://riedel12315.github.io/qingxia.github.io/files/paper13.pdf" target="_blank" rel="noopener noreferrer" aria-label="打开 PDF：CFD with heat transfer（在新窗口打开）">PDF <span aria-hidden="true">↗</span></a></div>
+      </article>
+      <article class="sim-item" id="cfd-03" aria-labelledby="cfd-03-h" data-group="cfd" data-item="cfd-03" data-figure-count="1">
+        <h3 id="cfd-03-h" class="sim-item__title">CFD with multi-component model（多相流计算）</h3>
+        <ul class="sim-figs sim-figs--count-1">
+          <li class="sim-figs__cell">
+            <figure class="sim-figure" data-fig-index="11" data-item="cfd-03" data-full="../../images/simulation/lYviAZdCo2XLMsc.gif" data-gif="../../images/simulation/lYviAZdCo2XLMsc.gif" data-poster="../../images/simulation/lYviAZdCo2XLMsc.poster.jpg" data-pdf="https://riedel12315.github.io/qingxia.github.io/files/paper10.pdf" data-caption-zh="多相流计算" data-caption-en="CFD with multi-component model">
+              <div class="sim-figure__media">
+                <a class="sim-figure__open" href="../../images/simulation/lYviAZdCo2XLMsc.gif" target="_blank" rel="noopener noreferrer" aria-haspopup="dialog" aria-label="放大查看：多相流计算 / CFD with multi-component model"><img class="sim-figure__img" src="../../images/simulation/lYviAZdCo2XLMsc.poster.jpg" alt="多组分多相流模型模拟的静态首帧：组分界面分布" width="849" height="283" loading="lazy" decoding="async"></a>
+                <button class="sim-play" type="button" hidden aria-pressed="false" aria-label="播放动画：CFD with multi-component model"><span class="sim-play__icon" aria-hidden="true">▶</span></button>
+              </div>
+              <figcaption class="sim-figure__caption"><span class="sim-figure__title">多相流计算 / CFD with multi-component model</span></figcaption>
+              <span class="sim-figure__status" role="status" aria-live="polite"></span>
+              <noscript><a class="sim-figure__giflink" href="../../images/simulation/lYviAZdCo2XLMsc.gif">查看动画原始文件（GIF）</a></noscript>
+            </figure>
+          </li>
+        </ul>
+        <div class="sim-item__actions"><a class="btn btn--inverse sim-pdf" href="https://riedel12315.github.io/qingxia.github.io/files/paper10.pdf" target="_blank" rel="noopener noreferrer" aria-label="打开 PDF：CFD with multi-component model（在新窗口打开）">PDF <span aria-hidden="true">↗</span></a></div>
+      </article>
+      <article class="sim-item" id="cfd-04" aria-labelledby="cfd-04-h" data-group="cfd" data-item="cfd-04" data-figure-count="1">
+        <h3 id="cfd-04-h" class="sim-item__title">CFD based on Smoothed Partical Hydrodynamic(SPH) method（颗粒流）</h3>
+        <ul class="sim-figs sim-figs--count-1">
+          <li class="sim-figs__cell">
+            <figure class="sim-figure" data-fig-index="12" data-item="cfd-04" data-full="../../images/simulation/V12h3sc9jgSTHPY.gif" data-gif="../../images/simulation/V12h3sc9jgSTHPY.gif" data-poster="../../images/simulation/V12h3sc9jgSTHPY.poster.jpg" data-pdf="" data-caption-zh="颗粒流" data-caption-en="CFD based on Smoothed Partical Hydrodynamic(SPH) method">
+              <div class="sim-figure__media">
+                <a class="sim-figure__open" href="../../images/simulation/V12h3sc9jgSTHPY.gif" target="_blank" rel="noopener noreferrer" aria-haspopup="dialog" aria-label="放大查看：颗粒流 / CFD based on Smoothed Partical Hydrodynamic(SPH) method"><img class="sim-figure__img" src="../../images/simulation/V12h3sc9jgSTHPY.poster.jpg" alt="基于 SPH 粒子法的流体模拟静态首帧：粒子离散与飞溅" width="600" height="173" loading="lazy" decoding="async"></a>
+                <button class="sim-play" type="button" hidden aria-pressed="false" aria-label="播放动画：CFD based on Smoothed Partical Hydrodynamic(SPH) method"><span class="sim-play__icon" aria-hidden="true">▶</span></button>
+              </div>
+              <figcaption class="sim-figure__caption"><span class="sim-figure__title">颗粒流 / CFD based on Smoothed Partical Hydrodynamic(SPH) method</span></figcaption>
+              <span class="sim-figure__status" role="status" aria-live="polite"></span>
+              <noscript><a class="sim-figure__giflink" href="../../images/simulation/V12h3sc9jgSTHPY.gif">查看动画原始文件（GIF）</a></noscript>
+            </figure>
+          </li>
+        </ul>
+      </article>
+      <article class="sim-item" id="cfd-05" aria-labelledby="cfd-05-h" data-group="cfd" data-item="cfd-05" data-figure-count="1">
+        <h3 id="cfd-05-h" class="sim-item__title">CFD with conservative phase-field method（守恒的相场方法研究）</h3>
+        <ul class="sim-figs sim-figs--count-1">
+          <li class="sim-figs__cell">
+            <figure class="sim-figure" data-fig-index="13" data-item="cfd-05" data-full="../../images/simulation/OZhxirCEqVbc7o5.gif" data-gif="../../images/simulation/OZhxirCEqVbc7o5.gif" data-poster="../../images/simulation/OZhxirCEqVbc7o5.poster.jpg" data-pdf="https://riedel12315.github.io/qingxia.github.io/files/paper16.pdf" data-caption-zh="守恒的相场方法研究" data-caption-en="CFD with conservative phase-field method">
+              <div class="sim-figure__media">
+                <a class="sim-figure__open" href="../../images/simulation/OZhxirCEqVbc7o5.gif" target="_blank" rel="noopener noreferrer" aria-haspopup="dialog" aria-label="放大查看：守恒的相场方法研究 / CFD with conservative phase-field method"><img class="sim-figure__img" src="../../images/simulation/OZhxirCEqVbc7o5.poster.jpg" alt="守恒相场方法模拟两相界面的静态首帧：界面演化云图" width="697" height="343" loading="lazy" decoding="async"></a>
+                <button class="sim-play" type="button" hidden aria-pressed="false" aria-label="播放动画：CFD with conservative phase-field method"><span class="sim-play__icon" aria-hidden="true">▶</span></button>
+              </div>
+              <figcaption class="sim-figure__caption"><span class="sim-figure__title">守恒的相场方法研究 / CFD with conservative phase-field method</span></figcaption>
+              <span class="sim-figure__status" role="status" aria-live="polite"></span>
+              <noscript><a class="sim-figure__giflink" href="../../images/simulation/OZhxirCEqVbc7o5.gif">查看动画原始文件（GIF）</a></noscript>
+            </figure>
+          </li>
+        </ul>
+        <div class="sim-item__actions"><a class="btn btn--inverse sim-pdf" href="https://riedel12315.github.io/qingxia.github.io/files/paper16.pdf" target="_blank" rel="noopener noreferrer" aria-label="打开 PDF：CFD with conservative phase-field method（在新窗口打开）">PDF <span aria-hidden="true">↗</span></a></div>
+      </article>
+    </div>
+  </section>
+  <section class="sim-group" id="img" aria-labelledby="img-h" data-group="img" data-group-index="2">
+    <h2 id="img-h" class="sim-group__title">Image processing <span class="sim-group__count">2 项 · 2 图</span></h2>
+    <div class="sim-grid">
+      <article class="sim-item" id="img-01" aria-labelledby="img-01-h" data-group="img" data-item="img-01" data-figure-count="1">
+        <h3 id="img-01-h" class="sim-item__title">Fingerprint restoration（指纹修补）</h3>
+        <ul class="sim-figs sim-figs--count-1">
+          <li class="sim-figs__cell">
+            <figure class="sim-figure" data-fig-index="14" data-item="img-01" data-full="../../images/simulation/sWkfSq3ZENQJ7h5.jpg" data-gif="" data-poster="../../images/simulation/sWkfSq3ZENQJ7h5.poster.jpg" data-pdf="https://riedel12315.github.io/qingxia.github.io/files/paper7.pdf" data-caption-zh="指纹修补" data-caption-en="Fingerprint restoration">
+              <div class="sim-figure__media">
+                <a class="sim-figure__open" href="../../images/simulation/sWkfSq3ZENQJ7h5.jpg" target="_blank" rel="noopener noreferrer" aria-haspopup="dialog" aria-label="放大查看：指纹修补 / Fingerprint restoration"><img class="sim-figure__img" src="../../images/simulation/sWkfSq3ZENQJ7h5.poster.jpg" alt="指纹图像修补结果：断裂脊线被重建后的对比图" width="695" height="555" loading="lazy" decoding="async"></a>
+              </div>
+              <figcaption class="sim-figure__caption"><span class="sim-figure__title">指纹修补 / Fingerprint restoration</span></figcaption>
+            </figure>
+          </li>
+        </ul>
+        <div class="sim-item__actions"><a class="btn btn--inverse sim-pdf" href="https://riedel12315.github.io/qingxia.github.io/files/paper7.pdf" target="_blank" rel="noopener noreferrer" aria-label="打开 PDF：Fingerprint restoration（在新窗口打开）">PDF <span aria-hidden="true">↗</span></a></div>
+      </article>
+      <article class="sim-item" id="img-02" aria-labelledby="img-02-h" data-group="img" data-item="img-02" data-figure-count="1">
+        <h3 id="img-02-h" class="sim-item__title">Color correction and L0-denoising（图像降噪和颜色矫正）</h3>
+        <ul class="sim-figs sim-figs--count-1">
+          <li class="sim-figs__cell">
+            <figure class="sim-figure" data-fig-index="15" data-item="img-02" data-full="../../images/simulation/jS8DZJFENX5oIW6.png" data-gif="" data-poster="../../images/simulation/jS8DZJFENX5oIW6.poster.jpg" data-pdf="https://riedel12315.github.io/qingxia.github.io/files/paper5.pdf" data-caption-zh="图像降噪和颜色矫正" data-caption-en="Color correction and L0-denoising">
+              <div class="sim-figure__media">
+                <a class="sim-figure__open" href="../../images/simulation/jS8DZJFENX5oIW6.png" target="_blank" rel="noopener noreferrer" aria-haspopup="dialog" aria-label="放大查看：图像降噪和颜色矫正 / Color correction and L0-denoising"><img class="sim-figure__img" src="../../images/simulation/jS8DZJFENX5oIW6.poster.jpg" alt="图像降噪与颜色矫正（L0 平滑）处理前后的结果对比图" width="989" height="461" loading="lazy" decoding="async"></a>
+              </div>
+              <figcaption class="sim-figure__caption"><span class="sim-figure__title">图像降噪和颜色矫正 / Color correction and L0-denoising</span></figcaption>
+            </figure>
+          </li>
+        </ul>
+        <div class="sim-item__actions"><a class="btn btn--inverse sim-pdf" href="https://riedel12315.github.io/qingxia.github.io/files/paper5.pdf" target="_blank" rel="noopener noreferrer" aria-label="打开 PDF：Color correction and L0-denoising（在新窗口打开）">PDF <span aria-hidden="true">↗</span></a></div>
+      </article>
+    </div>
+  </section>
+</div>
+    </section>
+
+    <section class="preview-view" id="view-home" aria-label="首页概览" hidden>
+      <div class="page__content">
+        <p class="preview-hint">以下为 <code>_pages/about.md</code> 的代表性摘录（非全文），用于展示浅色主题的留白、1px 分隔线与单一强调色排版，以及旧闻 / 代表作的原生 <code>&lt;details&gt;</code> 折叠。</p>
+
+        <h2>About me（简介）</h2>
+        <p><strong>Qing Xia</strong> received his Ph.D. degree in June 2025 from the School of Mathematics and Statistics at Xi’an Jiaotong University (XJTU), where he was supervised by Prof. Dr. <a href="http://gr.xjtu.edu.cn/web/yibaoli">Yibao Li</a>. Prior to that, he obtained his B.S. degree from the same school at XJTU in 2019. Recently, he was selected for the <strong>TopMinds</strong> program and joined Huawei.</p>
+
+        <h2>Research（研究）</h2>
+        <p>My research interests mainly lie in <strong>Shape topology optimization in 3D printing</strong> and <strong>multi-scale multi-physics coupled computation</strong>. My research interests also include computer vision on the digital twin, entropy analysis and numerical analysis. Since 2019, I have published <strong>43 SCI</strong> papers, <strong>32</strong> of them in <strong>JCR Q1</strong> journals, <strong>7</strong> chosen as <strong>Highly Cited paper</strong> by Web of Science.</p>
+
+        <h2>News（新闻）</h2>
+        <ul>
+          <li>May 15, 2025. <strong>Qing Xia</strong> successfully obtained his Ph.D. in Science.</li>
+          <li>May 01, 2025. Our paper 'A Unified Algorithm Framework for Phase-Field Based Multimaterial Topology Optimization with Various Graded Interfaces' has been accepted for publication in <em>International Journal for Numerical Methods in Engineering</em>.</li>
+          <li>Apr 22, 2025. Our paper 'Data-driven reduced-order modeling of hydrogen-fueled supersonic combustion' has been accepted for publication in <em>Physics of Fluids</em>.</li>
+          <li>Apr 09, 2025. <strong>Qing Xia</strong> attended the award ceremony of the 10th Xu Zongben Applied Mathematics Paper Award and delivered a presentation.</li>
+          <li>Mar 08, 2025. Our paper 'Phase field modeling of melting and solidification dynamics in metallic powders during the bed fusion process' has been accepted for publication in <em>Communications in Nonlinear Science and Numerical Simulation</em>.</li>
+          <li>Jan 11, 2025. Our paper 'Triply periodic minimal surfaces based topology optimization for the hydrodynamic and convective heat transfer' has been chosen as the Highly Cited paper by Web of Science.</li>
+          <li>Jan 11, 2025. Our paper 'An unconditional energy stable data assimilation scheme for Navier-Stokes-Cahn-Hilliard equations' has been chosen as the Highly Cited paper by Web of Science.</li>
+          <li>Jan 09, 2025. Our paper 'Enhanced Reduced-Order Modeling with VAE and LSTM for Predicting the Cahn-Hilliard Equation' has been accepted for publication in <em>Engineering Analysis with Boundary Elements</em>.</li>
+        </ul>
+
+        <details class="home-more">
+          <summary>展开更早的动态（2024–2022，共 31 条；预览摘录 6 条）</summary>
+          <ul>
+            <li>Dec 18, 2024. Our paper 'A second-order accurate numerical method with unconditional energy stability for the Lifshitz-Petrich equation on curved surfaces' has been accepted.</li>
+            <li>Oct 30, 2024. <strong>Qing Xia</strong> won the Xu Zongben Applied Mathematics Paper Award (Second prize).</li>
+            <li>Sep 11, 2024. Our paper 'On the adaption of biological transport networks affected by complex domains' has been accepted for publication in <em>Physics of Fluids</em>.</li>
+            <li>Jun 14, 2024. Our application of '3D printing design - simulation - processing integration research' was awarded "Outstanding achievements of scientific and technological research of Shaanxi Province".</li>
+            <li>May 10, 2024. Our paper 'On the integrated 3D printing research for design, optimization and simulation within phase field framework' has been accepted (Special invitation).</li>
+            <li>Feb 19, 2024. Our paper 'Thermal-fluid topology optimization with unconditional energy stability' has been chosen as the Highly Cited paper by Web of Science.</li>
+          </ul>
+        </details>
+
+        <h2>Magnum Opus（代表作）</h2>
+        <ul>
+          <li><strong>Qing Xia</strong>#, Gangming Sun, Junseok Kim, Yibao Li, Multi-scale modeling and simulation of additive manufacturing based on fused deposition technique, <em>Physics of Fluids</em>, 35 (2023) 034116 (<strong>Cover Article/Featured/Scilight Article</strong>).</li>
+          <li><strong>Qing Xia</strong>#, Junxiang Yang, Yibao Li, On the conservative phase-field method with the N-component incompressible flows, <em>Physics of Fluids</em>, 35 (2023) 012120. (JCR Q1, TOP)</li>
+          <li>Yibao Li#, Zhixian Lv, <strong>Qing Xia</strong>*, On the adaption of biological transport networks affected by complex domains, <em>Physics of Fluids</em>. (JCR Q1, TOP)</li>
+          <li><strong>Qing Xia</strong>#, Qian Yu, Yibao Li, A second-order accuracy, unconditionally energy stable numerical scheme for binary fluid flows on arbitrarily curved surfaces, <em>CMAME</em>, 384 (2021) 113987.</li>
+          <li><strong>Qing Xia</strong>#, Junxiang Yang, Junseok Kim, Yibao Li, On the phase field based model for the crystalline transition and nucleation within the Lagrange multiplier framework, <em>Journal of Computational Physics</em>, 513 (2024) 113158.</li>
+        </ul>
+
+        <details class="home-more">
+          <summary>展开更多代表作（第 6–15 条，共 10 条）</summary>
+          <ul>
+            <li>A modified and efficient phase field model for the biological transport network, <em>J. Comput. Phys.</em> (2023).</li>
+            <li>Thermal-fluid topology optimization with unconditional energy stability and second-order accuracy, <em>CNSNS</em>, 116 (2023) 106782.</li>
+            <li>Triply periodic minimal surfaces based topology optimization for the hydrodynamic and convective heat transfer, <em>CNSNS</em>, 131 (2024) 107819.</li>
+            <li>Phase field modeling of melting and solidification dynamics in metallic powders during the bed fusion process, <em>CNSNS</em>.</li>
+            <li>Binary thermal fluids computation over arbitrary surfaces, <em>J. Comput. Appl. Math.</em> (2023).</li>
+            <li>An unconditionally energy stable method for binary incompressible heat conductive fluids, <em>Computers &amp; Mathematics with Applications</em>, 123 (2023) 26-39.</li>
+            <li>Modeling and simulation of multi-component immiscible flows, <em>European Journal of Mechanics-B/Fluids</em>, 95 (2022) 194-204.</li>
+            <li>A simple and efficient volume merging method for triply periodic minimal structure, <em>Computer Physics Communications</em>, 264 (2021) 107956.</li>
+            <li>Simple and efficient fingerprint image restoration method based on a phase-field model, <em>Pattern Recognition</em>, 123 (2020) 108405.</li>
+            <li>A simple and practical volume merging algorithm for the porous scaffold design, <em>Mathematics and Computers in Simulation</em>, 481 (2024) 481-495.</li>
+          </ul>
+        </details>
+
+        <h2>Awards（获奖）</h2>
+        <ul>
+          <li>Outstanding achievements of scientific and technological research of Shaanxi Province (2024，一等奖，第三完成人)</li>
+          <li>The 10th Xu Zongben Applied Mathematics Paper Award（第十届徐宗本应用数学论文奖）</li>
+          <li>National Scholarship for Doctoral students (2023)（国家奖学金）</li>
+          <li>Academic Star Award of Xi’an Jiaotong University (2023)（学术之星，全校 10 人）</li>
+          <li>National Scholarship for Doctoral students (2022)（国家奖学金）</li>
+          <li>Outstanding Model for the Doctoral students of XJTU (2022)（博士研究生标兵，全校 15 人）</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="page__footer">
+  <footer>
+    <div class="page__footer-copyright">
+      &copy; 2025 Qing Xia / 夏青 &nbsp;·&nbsp;
+      <a href="mailto:xiaqing151701@stu.xjtu.edu.cn">Email</a> &nbsp;·&nbsp;
+      <a href="https://scholar.google.com/citations?user=pWXuL4EAAAAJ&amp;hl=zh-CN">Google Scholar</a>
+      &nbsp;·&nbsp; 静态预览页（无 Jekyll 构建，file:// 直接打开）
+    </div>
+  </footer>
+</div>
+
+<details class="preview-notes" open>
+  <summary>改造说明（本次关键数字）</summary>
+  <ul>
+    <li>删除装饰 / 死文件：<strong>7</strong> 个（另 2 个 spiral 文件）</li>
+    <li>Simulation 首屏图：<strong>26.85 MB → 0.79 MB</strong> 静帧（833 KB / 16 张）</li>
+    <li>Web 字体：<strong>3 → 1</strong>（仅 Inter）</li>
+    <li>首屏 GIF 请求：<strong>0</strong>（9 个 GIF 改为点击后加载）</li>
+    <li>3 组 / 13 子项 / 16 图 / 10 PDF</li>
+  </ul>
+  <p>本页为 <code>.design/preview/</code> 下的验收预览，图片与 CSS/JS 均用相对路径指向仓库原文件，不复制业务代码。</p>
+</details>
+
+<script>
+(function () {
+  'use strict';
+  var D = document;
+  var views = {
+    simulation: D.getElementById('view-simulation'),
+    home: D.getElementById('view-home')
+  };
+  var titles = { simulation: 'Simulation', home: '首页概览 / About me' };
+  var h1 = D.getElementById('preview-title');
+  var navSim = D.getElementById('nav-sim');
+  var navHome = D.getElementById('nav-home');
+
+  function setView(name) {
+    Object.keys(views).forEach(function (k) { views[k].hidden = (k !== name); });
+    h1.textContent = titles[name];
+    if (name === 'simulation') {
+      navSim.setAttribute('aria-current', 'page'); navHome.removeAttribute('aria-current');
+    } else {
+      navHome.setAttribute('aria-current', 'page'); navSim.removeAttribute('aria-current');
+    }
+    D.querySelectorAll('.preview-tab[data-view-target]').forEach(function (b) {
+      b.setAttribute('aria-pressed', b.getAttribute('data-view-target') === name ? 'true' : 'false');
+    });
+    window.scrollTo(0, 0);
+  }
+  D.querySelectorAll('[data-view-target]').forEach(function (el) {
+    el.addEventListener('click', function (e) {
+      e.preventDefault();
+      setView(el.getAttribute('data-view-target'));
+    });
+  });
+  D.getElementById('reduce-motion').addEventListener('change', function () {
+    if (this.checked) D.documentElement.setAttribute('data-reduced-motion', '');
+    else D.documentElement.removeAttribute('data-reduced-motion');
+  });
+  setView('simulation');
+})();
+</script>
+<script src="../../assets/js/simulation.js" defer></script>
+</body>
+</html>

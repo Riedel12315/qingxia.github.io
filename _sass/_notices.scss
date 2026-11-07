@@ -1,85 +1,36 @@
 /* ==========================================================================
-   NOTICE TEXT BLOCKS — Dark theme
+   NOTICE TEXT BLOCKS — light theme, no forced declarations
    ========================================================================== */
 
 @mixin notice($notice-color) {
-  margin: 2em 0 !important;
+  margin: 2em 0;
   padding: 1em 1.25em;
   font-family: $global-font-family;
-  font-size: $type-size-6 !important;
+  font-size: $type-size-6;
   text-indent: initial;
-  background-color: rgba($notice-color, 0.08);
-  border: 1px solid rgba($notice-color, 0.2);
+  background-color: $surface-2;
+  border: 1px solid $line-strong;
+  border-left: 3px solid $notice-color;
   border-radius: $border-radius;
 
-  h4 {
-    margin-top: 0 !important;
-    margin-bottom: 0.75em;
-    color: $notice-color;
-  }
+  h4 { margin-top: 0; margin-bottom: .75em; color: $notice-color; }
+  @at-root .page__content #{&} h4 { margin-bottom: 0; font-size: 1em; }
 
-  @at-root .page__content #{&} h4 {
-    margin-bottom: 0;
-    font-size: 1em;
-  }
-
-  p {
-    &:last-child {
-      margin-bottom: 0 !important;
-    }
-  }
-
-  h4 + p {
-    margin-top: 0;
-    padding-top: 0;
-  }
+  p:last-child { margin-bottom: 0; }
+  h4 + p { margin-top: 0; padding-top: 0; }
 
   a {
-    color: $notice-color;
-
-    &:hover {
-      color: lighten($notice-color, 10%);
-    }
+    color: $accent;
+    &:hover { color: $accent-hover; }
   }
 
-  code {
-    background-color: rgba($notice-color, 0.08);
-    color: $text-color;
-  }
-
-  ul {
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
+  code { background-color: $code-bg; color: $code-ink; }
+  ul:last-child { margin-bottom: 0; }
 }
 
-/* Default notice */
-.notice {
-  @include notice($gray);
-}
-
-/* Primary notice */
-.notice--primary {
-  @include notice($primary-color);
-}
-
-/* Info notice */
-.notice--info {
-  @include notice($info-color);
-}
-
-/* Warning notice */
-.notice--warning {
-  @include notice($warning-color);
-}
-
-/* Success notice */
-.notice--success {
-  @include notice($success-color);
-}
-
-/* Danger notice */
-.notice--danger {
-  @include notice($danger-color);
-}
+.notice           { @include notice($ink-3); }
+.notice--primary  { @include notice($accent); }
+.notice--info     { @include notice($accent); }
+.notice--warning  { @include notice($warning-color); }
+.notice--success  { @include notice($success-color); }
+.notice--danger   { @include notice($danger-color); }

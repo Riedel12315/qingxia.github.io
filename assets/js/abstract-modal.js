@@ -1,140 +1,123 @@
 /**
- * Abstract Modal — click any publication to see its abstract.
+ * Abstract modal — precise binding via data-abstract-key, no keyword matching.
+ * Trigger: <button type="button" data-abstract-key="…" aria-haspopup="dialog">
+ * Panel: role="dialog" aria-modal="true", focus trap, Esc, focus restored.
  */
 (function () {
   'use strict';
+
+  function init() {
+    var dataEl = document.getElementById('abstract-data');
+    if (!dataEl) return;
+    var abstracts;
+    try { abstracts = JSON.parse(dataEl.textContent); } catch (e) { return; }
+
+    var triggers = document.querySelectorAll('.abstract-trigger[data-abstract-key]');
+    if (!triggers.length) return;
+
+    var overlay = null;
+    var lastTrigger = null;
+    var focusable = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+
+    function el(tag, cls, text) {
+      var node = document.createElement(tag);
+      if (cls) node.className = cls;
+      if (text != null) node.textContent = text;
+      return node;
+    }
+
+    function build(data) {
+      var modal = el('div', 'abstract-modal');
+      modal.setAttribute('role', 'dialog');
+      modal.setAttribute('aria-modal', 'true');
+      modal.setAttribute('aria-labelledby', 'abstract-modal-title');
+      modal.addEventListener('mousedown', function (e) { e.stopPropagation(); });
+
+      var closeBtn = el('button', 'abstract-modal__close', '\u00D7');
+      closeBtn.type = 'button';
+      closeBtn.setAttribute('aria-label', 'Close');
+      closeBtn.addEventListener('click', close);
+      modal.appendChild(closeBtn);
+
+      var title = el('div', 'abstract-modal__title', data.title || 'Abstract');
+      title.id = 'abstract-modal-title';
+      modal.appendChild(title);
+
+      var meta = el('div', 'abstract-modal__meta');
+      if (data.authors) {
+        var a = el('strong', null, data.authors);
+        meta.appendChild(a);
+      }
+      [data.journal, data.year].forEach(function (part) {
+        if (part) meta.appendChild(document.createTextNode('  \u00B7  ' + part));
+      });
+      modal.appendChild(meta);
+
+      if (data.badges && data.badges.length) {
+        var row = el('div', 'abstract-modal__badges');
+        data.badges.forEach(function (b) {
+          row.appendChild(el('span', 'abstract-modal__badge abstract-modal__badge--' + b.type, b.label));
+        });
+        modal.appendChild(row);
+      }
+
+      modal.appendChild(el('div', 'abstract-modal__abstract', data.abstract || ''));
+      return modal;
+    }
+
+    function show(data, trigger) {
+      close();                       // single, well-defined close path
+      lastTrigger = trigger;
+
+      var backdrop = el('div', 'abstract-overlay');
+      backdrop.addEventListener('mousedown', function (e) {
+        if (e.target === backdrop) close();
+      });
+      backdrop.appendChild(build(data));
+      document.body.appendChild(backdrop);
+      document.body.classList.add('overflow--hidden');
+      overlay = backdrop;
+
+      var btn = backdrop.querySelector('.abstract-modal__close');
+      if (btn) btn.focus();
+    }
+
+    function close() {
+      if (!overlay) return;
+      var node = overlay;
+      overlay = null;
+      if (node.parentNode) node.parentNode.removeChild(node);
+      document.body.classList.remove('overflow--hidden');
+      if (lastTrigger && document.contains(lastTrigger)) lastTrigger.focus();
+      lastTrigger = null;
+    }
+
+    function onKeydown(e) {
+      if (!overlay) return;
+      if (e.key === 'Escape') { e.preventDefault(); close(); return; }
+      if (e.key !== 'Tab') return;
+
+      var items = Array.prototype.slice.call(overlay.querySelectorAll(focusable))
+        .filter(function (n) { return !n.disabled && n.offsetParent !== null; });
+      if (!items.length) return;
+      var first = items[0], last = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+
+    Array.prototype.forEach.call(triggers, function (btn) {
+      btn.addEventListener('click', function () {
+        var data = abstracts[btn.getAttribute('data-abstract-key')];
+        if (data) show(data, btn);
+      });
+    });
+
+    document.addEventListener('keydown', onKeydown);
+  }
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
     init();
-  }
-
-  function init() {
-    // Find the JSON data block
-    var dataEl = document.getElementById('abstract-data');
-    if (!dataEl) return;
-    var abstracts = {};
-    try { abstracts = JSON.parse(dataEl.textContent); } catch (e) { return; }
-
-    // Find all publication list items in the archive area
-    var archive = document.querySelector('.archive');
-    if (!archive) return;
-    var items = archive.querySelectorAll('li');
-
-    // Build keyword index from abstract data
-    var keys = Object.keys(abstracts);
-
-    items.forEach(function (li) {
-      var text = li.textContent || '';
-      var textLower = text.toLowerCase();
-      // Find the BEST matching key (highest keyword overlap), not just the first
-      var bestKey = null;
-      var bestScore = 0;
-      for (var i = 0; i < keys.length; i++) {
-        var phrases = keys[i].toLowerCase().split(/\s+/).filter(function (w) { return w.length > 4; });
-        var matchCount = 0;
-        for (var j = 0; j < phrases.length; j++) {
-          if (textLower.indexOf(phrases[j]) !== -1) matchCount++;
-        }
-        // Score = matches / total phrases (ratio), prefer higher match count
-        var score = matchCount >= 3 ? matchCount : 0; // need at least 3 keyword matches
-        if (score > bestScore) { bestScore = score; bestKey = keys[i]; }
-      }
-
-      if (bestKey && abstracts[bestKey]) {
-        // Make this item clickable
-        li.style.cursor = 'pointer';
-        li.title = 'Click to view abstract';
-
-        // Add a subtle abstract indicator
-        var badge = document.createElement('span');
-        badge.textContent = ' 📄';
-        badge.style.cssText = 'font-size:0.75em;opacity:0.4;cursor:pointer;';
-        badge.title = 'View abstract';
-        li.appendChild(badge);
-
-        (function (key) {
-          li.addEventListener('click', function (e) {
-            if (e.target.tagName === 'A') return;
-            e.stopPropagation();
-            showAbstract(abstracts[key]);
-          });
-        })(bestKey);
-      }
-    });
-
-    function showAbstract(data) {
-      // Remove existing modal
-      var existing = document.querySelector('.abstract-overlay');
-      if (existing) existing.parentNode.removeChild(existing);
-
-      var overlay = document.createElement('div');
-      overlay.className = 'abstract-overlay';
-      overlay.addEventListener('click', function (e) {
-        if (e.target === overlay) closeModal();
-      });
-
-      var modal = document.createElement('div');
-      modal.className = 'abstract-modal';
-      modal.addEventListener('click', function (e) { e.stopPropagation(); });
-
-      // Close button
-      var closeBtn = document.createElement('button');
-      closeBtn.className = 'abstract-modal__close';
-      closeBtn.innerHTML = '&#10005;';
-      closeBtn.setAttribute('aria-label', 'Close');
-      closeBtn.addEventListener('click', closeModal);
-      modal.appendChild(closeBtn);
-
-      // Title
-      var title = document.createElement('div');
-      title.className = 'abstract-modal__title';
-      title.textContent = data.title;
-      modal.appendChild(title);
-
-      // Meta
-      var meta = document.createElement('div');
-      meta.className = 'abstract-modal__meta';
-      var metaParts = [];
-      if (data.authors) metaParts.push('<strong>' + data.authors + '</strong>');
-      if (data.journal) metaParts.push(data.journal);
-      if (data.year) metaParts.push(data.year);
-      meta.innerHTML = metaParts.join(' · ');
-      modal.appendChild(meta);
-
-      // Badges
-      if (data.badges && data.badges.length) {
-        var badgeRow = document.createElement('div');
-        badgeRow.style.marginBottom = '0.8em';
-        data.badges.forEach(function (b) {
-          var span = document.createElement('span');
-          span.className = 'abstract-modal__badge abstract-modal__badge--' + b.type;
-          span.textContent = b.label;
-          badgeRow.appendChild(span);
-        });
-        modal.appendChild(badgeRow);
-      }
-
-      // Abstract
-      var abs = document.createElement('div');
-      abs.className = 'abstract-modal__abstract';
-      abs.textContent = data.abstract;
-      modal.appendChild(abs);
-
-      overlay.appendChild(modal);
-      document.body.appendChild(overlay);
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeModal() {
-      var overlay = document.querySelector('.abstract-overlay');
-      if (overlay && overlay.parentNode) overlay.parentNode.removeChild(overlay);
-      document.body.style.overflow = '';
-    }
-
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') closeModal();
-    });
   }
 })();

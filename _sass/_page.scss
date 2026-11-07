@@ -1,20 +1,37 @@
 /* ==========================================================================
-   SINGLE PAGE/POST — Premium dark content
+   SINGLE PAGE / ARCHIVE — light academic layout
    ========================================================================== */
 
 #main {
   @include container;
   @include clearfix;
-  margin-top: 2.5em;
-  padding-left: 1em;
-  padding-right: 1em;
-  padding-bottom: 3em;
+  margin: 3rem auto 4rem;
+  padding: 0 1.25rem;
   min-height: 60vh;
-  animation: intro 0.4s both;
-  animation-delay: 0.25s;
+  max-width: 1200px;
 
-  @include breakpoint($x-large) {
-    max-width: $x-large;
+  @include breakpoint($medium)  { padding: 0 1.5rem; }
+  @include breakpoint($large)   { padding: 0 2.5rem; }
+}
+
+/* Desktop grid overrides Susy floats; child widths/paddings are reset so the
+   two columns are always 240px + fluid content, never 10-of-12. */
+@media (min-width: 1024px) {
+  #main {
+    display: grid;
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: 4rem;
+    max-width: 1200px;
+
+    > .sidebar, > .page, > .archive, > .page__related {
+      float: none;
+      width: auto;
+      max-width: none;
+      margin-left: 0;
+      margin-right: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 }
 
@@ -28,130 +45,89 @@
   .page__inner-wrap {
     @include full();
 
-    .page__content,
-    .page__meta,
-    .page__share {
-      @include full();
-    }
+    .page__content, .page__meta, .page__share { @include full(); }
   }
 }
 
 .page__title {
-  margin-top: 0;
-  line-height: 1.15;
+  margin: 0 0 2rem;
+  line-height: 1.2;
   font-family: $header-font-family;
   font-weight: 700;
-  font-size: 2.2em;
-  letter-spacing: -0.03em;
-  color: #FFFFFF;
+  font-size: 2.25rem;
+  letter-spacing: -0.02em;
+  color: $ink;
 
-  & + .page__meta {
-    margin-top: -0.3em;
-  }
+  & + .page__meta { margin-top: -0.3em; }
 }
 
 .page__lead {
   font-family: $global-font-family;
-  font-size: 1.15em;
-  color: $gray;
+  font-size: 1.1875rem;
+  color: $ink-2;
   line-height: 1.7;
 }
 
 .page__content {
 
-  /* ── Section headings ── */
   h2 {
-    padding-bottom: 0.7em;
-    border-bottom: none; /* replaced by ::after in base */
-    color: #FFFFFF;
-    font-size: 1.4em;
-    margin-top: 3em;
+    padding-bottom: .75rem;
+    border-bottom: 1px solid $line;
+    color: $ink;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 4rem;
+    margin-bottom: 1.5rem;
   }
 
   h3 {
-    color: #E0E0E5;
-    font-size: 1.1em;
-    margin-top: 1.8em;
+    color: $ink;
+    font-size: 1.1875rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
   }
 
-  p, li, dl {
-    font-size: 1em;
-    line-height: 1.75;
-  }
+  p, li, dl { font-size: 1.0625rem; line-height: 1.8; }
 
   p {
-    margin: 0 0 1.2em;
+    margin: 0 0 1.25rem;
 
     @if $paragraph-indent == true {
-      & + p {
-        text-indent: $indent-var;
-        margin-top: -($indent-var);
-      }
+      & + p { text-indent: $indent-var; margin-top: -($indent-var); }
     }
   }
 
-  /* ── Links in content — coral, underline on hover ── */
   a {
     color: $link-color;
     text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: all 0.2s ease;
+    border-bottom: 0;
+    transition: $global-transition;
 
-    &:hover {
-      color: $link-color-hover;
-      border-bottom-color: rgba(255, 133, 133, 0.3);
-    }
+    &:hover { color: $link-color-hover; }
   }
 
-  /* ── Bold stat numbers ── */
-  strong {
-    color: #FFFFFF;
-    font-weight: 650;
-  }
+  strong { color: $ink; font-weight: 600; }
 
-  dt {
-    margin-top: 1em;
-    font-family: $sans-serif;
-    font-weight: 600;
-    color: #FFFFFF;
-  }
+  dt { margin-top: 1em; font-family: $sans-serif; font-weight: 600; color: $ink; }
+  dd { margin-left: 1em; font-family: $sans-serif; font-size: $type-size-6; color: $ink-2; }
+  .small { font-size: $type-size-6; color: $ink-3; }
 
-  dd {
-    margin-left: 1em;
-    font-family: $sans-serif;
-    font-size: $type-size-6;
-    color: $gray;
-  }
+  blockquote + .small { margin-top: -1.5em; padding-left: 1.25rem; }
 
-  .small {
-    font-size: $type-size-6;
-    color: $gray;
-  }
-
-  blockquote + .small {
-    margin-top: -1.5em;
-    padding-left: 1.25rem;
-  }
-
-  /* ── List items — glass hover ── */
+  /* No glass cards, no translateX, no hover shadow. */
   ul li, ol li {
-    padding: 0.5em 0.75em;
-    margin-bottom: 0.3em;
-    position: relative;
-    border-radius: 8px;
-    border: 1px solid transparent;
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0;
+    margin-bottom: .5em;
+    border: 0;
+    border-radius: 0;
     color: $text-color;
+  }
 
-    &:hover {
-      background: rgba(255, 255, 255, 0.05);
-      border-color: rgba(255, 255, 255, 0.10);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35),
-                  0 0 0 1px rgba(255, 255, 255, 0.04) inset;
-      transform: translateX(2px);
-    }
+  /* Top-level entries become a divider list (§5.3). */
+  > ul > li, > ol > li {
+    padding: 1.25rem 0;
+    margin-bottom: 0;
+    border-bottom: 1px solid $line;
   }
 }
 
@@ -159,8 +135,6 @@
   position: relative;
   margin-bottom: 2em;
   @include clearfix;
-  animation: intro 0.4s both;
-  animation-delay: 0.2s;
 
   &--overlay {
     position: relative;
@@ -170,143 +144,79 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    animation: intro 0.4s both;
-    animation-delay: 0.2s;
 
-    a { color: #fff; }
-
+    a { color: $accent; }
     .wrapper {
-      padding-left: 1em;
-      padding-right: 1em;
+      padding-left: 1em; padding-right: 1em;
       @include breakpoint($x-large) { max-width: $x-large; }
     }
-
-    .page__title,
-    .page__meta,
-    .page__lead,
-    .btn {
-      color: #fff;
-      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
-    }
-
+    .page__title { font-size: $type-size-2; @include breakpoint($small) { font-size: $type-size-1; } }
     .page__lead { max-width: $medium; }
-
-    .page__title {
-      font-size: $type-size-2;
-      @include breakpoint($small) { font-size: $type-size-1; }
-    }
   }
 }
 
-.page__hero-image {
-  width: 100%;
-  height: auto;
-  -ms-interpolation-mode: bicubic;
-}
+.page__hero-image { width: 100%; height: auto; -ms-interpolation-mode: bicubic; }
 
 .page__hero-caption {
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: 0; right: 0;
   margin: 0 auto;
   padding: 2px 5px;
-  color: #fff;
+  color: $surface;
   font-family: $caption-font-family;
   font-size: $type-size-7;
-  background: #000;
+  background: $overlay;
   text-align: right;
   z-index: 5;
-  opacity: 0.5;
+  opacity: .9;
   border-radius: $border-radius 0 $border-radius 0;
 
   @include breakpoint($large) { padding: 5px 10px; }
-
-  a { color: #fff; text-decoration: none; }
+  a { color: $surface; text-decoration: none; }
 }
 
 /*
-   Social sharing
+   Social sharing / meta
    ========================================================================== */
 
-.page__share {
-  margin-top: 2em;
-  padding-top: 1em;
-  border-top: 1px solid $border-color;
-
-  @include breakpoint(max-width $small) {
-    .btn span {
-      border: 0;
-      clip: rect(0 0 0 0);
-      height: 1px;
-      margin: -1px;
-      overflow: hidden;
-      padding: 0;
-      position: absolute;
-      width: 1px;
-    }
-  }
-}
-
+.page__share { margin-top: 2em; padding-top: 1em; border-top: 1px solid $line; }
 .page__share-title {
   margin-bottom: 10px;
   font-size: $type-size-6;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: $gray;
+  letter-spacing: .08em;
+  color: $ink-3;
 }
+
+.page__meta { margin-top: 2em; color: $ink-3; font-family: $sans-serif; font-size: $type-size-6; p { margin: 0; } a { color: inherit; } }
+.page__meta-title { margin-bottom: 10px; font-size: $type-size-6; text-transform: uppercase; letter-spacing: .08em; color: $ink-3; }
 
 /*
-   Page meta
+   Taxonomy chips
    ========================================================================== */
 
-.page__meta {
-  margin-top: 2em;
-  color: $gray;
-  font-family: $sans-serif;
-  font-size: $type-size-6;
-
-  p { margin: 0; }
-  a { color: inherit; }
-}
-
-.page__meta-title {
-  margin-bottom: 10px;
-  font-size: $type-size-6;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-/*
-   Page taxonomy
-   ========================================================================== */
-
-.page__taxonomy {
-  .sep { display: none; }
-  strong { margin-right: 10px; color: #FFFFFF; }
-}
+.page__taxonomy { .sep { display: none; } strong { margin-right: 10px; color: $ink; } }
 
 .page__taxonomy-item {
   display: inline-block;
   margin-right: 5px;
   margin-bottom: 8px;
-  padding: 5px 12px;
+  padding: .25rem .625rem;
+  min-height: 26px;
   text-decoration: none;
   font-size: $type-size-6;
-  color: $gray;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid $border-color;
-  border-radius: 6px;
+  font-weight: 500;
+  color: $ink-2;
+  background: $surface-2;
+  border: 1px solid $line;
+  border-radius: 4px;
 
-  &:hover {
-    text-decoration: none;
-    color: #FFFFFF;
-    background: rgba(255, 255, 255, 0.06);
-    border-color: rgba(255, 255, 255, 0.15);
-  }
+  &:hover { color: $accent; border-color: $line-strong; }
+  &.active, &.selected { color: $accent; background: $accent-soft; border-color: $accent; }
 }
 
 /*
-   Comments
+   Comments / related
    ========================================================================== */
 
 .page__comments { @include full(); }
@@ -316,97 +226,45 @@
   margin-bottom: 10px;
   padding-top: 2rem;
   font-size: $type-size-6;
-  border-top: 1px solid $border-color;
+  border-top: 1px solid $line;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #FFFFFF;
+  letter-spacing: .08em;
+  color: $ink;
 }
 
 .page__comments-form {
   padding: 1em;
-  background: rgba(255, 255, 255, 0.03);
+  background: $surface-2;
   border-radius: $border-radius;
-  border: 1px solid $border-color;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid $line;
   transition: $global-transition;
 
   &.disabled {
-    input, button, textarea, label {
-      pointer-events: none;
-      cursor: not-allowed;
-      filter: alpha(opacity=65);
-      box-shadow: none;
-      opacity: 0.65;
-    }
+    input, button, textarea, label { pointer-events: none; cursor: not-allowed; opacity: .55; }
   }
 }
 
-.comment {
-  @include clearfix();
-  margin: 1em 0;
-
-  &:not(:last-child) {
-    border-bottom: 1px solid $border-color;
-  }
-}
-
-.comment__avatar-wrapper {
-  float: left;
-  width: 60px;
-  height: 60px;
-  @include breakpoint($large) { width: 100px; height: 100px; }
-}
-
+.comment { @include clearfix(); margin: 1em 0; &:not(:last-child) { border-bottom: 1px solid $line; } }
+.comment__avatar-wrapper { float: left; width: 60px; height: 60px; @include breakpoint($large) { width: 100px; height: 100px; } }
 .comment__avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  @include breakpoint($large) {
-    width: 80px;
-    height: 80px;
-    padding: 5px;
-    border: 1px solid $border-color;
-  }
+  width: 40px; height: 40px; border-radius: 50%;
+  @include breakpoint($large) { width: 80px; height: 80px; padding: 5px; border: 1px solid $line; }
 }
-
-.comment__content-wrapper {
-  float: right;
-  width: calc(100% - 60px);
-  @include breakpoint($large) { width: calc(100% - 100px); }
-}
-
-.comment__author {
-  margin: 0;
-  color: #FFFFFF;
-  a { text-decoration: none; }
-}
-
-.comment__date {
-  @extend .page__meta;
-  margin: 0;
-  a { text-decoration: none; }
-}
-
-/*
-   Related
-   ========================================================================== */
+.comment__content-wrapper { float: right; width: calc(100% - 60px); @include breakpoint($large) { width: calc(100% - 100px); } }
+.comment__author { margin: 0; color: $ink; a { text-decoration: none; } }
+.comment__date { @extend .page__meta; margin: 0; a { text-decoration: none; } }
 
 .page__related {
   margin-top: 2em;
   padding-top: 1em;
-  border-top: 1px solid $border-color;
+  border-top: 1px solid $line;
   @include clearfix();
-  float: left;
-  @include breakpoint($large) { @include pre(2.5 of 12); }
-
   a { color: inherit; text-decoration: none; }
 }
-
 .page__related-title {
   margin-bottom: 10px;
   font-size: $type-size-6;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #FFFFFF;
+  letter-spacing: .08em;
+  color: $ink;
 }

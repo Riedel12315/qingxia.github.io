@@ -1,5 +1,6 @@
 /* ==========================================================================
-   Variables — Raycast-inspired academic (readability pass)
+   Variables — light academic theme (single source of truth)
+   Values mirrored at runtime by :root in _sass/_custom.scss
    ========================================================================== */
 
 /*
@@ -12,85 +13,86 @@ $doc-font-size              : 16;
 $paragraph-indent           : false;
 $indent-var                 : 1.3em;
 
-/* typefaces */
-$sans-serif                 : 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-$sans-serif-narrow          : 'Inter Tight', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-$monospace                  : 'JetBrains Mono', 'SF Mono', 'Fira Code', Monaco, Consolas, monospace;
+/* one typeface family only; Chinese falls back to the system stack */
+$sans-serif                 : 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans CJK SC', sans-serif;
+$sans-serif-narrow          : $sans-serif;
+$monospace                  : 'SF Mono', 'JetBrains Mono', Consolas, 'Liberation Mono', Menlo, monospace;
 $serif                      : Georgia, Times, serif;
 
 $global-font-family         : $sans-serif;
-$header-font-family         : $sans-serif-narrow;
+$header-font-family         : $sans-serif;
 $caption-font-family        : $sans-serif;
 
-/* type scale */
-$type-size-1                : 2.441em;
-$type-size-2                : 1.953em;
-$type-size-3                : 1.563em;
-$type-size-4                : 1.25em;
-$type-size-5                : 1em;
-$type-size-6                : 0.875em;
-$type-size-7                : 0.75em;
-$type-size-8                : 0.625em;
+/* type scale — rem based on a 16px root, floor 12px */
+$type-size-1                : 2.25rem;    /* 36px  h1 */
+$type-size-2                : 1.875rem;   /* 30px  mobile hero */
+$type-size-3                : 1.5rem;     /* 24px  h2 */
+$type-size-4                : 1.1875rem;  /* 19px  h3 / lead */
+$type-size-5                : 1.0625rem;  /* 17px  body */
+$type-size-6                : 0.875rem;   /* 14px  caption / meta */
+$type-size-7                : 0.75rem;    /* 12px  minimum */
+$type-size-8                : 0.75rem;
 
 
 /*
-   Colors — dark palette tuned for readability
+   Colors — paper white ground, ink text, one accent only
    ========================================================================== */
 
-// ── Neutrals ──
-$gray                       : #9CA0A8;   // secondary text — lighter for readability
-$dark-gray                  : #E4E4E7;   // primary body text
-$darker-gray                : #FFFFFF;   // headings / emphasis
-$light-gray                 : rgba(255, 255, 255, 0.10);
-$lighter-gray               : rgba(255, 255, 255, 0.04);
+$bg                         : #FAF9F6;   /* page ground */
+$surface                    : #FFFFFF;   /* content surface */
+$surface-2                  : #F3F4F1;   /* code / hover / chip */
+$ink                        : #1B2429;   /* primary text */
+$ink-2                     : #49565C;    /* secondary text */
+$ink-3                     : #626F75;    /* metadata */
+$line                       : #E3E6E2;   /* decorative 1px rule */
+$line-strong                : #82908E;   /* interactive control border, >=3:1 */
+$accent                     : #14566B;   /* links / current / primary / focus */
+$accent-hover               : #0E4152;
+$accent-soft                : #E9F2F4;
+$focus-halo                 : rgba(20, 86, 107, 0.15);
+$code-bg                    : #F2F4F1;
+$code-ink                   : #9A3B4C;    /* journal names / inline code */
+$overlay                    : rgba(20, 32, 36, 0.68);
+$selection                  : #D7E8ED;
+$shadow-color               : rgba(27, 36, 41, 0.04);
 
-// ── Surfaces ──
-$body-color                 : #0C0C0F;
-$background-color           : #0C0C0F;
-$code-background-color      : rgba(255, 255, 255, 0.05);
-$code-background-color-dark : rgba(255, 255, 255, 0.08);
-$text-color                 : #E4E4E7;
-$border-color               : rgba(255, 255, 255, 0.07);
+/* theme-legacy aliases — kept so every partial still compiles */
+$gray                       : $ink-3;
+$dark-gray                  : $ink-2;
+$darker-gray                : $ink;
+$light-gray                 : $line;
+$lighter-gray               : $surface-2;
+$body-color                 : $bg;
+$background-color           : $bg;
+$code-background-color      : $code-bg;
+$code-background-color-dark : $accent-soft;
+$text-color                 : $ink;
+$border-color               : $line;
 
-// ── Accent palette ──
-$primary-color              : #FF6363;   // UI accent only (buttons, glows, decoration)
-$success-color              : #4DF0B5;
-$warning-color              : #F5C842;
-$danger-color               : #FF6363;
-$info-color                 : #C4A6FF;
+/* accent palette — muted status text only, no coloured button family */
+$primary-color              : $accent;
+$success-color              : #2E6B4F;
+$warning-color              : #8A6212;
+$danger-color               : #A33A3A;
+$info-color                 : $accent;
+$code-accent                : $code-ink;
 
-// ── Code / inline highlight (teal for readability on dark) ──
-$code-accent                : #5EEAD4;
-
-/* brands */
-$behance-color              : #1769FF;
-$dribbble-color             : #ea4c89;
-$facebook-color             : #3b5998;
-$flickr-color               : #ff0084;
-$foursquare-color           : #0072b1;
-$github-color               : #fafbfc;
-$google-plus-color          : #dd4b39;
-$instagram-color            : #517fa4;
-$lastfm-color               : #d51007;
-$linkedin-color             : #007bb6;
-$pinterest-color            : #cb2027;
-$rss-color                  : #fa9b39;
-$soundcloud-color           : #ff3300;
-$stackoverflow-color        : #fe7a15;
-$tumblr-color               : #32506d;
-$twitter-color              : #55acee;
-$vimeo-color                : #1ab7ea;
-$vine-color                 : #00bf8f;
-$youtube-color              : #bb0000;
-$xing-color                 : #006567;
+/* brand colours all collapse to neutral (no second accent family) */
+$behance-color: $ink-3;   $dribbble-color: $ink-3;   $facebook-color: $ink-3;
+$flickr-color: $ink-3;    $foursquare-color: $ink-3; $github-color: $ink-3;
+$google-plus-color: $ink-3;$instagram-color: $ink-3;  $lastfm-color: $ink-3;
+$linkedin-color: $ink-3;  $pinterest-color: $ink-3;  $rss-color: $ink-3;
+$soundcloud-color: $ink-3;$stackoverflow-color: $ink-3; $tumblr-color: $ink-3;
+$twitter-color: $ink-3;   $vimeo-color: $ink-3;      $vine-color: $ink-3;
+$youtube-color: $ink-3;   $xing-color: $ink-3;
 
 
-/* links — brighter for dark backgrounds */
-$link-color                 : #FF8585;
-$link-color-hover           : #FFABAB;
-$link-color-visited         : #E599E5;
-$masthead-link-color        : #B0B3B8;
-$masthead-link-color-hover  : #FFFFFF;
+/* links */
+$link-color                 : $accent;
+$link-color-hover           : $accent-hover;
+$link-color-visited         : $accent;
+$masthead-link-color        : $ink-2;
+$masthead-link-color-hover  : $accent;
 
 
 /*
@@ -100,10 +102,10 @@ $masthead-link-color-hover  : #FFFFFF;
 @include breakpoint-set("to ems", true);
 
 $small                      : 600px !default;
-$medium                     : 768px !default;
+$medium                     : 720px !default;   /* breakpoint B per §5.1 */
 $medium-wide                : 900px !default;
-$large                      : 925px !default;
-$x-large                    : 1280px !default;
+$large                      : 1024px !default;
+$x-large                    : 1200px !default;
 
 /*
    Grid
@@ -129,8 +131,8 @@ $susy: (
    Other
    ========================================================================== */
 
-$border-radius              : 8px;
-$box-shadow                 : 0 8px 30px rgba(0, 0, 0, 0.3);
-$global-transition          : all 0.15s ease-out;
+$border-radius              : 6px;
+$box-shadow                 : 0 1px 2px $shadow-color;
+$global-transition          : color 120ms ease-out, background-color 120ms ease-out, border-color 120ms ease-out, opacity 120ms ease-out;
 $navicon-width              : 28px;
 $navicon-height             : 4px;

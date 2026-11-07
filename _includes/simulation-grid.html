@@ -1,0 +1,56 @@
+{%- comment -%}
+  Simulation 分组静态网格。唯一内容真源：_data/simulation.yml。
+  输出 .design/02-ux-spec.md §4.3 的 DOM 契约；JS 只读 data-*；禁用 JS 时全部内容可见。
+
+  注意 1：archive 布局（_layouts/archive.html:15,20）已输出 <div id="main"> 与
+          <h1 class="page__title">Simulation</h1>，本 include 只输出 .sim-page 容器，
+          避免重复 id 与重复 h1。
+  注意 2：Liquid 的 assign 在嵌套 for 循环内作用域不外泄，故
+          - 扁平 data-fig-index 用 increment 标签（写入 environments.first，全局持久）
+          - 分组「N 图」用 capture 搭配 size 过滤器统计，而非 assign 累加
+{%- endcomment -%}
+<div class="sim-page">
+{%- for group in site.data.simulation.groups -%}
+{%- capture gfigs_mark -%}{%- for git in group.items -%}{%- for gim in git.images -%}x{%- endfor -%}{%- endfor -%}{%- endcapture -%}
+  <section class="sim-group" id="{{ group.id }}" aria-labelledby="{{ group.id }}-h" data-group="{{ group.id }}" data-group-index="{{ forloop.index0 }}">
+    <h2 id="{{ group.id }}-h" class="sim-group__title">{{ group.title }} <span class="sim-group__count">{{ group.items | size }} 项 · {{ gfigs_mark | size }} 图</span></h2>
+    <div class="sim-grid">
+{%- for item in group.items -%}
+{%- assign nimg = item.images | size -%}
+{%- assign first_img = item.images | first -%}
+      <article class="sim-item{% if nimg >= 2 %} sim-item--wide{% endif %}" id="{{ item.id }}" aria-labelledby="{{ item.id }}-h" data-group="{{ group.id }}" data-item="{{ item.id }}" data-figure-count="{{ nimg }}">
+        <h3 id="{{ item.id }}-h" class="sim-item__title">{{ item.title_en }}{% if item.title_zh != "" %}（{{ item.title_zh }}）{% endif %}</h3>
+        <ul class="sim-figs sim-figs--count-{{ nimg }}{% if first_img.emphasis %} sim-figs--weighted{% endif %}">
+{%- for im in item.images -%}
+{%- capture idx -%}{% increment fig_i %}{%- endcapture -%}
+{%- assign stem = im.file | split: "." | first -%}
+{%- assign poster_url = stem | append: ".poster.jpg" | prepend: "/images/simulation/" -%}
+{%- assign full_url = im.file | prepend: "/images/simulation/" -%}
+{%- assign gif_url = "" -%}
+{%- if im.type == "gif" -%}{%- assign gif_url = full_url -%}{%- endif -%}
+          <li class="sim-figs__cell">
+            <figure class="sim-figure" data-fig-index="{{ idx }}" data-item="{{ item.id }}" data-full="{{ full_url }}" data-gif="{{ gif_url }}" data-poster="{{ poster_url }}" data-pdf="{{ item.pdf }}" data-caption-zh="{{ item.title_zh }}" data-caption-en="{{ item.title_en }}">
+              <div class="sim-figure__media">
+                <a class="sim-figure__open" href="{{ full_url }}" target="_blank" rel="noopener noreferrer" aria-haspopup="dialog" aria-label="放大查看：{{ im.caption }}"><img class="sim-figure__img" src="{{ poster_url }}" alt="{{ im.alt }}" width="{{ im.width }}" height="{{ im.height }}" loading="lazy" decoding="async"{% if idx == "0" %} fetchpriority="high"{% endif %}></a>
+{%- if im.type == "gif" -%}
+                <button class="sim-play" type="button" hidden aria-pressed="false" aria-label="播放动画：{{ item.title_en }}"><span class="sim-play__icon" aria-hidden="true">▶</span></button>
+{%- endif -%}
+              </div>
+              <figcaption class="sim-figure__caption"><span class="sim-figure__title">{{ im.caption }}</span>{% if item.meta %}<span class="sim-figure__meta">{{ item.meta }}</span>{% endif %}</figcaption>
+{%- if im.type == "gif" -%}
+              <span class="sim-figure__status" role="status" aria-live="polite"></span>
+              <noscript><a class="sim-figure__giflink" href="{{ full_url }}">查看动画原始文件（GIF）</a></noscript>
+{%- endif -%}
+            </figure>
+          </li>
+{%- endfor -%}
+        </ul>
+{%- if item.pdf -%}
+        <div class="sim-item__actions"><a class="btn btn--inverse sim-pdf" href="{{ item.pdf }}" target="_blank" rel="noopener noreferrer" aria-label="打开 PDF：{{ item.title_en }}（在新窗口打开）">PDF <span aria-hidden="true">↗</span></a></div>
+{%- endif -%}
+      </article>
+{%- endfor -%}
+    </div>
+  </section>
+{%- endfor -%}
+</div>
