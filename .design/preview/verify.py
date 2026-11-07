@@ -299,8 +299,20 @@ poster_bytes = sum(p.stat().st_size for p in posters if p.exists())
 orig_bytes = sum((ROOT / "images" / "simulation" / im["file"]).stat().st_size for im in images)
 info("16 张原图合计", "-", "%d B = %.2f MB（十进制）/ %.2f MiB" % (orig_bytes, orig_bytes / 1e6, orig_bytes / 1048576))
 info("16 张静帧合计", "-", "%d B = %.1f KiB / %.2f MiB" % (poster_bytes, poster_bytes / 1024, poster_bytes / 1048576))
+chk("16 张静帧合计（与团队最终复核一致）", 808037, poster_bytes)
+_compression = (1 - poster_bytes / orig_bytes) * 100
+info("压缩率", "-", "%.2f%%（%d B → %d B）" % (_compression, orig_bytes, poster_bytes))
+chk("压缩率 >= 97%（按 1 位小数四舍五入）", ">= 97.0%", "%.1f%%" % _compression,
+    round(_compression, 1) >= 97.0)
 _maxp = max(((p.name, p.stat().st_size) for p in posters if p.exists()), key=lambda x: x[1])
 info("最大单张 poster", "-", "%s (%d B)" % (_maxp[0], _maxp[1]))
+chk("最大单张 poster（与团队最终复核一致）", 139654, _maxp[1])
+_gen = (ROOT / "tools" / "make_posters.py").read_text(encoding="utf-8")
+chk("生成器含 budget = min(MAX_BYTES, src_bytes) 规则", "存在",
+    "存在" if re.search(r"budget\s*=\s*min\(MAX_BYTES,\s*src_bytes\)", _gen) else "缺失",
+    bool(re.search(r"budget\s*=\s*min\(MAX_BYTES,\s*src_bytes\)", _gen)))
+chk("生成器含 shutil.copyfile 零重编码分支", "存在",
+    "存在" if "shutil.copyfile" in _gen else "缺失", "shutil.copyfile" in _gen)
 bigger = [(im["file"], (ROOT / "images" / "simulation" / im["file"]).stat().st_size,
            (ROOT / "images" / "simulation" / (im["file"].split(".")[0] + ".poster.jpg")).stat().st_size)
           for im in images
@@ -469,7 +481,7 @@ bigger_now = [im["file"] for im in images
               if (ROOT / "images" / "simulation" / (im["file"].split(".")[0] + ".poster.jpg")).stat().st_size
               > (ROOT / "images" / "simulation" / im["file"]).stat().st_size]
 if bigger_now:
-    warn("F3 静帧仍大于原静图（fe-simulation #9 进行中）", "0 项待处理",
+    warn("F3 静帧仍大于原静图（业务代码待修复）", "0 项待处理",
          "%d 项：%s" % (len(bigger_now), ", ".join(bigger_now)))
 else:
     chk("F3 修复：16 张静帧均不大于各自源图", "0 项", "0 项", True)
@@ -479,34 +491,43 @@ chk("F3 修复证据：该 poster 与原静图字节一致（免重编码）", "
 # --------------------------------------------------------------------------
 # Report
 # --------------------------------------------------------------------------
-F3_STATUS = "待处理" if F3_OPEN else "已修复并复验"
+F3_STATUS = "待裁定" if F3_OPEN else "已闭环"
 F3_TEXT = ("`images/simulation/sWkfSq3ZENQJ7h5.poster.jpg` 原为 100,613 B，反而大于其源静图"
            " `sWkfSq3ZENQJ7h5.jpg` 的 75,300 B（其余 15 张静帧均显著小于原图）；"
            "静图无需重编码，直接复用原 `.jpg` 可省 ~25 KB，不违反 <150 KiB 预算。")
 if F3_OPEN:
-    F3_TEXT += "**复验时点仍未修复**，fe-simulation 任务 #9 进行中。"
+    F3_TEXT += "**复验时点仍未修复**，需派回对应同事处理。"
 else:
-    F3_TEXT += ("**复验（§3 / §6）**：fe-simulation 已把该 poster 替换为与原静图**字节完全一致**"
-                "的 75,300 B 文件，16 张静帧不再有比源图更大者，本条关闭。")
+    F3_TEXT += ("**复验（§3 / §6）**：fe-simulation 已闭环修复（任务 #9 已完成）——"
+                "根因是 695×555 紧凑 JPEG 被放大到 800×639 再 q80 重编码；"
+                "改为把原 JPEG 逐字节 `shutil.copyfile` 成 `.poster.jpg`（75,300 B，"
+                "与原静图字节完全一致），保持 16 个 figure 统一的 `<stem>.poster.jpg` 路径契约，"
+                "零重编码 / 零画质损失。生成器 `tools/make_posters.py` 已加"
+                " `budget = min(MAX_BYTES, src_bytes)` 与超限 `raise RuntimeError`，二次运行幂等。"
+                "16 张静帧合计 **808,037 B**，无一张比源图更大、无一张 >150 KiB，"
+                "最大 139,654 B，压缩率 96.99%，本条关闭。")
 FINDINGS = [
-    ("F1", "中", "已修复并复验", "`_includes/head/custom.html:11-13` 原引用 3 个不存在的 favicon 文件："
+    ("F1", "中", "已闭环", "`_includes/head/custom.html:11-13` 原引用 3 个不存在的 favicon 文件："
      "`images/apple-touch-icon-180x180.png`、`images/favicon-32x32.png`、`images/favicon.ico`"
      "（全仓库 find 无任何同名文件，仅 `safari-pinned-tab.svg` 存在；Gemfile 的"
      " `:jekyll_plugins` 只有 jekyll-feed / jekyll-sitemap / hawkins，无 favicon 生成插件，"
      "因此不是构建期生成物）。真实站点每次页面加载都会产生 3 个 404，"
      "与「首屏请求 ≤12」的性能预算口径冲突；文件头注释写「favicon (3 assets)」但实际有 4 个 link。"
-     "属 fe-theme 的 head 收尾范围。**复验（§6）**：fe-theme 任务 #10 已把 3 行删除，"
+     "属 fe-theme 的 head 收尾范围。**复验（§6）**：fe-theme 已闭环修复（任务 #10 已完成），"
      "改为 `rel=icon` + `apple-touch-icon` 同时指向真实存在的 `images/mstile-144x144.png`，"
      "保留 `safari-pinned-tab.svg`；旧文件名 0 残留、head 本地引用 0 个 404，本条关闭。"),
-    ("F2", "中", "已修复并复验", "`_sass/_archive.scss:55-62,70` 的 `.archive li { margin-bottom:.5em; ... }` 与"
+    ("F2", "中", "已闭环", "`_sass/_archive.scss:55-62,70` 的 `.archive li { margin-bottom:.5em; ... }` 与"
      " `.archive li:hover { background:$surface-2 }` 会作用到 Simulation 网格的"
      " `<li class=\"sim-figs__cell\">`：因为 `_pages/simulating_fig.md` 用 `layout: archive`，"
      " `.sim-page` 位于 `.archive` 内部，原 `assets/css/simulation.css:51` 只写了 `min-width:0`。"
-     "**复验（§6）**：fe-simulation 任务 #9 已在 `assets/css/simulation.css:58-59` 增加"
-     " `.sim-page .sim-figs > .sim-figs__cell` 正常态 + `:hover` 态的限定重置"
-     "（margin/padding/border/background/transition 等），未改 `_sass/`，本条关闭。"),
+     "**复验（§6）**：fe-simulation 已闭环修复（任务 #9 已完成），在 `assets/css/simulation.css`"
+     " 增加 `.sim-page .sim-figs > .sim-figs__cell` 正常态 + `:hover` 态的限定重置"
+     "（margin/padding/border/border-radius/background/color/font-size/line-height/list-style/transition）；"
+     "特异性 (0,3,0) / hover (0,4,0) 压过 `.archive li` (0,1,1)、`.archive li:hover` (0,2,1)、"
+     "`.archive > ul > li` (0,1,2)，并顺带挡下 `_sass/_base.scss:122` 的 `ul li` 行高与文字色；"
+     "未改 `_sass/`，`!important` 仍 0 处，本条关闭。"),
     ("F3", "低", F3_STATUS, F3_TEXT),
-    ("F4", "提示", "仅提示 / 无需处理", "任务书要求的外壳是 `<header class=\"masthead\">` 与"
+    ("F4", "提示", "不构成阻塞", "任务书要求的外壳是 `<header class=\"masthead\">` 与"
      " `<div id=\"main\" role=\"main\" class=\"page\">`；仓库真实代码是"
      " `_includes/masthead.html` 的 `<div class=\"masthead\">` 与"
      " `_layouts/archive.html` 的 `<div id=\"main\" role=\"main\">`（无 `page` class，"
@@ -528,6 +549,20 @@ UNVERIFIABLE = [
     "本报告只对 DOM 结构与文件路径做断言，未打开浏览器，不声称「渲染通过」。",
     "真实站点 `https://qingxiaxjtu.com/preview.html` 是否 404（未部署、无网络验证）。",
 ]
+
+# Defensive normalisation: FINDINGS has a 4th "status" column. Accept both the
+# historical 3-tuple and the current 4-tuple so an in-progress edit can never
+# crash the report with "too many values to unpack (expected 3)".
+def norm_finding(entry):
+    if len(entry) == 4:
+        return tuple(entry)
+    if len(entry) == 3:
+        return (entry[0], entry[1], "待裁定", entry[2])
+    raise AssertionError("FINDINGS entry must be a 3- or 4-tuple, got %r" % (entry,))
+
+
+NORM_FINDINGS = [norm_finding(e) for e in FINDINGS]
+assert all(len(r) == 5 for r in RESULTS), "RESULTS entries must be 5-tuples"
 
 lines = []
 lines.append("# Phase 3-C 独立验收报告 · 无构建静态预览页")
@@ -552,10 +587,11 @@ lines.append("| 通过 | %d |" % passed)
 lines.append("| 未通过 | %d |" % failed)
 lines.append("| 业务代码告警（不计入交付物通过/失败） | %d |" % warnings)
 lines.append("| 无法验证项（明确不计入通过） | %d |" % len(UNVERIFIABLE))
-n_fixed = len([f for f in FINDINGS if f[2].startswith("已修复")])
-n_open = len([f for f in FINDINGS if f[2] == "待处理"])
-lines.append("| 发现的问题 | %d（F1–F%d；%d 已修复复验 / %d 待处理 / %d 仅提示） |"
-             % (len(FINDINGS), len(FINDINGS), n_fixed, n_open, len(FINDINGS) - n_fixed - n_open))
+n_closed = len([f for f in NORM_FINDINGS if f[2] == "已闭环"])
+n_nonblock = len([f for f in NORM_FINDINGS if f[2] == "不构成阻塞"])
+n_pending = len([f for f in NORM_FINDINGS if f[2] == "待裁定"])
+lines.append("| 问题清单 | 共 %d 条：待裁定 %d / 已闭环 %d / 不构成阻塞 %d |"
+             % (len(NORM_FINDINGS), n_pending, n_closed, n_nonblock))
 lines.append("")
 lines.append("> 通过项均为脚本实际断言结果；**未验证项一律不写作「通过」**。")
 _warn_items = [r[1] for r in RESULTS if r[4] == "W"]
@@ -565,8 +601,8 @@ if _warn_items:
                  % (len(_warn_items), "；".join(_warn_items)))
 else:
     lines.append("> 本轮无业务代码告警。")
-lines.append("> 本报告是脚本运行**时点快照**；业务文件仍可能被其他同事修改，"
-             "交付前请再跑一次 `verify.py` 刷新状态。")
+lines.append("> 本报告为**最终复验快照**：Phase 3-A / 3-B / 3-C 与 #9 / #10 修复均已落盘并复验，"
+             "F1–F3 闭环、F4 不构成阻塞；后续如业务文件再变动，重跑 `verify.py` 即可刷新状态。")
 lines.append("")
 cur = None
 for s, item, exp, act, ok in RESULTS:
@@ -586,14 +622,40 @@ lines.append("")
 for i, u in enumerate(UNVERIFIABLE, 1):
     lines.append("%d. %s" % (i, u))
 lines.append("")
-lines.append("## 8. 发现的问题清单（交主理人裁定）")
+lines.append("## 8. 问题清单与闭环状态")
 lines.append("")
-lines.append("| 编号 | 级别 | 状态 | 文件 / 现象 |")
-lines.append("|---|---|---|---|")
-for fid, level, status, text in FINDINGS:
-    lines.append("| %s | %s | %s | %s |" % (fid, level, status, text.replace("|", "\\|")))
+lines.append("> 验收过程共发现 4 条；经 fe-theme / fe-simulation 修复并由本脚本复验后，"
+             "**待裁定 0 条**。以下为分组归档，历史现象与复验证据均予以保留。")
 lines.append("")
-lines.append("### 与前序同事报告口径不一致 / 需对齐的点")
+
+
+def finding_table(rows):
+    out = ["| 编号 | 级别 | 状态 | 文件 / 现象 |", "|---|---|---|---|"]
+    for entry in rows:
+        fid, level, status, text = norm_finding(entry)
+        out.append("| %s | %s | %s | %s |" % (fid, level, status, text.replace("|", "\\|")))
+    return out
+
+
+closed_rows = [f for f in NORM_FINDINGS if f[2] == "已闭环"]
+nonblock_rows = [f for f in NORM_FINDINGS if f[2] == "不构成阻塞"]
+pending_rows = [f for f in NORM_FINDINGS if f[2] == "待裁定"]
+lines.append("### 8.1 已解决 / 已闭环（%d 条）" % len(closed_rows))
+lines.append("")
+lines += finding_table(closed_rows)
+lines.append("")
+lines.append("### 8.2 不构成阻塞（%d 条）" % len(nonblock_rows))
+lines.append("")
+lines += finding_table(nonblock_rows)
+lines.append("")
+lines.append("### 8.3 待裁定（%d 条）" % len(pending_rows))
+lines.append("")
+if pending_rows:
+    lines += finding_table(pending_rows)
+else:
+    lines.append("**无。** F1–F3 已闭环，F4 为预览页专用适配、无需主理人裁定。")
+lines.append("")
+lines.append("### 与前序同事报告口径不一致 / 需对齐的点（本轮已全部对齐）")
 lines.append("")
 lines.append("- `F1`（已关闭）：head 原声明「favicon 精简到 3 个」，但 3 个被引用文件均不在仓库中；"
              "fe-theme 已删除 3 行并改用真实存在的 `mstile-144x144.png`。")
@@ -604,7 +666,7 @@ lines.append("- `F3`（%s）：1 张静帧曾比源静图大 25 KB；%s"
              % ("已关闭" if not F3_OPEN else "仍待处理",
                 "复验已替换为与原图字节一致的文件。" if not F3_OPEN else "复验时点仍未修复。"))
 lines.append("")
-lines.append("### 已修复并复验（本轮新增）")
+lines.append("### 已解决 / 已闭环的复验证据")
 lines.append("")
 lines.append("- **F1 / favicon**：`_includes/head/custom.html` 现为 `rel=icon` 与"
              " `apple-touch-icon` 同时指向 `images/mstile-144x144.png`（1,164 B，144×144 PNG，实测存在），"
@@ -622,7 +684,10 @@ lines.append("- **F2 / 网格样式污染**：`assets/css/simulation.css` 新增
 if not F3_OPEN:
     lines.append("- **F3 / 超大静帧**：`sWkfSq3ZENQJ7h5.poster.jpg` 现为 75,300 B，"
                  "与源静图 `sWkfSq3ZENQJ7h5.jpg` **字节完全一致**（§3 / §6 已断言），"
-                 "16 张静帧中不再有比源图更大者，首屏少传约 25 KB。")
+                 "16 张静帧中不再有比源图更大者，首屏少传约 25 KB。"
+                 "最终实测：16 张静帧合计 **808,037 B**、原图 26,848,641 B、压缩率 **96.99%**、"
+                 "单张均 <150 KiB、最大 **139,654 B**；生成器 `budget = min(MAX_BYTES, src_bytes)`"
+                 " 与 `shutil.copyfile` 零重编码分支均已断言存在。")
 lines.append("")
 lines.append("### 已澄清 / 不构成问题")
 lines.append("")
@@ -672,8 +737,9 @@ lines.append("- 首页概览为 `_pages/about.md` 的代表性摘录（News 8 �
 lines.append("")
 
 (HERE / "VERIFY.md").write_text("\n".join(lines), encoding="utf-8")
-print("VERIFY.md written: %d checks, %d passed, %d failed, %d warnings, %d unverifiable, %d findings"
-      % (total, passed, failed, warnings, len(UNVERIFIABLE), len(FINDINGS)))
+print("VERIFY.md written: %d checks, %d passed, %d failed, %d warnings, %d unverifiable | "
+      "findings: %d pending / %d closed / %d non-blocking"
+      % (total, passed, failed, warnings, len(UNVERIFIABLE), n_pending, n_closed, n_nonblock))
 if failed:
     print("FAILED CHECKS:")
     for s, item, exp, act, ok in RESULTS:

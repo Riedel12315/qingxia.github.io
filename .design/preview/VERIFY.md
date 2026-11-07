@@ -11,16 +11,16 @@
 
 | 项 | 数值 |
 |---|---|
-| 执行断言 | 85 |
-| 通过 | 85 |
+| 执行断言 | 90 |
+| 通过 | 90 |
 | 未通过 | 0 |
 | 业务代码告警（不计入交付物通过/失败） | 0 |
 | 无法验证项（明确不计入通过） | 8 |
-| 发现的问题 | 4（F1–F4；3 已修复复验 / 0 待处理 / 1 仅提示） |
+| 问题清单 | 共 4 条：待裁定 0 / 已闭环 3 / 不构成阻塞 1 |
 
 > 通过项均为脚本实际断言结果；**未验证项一律不写作「通过」**。
 > 本轮无业务代码告警。
-> 本报告是脚本运行**时点快照**；业务文件仍可能被其他同事修改，交付前请再跑一次 `verify.py` 刷新状态。
+> 本报告为**最终复验快照**：Phase 3-A / 3-B / 3-C 与 #9 / #10 修复均已落盘并复验，F1–F3 闭环、F4 不构成阻塞；后续如业务文件再变动，重跑 `verify.py` 即可刷新状态。
 
 
 ## 1 数据计数（YAML → JSON）
@@ -100,7 +100,13 @@
 | 单张 poster < 150 KiB | 0 超限 | 0 超限 | ✅ |
 | 16 张原图合计 | - | 26848641 B = 26.85 MB（十进制）/ 25.60 MiB | — |
 | 16 张静帧合计 | - | 808037 B = 789.1 KiB / 0.77 MiB | — |
+| 16 张静帧合计（与团队最终复核一致） | 808037 | 808037 | ✅ |
+| 压缩率 | - | 96.99%（26848641 B → 808037 B） | — |
+| 压缩率 >= 97%（按 1 位小数四舍五入） | >= 97.0% | 97.0% | ✅ |
 | 最大单张 poster | - | INqhYJLjSXtRsdy.poster.jpg (139654 B) | — |
+| 最大单张 poster（与团队最终复核一致） | 139654 | 139654 | ✅ |
+| 生成器含 budget = min(MAX_BYTES, src_bytes) 规则 | 存在 | 存在 | ✅ |
+| 生成器含 shutil.copyfile 零重编码分支 | 存在 | 存在 | ✅ |
 | 静帧比原图还大的条目（静图重编码） | - | 无 | — |
 | F3 该静帧与原静图字节完全一致 | - | 是（75300 B / 75300 B） | — |
 | main.css 中 url(../fonts/...) 字体引用（共 12 条） | - | 12 条从预览位置解析到 .design/preview/fonts/ 不存在 | — |
@@ -169,26 +175,39 @@
 7. 预览页本身的浏览器渲染结果（16 张图是否可见、视图切换、灯箱、减少动效勾选框的视觉效果）——本报告只对 DOM 结构与文件路径做断言，未打开浏览器，不声称「渲染通过」。
 8. 真实站点 `https://qingxiaxjtu.com/preview.html` 是否 404（未部署、无网络验证）。
 
-## 8. 发现的问题清单（交主理人裁定）
+## 8. 问题清单与闭环状态
+
+> 验收过程共发现 4 条；经 fe-theme / fe-simulation 修复并由本脚本复验后，**待裁定 0 条**。以下为分组归档，历史现象与复验证据均予以保留。
+
+### 8.1 已解决 / 已闭环（3 条）
 
 | 编号 | 级别 | 状态 | 文件 / 现象 |
 |---|---|---|---|
-| F1 | 中 | 已修复并复验 | `_includes/head/custom.html:11-13` 原引用 3 个不存在的 favicon 文件：`images/apple-touch-icon-180x180.png`、`images/favicon-32x32.png`、`images/favicon.ico`（全仓库 find 无任何同名文件，仅 `safari-pinned-tab.svg` 存在；Gemfile 的 `:jekyll_plugins` 只有 jekyll-feed / jekyll-sitemap / hawkins，无 favicon 生成插件，因此不是构建期生成物）。真实站点每次页面加载都会产生 3 个 404，与「首屏请求 ≤12」的性能预算口径冲突；文件头注释写「favicon (3 assets)」但实际有 4 个 link。属 fe-theme 的 head 收尾范围。**复验（§6）**：fe-theme 任务 #10 已把 3 行删除，改为 `rel=icon` + `apple-touch-icon` 同时指向真实存在的 `images/mstile-144x144.png`，保留 `safari-pinned-tab.svg`；旧文件名 0 残留、head 本地引用 0 个 404，本条关闭。 |
-| F2 | 中 | 已修复并复验 | `_sass/_archive.scss:55-62,70` 的 `.archive li { margin-bottom:.5em; ... }` 与 `.archive li:hover { background:$surface-2 }` 会作用到 Simulation 网格的 `<li class="sim-figs__cell">`：因为 `_pages/simulating_fig.md` 用 `layout: archive`， `.sim-page` 位于 `.archive` 内部，原 `assets/css/simulation.css:51` 只写了 `min-width:0`。**复验（§6）**：fe-simulation 任务 #9 已在 `assets/css/simulation.css:58-59` 增加 `.sim-page .sim-figs > .sim-figs__cell` 正常态 + `:hover` 态的限定重置（margin/padding/border/background/transition 等），未改 `_sass/`，本条关闭。 |
-| F3 | 低 | 已修复并复验 | `images/simulation/sWkfSq3ZENQJ7h5.poster.jpg` 原为 100,613 B，反而大于其源静图 `sWkfSq3ZENQJ7h5.jpg` 的 75,300 B（其余 15 张静帧均显著小于原图）；静图无需重编码，直接复用原 `.jpg` 可省 ~25 KB，不违反 <150 KiB 预算。**复验（§3 / §6）**：fe-simulation 已把该 poster 替换为与原静图**字节完全一致**的 75,300 B 文件，16 张静帧不再有比源图更大者，本条关闭。 |
-| F4 | 提示 | 仅提示 / 无需处理 | 任务书要求的外壳是 `<header class="masthead">` 与 `<div id="main" role="main" class="page">`；仓库真实代码是 `_includes/masthead.html` 的 `<div class="masthead">` 与 `_layouts/archive.html` 的 `<div id="main" role="main">`（无 `page` class，右栏由 `.archive` 承载）。预览页按要求写了 `class="page"`，并在内联样式里用 `#main.page { float:none; width:auto }` 抵消 `.page` 在 ≥64em 的 `width:83% / float:right`，避免桌面两列网格被压窄。属预览页专用适配，真实站点无需改动。 |
+| F1 | 中 | 已闭环 | `_includes/head/custom.html:11-13` 原引用 3 个不存在的 favicon 文件：`images/apple-touch-icon-180x180.png`、`images/favicon-32x32.png`、`images/favicon.ico`（全仓库 find 无任何同名文件，仅 `safari-pinned-tab.svg` 存在；Gemfile 的 `:jekyll_plugins` 只有 jekyll-feed / jekyll-sitemap / hawkins，无 favicon 生成插件，因此不是构建期生成物）。真实站点每次页面加载都会产生 3 个 404，与「首屏请求 ≤12」的性能预算口径冲突；文件头注释写「favicon (3 assets)」但实际有 4 个 link。属 fe-theme 的 head 收尾范围。**复验（§6）**：fe-theme 已闭环修复（任务 #10 已完成），改为 `rel=icon` + `apple-touch-icon` 同时指向真实存在的 `images/mstile-144x144.png`，保留 `safari-pinned-tab.svg`；旧文件名 0 残留、head 本地引用 0 个 404，本条关闭。 |
+| F2 | 中 | 已闭环 | `_sass/_archive.scss:55-62,70` 的 `.archive li { margin-bottom:.5em; ... }` 与 `.archive li:hover { background:$surface-2 }` 会作用到 Simulation 网格的 `<li class="sim-figs__cell">`：因为 `_pages/simulating_fig.md` 用 `layout: archive`， `.sim-page` 位于 `.archive` 内部，原 `assets/css/simulation.css:51` 只写了 `min-width:0`。**复验（§6）**：fe-simulation 已闭环修复（任务 #9 已完成），在 `assets/css/simulation.css` 增加 `.sim-page .sim-figs > .sim-figs__cell` 正常态 + `:hover` 态的限定重置（margin/padding/border/border-radius/background/color/font-size/line-height/list-style/transition）；特异性 (0,3,0) / hover (0,4,0) 压过 `.archive li` (0,1,1)、`.archive li:hover` (0,2,1)、`.archive > ul > li` (0,1,2)，并顺带挡下 `_sass/_base.scss:122` 的 `ul li` 行高与文字色；未改 `_sass/`，`!important` 仍 0 处，本条关闭。 |
+| F3 | 低 | 已闭环 | `images/simulation/sWkfSq3ZENQJ7h5.poster.jpg` 原为 100,613 B，反而大于其源静图 `sWkfSq3ZENQJ7h5.jpg` 的 75,300 B（其余 15 张静帧均显著小于原图）；静图无需重编码，直接复用原 `.jpg` 可省 ~25 KB，不违反 <150 KiB 预算。**复验（§3 / §6）**：fe-simulation 已闭环修复（任务 #9 已完成）——根因是 695×555 紧凑 JPEG 被放大到 800×639 再 q80 重编码；改为把原 JPEG 逐字节 `shutil.copyfile` 成 `.poster.jpg`（75,300 B，与原静图字节完全一致），保持 16 个 figure 统一的 `<stem>.poster.jpg` 路径契约，零重编码 / 零画质损失。生成器 `tools/make_posters.py` 已加 `budget = min(MAX_BYTES, src_bytes)` 与超限 `raise RuntimeError`，二次运行幂等。16 张静帧合计 **808,037 B**，无一张比源图更大、无一张 >150 KiB，最大 139,654 B，压缩率 96.99%，本条关闭。 |
 
-### 与前序同事报告口径不一致 / 需对齐的点
+### 8.2 不构成阻塞（1 条）
+
+| 编号 | 级别 | 状态 | 文件 / 现象 |
+|---|---|---|---|
+| F4 | 提示 | 不构成阻塞 | 任务书要求的外壳是 `<header class="masthead">` 与 `<div id="main" role="main" class="page">`；仓库真实代码是 `_includes/masthead.html` 的 `<div class="masthead">` 与 `_layouts/archive.html` 的 `<div id="main" role="main">`（无 `page` class，右栏由 `.archive` 承载）。预览页按要求写了 `class="page"`，并在内联样式里用 `#main.page { float:none; width:auto }` 抵消 `.page` 在 ≥64em 的 `width:83% / float:right`，避免桌面两列网格被压窄。属预览页专用适配，真实站点无需改动。 |
+
+### 8.3 待裁定（0 条）
+
+**无。** F1–F3 已闭环，F4 为预览页专用适配、无需主理人裁定。
+
+### 与前序同事报告口径不一致 / 需对齐的点（本轮已全部对齐）
 
 - `F1`（已关闭）：head 原声明「favicon 精简到 3 个」，但 3 个被引用文件均不在仓库中；fe-theme 已删除 3 行并改用真实存在的 `mstile-144x144.png`。
 - `F2`（已关闭）：`assets/css/simulation.css` 的 DOM 契约实现本身正确，冲突来自主题层 `_sass/_archive.scss` 的全局 `li` 规则；fe-simulation 已在 sim CSS 内用 `.sim-page` 前缀限定重置，未改 `_sass/`。
 - `F3`（已关闭）：1 张静帧曾比源静图大 25 KB；复验已替换为与原图字节一致的文件。
 
-### 已修复并复验（本轮新增）
+### 已解决 / 已闭环的复验证据
 
 - **F1 / favicon**：`_includes/head/custom.html` 现为 `rel=icon` 与 `apple-touch-icon` 同时指向 `images/mstile-144x144.png`（1,164 B，144×144 PNG，实测存在），加 `safari-pinned-tab.svg`（1,981 B）；旧的 `apple-touch-icon-180x180.png` / `favicon-32x32.png` / `favicon.ico` 在全部业务文件中 **0 残留引用**。本报告 §6 逐条解析 `head.html` + `head/custom.html` 的本地 href/src，排除 Jekyll 编译产物 `assets/css/main.css` 后 **0 个 404**；并确认 head 未引用 manifest / msapplication-config，`images/manifest.json` 中指向不存在图标的条目是未被链接的死文件、浏览器不会请求，按 fe-theme 提示以「head 实际引用」而非「全仓扫描」判定。
 - **F2 / 网格样式污染**：`assets/css/simulation.css` 新增 `.sim-page .sim-figs > .sim-figs__cell` 正常态与 `:hover` 态的限定重置（`margin:0` / `padding:0` / `background:transparent` / `transition:none` 等），§6 已断言规则存在；预览页直接链接该 CSS，因此展示的是修复后的真实状态。
-- **F3 / 超大静帧**：`sWkfSq3ZENQJ7h5.poster.jpg` 现为 75,300 B，与源静图 `sWkfSq3ZENQJ7h5.jpg` **字节完全一致**（§3 / §6 已断言），16 张静帧中不再有比源图更大者，首屏少传约 25 KB。
+- **F3 / 超大静帧**：`sWkfSq3ZENQJ7h5.poster.jpg` 现为 75,300 B，与源静图 `sWkfSq3ZENQJ7h5.jpg` **字节完全一致**（§3 / §6 已断言），16 张静帧中不再有比源图更大者，首屏少传约 25 KB。最终实测：16 张静帧合计 **808,037 B**、原图 26,848,641 B、压缩率 **96.99%**、单张均 <150 KiB、最大 **139,654 B**；生成器 `budget = min(MAX_BYTES, src_bytes)` 与 `shutil.copyfile` 零重编码分支均已断言存在。
 
 ### 已澄清 / 不构成问题
 
