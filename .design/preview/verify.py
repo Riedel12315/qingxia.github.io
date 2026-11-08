@@ -260,7 +260,7 @@ local_refs = [(t, k, v) for t, k, v in refs
               if not any(v.startswith(p) for p in external)]
 missing = []
 for t, k, v in local_refs:
-    p = (PREVIEW / v).resolve()
+    p = (PREVIEW / v.split("?", 1)[0].split("#", 1)[0]).resolve()
     if not os.path.exists(p):
         missing.append("%s %s=%s -> %s" % (t, k, v, p))
 chk("本地资源引用全部存在", "0 个 404", "%d 个 404" % len(missing), not missing)
@@ -377,15 +377,15 @@ info("排除文件中的命中数（单独说明）", "-",
      "; ".join("%s=%d" % (k, v) for k, v in excl_hits.items()))
 
 DELETED = [
-    "assets/js/liquid-bg.js", "assets/js/shooting-stars.js",
+    "assets/js/shooting-stars.js",
     "assets/js/theme-switcher.js", "assets/js/collapse.js",
     "assets/css/light-mode.css", "assets/css/collapse.css",
     "preview.html",
     "assets/js/simulation-spiral.js", "assets/css/simulation-spiral.css",
 ]
 still_there = [f for f in DELETED if (ROOT / f).exists()]
-chk("应删文件（7 装饰 + 2 spiral）确实不存在", "0 个仍存在", "%d 个仍存在" % len(still_there), not still_there)
-STALE_RX = re.compile(r"liquid-bg|shooting-stars|theme-switcher|collapse\.js|light-mode\.css|collapse\.css|simulation-spiral", re.I)
+chk("应删文件（8 个）确实不存在", "0 个仍存在", "%d 个仍存在" % len(still_there), not still_there)
+STALE_RX = re.compile(r"shooting-stars|theme-switcher|collapse\.js|light-mode\.css|collapse\.css|simulation-spiral", re.I)
 stale_hits = ["%s:%d" % (p.relative_to(ROOT), i + 1)
               for p in included
               for i, l in enumerate(p.read_text(encoding="utf-8", errors="replace").splitlines())
@@ -394,6 +394,39 @@ stale_hits += ["_config.yml:%d" % (i + 1)
                for i, l in enumerate((ROOT / "_config.yml").read_text(encoding="utf-8").splitlines())
                if STALE_RX.search(l)]
 info("对已删文件的残留引用（grep 等价扫描）", "0 条", "%d 条 %s" % (len(stale_hits), stale_hits[:5]))
+
+# --------------------------------------------------------------------------
+# 4b. Liquid backdrop — explicit user decision (2026-11-08).
+#     A documented exception to the earlier "zero continuous animation" rule:
+#     one near-invisible paper tint, stirred by the cursor, with hard opt-outs.
+# --------------------------------------------------------------------------
+liq = ROOT / "assets/js/liquid-bg.js"
+liq_src = liq.read_text(encoding="utf-8") if liq.exists() else ""
+head_html = (ROOT / "_includes/head/custom.html").read_text(encoding="utf-8")
+preview_html = (ROOT / ".design/preview/index.html").read_text(encoding="utf-8")
+custom_scss = (ROOT / "_sass/_custom.scss").read_text(encoding="utf-8")
+chk("液体背景脚本按用户新决策恢复", "存在", "存在" if liq.exists() else "缺失", liq.exists())
+chk("head/custom.html 引用液体背景", 1, head_html.count("liquid-bg.js"), head_html.count("liquid-bg.js") == 1)
+chk("预览页引用同一份液体背景", 1, preview_html.count("liquid-bg.js"), preview_html.count("liquid-bg.js") == 1)
+for _label, _needle in [
+    ("触屏设备停用 hover:none", "(hover: none)"),
+    ("尊重 prefers-reduced-motion", "prefers-reduced-motion"),
+    ("隐藏标签页暂停 rAF", "visibilitychange"),
+    ("静止降帧 IDLE_FPS", "IDLE_FPS"),
+    ("WebGL 不可用回退", "WebGLRenderingContext"),
+    ("单一浅色纸白配色", "0.980, 0.976, 0.965"),
+]:
+    chk("液体背景 / " + _label, "包含", "包含" if _needle in liq_src else "缺失", _needle in liq_src)
+for _label, _needle in [
+    ("无双皮肤 u_theme", "u_theme"),
+    ("无 .light-mode 依赖", "light-mode"),
+    ("无主题 MutationObserver", "MutationObserver"),
+    ("无 aurora class 依赖", "liquid-bg-active"),
+]:
+    chk("液体背景 / " + _label, 0, liq_src.count(_needle), liq_src.count(_needle) == 0)
+chk("canvas 层叠：内容 z-index 高于背景", "含规则",
+    "含规则" if ("#liquid-bg-canvas" in custom_scss and "z-index: 1" in custom_scss) else "缺失",
+    "#liquid-bg-canvas" in custom_scss and "z-index: 1" in custom_scss)
 
 # --------------------------------------------------------------------------
 # 5. Syntax / build
@@ -411,7 +444,8 @@ chk("原样命令（含 front matter）按预期失败 exit 65", "exit 65",
     SASS["exact"].returncode == 65)
 chk("剥离 front matter + --quiet --style=compressed 编译", "exit 0",
     "exit %d" % SASS["built"].returncode, SASS["built"].returncode == 0)
-chk("产物 main.css 字节数与 fe-theme 一致", 104685, SASS["bytes"])
+chk("产物 main.css 字节数（新增液体背景层叠规则后应 > 旧基线 104685）", "> 104685",
+    SASS["bytes"], SASS["bytes"] > 104685)
 chk("编译无 Error（--quiet 抑制弃用告警）", "0 Error",
     "%d Error" % (SASS["built"].stderr or "").count("Error:"),
     (SASS["built"].stderr or "").count("Error:") == 0)
@@ -544,7 +578,8 @@ UNVERIFIABLE = [
     "灯箱焦点循环、Esc 焦点归还、GIF 状态机（POSTER→CONFIRM/LOADING→PLAYING→ERROR）、10s 超时、"
     "`visibilitychange` 释放解码——均为运行时行为，只做了静态代码审阅，未实际点击验证。",
     "Network 面板 `.gif` 请求数 0 / 播放后恰好 +1 / 首屏 ≤12 请求 ≤600 KB、CLS <0.05、"
-    "rAF 循环 0、`prefers-reduced-motion` 下 `getComputedStyle().transitionDuration === '0s'`——需真实浏览器。",
+    "流体背景静止时降到 12fps / 触屏与减少动效下停用的实际帧率、`prefers-reduced-motion` 下 "
+    "`getComputedStyle().transitionDuration === '0s'`——静态断言已覆盖，运行时帧率需真实浏览器测量。",
     "预览页本身的浏览器渲染结果（16 张图是否可见、视图切换、灯箱、减少动效勾选框的视觉效果）——"
     "本报告只对 DOM 结构与文件路径做断言，未打开浏览器，不声称「渲染通过」。",
     "真实站点 `https://qingxiaxjtu.com/preview.html` 是否 404（未部署、无网络验证）。",

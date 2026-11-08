@@ -416,6 +416,7 @@ __HOME__
 })();
 </script>
 <script src="../../assets/js/simulation.js" defer></script>
+<script src="../../assets/js/liquid-bg.js?v=2" defer></script>
 </body>
 </html>
 """

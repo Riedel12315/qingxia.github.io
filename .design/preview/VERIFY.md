@@ -11,8 +11,8 @@
 
 | 项 | 数值 |
 |---|---|
-| 执行断言 | 90 |
-| 通过 | 90 |
+| 执行断言 | 104 |
+| 通过 | 104 |
 | 未通过 | 0 |
 | 业务代码告警（不计入交付物通过/失败） | 0 |
 | 无法验证项（明确不计入通过） | 8 |
@@ -46,7 +46,7 @@
 
 | 检查项 | 期望 | 实测 | 结果 |
 |---|---|---|---|
-| index.html 存在且非空 | >0 字节 | 49513 字节 | ✅ |
+| index.html 存在且非空 | >0 字节 | 49577 字节 | ✅ |
 | HTML 标签配平 / HTMLParser 无异常 | 0 错误 | 0 错误 | ✅ |
 | section.sim-group | 3 | 3 | ✅ |
 | article.sim-item | 13 | 13 | ✅ |
@@ -93,7 +93,7 @@
 | 检查项 | 期望 | 实测 | 结果 |
 |---|---|---|---|
 | 本地资源引用全部存在 | 0 个 404 | 0 个 404 | ✅ |
-| 本地资源引用总数 | - | 87 | — |
+| 本地资源引用总数 | - | 88 | — |
 | 外部链接（PDF / 学术站点，不做存在性断言） | - | 24 | — |
 | poster 文件存在 | 16 | 16 | ✅ |
 | 16 poster 可被 Pillow 打开 | 0 失败 | 0 失败 | ✅ |
@@ -116,7 +116,7 @@
 
 | 检查项 | 期望 | 实测 | 结果 |
 |---|---|---|---|
-| 扫描文件数（业务代码） | - | 91 | — |
+| 扫描文件数（业务代码） | - | 92 | — |
 | 排除文件数（_sass/vendor/** + 第三方 vendor js + main.min.js） | - | 95 | — |
 | backdrop-filter | 0 命中 | 0 命中 | ✅ |
 | radial-gradient | 0 命中 | 0 命中 | ✅ |
@@ -127,8 +127,22 @@
 | simulation-spiral | 0 命中 | 0 命中 | ✅ |
 | 旧霓虹色 #FF6363\|#A855F7\|#FF8585 | 0 命中 | 0 命中 | ✅ |
 | 排除文件中的命中数（单独说明） | - | backdrop-filter=0; radial-gradient=0; rotate3d\|perspective\|rotateY=0; .light-mode=0; prefers-color-scheme=0; animation-iteration-count: infinite=0; simulation-spiral=0; 旧霓虹色 #FF6363\|#A855F7\|#FF8585=0 | — |
-| 应删文件（7 装饰 + 2 spiral）确实不存在 | 0 个仍存在 | 0 个仍存在 | ✅ |
+| 应删文件（8 个）确实不存在 | 0 个仍存在 | 0 个仍存在 | ✅ |
 | 对已删文件的残留引用（grep 等价扫描） | 0 条 | 0 条 [] | — |
+| 液体背景脚本按用户新决策恢复 | 存在 | 存在 | ✅ |
+| head/custom.html 引用液体背景 | 1 | 1 | ✅ |
+| 预览页引用同一份液体背景 | 1 | 1 | ✅ |
+| 液体背景 / 触屏设备停用 hover:none | 包含 | 包含 | ✅ |
+| 液体背景 / 尊重 prefers-reduced-motion | 包含 | 包含 | ✅ |
+| 液体背景 / 隐藏标签页暂停 rAF | 包含 | 包含 | ✅ |
+| 液体背景 / 静止降帧 IDLE_FPS | 包含 | 包含 | ✅ |
+| 液体背景 / WebGL 不可用回退 | 包含 | 包含 | ✅ |
+| 液体背景 / 单一浅色纸白配色 | 包含 | 包含 | ✅ |
+| 液体背景 / 无双皮肤 u_theme | 0 | 0 | ✅ |
+| 液体背景 / 无 .light-mode 依赖 | 0 | 0 | ✅ |
+| 液体背景 / 无主题 MutationObserver | 0 | 0 | ✅ |
+| 液体背景 / 无 aurora class 依赖 | 0 | 0 | ✅ |
+| canvas 层叠：内容 z-index 高于背景 | 含规则 | 含规则 | ✅ |
 
 ## 5 语法与构建
 
@@ -138,7 +152,7 @@
 | main.scss 保留 Jekyll front matter（未删 / 未改业务文件） | 前 2 行均为 --- | 是 | ✅ |
 | 原样命令（含 front matter）按预期失败 exit 65 | exit 65 | exit 65 / Error: expected "{". | ✅ |
 | 剥离 front matter + --quiet --style=compressed 编译 | exit 0 | exit 0 | ✅ |
-| 产物 main.css 字节数与 fe-theme 一致 | 104685 | 104685 | ✅ |
+| 产物 main.css 字节数（新增液体背景层叠规则后应 > 旧基线 104685） | > 104685 | 104886 | ✅ |
 | 编译无 Error（--quiet 抑制弃用告警） | 0 Error | 0 Error | ✅ |
 | Sass 弃用告警（未加 --quiet 的诊断运行；显式打印 / 折叠重复） | - | 20 / 328；类型 import / if-function / global-builtin / slash-div，全部来自 _sass/vendor/ 的 breakpoint 与 susy，非错误 | — |
 | HTML 标签配平（见 §2） | 0 错误 | 0 错误 | ✅ |
@@ -154,7 +168,7 @@
 | author-profile.html 无 Follow 按钮 | 0 | 0 | ✅ |
 | Web 字体仅 1 套 Inter | 1 | 1 | ✅ |
 | _config.yml exclude 含 .design/ / preview.html / tools/ | 3 项齐备 | .design/, preview.html, tools/ | ✅ |
-| head/custom.html + head.html 的本地引用 | - | assets/css/academicons.css, assets/css/main.css, images/mstile-144x144.png, images/safari-pinned-tab.svg | — |
+| head/custom.html + head.html 的本地引用 | - | assets/css/academicons.css, assets/css/main.css, assets/js/liquid-bg.js, images/mstile-144x144.png, images/safari-pinned-tab.svg | — |
 | 排除 Jekyll 编译产物 | - | assets/css/main.css（非静态文件） | — |
 | head 引用的本地静态资源 0 个 404 | 0 缺失 | 0 缺失：无 | ✅ |
 | 旧 3 个 favicon 文件名残留引用（全业务文件） | 0 条 | 0 条 | ✅ |
@@ -171,7 +185,7 @@
 3. 浏览器 1440 / 1024 / 768 / 375 四宽度横向滚动与容器查询列数（`.sim-grid` 2/1 列）——无浏览器自动化。
 4. axe DevTools / Lighthouse Accessibility 扫描（0 critical / 0 serious）——无浏览器与工具链。
 5. 灯箱焦点循环、Esc 焦点归还、GIF 状态机（POSTER→CONFIRM/LOADING→PLAYING→ERROR）、10s 超时、`visibilitychange` 释放解码——均为运行时行为，只做了静态代码审阅，未实际点击验证。
-6. Network 面板 `.gif` 请求数 0 / 播放后恰好 +1 / 首屏 ≤12 请求 ≤600 KB、CLS <0.05、rAF 循环 0、`prefers-reduced-motion` 下 `getComputedStyle().transitionDuration === '0s'`——需真实浏览器。
+6. Network 面板 `.gif` 请求数 0 / 播放后恰好 +1 / 首屏 ≤12 请求 ≤600 KB、CLS <0.05、流体背景静止时降到 12fps / 触屏与减少动效下停用的实际帧率、`prefers-reduced-motion` 下 `getComputedStyle().transitionDuration === '0s'`——静态断言已覆盖，运行时帧率需真实浏览器测量。
 7. 预览页本身的浏览器渲染结果（16 张图是否可见、视图切换、灯箱、减少动效勾选框的视觉效果）——本报告只对 DOM 结构与文件路径做断言，未打开浏览器，不声称「渲染通过」。
 8. 真实站点 `https://qingxiaxjtu.com/preview.html` 是否 404（未部署、无网络验证）。
 

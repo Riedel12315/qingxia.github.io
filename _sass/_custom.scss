@@ -114,3 +114,27 @@ summary:hover { color: var(--c-accent-hover); text-decoration-color: var(--c-acc
   cursor: pointer; vertical-align: baseline;
 }
 .abstract-trigger:hover { color: var(--c-accent-hover); border-color: var(--c-accent); }
+
+/* ==========================================================================
+   Light liquid-flow backdrop (opt-in, paper edition)
+   The canvas is inserted by assets/js/liquid-bg.js and removed again when
+   WebGL / hover / motion preferences make the effect inappropriate, so the
+   plain --c-bg remains the fallback with no visual regression.
+   ========================================================================== */
+#liquid-bg-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Content must paint above the backdrop. .masthead already has z-index:20. */
+#main,
+.page__footer { position: relative; z-index: 1; }
+
+@media print {
+  #liquid-bg-canvas { display: none; }
+}

@@ -1,5 +1,7 @@
 # 视觉方向规范 v1 · Qing Xia / 夏青 学术个人主页
 
+> **变更提示（2026-11-08）**：用户后续决定恢复「鼠标搅动的粘稠流体背景」，采用浅色极淡基调、全站统一。该决策**覆盖**本文件 §1 原则 3 与 §7.1 #1 中「首屏零持续动画 / 删除 `assets/js/liquid-bg.js` / WebGL 上下文数 0」的条款；具体约束与真实浏览器验证见 [03-liquid-backdrop.md](03-liquid-backdrop.md)。其余视觉规范不变。
+
 > 交付阶段：Phase 1（视觉方向）
 > 适用仓库：`Riedel12315/qingxia.github.io` · 线上域名 `https://qingxiaxjtu.com`
 > 本地副本：`C:/Users/Qing Xia/WorkBuddy/Homepage`
