@@ -435,12 +435,18 @@ sidebar_scss = (ROOT / "_sass/_sidebar.scss").read_text(encoding="utf-8")
 chk("移动端档案：grid 落在 <div itemscope> 包装层", "含 .sidebar > [itemscope]",
     "含" if ".sidebar > [itemscope]" in sidebar_scss else "缺失",
     ".sidebar > [itemscope]" in sidebar_scss)
-chk("移动端档案：统一 pill 高度与 44px 命中区", "两者具备",
-    "两者具备" if ("min-height: 40px" in sidebar_scss and "max(100%, 44px)" in sidebar_scss) else "缺失",
-    "min-height: 40px" in sidebar_scss and "max(100%, 44px)" in sidebar_scss)
-chk("移动端档案：fa-fw / ai-fw 图标宽度归一化", "含 flex: 0 0 15px",
-    "含" if "flex: 0 0 15px" in sidebar_scss else "缺失",
-    "flex: 0 0 15px" in sidebar_scss)
+chk("移动端档案：竖排列表（非横排胶囊）", "column + nowrap + 无 pill 圆角",
+    "满足" if ("flex-direction: column" in sidebar_scss and "flex-wrap: nowrap" in sidebar_scss
+               and "border-radius: 6px" not in sidebar_scss.split(".sidebar .author__links > li")[1].split("@media")[0]) else "缺失",
+    "flex-direction: column" in sidebar_scss and "flex-wrap: nowrap" in sidebar_scss)
+chk("移动端档案：每行 1px 分隔线、末行去线", "含 border-bottom + last-child",
+    "含" if ("border-bottom: 1px solid" in sidebar_scss and "li:last-child { border-bottom: 0" in sidebar_scss) else "缺失",
+    "border-bottom: 1px solid" in sidebar_scss and "li:last-child { border-bottom: 0" in sidebar_scss)
+chk("移动端档案：整行 44px 命中区（::after inset:0）", "含 inset:0",
+    "含" if "inset: 0" in sidebar_scss else "缺失", "inset: 0" in sidebar_scss)
+chk("移动端档案：fa-fw / ai-fw 图标宽度归一化", "含 flex: 0 0 16px",
+    "含" if "flex: 0 0 16px" in sidebar_scss else "缺失",
+    "flex: 0 0 16px" in sidebar_scss)
 chk("流体背景：静态压回纸白（消除灰底噪）", "含 mix(col, lBase, 0.68)",
     "含" if "mix(col, lBase, 0.68)" in liq_src else "缺失",
     "mix(col, lBase, 0.68)" in liq_src)

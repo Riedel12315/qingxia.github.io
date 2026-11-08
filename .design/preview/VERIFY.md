@@ -11,8 +11,8 @@
 
 | 项 | 数值 |
 |---|---|
-| 执行断言 | 110 |
-| 通过 | 110 |
+| 执行断言 | 112 |
+| 通过 | 112 |
 | 未通过 | 0 |
 | 业务代码告警（不计入交付物通过/失败） | 0 |
 | 无法验证项（明确不计入通过） | 8 |
@@ -144,8 +144,10 @@
 | 液体背景 / 无 aurora class 依赖 | 0 | 0 | ✅ |
 | canvas 层叠：内容 z-index 高于背景 | 含规则 | 含规则 | ✅ |
 | 移动端档案：grid 落在 <div itemscope> 包装层 | 含 .sidebar > [itemscope] | 含 | ✅ |
-| 移动端档案：统一 pill 高度与 44px 命中区 | 两者具备 | 两者具备 | ✅ |
-| 移动端档案：fa-fw / ai-fw 图标宽度归一化 | 含 flex: 0 0 15px | 含 | ✅ |
+| 移动端档案：竖排列表（非横排胶囊） | column + nowrap + 无 pill 圆角 | 满足 | ✅ |
+| 移动端档案：每行 1px 分隔线、末行去线 | 含 border-bottom + last-child | 含 | ✅ |
+| 移动端档案：整行 44px 命中区（::after inset:0） | 含 inset:0 | 含 | ✅ |
+| 移动端档案：fa-fw / ai-fw 图标宽度归一化 | 含 flex: 0 0 16px | 含 | ✅ |
 | 流体背景：静态压回纸白（消除灰底噪） | 含 mix(col, lBase, 0.68) | 含 | ✅ |
 | 流体背景：已移除让边缘发灰的暗角 | 0 | 0 | ✅ |
 | 流体背景：清透冷青拖尾与更绵长尾迹 | 含新配色 + DECAY 0.24 | 含 | ✅ |
@@ -158,7 +160,7 @@
 | main.scss 保留 Jekyll front matter（未删 / 未改业务文件） | 前 2 行均为 --- | 是 | ✅ |
 | 原样命令（含 front matter）按预期失败 exit 65 | exit 65 | exit 65 / Error: expected "{". | ✅ |
 | 剥离 front matter + --quiet --style=compressed 编译 | exit 0 | exit 0 | ✅ |
-| 产物 main.css 字节数（新增液体背景层叠规则后应 > 旧基线 104685） | > 104685 | 106101 | ✅ |
+| 产物 main.css 字节数（新增液体背景层叠规则后应 > 旧基线 104685） | > 104685 | 106036 | ✅ |
 | 编译无 Error（--quiet 抑制弃用告警） | 0 Error | 0 Error | ✅ |
 | Sass 弃用告警（未加 --quiet 的诊断运行；显式打印 / 折叠重复） | - | 20 / 328；类型 import / if-function / global-builtin / slash-div，全部来自 _sass/vendor/ 的 breakpoint 与 susy，非错误 | — |
 | HTML 标签配平（见 §2） | 0 错误 | 0 错误 | ✅ |

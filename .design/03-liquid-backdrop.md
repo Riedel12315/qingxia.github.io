@@ -61,6 +61,8 @@
 **反馈 2：手机端 Email / ResearchGate / Google Scholar / ORCID 排列散乱、不高级。**
 - 根因：`<1024px` 时 `.sidebar` 用 flex 把头像与链接挤在同一行，链接列被压窄；纯文本 `Xi'an, China` 与带链接的 `<li>` 没有统一盒子，`fa-fw` 与 `ai-fw` 图标宽度不同，ORCID 被挤到第二行并出现缩进。
 - 第一次修正把 grid 加在 `.sidebar` 上**无效**：`author-profile.html` 把所有内容包在 `<div itemscope>` 里，真正的 grid item 只有这一个包装层，导致姓名折成三行、链接竖排。已改为把 grid 落在 `.sidebar > [itemscope]`。
-- 最终：移动端是一张白底 1px 边、8px 圆角的档案卡；第一行头像 + 姓名/bio 并排，第二行 5 个统一浅灰胶囊（含 location），图标统一 15px 宽、40px 高视觉盒 + `::after` 撑 44px 命中区。390×844 截图确认整齐、无孤立缩进。
+- 第二步（同日，仍不满意）：横排浅灰胶囊在手机上仍显得「框里分散」，不高级。
+- 最终方案：**去掉卡片框与每个链接的独立小胶囊**，改为纯竖排列表——第一行头像 + 姓名/bio 并排，下面 location / email / 各社交链接**各占一行、左对齐、图标统一 16px、行底 1px 分隔线、整行 44px 命中区**，与正文无缝融入。`.sidebar` 去掉 `background/border/border-radius`，`.author__links` 改回 `column + nowrap`，`li` 用 `border-bottom:1px solid $line`、`::after { inset:0 }` 撑满整行。
+- `390×844` 截图确认：五项条目整齐纵向排列、图标对齐、无孤立缩进、无散布小框。
 
-**当前可调值**：`DECAY 0.24` / `IMPULSE 0.52` / `glow * 0.62` / `u_drag * fall * 0.52` / `mix(col, lBase, 0.68)`。想更明显提高 `glow` 与 `u_drag` 两项；想更淡则调高 `mix(col, lBase, …)`。
+**当前可调值**：`DECAY 0.24` / `IMPULSE 0.52` / `glow * 0.62` / `u_drag * fall * 0.52` / `mix(col, lBase, 0.68)`。想更明显提高 `glow` 与 `u_drag` 两项；想更淡则调高 `mix(col, lBase, …)`。移动端若想恢复窄卡片，把 `.sidebar` 的 `background/border` 加回、`.author__links > li` 的 `border-bottom` 换成 `border + border-radius` 即可。

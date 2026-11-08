@@ -80,21 +80,21 @@
   }
 }
 
-/* ── <1024px: compact profile card ──
-   Row 1 = avatar + name/bio, row 2 = all links as one even wrapped group.
-   The old flex bar squeezed the links into a narrow column, so ORCID wrapped
-   onto its own indented line; plain-text <li> also had no shared box with the
-   linked ones. Grid + uniform pills fix both without touching the markup. */
+/* ── <1024px: plain profile block, vertical link list ──
+   Row 1 = avatar + name/bio. Below it, every entry (location, email, social)
+   sits on its own full-width row, left-aligned, with a 1px divider — no more
+   scattered horizontal pills inside a card. The grid lives on the <div
+   itemscope> wrapper that author-profile.html uses for everything. */
 @media (max-width: 1023px) {
   .sidebar {
     display: block;
     width: 100%;
     position: static;
-    padding: 1rem 1.25rem;
-    margin: 0 0 1.5rem;
-    background: $surface;
-    border: 1px solid $line;
-    border-radius: 8px;
+    padding: 0;
+    margin: 0 0 1.75rem;
+    background: none;
+    border: 0;
+    border-radius: 0;
   }
 
   /* author-profile.html wraps everything in <div itemscope>. The grid has to
@@ -123,39 +123,41 @@
     grid-row: 2;
     width: 100%;
     min-width: 0;
+    margin-top: .625rem;
+    padding-top: .625rem;
+    border-top: 1px solid $line;
   }
 
+  /* One row per entry, stacked vertically, left-aligned. */
   .sidebar .author__links {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: .5rem;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 0;
     margin: 0;
     padding: 0;
   }
 
-  /* Every item — including the plain-text location — gets the same pill. */
   .sidebar .author__links > li {
     position: relative;
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    min-height: 40px;
+    min-height: 44px;
     margin: 0;
-    padding: 0 .625rem;
-    font-size: .8125rem;
+    padding: 0;
+    font-size: .875rem;
     line-height: 1.4;
     color: $ink-2;
-    background: $surface-2;
-    border: 1px solid $line;
-    border-radius: 6px;
-    white-space: nowrap;
+    border-bottom: 1px solid $line;
     list-style: none;
   }
+  .sidebar .author__links > li:last-child { border-bottom: 0; }
 
   .sidebar .author__links > li > a {
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    gap: .375rem;
-    min-height: 40px;
+    gap: .5rem;
+    width: 100%;
+    min-height: 44px;
     padding: 0;
     font-size: inherit;
     color: inherit;
@@ -166,30 +168,27 @@
   }
   .sidebar .author__links > li > a:hover { color: $accent; text-decoration: none; }
 
-  /* >=44x44 hit area while the pill stays 40px tall. */
+  /* 44px hit area spanning the whole row. */
   .sidebar .author__links > li > a::after {
     content: "";
     position: absolute;
-    top: 50%; left: 50%;
-    width: max(100%, 44px);
-    height: max(100%, 44px);
-    transform: translate(-50%, -50%);
+    inset: 0;
   }
 
   /* fa-fw and ai-fw have different intrinsic widths; normalise both. */
   .sidebar .author__links > li i {
-    flex: 0 0 15px;
-    width: 15px;
-    min-width: 15px;
-    font-size: 14px;
+    flex: 0 0 16px;
+    width: 16px;
+    min-width: 16px;
+    font-size: 15px;
     line-height: 1;
     text-align: center;
     color: $ink-3;
   }
-  .sidebar .author__links > li > i { margin-right: .375rem; }
+  .sidebar .author__links > li > i { margin-right: .5rem; }
   .sidebar .author__links > li > a:hover i { color: $accent; }
 }
 
 @media (max-width: 720px) {
-  .sidebar { padding: .875rem 1rem; }
+  .sidebar { padding: 0; }
 }
