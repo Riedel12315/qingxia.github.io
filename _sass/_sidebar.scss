@@ -80,32 +80,116 @@
   }
 }
 
-/* ── <1024px: horizontal archive bar (avatar + wrapped links, no name) ── */
+/* ── <1024px: compact profile card ──
+   Row 1 = avatar + name/bio, row 2 = all links as one even wrapped group.
+   The old flex bar squeezed the links into a narrow column, so ORCID wrapped
+   onto its own indented line; plain-text <li> also had no shared box with the
+   linked ones. Grid + uniform pills fix both without touching the markup. */
 @media (max-width: 1023px) {
   .sidebar {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+    display: block;
     width: 100%;
     position: static;
-    padding: 1rem 0;
-    margin-bottom: 1.5rem;
-    border-bottom: 1px solid $line;
+    padding: 1rem 1.25rem;
+    margin: 0 0 1.5rem;
+    background: $surface;
+    border: 1px solid $line;
+    border-radius: 8px;
   }
 
-  .sidebar .author__avatar img { width: 48px; height: 48px; }
-  .sidebar .author__content { display: none; }
-  .sidebar .author__links-wrapper { width: 100%; }
+  /* author-profile.html wraps everything in <div itemscope>. The grid has to
+     live on that wrapper, or avatar / name / links are not grid items at all. */
+  .sidebar > [itemscope] {
+    display: grid;
+    grid-template-columns: 44px minmax(0, 1fr);
+    gap: .75rem 1rem;
+    align-items: center;
+  }
+
+  .sidebar .author__avatar { grid-column: 1; grid-row: 1; }
+  .sidebar .author__avatar img { width: 44px; height: 44px; }
+
+  .sidebar .author__content {
+    display: block;
+    grid-column: 2;
+    grid-row: 1;
+    min-width: 0;
+  }
+  .sidebar .author__name { margin: 0 0 2px; font-size: 1.0625rem; }
+  .sidebar .author__bio { margin: 0; font-size: .8125rem; }
+
+  .sidebar .author__links-wrapper {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: 100%;
+    min-width: 0;
+  }
 
   .sidebar .author__links {
     flex-direction: row;
     flex-wrap: wrap;
-    gap: .75rem 1rem;
+    gap: .5rem;
+    margin: 0;
+    padding: 0;
   }
 
-  .sidebar .author__links a { font-size: 14px; padding: 0 .5rem; }
+  /* Every item — including the plain-text location — gets the same pill. */
+  .sidebar .author__links > li {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+    margin: 0;
+    padding: 0 .625rem;
+    font-size: .8125rem;
+    line-height: 1.4;
+    color: $ink-2;
+    background: $surface-2;
+    border: 1px solid $line;
+    border-radius: 6px;
+    white-space: nowrap;
+    list-style: none;
+  }
+
+  .sidebar .author__links > li > a {
+    display: inline-flex;
+    align-items: center;
+    gap: .375rem;
+    min-height: 40px;
+    padding: 0;
+    font-size: inherit;
+    color: inherit;
+    background: none;
+    border: 0;
+    border-radius: 0;
+    text-decoration: none;
+  }
+  .sidebar .author__links > li > a:hover { color: $accent; text-decoration: none; }
+
+  /* >=44x44 hit area while the pill stays 40px tall. */
+  .sidebar .author__links > li > a::after {
+    content: "";
+    position: absolute;
+    top: 50%; left: 50%;
+    width: max(100%, 44px);
+    height: max(100%, 44px);
+    transform: translate(-50%, -50%);
+  }
+
+  /* fa-fw and ai-fw have different intrinsic widths; normalise both. */
+  .sidebar .author__links > li i {
+    flex: 0 0 15px;
+    width: 15px;
+    min-width: 15px;
+    font-size: 14px;
+    line-height: 1;
+    text-align: center;
+    color: $ink-3;
+  }
+  .sidebar .author__links > li > i { margin-right: .375rem; }
+  .sidebar .author__links > li > a:hover i { color: $accent; }
 }
 
 @media (max-width: 720px) {
-  .sidebar .author__avatar img { width: 40px; height: 40px; }
+  .sidebar { padding: .875rem 1rem; }
 }

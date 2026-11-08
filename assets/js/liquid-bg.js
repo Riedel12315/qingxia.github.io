@@ -23,9 +23,9 @@
   // ── 可调参数 ─────────────────────────────────────────────────────────────
   var MAX_V   = 0.7;    // 流速场在纹理中的编码范围（±0.7，aspect 空间/秒）
   var GRID_H  = 80;     // 流速场纵向格数（横向按宽高比折算）
-  var DECAY   = 0.45;   // 流速场指数衰减率（/秒）—— 越小尾迹越绵长
+  var DECAY   = 0.24;   // 流速场指数衰减率（/秒）—— 越小尾迹越绵长
   var DIFFUSE = 0.24;   // 每帧向四邻域扩散的比例
-  var IMPULSE = 0.45;   // 鼠标速度注入强度（浅色版更克制）
+  var IMPULSE = 0.52;   // 鼠标速度注入强度（浅色版更克制）
   var CURL    = 0.85;   // 鼠标转向时产生的旋涡强度
   var IDLE_MS  = 2200;  // 鼠标静止多久后降帧
   var IDLE_FPS = 12;    // 静止时帧率上限
@@ -111,7 +111,7 @@
     '  // ── 光标即时反馈：沿运动方向拉伸 + 环绕光标旋涡（粘稠感） ──',
     '  vec2 d = pb - u_mouse;',
     '  float r2 = dot(d, d);',
-    '  float fall = exp(-r2 / 0.07);',
+    '  float fall = exp(-r2 / 0.11);',
     '  float w = u_drag * fall;',
     '  disp += normalize(u_vel + vec2(0.0001)) * w * 0.06;',
     '  disp += vec2(-d.y, d.x) / (sqrt(r2) + 0.001) * w * 0.12;',
@@ -129,27 +129,29 @@
     '  vec3 lSky   = vec3(0.922, 0.958, 0.968);',
     '  vec3 lMist  = vec3(0.958, 0.974, 0.966);',
     '  vec3 col = lBase;',
-    '  col = mix(col, lBlue,  smoothstep(0.0, 0.85, f) * 0.30);',
-    '  col = mix(col, lBlue2, smoothstep(0.30, 0.92, q.y) * 0.22);',
-    '  col = mix(col, lSky,   smoothstep(0.45, 0.95, r.x) * 0.19);',
-    '  col = mix(col, lMist,  smoothstep(0.60, 0.98, r.y) * 0.13);',
-    '  col = mix(col, lBase, 0.30);',   // 再拉回纸白，静态几乎不可察觉
+    '  col = mix(col, lBlue,  smoothstep(0.0, 0.85, f) * 0.12);',
+    '  col = mix(col, lBlue2, smoothstep(0.30, 0.92, q.y) * 0.09);',
+    '  col = mix(col, lSky,   smoothstep(0.45, 0.95, r.x) * 0.08);',
+    '  col = mix(col, lMist,  smoothstep(0.60, 0.98, r.y) * 0.06);',
+    '  col = mix(col, lBase, 0.68);',   // 再拉回纸白，静态几乎不可察觉
     '',
     '  // ── 被搅动的液体：极淡青蓝拖尾（DeepSeek 手感，强度克制） ──',
     '  float flowMag = length(flowV) * u_flowStr;',
-    '  float glow = smoothstep(0.015, 0.18, flowMag);',
-    '  vec3 glowCol = vec3(0.66, 0.81, 0.85);',
-    '  col = mix(col, glowCol, glow * 0.45);',
-    '  col = mix(col, glowCol, u_drag * fall * 0.42);',
+    '  float glow = smoothstep(0.010, 0.085, flowMag);',
+    '  vec3 glowCol = vec3(0.66, 0.83, 0.94);',
+    '  col = mix(col, glowCol, glow * 0.62);',
+    '  col = mix(col, glowCol, u_drag * fall * 0.52);',
+    '  float core = smoothstep(0.045, 0.15, flowMag);',
+    '  col = mix(col, vec3(0.90, 0.96, 0.985), core * 0.55);',
     '',
     '  // 暗角',
     '  vec2 vc = p - vec2(ar * 0.5, 0.5);',
     '  float maxR = sqrt(ar * ar * 0.25 + 0.25);',
     '  float vig = smoothstep(1.18, 0.55, length(vc) / maxR * 1.35);',
-    '  col *= mix(0.992, 1.0, vig);',
+    '  // 浅色版不使用暗角：会让纸白边缘发灰',
     '',
     '  // 细微抖动，消除 8bit 色带',
-    '  col += (hash(gl_FragCoord.xy) - 0.5) * 0.004;',
+    '  col += (hash(gl_FragCoord.xy) - 0.5) * 0.0015;',
     '',
     '  gl_FragColor = vec4(col, 1.0);',
     '}'

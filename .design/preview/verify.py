@@ -429,6 +429,28 @@ chk("canvas 层叠：内容 z-index 高于背景", "含规则",
     "#liquid-bg-canvas" in custom_scss and "z-index: 1" in custom_scss)
 
 # --------------------------------------------------------------------------
+# 4c. Follow-up fixes (2026-11-08): mobile profile card + cleaner/stronger wake
+# --------------------------------------------------------------------------
+sidebar_scss = (ROOT / "_sass/_sidebar.scss").read_text(encoding="utf-8")
+chk("移动端档案：grid 落在 <div itemscope> 包装层", "含 .sidebar > [itemscope]",
+    "含" if ".sidebar > [itemscope]" in sidebar_scss else "缺失",
+    ".sidebar > [itemscope]" in sidebar_scss)
+chk("移动端档案：统一 pill 高度与 44px 命中区", "两者具备",
+    "两者具备" if ("min-height: 40px" in sidebar_scss and "max(100%, 44px)" in sidebar_scss) else "缺失",
+    "min-height: 40px" in sidebar_scss and "max(100%, 44px)" in sidebar_scss)
+chk("移动端档案：fa-fw / ai-fw 图标宽度归一化", "含 flex: 0 0 15px",
+    "含" if "flex: 0 0 15px" in sidebar_scss else "缺失",
+    "flex: 0 0 15px" in sidebar_scss)
+chk("流体背景：静态压回纸白（消除灰底噪）", "含 mix(col, lBase, 0.68)",
+    "含" if "mix(col, lBase, 0.68)" in liq_src else "缺失",
+    "mix(col, lBase, 0.68)" in liq_src)
+chk("流体背景：已移除让边缘发灰的暗角", 0, liq_src.count("col *= mix"),
+    liq_src.count("col *= mix") == 0)
+chk("流体背景：清透冷青拖尾与更绵长尾迹", "含新配色 + DECAY 0.24",
+    "含" if ("vec3(0.66, 0.83, 0.94)" in liq_src and "DECAY   = 0.24" in liq_src) else "缺失",
+    "vec3(0.66, 0.83, 0.94)" in liq_src and "DECAY   = 0.24" in liq_src)
+
+# --------------------------------------------------------------------------
 # 5. Syntax / build
 # --------------------------------------------------------------------------
 sec("5 语法与构建")
