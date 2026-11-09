@@ -40,6 +40,10 @@
 @import "vendor/magnific-popup/magnific-popup";
 @import "print";
 
+/* Restrained motion layer: nav/button/link feedback + one-off scroll reveal.
+   Loaded before the token layer so _custom.scss keeps its final word. */
+@import "motion";
+
 /* Custom light-theme tokens + components (must stay last). No simulation import here:
    the Simulation module ships its own CSS referenced from its own page. */
 @import "custom";

@@ -11,8 +11,8 @@
 
 | 项 | 数值 |
 |---|---|
-| 执行断言 | 112 |
-| 通过 | 112 |
+| 执行断言 | 128 |
+| 通过 | 128 |
 | 未通过 | 0 |
 | 业务代码告警（不计入交付物通过/失败） | 0 |
 | 无法验证项（明确不计入通过） | 8 |
@@ -116,7 +116,7 @@
 
 | 检查项 | 期望 | 实测 | 结果 |
 |---|---|---|---|
-| 扫描文件数（业务代码） | - | 92 | — |
+| 扫描文件数（业务代码） | - | 94 | — |
 | 排除文件数（_sass/vendor/** + 第三方 vendor js + main.min.js） | - | 95 | — |
 | backdrop-filter | 0 命中 | 0 命中 | ✅ |
 | radial-gradient | 0 命中 | 0 命中 | ✅ |
@@ -151,6 +151,22 @@
 | 流体背景：静态压回纸白（消除灰底噪） | 含 mix(col, lBase, 0.68) | 含 | ✅ |
 | 流体背景：已移除让边缘发灰的暗角 | 0 | 0 | ✅ |
 | 流体背景：清透冷青拖尾与更绵长尾迹 | 含新配色 + DECAY 0.24 | 含 | ✅ |
+| 动效脚本 motion.js 存在 | 存在 | 存在 | ✅ |
+| 动效样式 _motion.scss 存在 | 存在 | 存在 | ✅ |
+| main.scss 引入 motion 层 | 1 | 1 | ✅ |
+| scripts.html 引入 motion.js（恰好 1 次） | 1 | 1 | ✅ |
+| motion.js / IntersectionObserver 一次性观察 | 包含 | 包含 | ✅ |
+| motion.js / 进入后 unobserve | 包含 | 包含 | ✅ |
+| motion.js / 尊重 prefers-reduced-motion | 包含 | 包含 | ✅ |
+| motion.js / 先标记再启用的防闪烁顺序 | 包含 | 包含 | ✅ |
+| motion.js / 排除折叠区 details | 包含 | 包含 | ✅ |
+| _motion.scss / 浮现规则由 no-preference 包裹 | 包含 | 包含 | ✅ |
+| _motion.scss / 初始位移 10px | 包含 | 包含 | ✅ |
+| _motion.scss / 揭示态归零 | 包含 | 包含 | ✅ |
+| _motion.scss / 三档时长 token | 包含 | 包含 | ✅ |
+| _motion.scss / 导航下划线从中心展开 | 包含 | 包含 | ✅ |
+| 动效层无廉价特效（位移放大/旋转/阴影/无限动画） | 0 命中 | 0 命中 [] | ✅ |
+| node --check assets/js/motion.js | exit 0 | exit 0  | ✅ |
 
 ## 5 语法与构建
 
@@ -160,9 +176,9 @@
 | main.scss 保留 Jekyll front matter（未删 / 未改业务文件） | 前 2 行均为 --- | 是 | ✅ |
 | 原样命令（含 front matter）按预期失败 exit 65 | exit 65 | exit 65 / Error: expected "{". | ✅ |
 | 剥离 front matter + --quiet --style=compressed 编译 | exit 0 | exit 0 | ✅ |
-| 产物 main.css 字节数（新增液体背景层叠规则后应 > 旧基线 104685） | > 104685 | 106036 | ✅ |
+| 产物 main.css 字节数（新增液体背景层叠规则后应 > 旧基线 104685） | > 104685 | 108045 | ✅ |
 | 编译无 Error（--quiet 抑制弃用告警） | 0 Error | 0 Error | ✅ |
-| Sass 弃用告警（未加 --quiet 的诊断运行；显式打印 / 折叠重复） | - | 20 / 328；类型 import / if-function / global-builtin / slash-div，全部来自 _sass/vendor/ 的 breakpoint 与 susy，非错误 | — |
+| Sass 弃用告警（未加 --quiet 的诊断运行；显式打印 / 折叠重复） | - | 20 / 329；类型 import / if-function / global-builtin / slash-div，全部来自 _sass/vendor/ 的 breakpoint 与 susy，非错误 | — |
 | HTML 标签配平（见 §2） | 0 错误 | 0 错误 | ✅ |
 
 ## 6 附加交叉核对（独立补充）

@@ -457,6 +457,46 @@ chk("流体背景：清透冷青拖尾与更绵长尾迹", "含新配色 + DECAY
     "vec3(0.66, 0.83, 0.94)" in liq_src and "DECAY   = 0.24" in liq_src)
 
 # --------------------------------------------------------------------------
+# 4d. Interaction / motion layer (2026-11-09)
+# --------------------------------------------------------------------------
+motion_js = ROOT / "assets/js/motion.js"
+motion_scss = ROOT / "_sass/_motion.scss"
+scripts_html = ROOT / "_includes/scripts.html"
+main_scss = (ROOT / "assets/css/main.scss").read_text(encoding="utf-8")
+mjs = motion_js.read_text(encoding="utf-8") if motion_js.exists() else ""
+msc = motion_scss.read_text(encoding="utf-8") if motion_scss.exists() else ""
+
+chk("动效脚本 motion.js 存在", "存在", "存在" if motion_js.exists() else "缺失", motion_js.exists())
+chk("动效样式 _motion.scss 存在", "存在", "存在" if motion_scss.exists() else "缺失", motion_scss.exists())
+chk("main.scss 引入 motion 层", 1, main_scss.count('@import "motion"'), main_scss.count('@import "motion"') == 1)
+chk("scripts.html 引入 motion.js（恰好 1 次）", 1,
+    scripts_html.read_text(encoding="utf-8").count("motion.js"),
+    scripts_html.read_text(encoding="utf-8").count("motion.js") == 1)
+for _label, _needle in [
+    ("IntersectionObserver 一次性观察", "IntersectionObserver"),
+    ("进入后 unobserve", "unobserve"),
+    ("尊重 prefers-reduced-motion", "prefers-reduced-motion"),
+    ("先标记再启用的防闪烁顺序", "motion-ready"),
+    ("排除折叠区 details", 'closest("details")'),
+]:
+    chk("motion.js / " + _label, "包含", "包含" if _needle in mjs else "缺失", _needle in mjs)
+for _label, _needle in [
+    ("浮现规则由 no-preference 包裹", "prefers-reduced-motion: no-preference"),
+    ("初始位移 10px", "translateY(10px)"),
+    ("揭示态归零", ".is-revealed"),
+    ("三档时长 token", "--dur-reveal"),
+    ("导航下划线从中心展开", "transform: scaleX(0)"),
+]:
+    chk("_motion.scss / " + _label, "包含", "包含" if _needle in msc else "缺失", _needle in msc)
+_cheap = [p for p in ("translateX", "rotate(", "scale(1", "box-shadow", "animation-iteration-count") if p in msc]
+chk("动效层无廉价特效（位移放大/旋转/阴影/无限动画）", "0 命中", "%d 命中 %s" % (len(_cheap), _cheap), len(_cheap) == 0)
+chk("node --check assets/js/motion.js", "exit 0",
+    "exit %d %s" % (run(["node", "--check", "assets/js/motion.js"]).returncode,
+                    run(["node", "--check", "assets/js/motion.js"]).stderr.strip()[:80]),
+    run(["node", "--check", "assets/js/motion.js"]).returncode == 0)
+
+
+# --------------------------------------------------------------------------
 # 5. Syntax / build
 # --------------------------------------------------------------------------
 sec("5 语法与构建")

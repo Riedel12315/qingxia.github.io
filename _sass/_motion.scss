@@ -1,0 +1,120 @@
+/* ==========================================================================
+   MOTION — restrained micro-interactions for a paper-like academic page
+   --------------------------------------------------------------------------
+   Two jobs only:
+     1. Confirm an interaction  — hover / press / focus on nav, buttons, entries.
+     2. Guide reading           — a one-off reveal when a block enters the viewport.
+   No looping decoration, no parallax, no scale/glow. Only opacity, a <=10px
+   translate and colour properties animate, so nothing reflows. Everything is
+   collapsed by the prefers-reduced-motion guard in _animations.scss.
+   ========================================================================== */
+
+:root {
+  --ease-out: cubic-bezier(.22, .61, .36, 1);
+  --dur-fast: 140ms;
+  --dur-base: 200ms;
+  --dur-reveal: 280ms;
+}
+
+/* ── 1. Navigation: the 2px current-state bar also grows on hover ────────── */
+/* The transparent 2px border on .greedy-nav a reserves the space, so the bar
+   can appear without changing the header height. It is drawn only on the
+   actual menu items (not the site name), from the centre outwards. */
+.greedy-nav .visible-links li:not(:first-child) a {
+  position: relative;
+}
+
+.greedy-nav .visible-links li:not(:first-child) a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;                 /* overlaps the reserved transparent border */
+  height: 2px;
+  background: var(--c-accent);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform var(--dur-base) var(--ease-out);
+  pointer-events: none;
+}
+
+.greedy-nav .visible-links li:not(:first-child) a:hover::after,
+.greedy-nav .visible-links li:not(:first-child) a:focus-visible::after,
+.greedy-nav .visible-links li:not(:first-child) a[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+/* ── 2. Buttons: 1px press travel, colour already handled by the theme ───── */
+.btn {
+  transition:
+    color var(--dur-fast) var(--ease-out),
+    background-color var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out),
+    transform var(--dur-fast) var(--ease-out);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+/* ── 3. Body links: underline warms up instead of snapping ───────────────── */
+.page__content a:not(.btn):not(.abstract-trigger),
+.archive a:not(.btn),
+.page__footer a {
+  transition:
+    color var(--dur-fast) var(--ease-out),
+    text-decoration-color var(--dur-fast) var(--ease-out);
+}
+
+/* ── 4. Tables and <summary>: same quiet colour transition ───────────────── */
+tbody td {
+  transition: background-color var(--dur-fast) var(--ease-out);
+}
+
+summary {
+  transition: color var(--dur-fast) var(--ease-out),
+              text-decoration-color var(--dur-fast) var(--ease-out);
+}
+
+/* ── 5. Entry rows: the 1px divider warms to accent on hover ─────────────── */
+/* Zero layout change — only the existing bottom rule changes colour, which is
+   the quietest possible "this row is interactive" signal on a paper surface. */
+.archive__item,
+.archive > ul > li,
+.archive > ol > li,
+.page__content > ul > li,
+.page__content > ol > li {
+  transition:
+    background-color var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out);
+}
+
+.archive__item:hover,
+.archive > ul > li:hover,
+.archive > ol > li:hover,
+.page__content > ul > li:hover,
+.page__content > ol > li:hover {
+  border-bottom-color: var(--c-accent);
+}
+
+/* ── 5. Scroll reveal ─────────────────────────────────────────────────────
+   motion.js tags eligible blocks with [data-reveal] and only then flips
+   html.motion-ready, so blocks already in view are marked visible before the
+   hiding rule can apply — no first-paint flash. The observer reveals each
+   block once and unobserves it. Without JS, or under reduced motion, none of
+   this applies and the page is fully visible. */
+@media (prefers-reduced-motion: no-preference) {
+  html.motion-ready [data-reveal] {
+    opacity: 0;
+    transform: translateY(10px);
+    transition:
+      opacity var(--dur-reveal) var(--ease-out),
+      transform var(--dur-reveal) var(--ease-out);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+
+  html.motion-ready [data-reveal].is-revealed {
+    opacity: 1;
+    transform: none;
+  }
+}

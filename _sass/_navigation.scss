@@ -127,8 +127,9 @@
 
     &:hover { color: $masthead-link-color-hover; }
 
-    /* static current state: accent text + 2px bottom bar, no slide */
-    &[aria-current="page"] { color: $accent; border-bottom-color: $accent; font-weight: 600; }
+    /* current state: accent text; the 2px bar is drawn by _motion.scss so it
+       can also grow from the centre on hover without shifting layout */
+    &[aria-current="page"] { color: $accent; border-bottom-color: transparent; font-weight: 600; }
   }
 
   button {
