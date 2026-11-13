@@ -11,8 +11,8 @@
 
 | 项 | 数值 |
 |---|---|
-| 执行断言 | 167 |
-| 通过 | 167 |
+| 执行断言 | 180 |
+| 通过 | 180 |
 | 未通过 | 0 |
 | 业务代码告警（不计入交付物通过/失败） | 0 |
 | 无法验证项（明确不计入通过） | 8 |
@@ -206,6 +206,19 @@
 | _page-tools.scss / toast 样式 | 包含 | 包含 | ✅ |
 | node --check assets/js/publications.js | exit 0 | exit 0  | ✅ |
 | node --check assets/js/page-tools.js | exit 0 | exit 0  | ✅ |
+| simulation.js / 视图切换条 | 包含 | 包含 | ✅ |
+| simulation.js / 并排对比面板 | 包含 | 包含 | ✅ |
+| simulation.js / 双图选择 | 包含 | 包含 | ✅ |
+| simulation.js / 同步缩放函数 | 包含 | 包含 | ✅ |
+| simulation.js / 滚轮缩放 | 包含 | 包含 | ✅ |
+| simulation.js / 拖拽平移 | 包含 | 包含 | ✅ |
+| simulation.js / URL 视图同步 | 包含 | 包含 | ✅ |
+| simulation.js / 灯箱缩放控件 | 包含 | 包含 | ✅ |
+| simulation.css / 视图切换样式 | 包含 | 包含 | ✅ |
+| simulation.css / 对比面板样式 | 包含 | 包含 | ✅ |
+| simulation.css / 选择态样式 | 包含 | 包含 | ✅ |
+| simulation.css / 灯箱缩放样式 | 包含 | 包含 | ✅ |
+| simulation.js gzip 体积 ≤ 10 KB | ≤ 10240 B | 6757 B | ✅ |
 
 ## 5 语法与构建
 

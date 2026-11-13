@@ -197,6 +197,102 @@
   .sim-lightbox__panel { padding: 1rem; }
 }
 
+/* ---------- 视图切换：网格 / 对比 ---------- */
+.sim-viewbar {
+  display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1rem;
+  margin: 0 0 2rem; padding-bottom: 1rem; border-bottom: 1px solid #E3E6E2;
+}
+.sim-viewbar__group {
+  display: inline-flex; gap: .25rem; padding: 3px;
+  background: #F3F4F1; border-radius: 6px;
+}
+.sim-viewbtn {
+  min-height: 38px; padding: 0 .875rem;
+  background: transparent; border: 1px solid transparent; border-radius: 4px;
+  font: 500 .875rem/1.2 'Inter', sans-serif; color: #49565C; cursor: pointer;
+  transition: color 120ms ease-out, background-color 120ms ease-out, border-color 120ms ease-out;
+}
+.sim-viewbtn:hover { color: #14566B; }
+.sim-viewbtn[aria-pressed="true"] {
+  color: #14566B; background: #FFFFFF; border-color: #E3E6E2; font-weight: 600;
+}
+.sim-viewbar__hint { margin: 0 0 0 auto; font-size: .875rem; color: #626F75; }
+@media (max-width: 719px) { .sim-viewbar__hint { margin-left: 0; } }
+
+/* ---------- 对比选择态 ---------- */
+.sim-figure.is-picked .sim-figure__media { outline: 2px solid #14566B; outline-offset: 2px; }
+.sim-figure.is-picked .sim-figure__media::after {
+  content: attr(data-pick);
+  position: absolute; top: .5rem; left: .5rem; z-index: 2;
+  width: 28px; height: 28px; display: grid; place-items: center;
+  background: #14566B; color: #FFFFFF; border-radius: 50%;
+  font: 600 .8125rem/1 'Inter', sans-serif;
+}
+
+/* ---------- 并排对比面板 ---------- */
+.sim-compare {
+  margin: 0 0 2rem; padding: 1rem;
+  background: #FFFFFF; border: 1px solid #E3E6E2; border-radius: 8px;
+}
+.sim-compare[hidden] { display: none; }
+.sim-compare__head { display: flex; align-items: center; gap: 1rem; margin-bottom: .75rem; }
+.sim-compare__title { margin: 0; font-size: 1.0625rem; font-weight: 600; color: #1B2429; }
+.sim-compare__close {
+  margin-left: auto; min-height: 44px; padding: 0 .75rem;
+  background: transparent; border: 1px solid #82908E; border-radius: 6px;
+  font: 500 .875rem/1.2 'Inter', sans-serif; color: #49565C; cursor: pointer;
+  transition: color 120ms ease-out, border-color 120ms ease-out;
+}
+.sim-compare__close:hover { color: #14566B; border-color: #14566B; }
+.sim-compare__panes {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+  background: #E3E6E2; border: 1px solid #E3E6E2; border-radius: 6px; overflow: hidden;
+}
+@container simpage (max-width: 699px) {
+  .sim-compare__panes { grid-template-columns: 1fr; }
+}
+.sim-compare__pane { min-width: 0; background: #F3F4F1; }
+.sim-compare__stage {
+  position: relative; height: min(46vh, 380px);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden; touch-action: none; cursor: grab;
+}
+.sim-compare__stage.is-dragging { cursor: grabbing; }
+.sim-compare__img {
+  display: block; max-width: 100%; max-height: 100%;
+  transform-origin: 0 0; user-select: none; -webkit-user-drag: none;
+  pointer-events: none;
+}
+.sim-compare__caption {
+  margin: 0; padding: .5rem .75rem .75rem;
+  font-size: .8125rem; line-height: 1.5; color: #626F75;
+}
+.sim-compare__foot { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin-top: .75rem; }
+.sim-compare__note { margin: 0; font-size: .8125rem; color: #626F75; }
+.sim-compare__zoom { display: inline-flex; gap: .25rem; margin-left: auto; }
+.sim-zoombtn {
+  min-width: 44px; min-height: 44px; padding: 0;
+  background: #FFFFFF; border: 1px solid #82908E; border-radius: 6px;
+  font: 500 .9375rem/1 'Inter', sans-serif; color: #49565C; cursor: pointer;
+  transition: color 120ms ease-out, border-color 120ms ease-out, background-color 120ms ease-out;
+}
+.sim-zoombtn:hover { color: #14566B; border-color: #14566B; background: #E9F2F4; }
+.sim-zoombtn[data-zoom="reset"] { padding: 0 .625rem; font-size: .8125rem; }
+@media (max-width: 719px) {
+  .sim-compare { padding: .75rem; }
+  .sim-compare__stage { height: min(34vh, 280px); }
+}
+
+/* ---------- 灯箱缩放 ---------- */
+.sim-lightbox__media {
+  position: relative; overflow: hidden; touch-action: none; cursor: grab;
+}
+.sim-lightbox__media.is-dragging { cursor: grabbing; }
+.sim-lightbox__img {
+  transform-origin: 0 0; user-select: none; -webkit-user-drag: none;
+}
+.sim-lightbox__zoom { display: inline-flex; gap: .25rem; }
+
 /* reduced-motion：全部过渡 0ms；靠高特异性覆盖上面的 transition，无需提升优先级 */
 @media (prefers-reduced-motion: reduce) {
   .sim-page, .sim-page *, .sim-lightbox, .sim-lightbox * { transition-duration: 0ms; animation: none; }

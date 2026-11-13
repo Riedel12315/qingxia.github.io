@@ -591,6 +591,33 @@ for _f in ("assets/js/publications.js", "assets/js/page-tools.js"):
     chk("node --check " + _f, "exit 0", "exit %d %s" % (_r.returncode, _r.stderr.strip()[:80]),
         _r.returncode == 0)
 
+# --------------------------------------------------------------------------
+# 4g. Simulation compare view + lightbox zoom (2026-11-13, Phase B)
+# --------------------------------------------------------------------------
+sim_js = (ROOT / "assets/js/simulation.js").read_text(encoding="utf-8")
+_sim_css = (ROOT / "assets/css/simulation.css").read_text(encoding="utf-8")
+for _label, _needle in [
+    ("视图切换条", "sim-viewbar"),
+    ("并排对比面板", "sim-compare"),
+    ("双图选择", "is-picked"),
+    ("同步缩放函数", "zoomAt"),
+    ("滚轮缩放", "wheel"),
+    ("拖拽平移", "pointerdown"),
+    ("URL 视图同步", "params.set('view', 'compare')"),
+    ("灯箱缩放控件", "data-lbzoom"),
+]:
+    chk("simulation.js / " + _label, "包含", "包含" if _needle in sim_js else "缺失", _needle in sim_js)
+for _label, _needle in [
+    ("视图切换样式", ".sim-viewbar"),
+    ("对比面板样式", ".sim-compare"),
+    ("选择态样式", ".sim-figure.is-picked"),
+    ("灯箱缩放样式", ".sim-lightbox__zoom"),
+]:
+    chk("simulation.css / " + _label, "包含", "包含" if _needle in _sim_css else "缺失", _needle in _sim_css)
+import gzip as _gzip
+_sim_gz = len(_gzip.compress(sim_js.encode("utf-8")))
+chk("simulation.js gzip 体积 ≤ 10 KB", "≤ 10240 B", "%d B" % _sim_gz, _sim_gz <= 10240)
+
 
 # --------------------------------------------------------------------------
 # 5. Syntax / build
