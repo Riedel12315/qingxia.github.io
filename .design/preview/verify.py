@@ -618,6 +618,41 @@ import gzip as _gzip
 _sim_gz = len(_gzip.compress(sim_js.encode("utf-8")))
 chk("simulation.js gzip 体积 ≤ 10 KB", "≤ 10240 B", "%d B" % _sim_gz, _sim_gz <= 10240)
 
+# --------------------------------------------------------------------------
+# 4h. Home curation (2026-11-13, Phase C)
+# --------------------------------------------------------------------------
+home_scss_path = ROOT / "_sass/_home.scss"
+home_scss = home_scss_path.read_text(encoding="utf-8") if home_scss_path.exists() else ""
+about_md = (ROOT / "_pages/about.md").read_text(encoding="utf-8")
+chk("首页策展样式 _home.scss 存在", "存在",
+    "存在" if home_scss_path.exists() else "缺失", home_scss_path.exists())
+chk("main.scss 引入 home 层", 1, main_scss.count('@import "home"'),
+    main_scss.count('@import "home"') == 1)
+for _label, _needle in [
+    ("Hero 区", 'class="home-hero"'),
+    ("研究主题区", 'class="home-topics"'),
+    ("精选代表作区", 'class="home-featured"'),
+]:
+    chk("about.md / " + _label, "包含", "包含" if _needle in about_md else "缺失",
+        _needle in about_md)
+chk("about.md / 3 张精选卡", 3, about_md.count('class="home-card"'),
+    about_md.count('class="home-card"') == 3)
+chk("about.md / 4 个主题入口", 4, about_md.count('class="home-topic"'),
+    about_md.count('class="home-topic"') == 4)
+chk("about.md / 主题入口指向筛选后的论文库", "≥ 4",
+    about_md.count("/publications/?topic="), about_md.count("/publications/?topic=") >= 4)
+for _label, _needle in [
+    ("Hero 样式", ".home-hero"),
+    ("主题网格", ".home-topics__grid"),
+    ("代表作网格", ".home-featured__grid"),
+    ("自有 CTA（避免被正文链接色覆盖）", ".home-cta"),
+]:
+    chk("_home.scss / " + _label, "包含", "包含" if _needle in home_scss else "缺失",
+        _needle in home_scss)
+chk("about.md / 正文无 Setext H1（保持单一大纲）", 0,
+    len(re.findall(r'^={3,}$', about_md, re.M)),
+    len(re.findall(r'^={3,}$', about_md, re.M)) == 0)
+
 
 # --------------------------------------------------------------------------
 # 5. Syntax / build

@@ -11,8 +11,8 @@
 
 | 项 | 数值 |
 |---|---|
-| 执行断言 | 180 |
-| 通过 | 180 |
+| 执行断言 | 193 |
+| 通过 | 193 |
 | 未通过 | 0 |
 | 业务代码告警（不计入交付物通过/失败） | 0 |
 | 无法验证项（明确不计入通过） | 8 |
@@ -116,7 +116,7 @@
 
 | 检查项 | 期望 | 实测 | 结果 |
 |---|---|---|---|
-| 扫描文件数（业务代码） | - | 99 | — |
+| 扫描文件数（业务代码） | - | 100 | — |
 | 排除文件数（_sass/vendor/** + 第三方 vendor js + main.min.js） | - | 95 | — |
 | backdrop-filter | 0 命中 | 0 命中 | ✅ |
 | radial-gradient | 0 命中 | 0 命中 | ✅ |
@@ -219,6 +219,19 @@
 | simulation.css / 选择态样式 | 包含 | 包含 | ✅ |
 | simulation.css / 灯箱缩放样式 | 包含 | 包含 | ✅ |
 | simulation.js gzip 体积 ≤ 10 KB | ≤ 10240 B | 6757 B | ✅ |
+| 首页策展样式 _home.scss 存在 | 存在 | 存在 | ✅ |
+| main.scss 引入 home 层 | 1 | 1 | ✅ |
+| about.md / Hero 区 | 包含 | 包含 | ✅ |
+| about.md / 研究主题区 | 包含 | 包含 | ✅ |
+| about.md / 精选代表作区 | 包含 | 包含 | ✅ |
+| about.md / 3 张精选卡 | 3 | 3 | ✅ |
+| about.md / 4 个主题入口 | 4 | 4 | ✅ |
+| about.md / 主题入口指向筛选后的论文库 | ≥ 4 | 7 | ✅ |
+| _home.scss / Hero 样式 | 包含 | 包含 | ✅ |
+| _home.scss / 主题网格 | 包含 | 包含 | ✅ |
+| _home.scss / 代表作网格 | 包含 | 包含 | ✅ |
+| _home.scss / 自有 CTA（避免被正文链接色覆盖） | 包含 | 包含 | ✅ |
+| about.md / 正文无 Setext H1（保持单一大纲） | 0 | 0 | ✅ |
 
 ## 5 语法与构建
 
@@ -228,9 +241,9 @@
 | main.scss 保留 Jekyll front matter（未删 / 未改业务文件） | 前 2 行均为 --- | 是 | ✅ |
 | 原样命令（含 front matter）按预期失败 exit 65 | exit 65 | exit 65 / Error: expected "{". | ✅ |
 | 剥离 front matter + --quiet --style=compressed 编译 | exit 0 | exit 0 | ✅ |
-| 产物 main.css 字节数（新增液体背景层叠规则后应 > 旧基线 104685） | > 104685 | 113170 | ✅ |
+| 产物 main.css 字节数（新增液体背景层叠规则后应 > 旧基线 104685） | > 104685 | 117280 | ✅ |
 | 编译无 Error（--quiet 抑制弃用告警） | 0 Error | 0 Error | ✅ |
-| Sass 弃用告警（未加 --quiet 的诊断运行；显式打印 / 折叠重复） | - | 20 / 331；类型 import / if-function / global-builtin / slash-div，全部来自 _sass/vendor/ 的 breakpoint 与 susy，非错误 | — |
+| Sass 弃用告警（未加 --quiet 的诊断运行；显式打印 / 折叠重复） | - | 20 / 332；类型 import / if-function / global-builtin / slash-div，全部来自 _sass/vendor/ 的 breakpoint 与 susy，非错误 | — |
 | HTML 标签配平（见 §2） | 0 错误 | 0 错误 | ✅ |
 
 ## 6 附加交叉核对（独立补充）

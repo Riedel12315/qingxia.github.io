@@ -10,8 +10,49 @@ redirect_from:
 
 **Qing Xia** received his Ph.D. degree in June 2025 from the School of Mathematics and Statistics at Xi’an Jiaotong University (XJTU), where he was supervised by Prof. Dr. [Yibao Li](http://gr.xjtu.edu.cn/web/yibaoli). Prior to that, he obtained his B.S. degree from the same school at XJTU in 2019. Recently, he was selected for the **TopMinds** program and joined Huawei.
 
+<section class="home-hero" aria-labelledby="home-hero-title">
+  <p class="home-hero__eyebrow">Ph.D. in Science · Xi'an Jiaotong University · Huawei TopMinds</p>
+  <h2 id="home-hero-title" class="home-hero__title">Shape topology optimization, multi-scale multi-physics, and the digital twin.</h2>
+  <p class="home-hero__lead">Projecting physical models from real space into digital space for equivalent experiments — removing the cost and constraints of physical trials.</p>
+  <ul class="home-hero__stats">
+    <li><strong>43</strong><span>SCI papers</span></li>
+    <li><strong>32</strong><span>JCR Q1</span></li>
+    <li><strong>7</strong><span>Highly Cited</span></li>
+  </ul>
+  <p class="home-hero__actions">
+    <a class="home-cta" href="/publications/">Browse publications</a>
+    <a class="home-cta home-cta--ghost" href="/simulation/">Explore simulations</a>
+  </p>
+</section>
+
 ## Research(研究)
 My research interests mainly lie in **Shape topology optimization in 3D printing** and **multi-scale multi-physics coupled computation**.  My research interests also include computer vision on the digital twin, entropy analysis and numerical analysis. My main work is to project the physical models from real space to digital space for equivalent experiments, which can eliminate the environment and material cost constraints of real physical experiment. Since 2019, I have published **43 SCI** papers on the international academic journals such as *Comput. Methods Appl. Mech. Eng.,  J. Comput. Phys., Comput. Phys., Commun., Phys. Fluids, Pattern Recognit.*, **32** of them are included in **JCR Q1** journals, **7** of them have been chosen as the **Highly Cited paper** by Web of Science.
+
+<section class="home-topics" aria-labelledby="home-topics-title">
+  <h2 id="home-topics-title">Research topics</h2>
+  <ul class="home-topics__grid">
+    <li><a class="home-topic" href="/publications/?topic=phase-field">
+      <span class="home-topic__name">Phase-field modelling</span>
+      <span class="home-topic__desc">Cahn–Hilliard, crystal nucleation, sintering and solidification.</span>
+      <span class="home-topic__more">View papers →</span>
+    </a></li>
+    <li><a class="home-topic" href="/publications/?topic=topology">
+      <span class="home-topic__name">Topology optimization</span>
+      <span class="home-topic__desc">TPMS, porous scaffolds, shell–infill and thermal-fluid design.</span>
+      <span class="home-topic__more">View papers →</span>
+    </a></li>
+    <li><a class="home-topic" href="/publications/?topic=additive">
+      <span class="home-topic__name">Additive manufacturing</span>
+      <span class="home-topic__desc">FDM, selective laser melting and multi-scale process simulation.</span>
+      <span class="home-topic__more">View papers →</span>
+    </a></li>
+    <li><a class="home-topic" href="/publications/?topic=fluid">
+      <span class="home-topic__name">Fluid &amp; CFD</span>
+      <span class="home-topic__desc">Navier–Stokes, heat transfer, combustion and curved surfaces.</span>
+      <span class="home-topic__more">View papers →</span>
+    </a></li>
+  </ul>
+</section>
 
 ## News（新闻）
 + May 15, 2025. **Qing Xia** successfully obtained his Ph.D. in Science.
@@ -61,6 +102,31 @@ My research interests mainly lie in **Shape topology optimization in 3D printing
 </details>
 
 ## Magnum Opus（代表作）
+
+<section class="home-featured" aria-labelledby="home-featured-title">
+  <h2 id="home-featured-title">Selected work</h2>
+  <ul class="home-featured__grid">
+    <li><article class="home-card">
+      <p class="home-card__venue">Physics of Fluids · 2023</p>
+      <h3 class="home-card__title">Multi-scale modeling and simulation of additive manufacturing based on fused deposition technique</h3>
+      <p class="home-card__note">Cover Article · Featured · Scilight Article of AIP Publishing</p>
+      <a class="home-card__link" href="/publications/?topic=additive">Related papers →</a>
+    </article></li>
+    <li><article class="home-card">
+      <p class="home-card__venue">Physics of Fluids · 2023</p>
+      <h3 class="home-card__title">On the conservative phase-field method with the N-component incompressible flows</h3>
+      <p class="home-card__note">Highly Cited Paper · JCR Q1 · TOP</p>
+      <a class="home-card__link" href="/publications/?topic=phase-field">Related papers →</a>
+    </article></li>
+    <li><article class="home-card">
+      <p class="home-card__venue">Physics of Fluids</p>
+      <h3 class="home-card__title">On the adaption of biological transport networks affected by complex domains</h3>
+      <p class="home-card__note">JCR Q1 · TOP</p>
+      <a class="home-card__link" href="/publications/?topic=phase-field">Related papers →</a>
+    </article></li>
+  </ul>
+</section>
+
 + **Qing Xia**#, Gangming Sun, Junseok Kim, Yibao Li, Multi-scale modeling and simulation of additive manufacturing based on fused deposition technique, *Physics of Fluids*, 35 (2023) 034116, (**Cover Article/Featured/Scilight Article of AIP publishing**). 
 + **Qing Xia**#, Junxiang Yang, Yibao Li, On the conservative phase-field method with the N-component incompressible flows, *Physics of Fluids*, 35 (2023) 012120. (JCR Q1, TOP, [Highly Cited paper](https://riedel12315.github.io/qingxia.github.io/files/HighlyCited.pdf)). 
 + Yibao Li#, Zhixian Lv, **Qing Xia***, On the adaption of biological transport networks affected by complex domains, *Physics of Fluids*. (JCR Q1, TOP )
