@@ -11,8 +11,8 @@
 
 | 项 | 数值 |
 |---|---|
-| 执行断言 | 128 |
-| 通过 | 128 |
+| 执行断言 | 141 |
+| 通过 | 141 |
 | 未通过 | 0 |
 | 业务代码告警（不计入交付物通过/失败） | 0 |
 | 无法验证项（明确不计入通过） | 8 |
@@ -46,7 +46,7 @@
 
 | 检查项 | 期望 | 实测 | 结果 |
 |---|---|---|---|
-| index.html 存在且非空 | >0 字节 | 49577 字节 | ✅ |
+| index.html 存在且非空 | >0 字节 | 49693 字节 | ✅ |
 | HTML 标签配平 / HTMLParser 无异常 | 0 错误 | 0 错误 | ✅ |
 | section.sim-group | 3 | 3 | ✅ |
 | article.sim-item | 13 | 13 | ✅ |
@@ -93,7 +93,7 @@
 | 检查项 | 期望 | 实测 | 结果 |
 |---|---|---|---|
 | 本地资源引用全部存在 | 0 个 404 | 0 个 404 | ✅ |
-| 本地资源引用总数 | - | 88 | — |
+| 本地资源引用总数 | - | 90 | — |
 | 外部链接（PDF / 学术站点，不做存在性断言） | - | 24 | — |
 | poster 文件存在 | 16 | 16 | ✅ |
 | 16 poster 可被 Pillow 打开 | 0 失败 | 0 失败 | ✅ |
@@ -116,7 +116,7 @@
 
 | 检查项 | 期望 | 实测 | 结果 |
 |---|---|---|---|
-| 扫描文件数（业务代码） | - | 94 | — |
+| 扫描文件数（业务代码） | - | 95 | — |
 | 排除文件数（_sass/vendor/** + 第三方 vendor js + main.min.js） | - | 95 | — |
 | backdrop-filter | 0 命中 | 0 命中 | ✅ |
 | radial-gradient | 0 命中 | 0 命中 | ✅ |
@@ -167,6 +167,19 @@
 | _motion.scss / 导航下划线从中心展开 | 包含 | 包含 | ✅ |
 | 动效层无廉价特效（位移放大/旋转/阴影/无限动画） | 0 命中 | 0 命中 [] | ✅ |
 | node --check assets/js/motion.js | exit 0 | exit 0  | ✅ |
+| 导航放大镜 nav-lens.js 存在 | 存在 | 存在 | ✅ |
+| scripts.html 引用 nav-lens.js（恰好 1 次） | 1 | 1 | ✅ |
+| nav-lens.js / pointerover 建立镜片 | 包含 | 包含 | ✅ |
+| nav-lens.js / pointermove 逐帧合并 | 包含 | 包含 | ✅ |
+| nav-lens.js / 仅精细指针启用 | 包含 | 包含 | ✅ |
+| nav-lens.js / 减少动效下不启用 | 包含 | 包含 | ✅ |
+| nav-lens.js / 装饰元素 aria-hidden | 包含 | 包含 | ✅ |
+| nav-lens.js / 字体就绪后重测 | 包含 | 包含 | ✅ |
+| _motion.scss / 镜片容器样式 | 包含 | 包含 | ✅ |
+| _motion.scss / 圆形裁剪 | 包含 | 包含 | ✅ |
+| _motion.scss / 放大倍率变量 | 包含 | 包含 | ✅ |
+| _motion.scss / 光学细边 | 包含 | 包含 | ✅ |
+| node --check assets/js/nav-lens.js | exit 0 | exit 0  | ✅ |
 
 ## 5 语法与构建
 
@@ -176,7 +189,7 @@
 | main.scss 保留 Jekyll front matter（未删 / 未改业务文件） | 前 2 行均为 --- | 是 | ✅ |
 | 原样命令（含 front matter）按预期失败 exit 65 | exit 65 | exit 65 / Error: expected "{". | ✅ |
 | 剥离 front matter + --quiet --style=compressed 编译 | exit 0 | exit 0 | ✅ |
-| 产物 main.css 字节数（新增液体背景层叠规则后应 > 旧基线 104685） | > 104685 | 108045 | ✅ |
+| 产物 main.css 字节数（新增液体背景层叠规则后应 > 旧基线 104685） | > 104685 | 108775 | ✅ |
 | 编译无 Error（--quiet 抑制弃用告警） | 0 Error | 0 Error | ✅ |
 | Sass 弃用告警（未加 --quiet 的诊断运行；显式打印 / 折叠重复） | - | 20 / 329；类型 import / if-function / global-builtin / slash-div，全部来自 _sass/vendor/ 的 breakpoint 与 susy，非错误 | — |
 | HTML 标签配平（见 §2） | 0 错误 | 0 错误 | ✅ |

@@ -495,6 +495,36 @@ chk("node --check assets/js/motion.js", "exit 0",
                     run(["node", "--check", "assets/js/motion.js"]).stderr.strip()[:80]),
     run(["node", "--check", "assets/js/motion.js"]).returncode == 0)
 
+# --------------------------------------------------------------------------
+# 4e. Navigation lens (2026-11-13)
+# --------------------------------------------------------------------------
+nav_lens = ROOT / "assets/js/nav-lens.js"
+njs = nav_lens.read_text(encoding="utf-8") if nav_lens.exists() else ""
+chk("导航放大镜 nav-lens.js 存在", "存在", "存在" if nav_lens.exists() else "缺失", nav_lens.exists())
+chk("scripts.html 引用 nav-lens.js（恰好 1 次）", 1,
+    scripts_html.read_text(encoding="utf-8").count("nav-lens.js"),
+    scripts_html.read_text(encoding="utf-8").count("nav-lens.js") == 1)
+for _label, _needle in [
+    ("pointerover 建立镜片", "pointerover"),
+    ("pointermove 逐帧合并", "requestAnimationFrame"),
+    ("仅精细指针启用", "(hover: hover) and (pointer: fine)"),
+    ("减少动效下不启用", "prefers-reduced-motion"),
+    ("装饰元素 aria-hidden", 'aria-hidden", "true'),
+    ("字体就绪后重测", "fonts.ready"),
+]:
+    chk("nav-lens.js / " + _label, "包含", "包含" if _needle in njs else "缺失", _needle in njs)
+for _label, _needle in [
+    ("镜片容器样式", ".nav-lens {"),
+    ("圆形裁剪", "clip-path: circle("),
+    ("放大倍率变量", "scale(var(--s"),
+    ("光学细边", ".nav-lens__ring"),
+]:
+    chk("_motion.scss / " + _label, "包含", "包含" if _needle in msc else "缺失", _needle in msc)
+chk("node --check assets/js/nav-lens.js", "exit 0",
+    "exit %d %s" % (run(["node", "--check", "assets/js/nav-lens.js"]).returncode,
+                    run(["node", "--check", "assets/js/nav-lens.js"]).stderr.strip()[:80]),
+    run(["node", "--check", "assets/js/nav-lens.js"]).returncode == 0)
+
 
 # --------------------------------------------------------------------------
 # 5. Syntax / build

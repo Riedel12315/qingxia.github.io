@@ -118,3 +118,49 @@ summary {
     transform: none;
   }
 }
+
+/* ── 6. Navigation lens: DeepSeek-style magnifier over the menu ──────────── */
+/* The lens lives inside each <a>, clipped to a circle at the pointer. The
+   backing is the same white as the masthead, so only the enlarged glyphs are
+   visible — no tinted disc, no glow. nav-lens.js only runs for fine pointers
+   and never under reduced motion, so touch devices see the plain nav. */
+.nav-lens {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 120ms var(--ease-out);
+}
+
+.nav-lens.is-active {
+  opacity: 1;
+}
+
+.nav-lens__inner {
+  position: absolute;
+  inset: 0;
+  background: var(--c-surface);
+  -webkit-clip-path: circle(var(--r, 28px) at var(--lx, 50%) var(--ly, 50%));
+  clip-path: circle(var(--r, 28px) at var(--lx, 50%) var(--ly, 50%));
+}
+
+.nav-lens__text {
+  position: absolute;
+  white-space: nowrap;
+  color: inherit;
+  transform: scale(var(--s, 1.7));
+}
+
+.nav-lens__ring {
+  position: absolute;
+  left: var(--lx, 50%);
+  top: var(--ly, 50%);
+  width: calc(var(--r, 28px) * 2);
+  height: calc(var(--r, 28px) * 2);
+  margin-left: calc(var(--r, 28px) * -1);
+  margin-top: calc(var(--r, 28px) * -1);
+  border: 1px solid rgba(20, 86, 107, .38);
+  border-radius: 50%;
+}
