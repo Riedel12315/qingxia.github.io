@@ -1,0 +1,64 @@
+/* ==========================================================================
+   PAGE TOOLS — reading progress, heading anchors, copy toast
+   All three are functional additions, not decoration: they appear only while
+   they are useful (long page / hovered heading / recent copy).
+   ========================================================================== */
+
+#read-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  z-index: 30;
+  background: var(--c-accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--dur-fast, 140ms) ease-out;
+}
+
+#read-progress.is-visible { opacity: 1; }
+
+.heading-anchor {
+  margin-left: .5rem;
+  color: var(--c-ink-3);
+  font-weight: 400;
+  text-decoration: none;
+  opacity: 0;
+  transition:
+    opacity var(--dur-fast, 140ms) ease-out,
+    color var(--dur-fast, 140ms) ease-out;
+}
+
+.heading-anchor:hover { color: var(--c-accent); }
+
+.page__content h2:hover .heading-anchor,
+.page__content h2:focus-within .heading-anchor,
+.archive h2:hover .heading-anchor,
+.archive h2:focus-within .heading-anchor { opacity: 1; }
+
+/* Touch devices have no hover: keep a faint affordance instead. */
+@media (max-width: 720px) {
+  .heading-anchor { opacity: .45; }
+}
+
+#site-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  z-index: 40;
+  padding: .5rem .875rem;
+  font: 500 .8125rem/1.4 'Inter', sans-serif;
+  color: var(--c-surface);
+  background: var(--c-ink);
+  border-radius: var(--r-md);
+  box-shadow: 0 4px 16px rgba(27, 36, 41, .18);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%);
+  transition: opacity var(--dur-fast, 140ms) ease-out;
+}
+
+#site-toast.is-visible { opacity: 1; }

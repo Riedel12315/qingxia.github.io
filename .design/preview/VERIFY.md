@@ -11,8 +11,8 @@
 
 | 项 | 数值 |
 |---|---|
-| 执行断言 | 141 |
-| 通过 | 141 |
+| 执行断言 | 167 |
+| 通过 | 167 |
 | 未通过 | 0 |
 | 业务代码告警（不计入交付物通过/失败） | 0 |
 | 无法验证项（明确不计入通过） | 8 |
@@ -46,7 +46,7 @@
 
 | 检查项 | 期望 | 实测 | 结果 |
 |---|---|---|---|
-| index.html 存在且非空 | >0 字节 | 49693 字节 | ✅ |
+| index.html 存在且非空 | >0 字节 | 49754 字节 | ✅ |
 | HTML 标签配平 / HTMLParser 无异常 | 0 错误 | 0 错误 | ✅ |
 | section.sim-group | 3 | 3 | ✅ |
 | article.sim-item | 13 | 13 | ✅ |
@@ -93,7 +93,7 @@
 | 检查项 | 期望 | 实测 | 结果 |
 |---|---|---|---|
 | 本地资源引用全部存在 | 0 个 404 | 0 个 404 | ✅ |
-| 本地资源引用总数 | - | 90 | — |
+| 本地资源引用总数 | - | 91 | — |
 | 外部链接（PDF / 学术站点，不做存在性断言） | - | 24 | — |
 | poster 文件存在 | 16 | 16 | ✅ |
 | 16 poster 可被 Pillow 打开 | 0 失败 | 0 失败 | ✅ |
@@ -116,7 +116,7 @@
 
 | 检查项 | 期望 | 实测 | 结果 |
 |---|---|---|---|
-| 扫描文件数（业务代码） | - | 95 | — |
+| 扫描文件数（业务代码） | - | 99 | — |
 | 排除文件数（_sass/vendor/** + 第三方 vendor js + main.min.js） | - | 95 | — |
 | backdrop-filter | 0 命中 | 0 命中 | ✅ |
 | radial-gradient | 0 命中 | 0 命中 | ✅ |
@@ -180,6 +180,32 @@
 | _motion.scss / 放大倍率变量 | 包含 | 包含 | ✅ |
 | _motion.scss / 光学细边 | 包含 | 包含 | ✅ |
 | node --check assets/js/nav-lens.js | exit 0 | exit 0  | ✅ |
+| 论文库脚本 publications.js 存在 | 存在 | 存在 | ✅ |
+| 微交互脚本 page-tools.js 存在 | 存在 | 存在 | ✅ |
+| publications.md 引用 publications.js（1 次） | 1 | 1 | ✅ |
+| publications.md 已移除 abstract-modal 依赖 | 0 | 0 | ✅ |
+| main.scss 引入 publications 层 | 1 | 1 | ✅ |
+| main.scss 引入 page-tools 层 | 1 | 1 | ✅ |
+| scripts.html 引用 page-tools.js（1 次） | 1 | 1 | ✅ |
+| publications.js / 按年份/类型/主题标注 | 包含 | 包含 | ✅ |
+| publications.js / URL 状态同步 | 包含 | 包含 | ✅ |
+| publications.js / chip 选中态 | 包含 | 包含 | ✅ |
+| publications.js / 就地摘要面板 | 包含 | 包含 | ✅ |
+| publications.js / 复制引用动作 | 包含 | 包含 | ✅ |
+| publications.js / 主题规则表 | 包含 | 包含 | ✅ |
+| page-tools.js / 阅读进度条 | 包含 | 包含 | ✅ |
+| page-tools.js / 标题锚点 | 包含 | 包含 | ✅ |
+| page-tools.js / 复制提示 toast | 包含 | 包含 | ✅ |
+| page-tools.js / 跨模块工具出口 | 包含 | 包含 | ✅ |
+| page-tools.js / 滚动 rAF 合并 | 包含 | 包含 | ✅ |
+| _publications.scss / 筛选工具条样式 | 包含 | 包含 | ✅ |
+| _publications.scss / 筛选 chip 样式 | 包含 | 包含 | ✅ |
+| _publications.scss / 就地摘要面板样式 | 包含 | 包含 | ✅ |
+| _page-tools.scss / 进度条样式 | 包含 | 包含 | ✅ |
+| _page-tools.scss / 锚点样式 | 包含 | 包含 | ✅ |
+| _page-tools.scss / toast 样式 | 包含 | 包含 | ✅ |
+| node --check assets/js/publications.js | exit 0 | exit 0  | ✅ |
+| node --check assets/js/page-tools.js | exit 0 | exit 0  | ✅ |
 
 ## 5 语法与构建
 
@@ -189,9 +215,9 @@
 | main.scss 保留 Jekyll front matter（未删 / 未改业务文件） | 前 2 行均为 --- | 是 | ✅ |
 | 原样命令（含 front matter）按预期失败 exit 65 | exit 65 | exit 65 / Error: expected "{". | ✅ |
 | 剥离 front matter + --quiet --style=compressed 编译 | exit 0 | exit 0 | ✅ |
-| 产物 main.css 字节数（新增液体背景层叠规则后应 > 旧基线 104685） | > 104685 | 108775 | ✅ |
+| 产物 main.css 字节数（新增液体背景层叠规则后应 > 旧基线 104685） | > 104685 | 113170 | ✅ |
 | 编译无 Error（--quiet 抑制弃用告警） | 0 Error | 0 Error | ✅ |
-| Sass 弃用告警（未加 --quiet 的诊断运行；显式打印 / 折叠重复） | - | 20 / 329；类型 import / if-function / global-builtin / slash-div，全部来自 _sass/vendor/ 的 breakpoint 与 susy，非错误 | — |
+| Sass 弃用告警（未加 --quiet 的诊断运行；显式打印 / 折叠重复） | - | 20 / 331；类型 import / if-function / global-builtin / slash-div，全部来自 _sass/vendor/ 的 breakpoint 与 susy，非错误 | — |
 | HTML 标签配平（见 §2） | 0 错误 | 0 错误 | ✅ |
 
 ## 6 附加交叉核对（独立补充）

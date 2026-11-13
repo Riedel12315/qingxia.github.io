@@ -5,8 +5,6 @@ permalink: /publications/
 author_profile: true
 ---
 
-<link rel="stylesheet" href="{{ base_path }}/assets/css/abstract-modal.css">
-
 ## Publications
 (# First Author, * Corresponding Author)
 1. **Qing Xia**#, Gangming Sun, Junseok Kim, Yibao Li*, Multi-scale modeling and simulation of additive manufacturing based on fused deposition technique, <span class="journal">Physics of Fluids</span>, 35 (2023) 034116.(Cover Article/Featured/Scilight Article of AIP publishing) <button type="button" class="abstract-trigger" data-abstract-key="multi-scale modeling additive manufacturing fused deposition" aria-haspopup="dialog">Abstract</button>
@@ -456,5 +454,5 @@ None
 }
 </script>
 
-<script src="{{ base_path }}/assets/js/abstract-modal.js" defer></script>
+<script src="{{ base_path }}/assets/js/publications.js" defer></script>
 

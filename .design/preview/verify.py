@@ -525,6 +525,72 @@ chk("node --check assets/js/nav-lens.js", "exit 0",
                     run(["node", "--check", "assets/js/nav-lens.js"]).stderr.strip()[:80]),
     run(["node", "--check", "assets/js/nav-lens.js"]).returncode == 0)
 
+# --------------------------------------------------------------------------
+# 4f. Publications library + page tools (2026-11-13, Phase 1)
+# --------------------------------------------------------------------------
+pub_js_path = ROOT / "assets/js/publications.js"
+tools_js_path = ROOT / "assets/js/page-tools.js"
+pub_scss_path = ROOT / "_sass/_publications.scss"
+tools_scss_path = ROOT / "_sass/_page-tools.scss"
+pub_md = (ROOT / "_pages/publications.md").read_text(encoding="utf-8")
+pub_js = pub_js_path.read_text(encoding="utf-8") if pub_js_path.exists() else ""
+tools_js = tools_js_path.read_text(encoding="utf-8") if tools_js_path.exists() else ""
+pscss = pub_scss_path.read_text(encoding="utf-8") if pub_scss_path.exists() else ""
+tscss = tools_scss_path.read_text(encoding="utf-8") if tools_scss_path.exists() else ""
+
+chk("论文库脚本 publications.js 存在", "存在",
+    "存在" if pub_js_path.exists() else "缺失", pub_js_path.exists())
+chk("微交互脚本 page-tools.js 存在", "存在",
+    "存在" if tools_js_path.exists() else "缺失", tools_js_path.exists())
+chk("publications.md 引用 publications.js（1 次）", 1, pub_md.count("publications.js"),
+    pub_md.count("publications.js") == 1)
+chk("publications.md 已移除 abstract-modal 依赖", 0, pub_md.count("abstract-modal"),
+    pub_md.count("abstract-modal") == 0)
+chk("main.scss 引入 publications 层", 1, main_scss.count('@import "publications"'),
+    main_scss.count('@import "publications"') == 1)
+chk("main.scss 引入 page-tools 层", 1, main_scss.count('@import "page-tools"'),
+    main_scss.count('@import "page-tools"') == 1)
+chk("scripts.html 引用 page-tools.js（1 次）", 1,
+    scripts_html.read_text(encoding="utf-8").count("page-tools.js"),
+    scripts_html.read_text(encoding="utf-8").count("page-tools.js") == 1)
+for _label, _needle in [
+    ("按年份/类型/主题标注", "data-topics"),
+    ("URL 状态同步", "replaceState"),
+    ("chip 选中态", "aria-pressed"),
+    ("就地摘要面板", "pub-abstract"),
+    ("复制引用动作", "复制引用"),
+    ("主题规则表", "TOPIC_RULES"),
+]:
+    chk("publications.js / " + _label, "包含", "包含" if _needle in pub_js else "缺失",
+        _needle in pub_js)
+for _label, _needle in [
+    ("阅读进度条", "read-progress"),
+    ("标题锚点", "heading-anchor"),
+    ("复制提示 toast", "site-toast"),
+    ("跨模块工具出口", "window.siteTools"),
+    ("滚动 rAF 合并", "requestAnimationFrame"),
+]:
+    chk("page-tools.js / " + _label, "包含", "包含" if _needle in tools_js else "缺失",
+        _needle in tools_js)
+for _label, _needle in [
+    ("筛选工具条样式", ".pub-toolbar"),
+    ("筛选 chip 样式", ".pub-chip"),
+    ("就地摘要面板样式", ".pub-abstract"),
+]:
+    chk("_publications.scss / " + _label, "包含", "包含" if _needle in pscss else "缺失",
+        _needle in pscss)
+for _label, _needle in [
+    ("进度条样式", "#read-progress"),
+    ("锚点样式", ".heading-anchor"),
+    ("toast 样式", "#site-toast"),
+]:
+    chk("_page-tools.scss / " + _label, "包含", "包含" if _needle in tscss else "缺失",
+        _needle in tscss)
+for _f in ("assets/js/publications.js", "assets/js/page-tools.js"):
+    _r = run(["node", "--check", _f])
+    chk("node --check " + _f, "exit 0", "exit %d %s" % (_r.returncode, _r.stderr.strip()[:80]),
+        _r.returncode == 0)
+
 
 # --------------------------------------------------------------------------
 # 5. Syntax / build

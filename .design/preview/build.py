@@ -419,6 +419,7 @@ __HOME__
 <script src="../../assets/js/liquid-bg.js?v=2" defer></script>
 <script src="../../assets/js/motion.js" defer></script>
 <script src="../../assets/js/nav-lens.js" defer></script>
+<script src="../../assets/js/page-tools.js" defer></script>
 </body>
 </html>
 """

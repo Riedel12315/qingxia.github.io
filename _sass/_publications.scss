@@ -1,0 +1,191 @@
+/* ==========================================================================
+   PUBLICATIONS — filterable library + inline abstracts
+   The markup stays a plain markdown list; publications.js annotates each <li>
+   with data-year / data-type / data-topics at runtime, so the content is still
+   fully readable with JS off (filters simply do not appear).
+   ========================================================================== */
+
+.pub-toolbar {
+  margin: 1.5rem 0 2rem;
+  padding: 1rem 1.125rem;
+  background: var(--c-surface);
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-md);
+}
+
+.pub-filter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .5rem;
+  padding: .3rem 0;
+}
+
+.pub-filter + .pub-filter { border-top: 1px solid var(--c-line); }
+
+.pub-filter__label {
+  flex: 0 0 3.5rem;
+  font: 600 .8125rem/1.4 'Inter', sans-serif;
+  color: var(--c-ink-3);
+  letter-spacing: .02em;
+}
+
+.pub-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: .25rem;
+  min-height: 34px;
+  padding: .2rem .6rem;
+  font: 500 .8125rem/1.3 'Inter', sans-serif;
+  color: var(--c-ink-2);
+  background: var(--c-surface);
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-sm);
+  cursor: pointer;
+  transition:
+    color var(--dur-fast, 140ms) ease-out,
+    background-color var(--dur-fast, 140ms) ease-out,
+    border-color var(--dur-fast, 140ms) ease-out;
+}
+
+.pub-chip:hover { color: var(--c-accent); border-color: var(--c-accent); }
+
+.pub-chip[aria-pressed="true"] {
+  color: var(--c-accent);
+  background: var(--c-accent-soft);
+  border-color: var(--c-accent);
+  font-weight: 600;
+}
+
+.pub-chip__count {
+  font-size: .6875rem;
+  font-weight: 400;
+  color: var(--c-ink-3);
+}
+.pub-chip[aria-pressed="true"] .pub-chip__count { color: var(--c-accent); }
+
+.pub-toolbar__foot {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: .4rem;
+  padding-top: .55rem;
+  border-top: 1px solid var(--c-line);
+}
+
+.pub-count { margin: 0; font-size: .8125rem; color: var(--c-ink-3); }
+
+.pub-reset {
+  margin-left: auto;
+  padding: .2rem .1rem;
+  font: 500 .8125rem/1.4 'Inter', sans-serif;
+  color: var(--c-accent);
+  background: none;
+  border: 0;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: var(--c-link-underline, rgba(20, 86, 107, .6));
+}
+
+.pub-reset[hidden] { display: none; }
+
+.pub-empty {
+  margin: 1.5rem 0;
+  padding: 2rem 1rem;
+  text-align: center;
+  color: var(--c-ink-3);
+  font-size: .9375rem;
+  border: 1px dashed var(--c-line);
+  border-radius: var(--r-md);
+}
+
+.pub-item[hidden] { display: none; }
+
+/* ── Inline action row under each entry ─────────────────────────────────── */
+.pub-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: .25rem;
+  margin-left: .5rem;
+  vertical-align: baseline;
+}
+
+.pub-copy {
+  position: relative;
+  display: inline-block;
+  padding: .2rem .5rem;
+  font: 500 .75rem/1.4 'Inter', sans-serif;
+  color: var(--c-ink-3);
+  background: transparent;
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-sm);
+  cursor: pointer;
+  transition:
+    color var(--dur-fast, 140ms) ease-out,
+    border-color var(--dur-fast, 140ms) ease-out;
+}
+
+.pub-copy:hover { color: var(--c-accent); border-color: var(--c-accent); }
+
+/* >=44x44 hit area while the visual box stays small. */
+.pub-copy::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: max(100%, 44px);
+  height: max(100%, 44px);
+  transform: translate(-50%, -50%);
+}
+
+/* ── Inline abstract panel (replaces the modal on this page) ─────────────── */
+.pub-abstract {
+  margin: .75rem 0 .25rem;
+  padding: .75rem 1rem;
+  background: var(--c-surface-2);
+  border-left: 2px solid var(--c-accent);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+}
+
+.pub-abstract[hidden] { display: none; }
+
+.pub-abstract__title {
+  margin: 0 0 .25rem;
+  font: 600 .9375rem/1.5 'Inter', sans-serif;
+  color: var(--c-ink);
+}
+
+.pub-abstract__meta {
+  margin: 0 0 .5rem;
+  font-size: .8125rem;
+  color: var(--c-ink-3);
+}
+
+.pub-abstract__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .375rem;
+  margin: 0 0 .5rem;
+}
+
+.pub-abstract__badge {
+  padding: .1rem .4rem;
+  font-size: .6875rem;
+  color: var(--c-accent);
+  background: var(--c-accent-soft);
+  border-radius: 3px;
+}
+
+.pub-abstract__body {
+  margin: 0;
+  font-size: .9375rem;
+  line-height: 1.75;
+  color: var(--c-ink-2);
+}
+
+@media (max-width: 720px) {
+  .pub-toolbar { padding: .75rem .875rem; }
+  .pub-filter__label { flex-basis: 100%; }
+  .pub-toolbar__foot { flex-wrap: wrap; gap: .5rem; }
+  .pub-actions { display: flex; margin: .5rem 0 0; }
+}
